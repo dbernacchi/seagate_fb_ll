@@ -1,0 +1,50 @@
+.accordion-body.collapse.in {
+	display:block !important;
+	height:auto !important;
+}
+.button,
+.button:hover,
+.button:focus,
+.button:active,
+.pdp-main-tab,
+.pdp-main-tab-dropdown-menu > .active > a.button,
+.pdp-main-tab > .dropdown > .pdp-main-tab-dropdown-menu,
+.rwd-nav-tabs,
+.rwd-nav-tabs-dropdown-menu > .active > a.button,
+.rwd-nav-tabs > .dropdown > .rwd-nav-tabs-dropdown-menu,
+.stay-informed-open.active,
+.tile-categories-list .pdp-main-tab > .tab-to-drop-dropdown > .dropdown-menu {
+	filter: none;
+}
+.stay-informed-close {
+	color: #999;
+}
+.support-pdp .collapse-inner {
+	padding: 4px 0;
+}
+.product-specs-table {
+	margin-top: auto;
+}
+@media (min-width: 781px) {
+.mega-nav > li {
+    background: url("../images/bg-transparent.png") !important;
+}
+}
+
+:lang(ar-em) .teaser-background-image-cell-play,
+:lang(ar-em) .nav-header-search-submit,
+:lang(ar-em) .refresh-btn-group .button,
+:lang(ar-em) .vtab > li.avail-item:after{
+	direction: ltr;
+}
+@media (max-width: 979px) {
+:lang(ar-em) .pdp-main-tab > .dropdown .dropdown-toggle span {
+	direction: ltr;
+}
+}
+@media (max-width: 767px) {
+:lang(ar-em) .nav-global-without-drop span:before,
+:lang(ar-em) .nav-global-third-level-wrapper a:after {
+	direction: ltr;
+}
+}

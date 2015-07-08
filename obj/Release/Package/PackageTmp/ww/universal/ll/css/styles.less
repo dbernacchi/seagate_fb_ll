@@ -1,0 +1,68 @@
+// variables
+
+@statsFontSize: 2em;
+@preloaderFontSize: 2.2em;
+
+@import 'menu.less';
+@import 'controls.less';
+@import 'text.less';
+@import 'fullscreen.less';
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.container-fluid
+{
+	margin: 0 auto;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+
+#glContainer
+{
+	display: flex;
+	flex-direction: column;
+	flex: 10;
+	z-index: 0 !important;
+	position: relative;
+	margin-left: 30px;
+
+	canvas {
+		width: 100%;
+		height: 500px;
+		border: 0;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+#ll-bg
+{
+	position: absolute;
+	top: 0;
+	float: left;
+}
+
+.active {
+	border-color: @blue !important;
+
+	span {
+		color: @blue !important;
+	}
+}
+
+/*@media (min-width: 2000px)
+{
+	iframe
+	{
+		border: 1px solid red;
+	}
+}*/

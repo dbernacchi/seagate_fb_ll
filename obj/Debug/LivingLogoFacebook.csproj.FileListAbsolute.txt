@@ -1,0 +1,6 @@
+c:\Users\vic\Dropbox\Work\WebGL\LivingLogo_Nebula_FacebookUpdate\bin\LivingLogoFacebook.dll.config
+c:\Users\vic\Dropbox\Work\WebGL\LivingLogo_Nebula_FacebookUpdate\bin\LivingLogoFacebook.dll
+c:\Users\vic\Dropbox\Work\WebGL\LivingLogo_Nebula_FacebookUpdate\bin\LivingLogoFacebook.pdb
+c:\Users\vic\Dropbox\Work\WebGL\LivingLogo_Nebula_FacebookUpdate\obj\Debug\LivingLogoFacebook.dll
+c:\Users\vic\Dropbox\Work\WebGL\LivingLogo_Nebula_FacebookUpdate\obj\Debug\LivingLogoFacebook.pdb
+C:\Users\vic\Dropbox\Work\WebGL\LivingLogo_Nebula_FacebookUpdate\obj\Debug\LivingLogoFacebook.csprojResolveAssemblyReference.cache

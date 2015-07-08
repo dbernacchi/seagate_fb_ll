@@ -1,0 +1,147 @@
+#line 1 400
+#define float2 vec2
+#define float3 vec3
+#define float4 vec4
+
+const float PI                      = 3.1415926535897;
+const float TWOPI                   = 2.0 * PI;
+const float DEG_TO_RAD              = PI / 180.0;
+const float RAD_TO_DEG              = 180.0 / PI;
+
+// v02
+const float LogoBeginT = 1346.0 / 4096.0;
+const float LogoEndT = 2808.0 / 4096.0;
+// v01
+//const float LogoBeginT = 1407.0 / 4096.0;
+//const float LogoEndT = 2722.0 / 4096.0;
+
+uniform sampler2D   TargetMap;
+uniform sampler2D   Map;
+uniform sampler2D   CubeAttrib1Map;
+uniform float       TimeStep;
+uniform float       Time;
+uniform float       ParticleSpeed;
+uniform float       PathSpeed;
+uniform float       OneOverPathSpeed;
+//		uniform float       Wave2EmitPosT;
+//		uniform float2      Dim;
+//		uniform float       ParticleDivisor;
+uniform float       LoopEndTime;
+
+varying vec2 texcoord;
+
+float Saturate( in float x )	{ return clamp( x, 0.0, 1.0 ); }
+vec3 Saturate( in vec3 x )      { return clamp( x, vec3(0.0), vec3(1.0) ); }
+
+
+float sineWave( float t, float b, float c, float d )
+{
+    return (sin( (t/d) * 2.0 * PI * b )) * c;
+}
+
+
+float easeInQuad( float t, float b, float c, float d)
+{
+    t /= d;
+    return c*t*t + b;
+}
+
+float easeOutQuad( float t, float b, float c, float d)
+{
+    t /= d;
+    return -c * t*(t-2.0) + b;
+}
+
+float easeInOutQuad( float t, float b, float c, float d )
+{
+    t /= d/2.0;
+    if (t < 1.0) return c/2.0*t*t + b;
+    t--;
+    return -c/2.0 * (t*(t-2.0) - 1.0) + b;
+}
+
+float easeOutCubic( float t, float b, float c, float d )
+{
+    t /= d;
+    t--;
+    return c*(t*t*t + 1.0) + b;
+}
+
+float easeInOutCubic( float t, float b, float c, float d )
+{
+    t /= d/2.0;
+    if (t < 1.0) return c/2.0*t*t*t + b;
+    t -= 2.0;
+    return c/2.0*(t*t*t + 2.0) + b;
+}
+
+float easeInQuint( float t, float b, float c, float d )
+{
+    t /= d;
+    return c*t*t*t*t*t + b;
+}
+
+float easeInOutQuint( float t, float b, float c, float d)
+{
+    t /= d/2.0;
+    if( t < 1.0 ) return (c/2.0)*t*t*t*t*t + b;
+    t -= 2.0;
+    return c/2.0*(t*t*t*t*t + 2.0) + b;
+}
+
+void main()
+{
+    vec4 targetData = texture2D( TargetMap, texcoord );
+    vec4 data = texture2D( Map, texcoord );
+    vec4 attrib1 = texture2D( CubeAttrib1Map, texcoord );
+    
+    data.rgb = targetData.rgb;
+    float partTargetT = data.g;
+    float partTriggerTime = attrib1.a;
+    float partBeginT = attrib1.r;
+    float partSpeed = attrib1.g;
+    
+    float startPartT = partBeginT;
+
+    float e0 = Saturate( easeOutCubic( Time, 0.0, 1.0, 1.0 ) );
+    
+    float time2 = Time * e0;
+
+#ifdef BEGIN_ANIM_ENABLED
+//    if( time2 < LoopEndTime )
+//    {
+        float t0 = time2 - partTriggerTime;
+        
+        if( t0 >= 0.0 && t0 < PathSpeed )
+        {
+            float pt = smoothstep( 0.0, 1.0, t0 * OneOverPathSpeed );
+            data.a = mix( startPartT, partTargetT, pt );
+        }
+
+        // Used for particle's scale up/down effect at logo endpoints
+        data.b = step( PathSpeed+0.25, t0 );
+
+        #ifdef LASTFM_API
+            data.a += TimeStep + abs(data.r)*0.000025 * partSpeed * ParticleSpeed;
+        #else
+            data.a += (TimeStep*0.25) + abs(data.r)*0.000025 * partSpeed * ParticleSpeed;
+        #endif
+
+        float aStep = step( data.a, LogoEndT );
+        data.a = data.a * aStep + (1.0-aStep) * LogoBeginT;
+
+#else
+//    }
+//    else
+//    {
+        float ttt = easeOutCubic( (time2 - LoopEndTime), 1.0, 3.0, 2.0 );
+        data.a += ( 1.0 - data.a ) * 0.75 * ttt * (1.0+partTriggerTime)*0.00025 * data.a * 1.5;
+        
+        data.a += TimeStep + abs(data.r)*0.00005 * partSpeed * 5.0; // * ParticleSpeed * 200.0;
+#endif
+//    }
+
+    data.a = Saturate( data.a );
+    
+    gl_FragColor = data;
+}

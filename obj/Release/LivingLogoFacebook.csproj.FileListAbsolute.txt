@@ -1,0 +1,5 @@
+c:\Users\vic\Dropbox\Work\WebGL\LivingLogo_Nebula_FacebookUpdate\bin\LivingLogoFacebook.dll.config
+c:\Users\vic\Dropbox\Work\WebGL\LivingLogo_Nebula_FacebookUpdate\bin\LivingLogoFacebook.dll
+c:\Users\vic\Dropbox\Work\WebGL\LivingLogo_Nebula_FacebookUpdate\bin\LivingLogoFacebook.pdb
+c:\Users\vic\Dropbox\Work\WebGL\LivingLogo_Nebula_FacebookUpdate\obj\Release\LivingLogoFacebook.dll
+c:\Users\vic\Dropbox\Work\WebGL\LivingLogo_Nebula_FacebookUpdate\obj\Release\LivingLogoFacebook.pdb

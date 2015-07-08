@@ -1,0 +1,45 @@
+.post-share a.fa {
+	text-decoration: none;
+	font-size: 32px;
+	margin-right: 6px;
+}
+
+.post-share.top-post-share a.fa {
+	color: rgba(0, 0, 0, 0.08);
+}
+
+.post-share.bottom-post-share a.fa-twitter-square,
+.post-share a.fa-twitter-square:hover {
+	color: #55acee;
+}
+
+.post-share.bottom-post-share a.fa-facebook-square,
+.post-share a.fa-facebook-square:hover {
+	color: #3b5998;
+}
+
+.post-share.bottom-post-share a.fa-google-plus-square,
+.post-share a.fa-google-plus-square:hover {
+	color: #dd4b39;
+}
+
+.post-share.bottom-post-share a.fa-linkedin-square,
+.post-share a.fa-linkedin-square:hover {
+	color: #0976b4;
+}
+
+.post-share.bottom-post-share a.fa-weibo,
+.post-share a.fa-weibo:hover {
+	color: #e21d2d;
+}
+
+.post-share a .sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}

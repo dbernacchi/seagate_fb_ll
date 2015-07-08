@@ -1,0 +1,91 @@
+#menu {
+	position: absolute;
+	top: 135px;
+	left: 25px;
+	z-index: 2147483647;
+
+	ul
+	{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li
+		{
+			@blue: #00A1DD;
+			@grey: #bbb;
+			@time: 0.4s;
+
+//			opacity: 0;
+			position: relative;
+			//			left: -150px;
+			width: 0;
+			overflow: hidden;
+			white-space: nowrap;
+			border-left-width: 0;
+			border-left-style: solid;
+			border-color: @grey;
+			padding: 0px 0 0 10px;
+			-webkit-transition: @time;
+			-o-transition: @time;
+			transition: @time;
+			height: 24px;
+			line-height: 24px;
+
+			&:hover
+			{
+				border-color: @blue;
+			}
+
+			.menuItemSwipe
+			{
+				font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				font-weight: 400;
+				font-size: 14px;
+				margin: 0;
+				color: @grey;
+				position: relative;
+				text-transform: uppercase;
+				cursor: pointer;
+				visibility: visible !important;
+				-webkit-transition: @time;
+				-o-transition: @time;
+				transition: @time;
+
+				span
+				{
+					display: block;
+					position: absolute;
+					left: 0;
+					top: -1px;
+					padding: 2px 0;
+					width: 0;
+					height: 100%;
+					overflow: hidden;
+					white-space: nowrap;
+					-webkit-transition: @time;
+					-o-transition: @time;
+					transition: @time;
+					line-height: 19px;
+
+					&:before
+					{
+						content: attr(rel);
+						position: absolute;
+						margin: 0;
+						left: 0;
+						top: 0;
+						padding: 0;
+						color: @blue;
+					}
+				}
+
+				&:hover span
+				{
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+

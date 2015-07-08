@@ -1,0 +1,36 @@
+#ll-canvas-container {
+    position: relative;
+    left: 0;
+    right: 0;
+    height: 500px;
+    visibility: hidden;
+    background-image: -webkit-radial-gradient(
+        center, ellipse cover,
+        #fff 0%, #fff 35%, #f8f8f8 60%, #e8e8e8 70%, #bbb 99%);
+
+    opacity: 0;
+    -webkit-perspective: 300px;
+}
+
+#ll-canvas-shadow {
+    position: absolute;
+    bottom: 20px; left: 50%; width: 640px; margin-left: -320px;
+    height: 50px;
+
+    background-image: -webkit-radial-gradient(
+        center, ellipse cover,
+        rgba(0,0,0, 0.035) 0%, rgba(0,0,0, 0.035) 30%,
+        transparent 50%);
+}
+
+#ll-canvas {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 320px;
+    height: 320px;
+    margin-left: -160px;
+    margin-top: -160px;
+
+    /*-webkit-perspective: 1500px;*/
+    -webkit-transform: rotateX(0deg);
+}

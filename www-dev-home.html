@@ -1,0 +1,1881 @@
+﻿<!DOCTYPE html>
+
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script>
+    	var isPDPPage = false;
+    </script>
+	
+	<!-- 123 -->	
+<script type="text/javascript">
+var ecommLocaleMap = {"ecommLocalesList":[{"ecommLocale":"pl-pl","seaLocale":"pl-pl","drLocale":"pl_PL","currency":"PLN"},{"ecommLocale":"en-ca","seaLocale":"en-ca","drLocale":"en_CA","currency":"CAD"},{"ecommLocale":"en-us","seaLocale":"en-us","drLocale":"en_US","currency":"USD"},{"ecommLocale":"en-ie","seaLocale":"en-gb","drLocale":"en_IE","currency":"EUR"},{"ecommLocale":"es-es","seaLocale":"es-es","drLocale":"es_ES","currency":"EUR"},{"ecommLocale":"en-au","seaLocale":"en-au","drLocale":"en_AU","currency":"AUD"},{"ecommLocale":"en-se","seaLocale":"en-gb","drLocale":"en_IE","currency":"SEK"},{"ecommLocale":"en-dk","seaLocale":"en-gb","drLocale":"en_IE","currency":"DKK"},{"ecommLocale":"de-de","seaLocale":"de-de","drLocale":"de_DE","currency":"EUR"},{"ecommLocale":"en-lt","seaLocale":"en-gb","drLocale":"en_IE","currency":"LTL"},{"ecommLocale":"en-ro","seaLocale":"en-gb","drLocale":"en_IE","currency":"RON"},{"ecommLocale":"en-hu","seaLocale":"en-gb","drLocale":"en_IE","currency":"HUF"},{"ecommLocale":"fr-fr","seaLocale":"fr-fr","drLocale":"fr_FR","currency":"EUR"},{"ecommLocale":"en-cz","seaLocale":"en-gb","drLocale":"en_IE","currency":"CZK"},{"ecommLocale":"it-it","seaLocale":"it-it","drLocale":"it_IT","currency":"EUR"},{"ecommLocale":"en-gb","seaLocale":"en-gb","drLocale":"en_GB","currency":"GBP"}]};
+var gsaEcommLocaleMap = {"gsaEcommLocalesList":[]};
+var ciLocaleMap = {"locales":[
+{'name':'pl-pl','embed':'','xml':''},{'name':'en-in','embed':'5203','xml':'5204'},{'name':'en-ca','embed':'5898','xml':'5886'},{'name':'ru-ru','embed':'4632','xml':'4641'},{'name':'en-ie','embed':'','xml':''},{'name':'fr-be','embed':'','xml':''},{'name':'pt-br','embed':'4634','xml':'4638'},{'name':'en-em','embed':'','xml':''},{'name':'tr-tr','embed':'4633','xml':'4643'},{'name':'zh-tw','embed':'','xml':''},{'name':'ja-jp','embed':'','xml':''},{'name':'fr-fr','embed':'4448','xml':'4452'},{'name':'nl-nl','embed':'','xml':''},{'name':'en-cz','embed':'','xml':''},{'name':'en-sg','embed':'4631','xml':'4642'},{'name':'zh-cn','embed':'','xml':''},{'name':'en-as','embed':'','xml':''},{'name':'en-us','embed':'4399','xml':'4450'},{'name':'nl-hu','embed':'','xml':''},{'name':'es-es','embed':'5062','xml':'5063'},{'name':'en-se','embed':'','xml':''},{'name':'en-au','embed':'','xml':''},{'name':'en-dk','embed':'','xml':''},{'name':'id-id','embed':'','xml':''},{'name':'ar-em','embed':'','xml':''},{'name':'nl-be','embed':'','xml':''},{'name':'ko-kr','embed':'','xml':''},{'name':'de-de','embed':'4447','xml':'4453'},{'name':'en-ro','embed':'','xml':''},{'name':'en-lt','embed':'','xml':''},{'name':'it-it','embed':'','xml':''},{'name':'en-gb','embed':'4449','xml':'4451'},{'name':'es-la','embed':'','xml':''}
+]};
+</script>
+    <script type="text/javascript" src="/ww/js/app/localeChooser.min.js?v=51" ></script>
+	<script>
+  var pgTitle = "";
+	var sppFilter = "";
+	var callSppFilter = false;
+	
+	var defaultStr = "Enter product name or keyword";
+    defaultStr = defaultStr || "";
+	</script>
+
+<!-- lang : -->
+<!-- country : -->
+<!-- role : -->
+
+<!-- isUserSPPMember : false-->
+
+<!-- com.cust.contentbean.ChannelInfoMasterImpl@6611ace1 .... Home -->
+
+<script type="text/javascript">
+	var rcLocaleJS = "en-us";
+	//define varaible isArEm for arabic project, if locale is ar-em, the value is true;
+	var isArEm = rcLocaleJS == "ar-em";
+	var spp_ProfileURL = "https://seagate--dev.cs3.my.salesforce.com/apex/SPP_PersonProfile_VF";
+	var gsaSite = "All_collection_stg";
+	var gsaURL = "http://okmztstsrch2.okla.seagate.com/suggest?";
+	currentCountry = getCountryForLocale(rcLocaleJS);
+	var loggedinUserName = getCookie("USERDETAIL");
+	var serverHost = "wwwdevedit.seagate.com";
+	var IsSppUser = "false";
+	var sppLocale = getCookie("SPPLOCALE");
+ 
+</script>
+
+<!-- pdpData  -->
+
+<script>
+var pdh_data={'site':'product_finder_stg',
+		'locale':'en-us',
+		'start':'0',
+        'num':'10',
+        'client':'en_us_frontend',
+        'ie':'utf8',
+        'oe':'utf8',
+        'tlen':'100',
+        'getfields':'*',
+        'lr':'lang_en',
+        'filter':'0',
+        'sort':'date:D:L:d1',
+        'requiredfields':'(pdh:true).(lang:en-us)',
+        'output':'xml_no_dtd',
+        'searchURLPrefix':'http://okmztstsrch2.okla.seagate.com/search?'
+		};
+</script>
+
+	<title>	Seagate - Storing the world’s digital content |	
+	Seagate	</title>	 
+				<meta name="keywords" content="hard drives, hard drive, hard disk drives, hard disk drive, hard disks, harddrive, storage drive, external hard drive, enterprise drive, desktop drive, portable drive, portable drives, FireWire, USB, Serial ATA, SATA"/> 
+			 
+				<meta name="description" content="Seagate is the company the world trusts to store our lives - our files and photos, our libraries and histories, our science and progress."/> 
+			
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="">
+    <link href="/cps/script/preview/style.jsp" rel="stylesheet" type="text/css">
+
+    <script src="/ww/universal/ll/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+	  var currentLocale, currentCountry, currentLanguage;
+	  var homePageBannerFlash='';
+	  setLocaleOnLoad();
+	  var loginVar = {
+	    'smUserDn' : 'uid=235650,ou=people,o=seagate.com,o=SDS',
+	    'userName' : ''
+	  };
+	  var httpsURL = "https://wwwdevedit.seagate.com";
+	  var serverHost = "wwwdevedit.seagate.com";
+	</script>
+    <!-- Styles -->
+    <link href="/ww/universal/ll/css/facebook.css" rel="stylesheet">
+    <link href="/ww/universal/css/stx-bootstrap-min.css?v=51" rel="stylesheet">
+	
+
+
+
+<link href="/ww/universal/css/stx-bootstrap-responsive-min.css" rel="stylesheet" type="text/css" />
+
+    <!--[if IE 8]><link href="/ww/universal/css/styles_ie8.css?v=51" rel="stylesheet"><![endif]-->
+	<!--[if IE 9]><link href="/ww/universal/css/styles_ie9.css?v=51" rel="stylesheet"><![endif]-->
+    <script type="text/javascript" src="//nexus.ensighten.com/seagate/Bootstrap.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="/ww/universal/js/html5.js?v=51"></script>
+    <![endif]-->
+    
+ <style>	#toggle-pencil {	display: block;	height: 20px;	width: 20px;	background-image: url(/sites/legacy/images/edit_new.gif);	background-position: center center;	background-repeat: no-repeat;	box-shadow: 1px 1px 2px black;	background-color: #fff;	position: fixed;	top: 5px;	left: 5px;	z-index: 100;	}	</style> 
+ <!-- Begin insert headerCode from Channel Info Child -->	<meta name="baidu-site-verification" content="U65tD3hzpy" />
+<meta name="responsive-page" content="true">
+<meta id="Viewport" name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<link href="/ww/universal/ll/css/ll-combined.css" rel="stylesheet">
+<script src="/ww/universal/ll/js/ll-header-combined.js"></script>
+<style>
+/*.home-tile-content>h4{
+background-color:rgba(255,255,255,.53);
+}*/
+#bg_color{background-color:rgba(255,255,255,.53);}
+</style>
+
+	<!-- End insert headerCode from Channel Info Child --> 
+  
+    <script src="/ww/universal/ll/js/ll-facebook.js"></script>
+    <script>
+
+      //1405856746407385
+      var appId = 687711224695327;
+      //1643796342531920
+      //var appId = 1405856746407385;
+
+      /**
+       * This is the bootstrap / app script
+       */
+
+      // wait for DOM and facebook auth
+      var docReady = $.Deferred();
+      var facebookReady = $.Deferred();
+      var llScriptReady = $.Deferred();
+      
+      $(document).ready(docReady.resolve);
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId: appId,
+          status: true,
+          cookie: true,
+          xfbml: true
+        });
+        facebookReady.resolve();
+      };
+      
+      $.when(docReady, facebookReady, llScriptReady).then(function() {
+
+ 
+        llBootstrap();
+        
+        
+      });
+
+      // call facebook script
+      (function(d) {
+        var js, id = 'facebook-jssdk';
+        if (d.getElementById(id)) {
+          return;
+        }
+        js = d.createElement('script');
+        js.id = id;
+        js.async = true;
+        js.src = "http://connect.facebook.net/en_US/all.js";
+        d.getElementsByTagName('head')[0].appendChild(js);
+      }(document));
+      
+    </script>
+
+  </head>  
+  
+  
+  </head> <body><script type="text/javascript">var vgnextproperties = {"themeId":"741cc0710082d310VgnVCM1000001340090aRCRD","locale":"en_US","layoutId":"087a6c5232979410VgnVCM1000003181090aRCRD","dpmsso":"false","vgnextxmlname":"VgnExtPage","vgnextchannel":"0964c3a6179cd210VgnVCM100000cc2da00aRCRD","vgnextnoice":false,"templateThumbnail":"/thumbnail/90827165b9a9c210VgnVCM1000002b09600aSTFL/xl.png","isECC":false,"formatDisplayName":"Web","channelPath":"/Home","requestParams":{"weblogic.servlet.internal.crosscontext.type":"include","headerCode":"<meta name=\"baidu-site-verification\" content=\"U65tD3hzpy\" />\n<meta name=\"responsive-page\" content=\"true\">\n<meta id=\"Viewport\" name=\"viewport\" content=\"initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no\">\n<link href=\"/ww/universal/ll/css/ll-combined.css\" rel=\"stylesheet\">\n<script src=\"/ww/universal/ll/js/ll-header-combined.js\"><\/script>\n<style>\n/*.home-tile-content>h4{\nbackground-color:rgba(255,255,255,.53);\n}*/\n#bg_color{background-color:rgba(255,255,255,.53);}\n<\/style>\n\n","footerCode":"<script src=\"/ww/universal/ll/assets/lib/TweenMax.min.js\"><\/script>\n    <script src=\"/ww/universal/ll/js/ll.js\"><\/script>\n    <script src=\"/ww/universal/ll/js/RequestBinaryData.js\"><\/script>\n    <script src=\"/ww/universal/ll/js/require.js\"><\/script>\n<script>\n      var rootPath = \"/ww/universal/ll/\";\n      var rSplit = rcLocaleJS.split(\"-\");\n      var rcLocaleJSDirectory = rSplit[0]+\"/\"+rSplit[1];\n                if (Environment.isIe() && Environment.isIe() <= 9 && !Environment.ieGrown()) {\n                       requirejs.config({\n                           baseUrl: rootPath,\n                           shim: {\n                               'js/ll-script': ['js/ll-webgl'],\n                               'js/ll-apifunctions': ['js/FBOUtils']\n                           },\n                           paths: {\n                               jquery: [\n                                   '/ww/universal/ll/js/jquery-1.11.3.min.js',\n                                   'jquery'\n                               ]\n                           }\n                       });\n                       require(['jquery'], function($) {\n                           return jQuery;\n                       });\n                       require([\"js/ll-webgl\", 'js/Common', \"js/ll-script\", \"assets/js/bootstrap\"], function() {})\n                   } else {\n                       requirejs.config({\n                           baseUrl: rootPath,\n                           paths: {\n                               jquery: [\n                                   '/ww/universal/ll/js/jquery-1.11.3.min',\n                                   //If the CDN location fails, load from this location\n                                   'jquery'\n                               ]\n                           },\n                           shim: {\n                               'js/ll-webgl': [\"js/ll\", 'js/three.min', 'js/ll-apifunctions', 'js/ll-apiscene', 'js/ll-apisceneGetty', 'js/ll-canvas.min'],\n                               'js/FBOUtils': [\"js/ll\", 'js/three.min'],\n                               'js/ll-script': [\"js/ll\", 'js/ll-webgl'],\n                               'js/Common': [\"js/ll\", 'js/three.min'],\n                               \"js/ll-apiscene\": [\"js/ll\", 'js/three.min'],\n                               \"js/ll-apisceneGetty\": [\"js/ll\", 'js/three.min', 'js/ll-apiscene'],\n                               'js/ll-apifunctions': [\"js/ll\", 'js/FBOUtils']\n                           },\n                           waitSeconds: 0\n                       });      \n                       require([\"js/three.min\", \"js/FBOUtils\", \"js/Common\", \"js/ll\", \"js/ll-apifunctions\", \"js/ll-apiscene\", \"js/ll-apisceneGetty\", \"js/ll-webgl\",\n                           \"js/ll-script\", \"../font/ss-standard\", \"js/ll-canvas.min\", \"js/ll-taglines\", \"js/klang.min\"\n                       ], function() {\n                           //This function will be called when all the dependencies\n                           //listed above in deps are loaded. Note that this\n                           //function could be called before the page is loaded.\n                           //This callback is optional.\n                           //  console.log('now ready')\n                       })\n                   }\n      <\/script>\n  <script>  \n    if (Environment.isIe() && Environment.isIe() <= 9 && !Environment.ieGrown()) {\n    } else {\n        $(function() {\n            mack.hotZone();\n            $(window).resize(function() {\n                mack.hotZone();\n            })\n        })\n    }\n    <\/script>","weblogic.servlet.internal.crosscontext.path":"/portal","weblogic.servlet.forward.target_servlet_path":"/site","weblogic.servlet.jsp":"true","TEMPLATE_SUPPORTS_DPI":"true","version":"51"},"vgnextobjecttypeid":"2119c16755589f00VgnVCM1000002d01130a____","menuItemId":"9b62dfda9b6fd75100adedd1210890a0","site":{"sharedComponentsChannelId":"27d82e689eecd210VgnVCM100000cc2da00aRCRD","sharedThemesChannelId":"024965eeed10c410VgnVCM1000003181090aRCRD","sharedRegionLayoutsChannelId":"4d1b50e88bb39410VgnVCM100000ef41090aRCRD","sharedPageLayoutsChannelId":"644965eeed10c410VgnVCM1000003181090aRCRD","sharedDisplayViewsChannelId":"3a7f8d967d91e210VgnVCM10000023d2a60aRCRD","sharedTemplatesChannelId":"ba4c2e689eecd210VgnVCM100000cc2da00aRCRD","homeChannelName":"Home","siteId":"be64c3a6179cd210VgnVCM100000cc2da00aRCRD","siteAppSvcsId":"8e64c3a6179cd210VgnVCM100000cc2da00a____","sharedComponents":["6f1c99d235416410VgnVCM1000001340090aRCRD","1440adff57757310VgnVCM1000001180090aRCRD","ebd91187de606410VgnVCM1000001340090aRCRD"],"homeChannelId":"0964c3a6179cd210VgnVCM100000cc2da00aRCRD","siteName":"www","siteIsMultilingual":true},"localeId":"LenUSL000000000000000000000000000000RCRD","vgnextoid":"0964c3a6179cd210VgnVCM100000cc2da00aRCRD","channelName":"Home","menuItemIds":["9b62dfda9b6fd75100adedd1210890a0","9b62dfda9b6fd75100adedd1210890a0","9b62dfda9b6fd75100adedd1210890a0"],"deliveryType":"dpm","isPublished":true,"format":"default","layoutThumbnail":"/thumbnail/4b727165b9a9c210VgnVCM1000002b09600aSTFL/xl.png","themeThumbnail":"/thumbnail/d1827165b9a9c210VgnVCM1000002b09600aSTFL/xl.png","vgnextdisplayname":"Channel Page","localeDisplayName":"English (United States)","previewWebAppContext":"/sites","templateId":"785f4cdcf5417310VgnVCM1000001180090aRCRD","pageType":"channelPage","useDefaultChannel":false,"vgnExtHiddenComponentIds":"","themeName":"Universal Responsive","layoutName":"Home Page White Header","isApproved":true,"templateName":"universal"};</script>
+<script type="text/javascript" src="/cps/script/preview/init.jsp"></script>
+	<div>	<div class="vgn-ext-region" vgnextregionname="nav-header" vgnextregionscope="template" vgnextregiontypes="VgnExtQuery,VgnExtMultiSelect" vgnextregionid="2bf04cdcf5417310VgnVCM1000001180090aRCRD">
+
+<div  class="vgn-ext-component vgn-ext-component-VgnExtMultiSelect" vgnextcomponentid="6f1c99d235416410VgnVCM1000001340090aRCRD" vgnextxmlname="VgnExtMultiSelect"  vgnextdisplayname="Content List" translationrequired="false">
+<!-- mega-nav.jsp generated at 1430937878090 -->
+
+
+<!-- Start Nav Mega Display View Markup-->
+<!--googleoff: all-->
+<div class="gn-container">
+	<div class="sticky-header-placeholder"></div>
+	<div class="sticky-header">
+		<div class="global-nav-oz">
+			<div class="container">
+				<div class="row">
+					<div class="span12">
+						<div class="gn-logo">
+							<a href="/">Seagate</a>	
+						</div>
+						<div class="gn-side-toggle gn-icon hidden-desktop">
+							<a class="gn-icon-container clearfix">
+								<span class="ss-icon">&#xE9A1;</span>
+							</a>
+						</div>
+						
+							<div class="gn-user gn-icon">
+								<div class="gn-icon-container clearfix">
+									<span class="ss-icon">&#x1F464;</span><i class="ss-icon">&#x25BE;</i>
+								</div>
+								<div id="not-logged-in-new" class="gn-user-drop-container">
+									<div class="gn-user-drop">
+										<span class="ss-icon user-delete hidden-desktop pull-right">&#x2421;</span>
+										<p>Sign In as</p>
+										<hr />
+										<a href="/consumer-login/">
+											Consumers  &amp; Non-SPP Resellers
+										</a>
+										<a href="/partners/">
+											Partners &amp; Suppliers
+	</a>	</div>	</div>	
+									<div id="logged-in-new" class="gn-user-drop-container" style="display: none;">
+										<div class="gn-user-drop">
+											<span class="ss-icon user-delete hidden-desktop pull-right">&#x2421;</span>
+											<p><span id="logged-in-hello-new"></span></p>
+											<hr />
+											<a id="dashboard" href="#"></a>
+											<a id="profile" href="#"></a>
+											<hr />
+											<a id="logout" href="javascript:Logout('https://ssodev.okla.seagate.com/www/logout.html');">Logout</a>	</div>	</div>	
+	</div>	
+						<div class="gn-cart gn-icon" style="display: none;">
+							<a href="#" class="view-cart gn-icon-container clearfix">
+								<span id="cartLineItems_new" class="ss-icon">&#xE500;</span>
+							</a>
+						</div>
+						
+							<div class="gn-globe gn-icon">
+	                            <a class="globe-icon gn-icon-container clearfix" data-toggle="modal" href="#LocaleSelector">
+	                              <span class="ss-icon">&#x1F30E;</span>
+	                          </a>
+	                        </div>
+                        
+						<div class="gn-side-wrapper">
+							<div class="gn-side-container">
+								<div class="gn-search">
+									<form id="suggestion_form2" method="get" onsubmit="return submitSearchFormPromo();">
+										<a class="btn btn-primary gn-search-btn"><span class="ss-icon" onclick="javascript:submitSearchFormPromo();">&#x1F50E;</span></a>
+										<input id="searchPromo" name="q" type="text" class="gn-search-input" value="Search" onfocus="if (this.value=='Search') { this.value=''; }" onblur="if (this.value=='') { this.value='Search'; }" onkeyup="if(event.keyCode==13) { return submitSearchFormPromo(); }" />
+										<input type="submit" id="search-submit" class="gn-search-submit hidden" />
+										<a href="" class="gn-search-clear hide"><span class="ss-icon">&#x2421;</span></a>
+									</form>
+								</div>
+								<div class="gn-menu">
+									<ul class="gn-menu-list clearfix">
+										
+												<li>
+													<div class="gn-menu-item-1lvl">
+														<script type="text/javascript">
+                              if(typeof vExt != 'undefined'){
+vExt.onReady(function() {
+	vui.cps.ui.pencilUtil = {
+		editItem: function(objectType,objTypeId,objTypeXmlName,vcmID){
+			vui.vcm.ui.editor.edit({
+				asObjectType: eval(objectType),
+				objectTypeId: objTypeId,
+				objectTypeXmlName: objTypeXmlName,
+				id: vcmID,
+				skipPopout: true
+			});}}
+	var hideClassName="x-hide-display";
+	function motovuiGetEvents() {
+		var e = {};
+		e[vui.cps.ui.ice.page.TOPIC] = vui.scope(this, function(domEvent, vuiEvent){
+			if (vuiEvent.type === vui.cps.ui.ice.page.EDIT_ON) {
+				var els = vExt.select("a.moto-pencil-hide", true);
+				els.removeClass(hideClassName);
+			} else if (vuiEvent.type === vui.cps.ui.ice.page.EDIT_OFF) {
+				var els = vExt.select("a.moto-pencil-hide", true);
+				els.addClass(hideClassName);}});
+		return e;
+	}
+	vui.cps.ui.ice.util.subscribeVuiListeners(motovuiGetEvents());});
+                              }
+</script>
+<style type="text/css">
+.moto-pencil-hide{
+	}
+</style><img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','e39d191fe071e210VgnVCM1000001180090a____','RICH-CONTENT-BLOCK-MASTER','b8d378c69ae4a410VgnVCM100000ef41090aRCRD');" />
+
+	<a href>Personal<style type="text/css">#bgimg {background-image: url("/ww/universal/images/personal-cloud-global-nav-promo-248x336.jpg");  min-height: 340px;padding-left:15px;height:100%;} .sub-hed{ font-size:25px}</style></a>
+														<span><em></em></span>
+														<i class="ss-icon visible-desktop">&#x25BE;</i>
+														<i class="ss-icon directup visible-desktop">&#x25B4;</i>
+													</div>
+													
+														<div class="gn-dropdown">
+															<div class="container">
+																<div class="gn-dropdown-menu row-fluid">
+																	<div class="span9">
+																		
+																					<div class="row-fluid">
+																				
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">Desktop Storage-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>Personal<style type="text/css">#bgimg {background-image: url("/ww/universal/images/personal-cloud-global-nav-promo-248x336.jpg");  min-height: 340px;padding-left:15px;height:100%;} .sub-hed{ font-size:25px}</style></a>
+																								<p class="hidden-desktop">Desktop Storage-level 3</p>	
+	<ul>	
+	<li><a href='http://knowledge.seagate.com/articles/en_US/FAQ/004195en' class='eeee' title='FreeAgent Pro software download (now includes MacOS X Leopard support)' target='stx-popup'  >FreeAgent Pro software download (now includes MacOS X Leopard support)</a></li>	
+	<li><a href='/internal-hard-drives/enterprise-hard-drives/ssd/1200-ssd' >1200 SSD</a></li>	
+	</ul>	
+	</div>	</div>	
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">Mac Storage-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>Personal<style type="text/css">#bgimg {background-image: url("/ww/universal/images/personal-cloud-global-nav-promo-248x336.jpg");  min-height: 340px;padding-left:15px;height:100%;} .sub-hed{ font-size:25px}</style></a>
+																								<p class="hidden-desktop">Mac Storage-level 3</p>	
+	<ul>	
+	<li><a href='/files/docs/maxtor/maxtor_basics_SATA_hd_datasheet.pdf' ><img src='/ww/images/global/icn/icn_pdf.png' alt='Maxtor Basics SATA II Hard Drive Kit Data Sheet' width='13' height='14'/>&nbsp;Maxtor Basics SATA II Hard Drive Kit Data Sheet&nbsp;<span dir='ltr'>(1048KB)</span></a></li>	
+	<li><a href='http://knowledge.seagate.com/articles/en_US/FAQ/004195en' class='eeee' title='FreeAgent Pro software download (now includes MacOS X Leopard support)' target='stx-popup'  >FreeAgent Pro software download (now includes MacOS X Leopard support)</a></li>	
+	</ul>	
+	</div>	</div>	
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">Software and Mobile Apps-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>Personal<style type="text/css">#bgimg {background-image: url("/ww/universal/images/personal-cloud-global-nav-promo-248x336.jpg");  min-height: 340px;padding-left:15px;height:100%;} .sub-hed{ font-size:25px}</style></a>
+																								<p class="hidden-desktop">Software and Mobile Apps-level 3</p>	
+	<ul>	
+	<li><a href='/internal-hard-drives/enterprise-hard-drives/ssd/1200-ssd' >1200 SSD</a></li>	
+	</ul>	
+	</div>	</div>	
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">Solutions-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>Personal<style type="text/css">#bgimg {background-image: url("/ww/universal/images/personal-cloud-global-nav-promo-248x336.jpg");  min-height: 340px;padding-left:15px;height:100%;} .sub-hed{ font-size:25px}</style></a>
+																								<p class="hidden-desktop">Solutions-level 3</p>	
+	<ul>	
+	<li><a href='/do-more/backing-up-creating-your-back-up-plan-master-dm' >Backing Up 101: Creating Your Back Up Plan </a></li>	
+	<li><a href='/do-more/back-up-your-social-media-photos-master-dm' >Back Up Your Social Media Photos</a></li>	
+	<li><a href='/articles' >View All</a></li>	
+	</ul>	
+	</div>	</div>			</div>	
+																	</div>
+																	<div class="span3">
+																		<div id='inline-text-32c44a3a67d7a410VgnVCM100000ef41090aRCRD-BODY' contentEditable="false" formattingtoolsenabled='true' oid='32c44a3a67d7a410VgnVCM100000ef41090aRCRD' attributexmlname='BODY' isvalid='false'  originalvalue='&lt;div id=&quot;bgimg&quot; class=&quot;hidden-phone&quot;&gt;&lt;br /&gt;&lt;strong&gt;Personal Cloud &lt;/strong&gt; &lt;br /&gt;&lt;div class=&quot;sub-hed&quot;&gt;Home Media Storage&lt;/div&gt;&lt;p&gt;Access your movies, music and photos at home or on the road. &lt;br /&gt; &lt;br /&gt;&lt;a href=&quot;/products/network-attached-storage/home-network/personal-cloud/&quot;&gt;Learn More &gt;&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;' iscomponent='false'>
+<div id="bgimg" class="hidden-phone"><br /><strong>Personal Cloud</strong> <br />
+<div class="sub-hed">Home Media Storage</div>
+<p>Access your movies, music and photos at home or on the road.<br /> <br /><a href="/products/network-attached-storage/home-network/personal-cloud/">Learn More &gt;</a></p>
+</div></div>
+
+	</div>	</div>	</div>	</div>	
+	</li>	
+												<li>
+													<div class="gn-menu-item-1lvl">
+														<img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','e39d191fe071e210VgnVCM1000001180090a____','RICH-CONTENT-BLOCK-MASTER','6ec478c69ae4a410VgnVCM100000ef41090aRCRD');" />
+
+	<a href>Business</a>
+														<span><em></em></span>
+														<i class="ss-icon visible-desktop">&#x25BE;</i>
+														<i class="ss-icon directup visible-desktop">&#x25B4;</i>
+													</div>
+													
+														<div class="gn-dropdown">
+															<div class="container">
+																<div class="gn-dropdown-menu row-fluid">
+																	<div class="span9">
+																		
+																					<div class="row-fluid">
+																				
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">Network Attached Storage-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>Business</a>
+																								<p class="hidden-desktop">Network Attached Storage-level 3</p>	
+	<ul>	
+	<li><a href='/products/network-attached-storage/business-storage' >Business Storage</a></li>	
+	<li><a href='/products/network-attached-storage/nas-drives' >NAS Hard Drives</a></li>	
+	</ul>	
+	</div>	</div>	
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">High Performance Computing-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>Business</a>
+																								<p class="hidden-desktop">High Performance Computing-level 3</p>	
+	<ul>	
+	<li><a href='/products/enterprise-servers-storage/enterprise-storage-systems/clustered-file-systems' >ClusterStor Parallel Storage System</a></li>	
+	</ul>	
+	</div>	</div>	
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">Data Protection Appliances-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>Business</a>
+																								<p class="hidden-desktop">Data Protection Appliances-level 3</p>	
+	<ul>	
+	<li><a href='/products/enterprise-servers-storage/enterprise-storage-systems/data-protection-appliances' ><a href="/products/enterprise-servers-storage/enterprise-storage-systems/data-protection-appliances/#BTA">Backup Target Appliance</a></a></li>	
+	<li><a href='/products/enterprise-servers-storage/enterprise-storage-systems/data-protection-appliances' >Enterprise Backup & Recovery Appliances</a></li>	
+	<li><a href='/products/enterprise-servers-storage/enterprise-storage-systems/data-protection-appliances/#ERA' >Express Recovery Appliances</a></li>	
+	</ul>	
+	</div>	</div>	
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">Solutions-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>Business</a>
+																								<p class="hidden-desktop">Solutions-level 3</p>	
+	<ul>	
+	<li><a href='/solutions/cloud-systems-and-solutions' >Cloud Systems and Solutions</a></li>	
+	<li><a href='/solutions/cloud/data-center-cloud/platforms' >Cloud Drive Technology</a></li>	
+	<li><a href='/solutions/video-surveillance-systems' >Video Surveillance Systems</a></li>	
+	<li><a href='/solutions/solid-state-hybrid' >Solid State Hybrid Technology</a></li>	
+	<li><a href='/solutions/security' >Security Technology</a></li>	
+	</ul>	
+	</div>	</div>			</div>	
+																					<div class="row-fluid">
+																				
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">Internal Hard Drives-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>Business</a>
+																								<p class="hidden-desktop">Internal Hard Drives-level 3</p>	
+	<ul>	
+	<li><a href='/products/desktop-storage/desktop-internal-drives' >Desktop Hard Drives</a></li>	
+	<li><a href='/products/laptop-mobile-storage/laptop-internal-drives' >Mobile & Laptop Drives</a></li>	
+	<li><a href='/products/media-video-storage/surveillance-drives' >Surveillance & Video Drives</a></li>	
+	<li><a href='/products/network-attached-storage/nas-drives' >NAS Hard Drives</a></li>	
+	<li><a href='/products/solid-state-flash-storage/ssd' >Solid State Drives</a></li>	
+	<li><a href='/products/enterprise-servers-storage/mission-critical-storage' >Mission Critical Drives</a></li>	
+	<li><a href='/products/enterprise-servers-storage/nearline-storage' >Nearline Drives</a></li>	
+	</ul>	
+	</div>	</div>	
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">Backup & Recovery Services-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>Business</a>
+																								<p class="hidden-desktop">Backup & Recovery Services-level 3</p>	
+	<ul>	
+	<li><a href='/services-software/cloud-services/cloud-backup-recovery-archiving' >Cloud Backup & Recovery Services</a></li>	
+	<li><a href='/services-software/cloud-services/cloud-resiliency-services' >Cloud Resiliency Services</a></li>	
+	<li><a href='http://lts2.evault.com' >Long-Term Storage</a></li>	
+	<li><a href='/services-software/seagate-recovery-services/rescue/' >Data Rescue Plans</a></li>	
+	<li><a href='/services-software/seagate-recovery-services/recover/' >Data Recovery Services</a></li>	
+	<li><a href='/services-software/data-recovery-services/consumers/file-recovery-software' >File Recovery Software</a></li>	
+	</ul>	
+	</div>	</div>			</div>	
+																	</div>
+																	<div class="span3">
+																		<div id='inline-text-74f64a3a67d7a410VgnVCM100000ef41090aRCRD-BODY' contentEditable="false" formattingtoolsenabled='true' oid='74f64a3a67d7a410VgnVCM100000ef41090aRCRD' attributexmlname='BODY' isvalid='false'  originalvalue='&lt;div id=&quot;bus-bgimg&quot; class=&quot;hidden-phone&quot;&gt;&lt;br /&gt;&lt;strong&gt;Business Storage&lt;/strong&gt; &lt;br /&gt;&lt;div class=&quot;sub-hed&quot;&gt;Teamwork&lt;/div&gt;&lt;p&gt;Centralise, manage and access all your business files with ease.&lt;br /&gt; &lt;br /&gt;&lt;a href=&quot;/products/network-attached-storage/business-storage/seagate-nas/&quot;&gt;Learn More &gt;&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;' iscomponent='false'>
+</div>
+
+	</div>	</div>	</div>	</div>	
+	</li>	
+												<li>
+													<div class="gn-menu-item-1lvl">
+														<img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','e39d191fe071e210VgnVCM1000001180090a____','RICH-CONTENT-BLOCK-MASTER','16aada54e5f4a410VgnVCM100000ef41090aRCRD');" />
+
+	<a href>OEM and Integrators</a>
+														<span><em></em></span>
+														<i class="ss-icon visible-desktop">&#x25BE;</i>
+														<i class="ss-icon directup visible-desktop">&#x25B4;</i>
+													</div>
+													
+														<div class="gn-dropdown">
+															<div class="container">
+																<div class="gn-dropdown-menu row-fluid">
+																	<div class="span9">
+																		
+																					<div class="row-fluid">
+																				
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">Enterprise Storage-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>OEM and Integrators</a>
+																								<p class="hidden-desktop">Enterprise Storage-level 3</p>	
+	<ul>	
+	<li><a href='/products/enterprise-servers-storage/nearline-storage' >Nearline Drives</a></li>	
+	<li><a href='/products/enterprise-servers-storage/mission-critical-storage' >Mission Critical Drives</a></li>	
+	</ul>	
+	</div>	</div>	
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">Flash Storage-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>OEM and Integrators</a>
+																								<p class="hidden-desktop">Flash Storage-level 3</p>	
+	<ul>	
+	<li><a href='/products/solid-state-flash-storage/ssd' >Solid State Drives</a></li>	
+	<li><a href='/products/solid-state-flash-storage/accelerator-cards' >Nytro Flash Accelerator Cards</a></li>	
+	<li><a href='/products/solid-state-flash-storage/flash-controllers' >SandForce Flash Controllers</a></li>	
+	</ul>	
+	</div>	</div>	
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">Hard Drives-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>OEM and Integrators</a>
+																								<p class="hidden-desktop">Hard Drives-level 3</p>	
+	<ul>	
+	<li><a href='/products/network-attached-storage/nas-drives' >NAS Hard Drives</a></li>	
+	<li><a href='/products/media-video-storage/surveillance-drives' >Surveillance & Video Drives</a></li>	
+	<li><a href='/products/desktop-storage/desktop-internal-drives' >Desktop Hard Drives</a></li>	
+	<li><a href='/products/laptop-mobile-storage/laptop-internal-drives' >Mobile & Laptop Drives</a></li>	
+	</ul>	
+	</div>	</div>	
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">Solutions-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>OEM and Integrators</a>
+																								<p class="hidden-desktop">Solutions-level 3</p>	
+	<ul>	
+	<li><a href='/solutions/cloud' >Cloud Drive Technology</a></li>	
+	<li><a href='/solutions/cloud-systems-and-solutions' >Cloud Systems and Solutions</a></li>	
+	<li><a href='/solutions/video-surveillance-systems' >Video Surveillance Systems</a></li>	
+	<li><a href='/solutions/cloud/data-center-cloud/platforms' >Cloud Drive Technology</a></li>	
+	</ul>	
+	</div>	</div>			</div>	
+																					<div class="row-fluid">
+																				
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">Scale Out Storage-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>OEM and Integrators</a>
+																								<p class="hidden-desktop">Scale Out Storage-level 3</p>	
+	<ul>	
+	<li><a href='/products/enterprise-servers-storage/enterprise-storage-systems/embedded-storage-systems' >OneStor Embedded Storage Platform</a></li>	
+	<li><a href='/products/enterprise-servers-storage/enterprise-storage-systems/modular-enclosures/' >OneStor Modular Storage Enclosures</a></li>	
+	<li><a href='/products/enterprise-servers-storage/nearline-storage' >Nearline Drives</a></li>	
+	</ul>	
+	</div>	</div>			</div>	
+																	</div>
+																	<div class="span3">
+																		<div id='inline-text-b288d50e29e7a410VgnVCM100000ef41090aRCRD-BODY' contentEditable="false" formattingtoolsenabled='true' oid='b288d50e29e7a410VgnVCM100000ef41090aRCRD' attributexmlname='BODY' isvalid='false'  originalvalue='' iscomponent='false'>
+</div>
+
+	</div>	</div>	</div>	</div>	
+	</li>	
+												<li>
+													<div class="gn-menu-item-1lvl">
+														<img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','e39d191fe071e210VgnVCM1000001180090a____','RICH-CONTENT-BLOCK-MASTER','599cda54e5f4a410VgnVCM100000ef41090aRCRD');" />
+
+	<a href>Partners</a>
+														<span><em></em></span>
+														<i class="ss-icon visible-desktop">&#x25BE;</i>
+														<i class="ss-icon directup visible-desktop">&#x25B4;</i>
+													</div>
+													
+														<div class="gn-dropdown">
+															<div class="container">
+																<div class="gn-dropdown-menu row-fluid">
+																	<div class="span9">
+																		
+																					<div class="row-fluid">
+																				
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">Cloud Builders-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>Partners</a>
+																								<p class="hidden-desktop">Cloud Builders-level 3</p>	
+	<ul>	
+	<li><a href='/solutions/cloud/data-center-cloud/partners' >Cloud Alliance Partners</a></li>	
+	<li><a href='/products/enterprise-servers-storage/nearline-storage/kinetic-hdd/partners' >Kinetic Partners</a></li>	
+	<li><a href='/products/enterprise-servers-storage/enterprise-storage-systems/reference-architectures' >Reference Architecture Partners</a></li>	
+	<li><a href='http://www.evault.com/partners/' >EVault Partner Program</a></li>	
+	</ul>	
+	</div>	</div>	
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">Partner Portals-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>Partners</a>
+																								<p class="hidden-desktop">Partner Portals-level 3</p>	
+	<ul>	
+	<li><a href='/partners' >Partner Login</a></li>	
+	<li><a href='http://partners.evault.com/' >EVault Partner Center</a></li>	
+	</ul>	
+	</div>	</div>			</div>	
+																	</div>
+																	<div class="span3">
+																		<div id='inline-text-0be34a3a67d7a410VgnVCM100000ef41090aRCRD-BODY' contentEditable="false" formattingtoolsenabled='true' oid='0be34a3a67d7a410VgnVCM100000ef41090aRCRD' attributexmlname='BODY' isvalid='false'  originalvalue='' iscomponent='false'>
+</div>
+
+	</div>	</div>	</div>	</div>	
+	</li>	
+												<li>
+													<div class="gn-menu-item-1lvl">
+														<img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','e39d191fe071e210VgnVCM1000001180090a____','RICH-CONTENT-BLOCK-MASTER','70163eb45550a410VgnVCM100000ef41090aRCRD');" />
+
+	<a href>Support</a>
+														<span><em></em></span>
+														<i class="ss-icon visible-desktop">&#x25BE;</i>
+														<i class="ss-icon directup visible-desktop">&#x25B4;</i>
+													</div>
+													
+														<div class="gn-dropdown">
+															<div class="container">
+																<div class="gn-dropdown-menu row-fluid">
+																	<div class="span9">
+																		
+																					<div class="row-fluid">
+																				
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">By Product-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>Support</a>
+																								<p class="hidden-desktop">By Product-level 3</p>	
+	<ul>	
+	<li><a href='/support/by-product/business-nas' >Business NAS</a></li>	
+	<li><a href='/support/by-product/home-network' >Consumer NAS</a></li>	
+	<li><a href='/support/by-product/desktop-external' >Desktop External</a></li>	
+	<li><a href='/support/by-product/enterprise-servers-and-storage' >Enterprise Servers & Storage</a></li>	
+	<li><a href='/support/by-product/internal' >Internal</a></li>	
+	<li><a href='/support/by-product/media-players-and-dvrs' >Media Players & DVRs</a></li>	
+	<li><a href='/support/by-product/portable-external' >Portable External</a></li>	
+	<li><a href='/support/by-product/software-and-apps' >Software & Apps</a></li>	
+	<li><a href='/support/by-product/ssd-and-pcie-flash' >SSD & PCIe Flash</a></li>	
+	<li><a href='/support/by-product/wireless' >Wireless</a></li>	
+	</ul>	
+	</div>	</div>	
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">By Service-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>Support</a>
+																								<p class="hidden-desktop">By Service-level 3</p>	
+	<ul>	
+	<li><a href='/services-software/seagate-recovery-services/recover' >Data Recovery Services</a></li>	
+	<li><a href='http://evault.com/support' >Cloud Recovery Services</a></li>	
+	</ul>	
+	</div>	</div>	
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">By Topic-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>Support</a>
+																								<p class="hidden-desktop">By Topic-level 3</p>	
+	<ul>	
+	<li><a href='/support/by-topic/downloads' >Downloads</a></li>	
+	<li><a href='/support/by-topic/warranty-and-returns' >Warranty & Returns</a></li>	
+	</ul>	
+	</div>	</div>	
+																						<div class="span3">
+																							<div class="gn-menu-item-2lvl">
+																								<p><a href="http://www.baidu.com">Ask the Community-level 2</a></p>
+																								<span class="ss-directright hidden-desktop"></span>
+																							</div>
+																							<div class="gn-menu-box-3lvl">
+																								<a href="" class="hidden-desktop"><span class="ss-directleft"></span>Support</a>
+																								<p class="hidden-desktop">Ask the Community-level 3</p>	
+	<ul>	
+	<li class="facebook"><a href='http://www.facebook.com/seagatesupport' >Facebook</a></li>	
+	<li><a href='http://twitter.com/askseagate' >Twitter</a></li>	
+	<li><a href='http://www.youtube.com/user/AskSeagate' >YouTube</a></li>	
+	<li><a href='http://forums.seagate.com/' >User Forums</a></li>	
+	</ul>	
+	</div>	</div>			</div>	
+																	</div>
+																	<div class="span3">
+																		<div id='inline-text-70163eb45550a410VgnVCM100000ef41090aRCRD-BODY' contentEditable="false" formattingtoolsenabled='true' oid='70163eb45550a410VgnVCM100000ef41090aRCRD' attributexmlname='BODY' isvalid='false'  originalvalue='' iscomponent='false'>
+</div>
+
+	</div>	</div>	</div>	</div>	
+	</li>	
+	</ul>	</div>	
+									<div class="gn-store" style="display: none;">
+										<img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','8517b5916d07d210VgnVCM1000001180090a____','LINK-MASTER','ac13f6fa5f35a410VgnVCM100000ef41090aRCRD');" />
+<a href='/store' class='btn btn-primary' >Store</a>
+	</div>	
+							</div>
+						</div>
+						<div class="gn-side-overlay hidden-desktop"></div>
+						<div class="gn-drop-overlay visible-desktop"></div>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</div>
+</div>  
+<!--googleon: all-->
+<!-- End Nav Mega Display View Markup-->
+
+
+<!-- mega-nav.jsp took 3384  --></div>
+</div>
+	</div>	
+    	<div id="r-region-a" class="r-region-a">
+            <div class="vgn-ext-region" vgnextregionname="region-a" vgnextregionscope="page" vgnextregiontypes="VgnExtChannelNavComponent,VgnExtQuery,VgnExtContentSelectComponent,VgnExtMultiSelect,VgnExtTextBlock" vgnextregionid="d36991cca7346410VgnVCM1000001340090aRCRD">
+
+<div  class="vgn-ext-component vgn-ext-component-VgnExtMultiSelect" vgnextcomponentid="219af47e9b516410VgnVCM1000001340090aRCRD" vgnextxmlname="VgnExtMultiSelect"  vgnextdisplayname="Content List" translationrequired="false"><!-- #### Copy Paste Below into the desired Region hotZone is set to 100% width -->
+
+          
+    <div class="row hotZone">
+      <div class="container bigMenu">
+
+        <div id="ll-mega-nav-container">
+          <section class="span1">
+              <div class="mobileNav" style="display:none;">
+                <div class="selMenu">
+                  <select class="mNav">
+                    <option value="" selected="selected"></option>
+                    <option value="5">Getty</option>
+                    <option value="0">Instagram</option>
+                      <option value="1">Twitter</option>
+                          <option value="2">New York Times</option>
+                             <option value="3">Amazon</option>
+                          <option value="4">LAST.FM</option>
+                          <option class="facebook" value="6">Facebook</option>
+                  </select>
+                  <div class="mIcon"></div>
+                </div>
+              </div>
+          </section>  
+                  <section id="menu" class="span3 offset0 nmb">
+                    <ul>
+                       <li>
+                        <span class="getty menuItemSwipe" onclick="ieMe.getty()">
+                          getty
+                          <span rel="getty"></span>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="insta menuItemSwipe" onclick="ieMe.insta()">
+                          instagram
+                          <span rel="instagram"></span>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="twt menuItemSwipe" onclick="ieMe.twt()">
+                          twitter
+                          <span rel="twitter"></span>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="nyt menuItemSwipe" onclick="ieMe.nyt()">
+                          new york times
+                          <span rel="new york times"></span>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="amz menuItemSwipe" onclick="ieMe.amz()">
+                          amazon
+                          <span rel="amazon"></span>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="lastF menuItemSwipe" onclick="ieMe.lastf()">
+                          last.fm
+                          <span rel="last.fm"></span>
+                        </span>
+                      </li>
+                      <li class="facebook">
+                        <span class="fb menuItemSwipe" onclick="ieMe.fb()">
+                          facebook
+                          <span rel="facebook"></span>
+                        </span>
+                      </li>
+                    </ul>
+                   </section>
+
+                   <section id="leftControls" class="nmb">
+                     <!--<div class="gettyText">GETTY</div>-->
+                     <ul>
+                       <li>
+                         <div class="checkboxContainer">
+                           <div id="audio"></div>
+                         </div>
+                       </li>
+                       <li></li>
+                       <li><span class="circle cameraActive0"></span></li>
+                       <li><span class="circle"></span></li>
+                       <li><span class="circle"></span></li>
+                       <li id="zoom-controls" class="zoom-controls">
+                            <span class="ti-search zoom-icon"></span>
+                        </li>
+                     </ul>
+                   </section>
+
+               </div>
+         </div>
+    <div class="row mainStage">
+  <!-- This is Where the content lives -->  
+  
+ 
+      <div id="glContainer" style="display:none;"></div>
+      <div class="container">
+      <div id="doEvent"></div>
+      <div id="doTiltLR"></div>
+      <div id="doTiltFB"></div>
+      <div id="doDirection"></div>
+      </div>
+            <div style="display:none;" class="gifMe">
+             
+            </div> 
+            
+           <!-- ll canvas elements -->
+           <div id="ll-canvas-container">
+
+               <div id="ll-canvas-shadow"></div>
+               <canvas id="ll-canvas"></canvas>
+           </div>
+
+      
+      
+           <div class="container block canCan" style="display:none;">
+         
+            <div class="row">
+        <div class="container block">
+              <div class="ll-ratio button">100%</div>
+            </div>
+            <div class="container block bnc">
+              <div class="btnc button" onclick="mack.setCan(0.1)">10%</div>
+              <div class="btnc button" onclick="mack.setCan(0.25)">25%</div>
+              <div onclick="mack.setCan(0.5)" class="btnc button">50%</div>
+              <div class="btnc button" onclick="mack.setCan(0.70)">70%</div>
+              <div class="btnc button" onclick="mack.setCan(0.80)">80%</div>
+              <div class="btnc button" onclick="mack.setCan(0.90)">90%</div>
+              <div class="btnc button" onclick="mack.setCan(1)">100%</div>
+             </div>
+           </div>
+</div>
+
+
+           
+
+
+                  <section id="rightControls">
+                    <div class="checkboxContainer">
+                      <div id="fullscreen"></div>
+                    </div>
+                  </section>
+                  
+
+                  <!--  IN The Below Section Lay The API Div Fields we Target -->
+                  <section id="text">
+                    <section id="preloader">
+                      <p dir="ltr">Seagate creates space for the world's leading brands.</p>
+                    </section>
+                    <section id="bottomText"> <!--  Bottom Text's top value is animated through hotzone and supersizeme/supersizemeGL functions -->
+                      <section id="stats" style="opacity: 0;">
+                        <p>More people are listening to Rock in San Francisco on Last.fm than any other kind of music.</p>
+                      </section>
+                      <section id="statsTwitter" style="opacity: 0;display:none!important;visibility:hidden;">
+                        <p><span id="twitterHandle">XXXXXXXXXXXXXXXXX</span> <span id="twitterText">to Rock in San Francisco on Last.fm than any other kind of music.</span></p>
+                      </section>
+                      <section id="logo" style="opacity: 0;"></section>
+                    </section>
+                  </section>
+               
+    </div>
+    <div class="container bigMenuB" style="display:none;">
+
+      <div>
+        <section class="span1">
+            <div class="mobileNav" style="display:none;">
+              <div class="selMenu">
+                <select class="mNav">
+                  
+                  <option value="5">Getty</option>
+                  <option value="0">Instagram</option>
+                    <option value="1">Twitter</option>
+                        <option value="2">New York Times</option>
+                           <option value="3">Amazon</option>
+                        <option value="4">LAST.FM</option>
+                        <option class="facebook" value="6">facebook</option>
+                </select>
+                <div class="mIcon"></div>
+              </div>
+            </div>
+        </section>  
+                <section id="menu" class="span3 offset2 nmb">
+                  <ul>
+                     <li>
+                      <span class="getty menuItemSwipe">
+                        getty
+                        <span rel="getty"></span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="insta menuItemSwipe" onclick="ieMe.insta()">
+                        instagram
+                        <span rel="instagram"></span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="twt menuItemSwipe" onclick="ieMe.twt()">
+                        twitter
+                        <span rel="twitter"></span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="nyt menuItemSwipe" onclick="ieMe.nyt()">
+                        new york times
+                        <span rel="new york times"></span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="amz menuItemSwipe" onclick="ieMe.amz()">
+                        amazon
+                        <span rel="amazon"></span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="lastF menuItemSwipe" onclick="ieMe.lastf()">
+                        last.fm
+                        <span rel="last.fm"></span>
+                      </span>
+                    </li>
+                    <li class="facebook">
+                      <span class="fb menuItemSwipe" onclick="ieMe.lastf()">
+                        facebook
+                        <span rel="facebook"></span>
+                      </span>
+                    </li>
+                  </ul>
+                 </section>
+
+                 <section id="leftControls" class="nmb offset2">
+                   <ul>
+                     <li>
+                       <div class="checkboxContainer">
+                         <div id="audio"></div>
+                       </div>
+                     </li>
+                     <li></li>
+                     <li><span class="circle cameraActive0"></span></li>
+                     <li><span class="circle"></span></li>
+                     <li><span class="circle"></span></li>
+                     <li id="zoom-controls" class="zoom-controls">
+                                <span class="ti-search zoom-icon"></span>
+                     </li>
+                   </ul>
+                 </section>
+
+             </div>
+       </div>
+
+
+
+<!-- ############### /Make sure to Update hard-coded audio src files  ########### -->
+  <!-- Updated these to match the reference directory provided - /ww/universal/ll/ -->
+      <!-- 
+      <audio preload="auto" class="bInsta" style="display:none;visibility: hidden" loop>
+           <source src="/ww/universal/ll/sounds/sounds/1430_082a8dce4afb519d87848ab8c127efe7_INSTAGRAM_REST.mp3" type="audio/mpeg" />
+           <source src="/ww/universal/ll/sounds/sounds/1430_082a8dce4afb519d87848ab8c127efe7_INSTAGRAM_REST.ogg" type="audio/ogg" /> Your browser isn't invited for super fun audio time.
+       </audio>
+       <audio preload="auto" class="bAmazon" style="display:none;visibility: hidden" loop>
+           <source src="/ww/universal/ll/sounds/sounds/1428_5d3a3c979c7cb6696b3c60ccfa35fe00_AMAZON_REST.mp3" type="audio/mpeg" />
+           <source src="/ww/universal/ll/sounds/sounds/1428_5d3a3c979c7cb6696b3c60ccfa35fe00_AMAZON_REST.ogg" type="audio/ogg" /> Your browser isn't invited for super fun audio time.
+       </audio>
+       <audio preload="auto" class="bLast" style="display:none;visibility: hidden" loop>
+           <source src="/ww/universal/ll/sounds/sounds/1432_b1326a9d71247720253e6bb9982a9367_LASTFM_REST.mp3" type="audio/mpeg" />
+           <source src="/ww/universal/ll/sounds/sounds/1432_b1326a9d71247720253e6bb9982a9367_LASTFM_REST.ogg" type="audio/ogg" /> Your browser isn't invited for super fun audio time.
+       </audio>
+       <audio preload="auto" class="bNyt" style="display:none;visibility: hidden" loop>
+           <source src="/ww/universal/ll/sounds/sounds/1433_0dcbd8e0fe028b500cc3c02031499dca_NYT_REST.mp3" type="audio/mpeg" />
+           <source src="/ww/universal/ll/sounds/sounds/1433_0dcbd8e0fe028b500cc3c02031499dca_NYT_REST.ogg" type="audio/ogg" /> Your browser isn't invited for super fun audio time.
+       </audio>
+       <audio preload="auto" class="bTwit" style="display:none;visibility: hidden" loop>
+           <source src="/ww/universal/ll/sounds/sounds/1425_c90078f981cca11884c804ea535d79c6_TWITTER_REST.mp3" type="audio/mpeg" />
+           <source src="/ww/universal/ll/sounds/sounds/1425_c90078f981cca11884c804ea535d79c6_TWITTER_REST.ogg" type="audio/ogg" /> Your browser isn't invited for super fun audio time.
+       </audio>
+       -->
+       <audio preload="auto" class="bGetty" style="display:none;visibility: hidden" loop>
+           <source src="/ww/universal/ll/sounds/sounds/5771_37b9c4ce804578706d39e254f3a54ef5_Getty_rest.mp3" type="audio/mpeg" />
+           <source src="/ww/universal/ll/sounds/sounds/5771_37b9c4ce804578706d39e254f3a54ef5_Getty_rest.ogg" type="audio/ogg" /> Your browser isn't invited for super fun audio time.
+       </audio>
+
+       <!-- ############### /Make sure to Update hard-coded audio src files  ########### -->
+       
+        
+
+
+    </div>
+     <!-- /container -->
+
+	 </div><div  class="vgn-ext-component vgn-ext-component-VgnExtMultiSelect" vgnextcomponentid="54d43eb18e01a410VgnVCM100000ef41090aRCRD" vgnextxmlname="VgnExtMultiSelect"  vgnextdisplayname="Content List" translationrequired="false">
+				<div class="content-row clearfix ">
+					
+							<div class="content-row-1-column">
+								<script type="text/javascript">
+                  if(typeof vExt != 'undefined'){
+vExt.onReady(function() {
+	vui.cps.ui.pencilUtil = {
+		editItem: function(objectType,objTypeId,objTypeXmlName,vcmID){
+			vui.vcm.ui.editor.edit({
+				asObjectType: eval(objectType),
+				objectTypeId: objTypeId,
+				objectTypeXmlName: objTypeXmlName,
+				id: vcmID,
+				skipPopout: true
+			});}}
+	var hideClassName="x-hide-display";
+	function motovuiGetEvents() {
+		var e = {};
+		e[vui.cps.ui.ice.page.TOPIC] = vui.scope(this, function(domEvent, vuiEvent){
+			if (vuiEvent.type === vui.cps.ui.ice.page.EDIT_ON) {
+				var els = vExt.select("a.moto-pencil-hide", true);
+				els.removeClass(hideClassName);
+			} else if (vuiEvent.type === vui.cps.ui.ice.page.EDIT_OFF) {
+				var els = vExt.select("a.moto-pencil-hide", true);
+				els.addClass(hideClassName);}});
+		return e;
+	}
+	vui.cps.ui.ice.util.subscribeVuiListeners(motovuiGetEvents());});
+                  }
+</script>
+<style type="text/css">
+.moto-pencil-hide{
+	}
+</style><img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','e39d191fe071e210VgnVCM1000001180090a____','RICH-CONTENT-BLOCK-MASTER','8f143eb18e01a410VgnVCM100000ef41090aRCRD');" />
+
+	<!-- Ephox content start -->	<p style="text-align: center; vertical-align: bottom; font-size: 1.7em; line-height: 1.2em; margin: 40px 0 30px; font-weight: 300;">We are creating space for the human experience. <a href="about-seagate/brand/">Find out how</a></p>
+	<!-- Ephox content end -->	
+	</div>	
+	</div>	</div>
+</div>
+	</div> 
+<div class="container gutter8">
+	<div class="row">
+				<div class="span9 t-s12">
+					<div class="row">
+						<div class="span3 t-s4">
+							
+						        	<div id="r-region-b" class="r-region-b">
+						                <div class="vgn-ext-region" vgnextregionname="region-b" vgnextregionscope="page" vgnextregiontypes="VgnExtContentSelectComponent,VgnExtMultiSelect,VgnExtChannelNavComponent,VgnExtQuery" vgnextregionid="bbb991cca7346410VgnVCM1000001340090aRCRD">
+
+<div  class="vgn-ext-component vgn-ext-component-VgnExtMultiSelect" vgnextcomponentid="cc5bf47e9b516410VgnVCM1000001340090aRCRD" vgnextxmlname="VgnExtMultiSelect"  vgnextdisplayname="Content List" translationrequired="false">
+<!-- Start Link Background Image Hover Display View en_US -->
+
+	<style>	#shop-banner {	background-image: url(/files/www-content/homepage/_shared/images/stx-shopTILE.jpg);	}	</style>	
+ <style>	@media (max-width: 767px) {	#shop-banner {	background-image: url(/files/www-content/homepage/_shared/images/stx-shopTILE-767x170.jpg);	}	}	</style>	
+								<a href="/store" id="shop-banner" class="home-tile" >
+									<div class="home-tile-content">
+										
+	<h3 >	<div id='inline-text-bb79cf896470a410VgnVCM100000ef41090aRCRD-INTRO-TEXT' contentEditable="false" formattingtoolsenabled='false' oid='bb79cf896470a410VgnVCM100000ef41090aRCRD' attributexmlname='INTRO-TEXT' isvalid='false'  originalvalue='' iscomponent='false'>
+Shop Our Store</div>
+		</h3>	
+	<h4 >Weekly Specials</h4>	
+	<p ></p>
+										<div class="home-tile-hover">
+											<div class="home-tile-hover-content">
+												<h5>Offering Weekly Specials + Free Shippingtrue11111111111111111</h5>	<div id='inline-text-bb79cf896470a410VgnVCM100000ef41090aRCRD-DESCRIPTION-SHORT-HOVER' contentEditable="false" formattingtoolsenabled='false' oid='bb79cf896470a410VgnVCM100000ef41090aRCRD' attributexmlname='DESCRIPTION-SHORT-HOVER' isvalid='false'  originalvalue='' iscomponent='false'>
+<p>true222222222222</p></div>
+
+											</div>
+										</div>
+										<span class="btn btn-primary">
+										<div id='inline-text-bb79cf896470a410VgnVCM100000ef41090aRCRD-CALL-TO-ACTION' contentEditable="false" formattingtoolsenabled='false' oid='bb79cf896470a410VgnVCM100000ef41090aRCRD' attributexmlname='CALL-TO-ACTION' isvalid='false'  originalvalue='' iscomponent='false'>
+LEARN MORE</div>
+</span>	</div>	</a>	<script type="text/javascript">
+  if(typeof vExt != 'undefined'){
+vExt.onReady(function() {
+	vui.cps.ui.pencilUtil = {
+		editItem: function(objectType,objTypeId,objTypeXmlName,vcmID){
+			vui.vcm.ui.editor.edit({
+				asObjectType: eval(objectType),
+				objectTypeId: objTypeId,
+				objectTypeXmlName: objTypeXmlName,
+				id: vcmID,
+				skipPopout: true
+			});}}
+	var hideClassName="x-hide-display";
+	function motovuiGetEvents() {
+		var e = {};
+		e[vui.cps.ui.ice.page.TOPIC] = vui.scope(this, function(domEvent, vuiEvent){
+			if (vuiEvent.type === vui.cps.ui.ice.page.EDIT_ON) {
+				var els = vExt.select("a.moto-pencil-hide", true);
+				els.removeClass(hideClassName);
+			} else if (vuiEvent.type === vui.cps.ui.ice.page.EDIT_OFF) {
+				var els = vExt.select("a.moto-pencil-hide", true);
+				els.addClass(hideClassName);}});
+		return e;
+	}
+	vui.cps.ui.ice.util.subscribeVuiListeners(motovuiGetEvents());});
+  }
+</script>
+<style type="text/css">
+.moto-pencil-hide{
+	}
+</style><img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','e766ae3ecfd9f210VgnVCM1000001180090a____','HOME-SUB-BANNER-MASTER','c1e76ca67070a410VgnVCM100000ef41090aRCRD');" />
+
+<!-- End Link Background Image Hover Display View -->
+</div>
+</div>
+	</div> 
+						</div>
+					<div class="span3 t-s4">
+						
+					        	<div id="r-region-c" class="r-region-c">
+					                <div class="vgn-ext-region" vgnextregionname="region-c" vgnextregionscope="page" vgnextregiontypes="VgnExtQuery,VgnExtMultiSelect,VgnExtContentSelectComponent,VgnExtChannelNavComponent" vgnextregionid="84d991cca7346410VgnVCM1000001340090aRCRD">
+
+<div  class="vgn-ext-component vgn-ext-component-VgnExtMultiSelect" vgnextcomponentid="d1abf47e9b516410VgnVCM1000001340090aRCRD" vgnextxmlname="VgnExtMultiSelect"  vgnextdisplayname="Content List" translationrequired="false">
+<!-- Start Link Background Image Hover Display View en_US -->
+
+	<style>	#living-logo-banner {	background-image: url(/files/www-content/homepage/_shared/images/stx-perscloudTILE-292x228.jpg);	}	</style>	
+ <style>	@media (max-width: 767px) {	#living-logo-banner {	background-image: url(/files/www-content/homepage/_shared/images/stx-perscloudTILE-767x170.jpg);	}	}	</style>	
+								<a href="/products/network-attached-storage/home-network/personal-cloud" id="living-logo-banner" class="home-tile" >
+									<div class="home-tile-content">
+										
+	<h3 style="color:#ffffff;">	<div id='inline-text-a089cf896470a410VgnVCM100000ef41090aRCRD-INTRO-TEXT' contentEditable="false" formattingtoolsenabled='false' oid='a089cf896470a410VgnVCM100000ef41090aRCRD' attributexmlname='INTRO-TEXT' isvalid='false'  originalvalue='' iscomponent='false'>
+Featured Product</div>
+		</h3>	
+	<h4 style="color:#ffffff;">Personal Cloud</h4>	
+	<p ></p>
+										<div class="home-tile-hover">
+											<div class="home-tile-hover-content">
+												<h5>Your World On All Your Devicestrue11111111111111111</h5>	<div id='inline-text-a089cf896470a410VgnVCM100000ef41090aRCRD-DESCRIPTION-SHORT-HOVER' contentEditable="false" formattingtoolsenabled='false' oid='a089cf896470a410VgnVCM100000ef41090aRCRD' attributexmlname='DESCRIPTION-SHORT-HOVER' isvalid='false'  originalvalue='' iscomponent='false'>
+<p>true222222222222</p></div>
+
+											</div>
+										</div>
+										<span class="btn btn-primary">
+										<div id='inline-text-a089cf896470a410VgnVCM100000ef41090aRCRD-CALL-TO-ACTION' contentEditable="false" formattingtoolsenabled='false' oid='a089cf896470a410VgnVCM100000ef41090aRCRD' attributexmlname='CALL-TO-ACTION' isvalid='false'  originalvalue='' iscomponent='false'>
+LEARN MORE</div>
+</span>	</div>	</a>	<script type="text/javascript">
+  if(typeof vExt != 'undefined'){
+vExt.onReady(function() {
+	vui.cps.ui.pencilUtil = {
+		editItem: function(objectType,objTypeId,objTypeXmlName,vcmID){
+			vui.vcm.ui.editor.edit({
+				asObjectType: eval(objectType),
+				objectTypeId: objTypeId,
+				objectTypeXmlName: objTypeXmlName,
+				id: vcmID,
+				skipPopout: true
+			});}}
+	var hideClassName="x-hide-display";
+	function motovuiGetEvents() {
+		var e = {};
+		e[vui.cps.ui.ice.page.TOPIC] = vui.scope(this, function(domEvent, vuiEvent){
+			if (vuiEvent.type === vui.cps.ui.ice.page.EDIT_ON) {
+				var els = vExt.select("a.moto-pencil-hide", true);
+				els.removeClass(hideClassName);
+			} else if (vuiEvent.type === vui.cps.ui.ice.page.EDIT_OFF) {
+				var els = vExt.select("a.moto-pencil-hide", true);
+				els.addClass(hideClassName);}});
+		return e;
+	}
+	vui.cps.ui.ice.util.subscribeVuiListeners(motovuiGetEvents());});
+  }
+</script>
+<style type="text/css">
+.moto-pencil-hide{
+	}
+</style><img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','e766ae3ecfd9f210VgnVCM1000001180090a____','HOME-SUB-BANNER-MASTER','c4e56ca67070a410VgnVCM100000ef41090aRCRD');" />
+
+<!-- End Link Background Image Hover Display View -->
+</div>
+</div>
+	</div> 
+					</div>
+					<div class="span3 t-s4">
+					    
+					        	<div id="r-region-d" class="r-region-d">
+					                <div class="vgn-ext-region" vgnextregionname="region-d" vgnextregionscope="page" vgnextregiontypes="VgnExtQuery,VgnExtContentSelectComponent,VgnExtMultiSelect,VgnExtChannelNavComponent" vgnextregionid="79ba91cca7346410VgnVCM1000001340090aRCRD">
+
+<div  class="vgn-ext-component vgn-ext-component-VgnExtMultiSelect" vgnextcomponentid="debbf47e9b516410VgnVCM1000001340090aRCRD" vgnextxmlname="VgnExtMultiSelect"  vgnextdisplayname="Content List" translationrequired="false">
+<!-- Start Link Background Image Hover Display View en_US -->
+
+	<style>	#enterprise-nas-banner-tile {	background-image: url(/files/www-content/homepage/homepage_2014/_shared/images/enterprise-nas-banner-tile-292x228.jpg);	}	</style>	
+ <style>	@media (max-width: 767px) {	#enterprise-nas-banner-tile {	background-image: url(/files/www-content/homepage/homepage_2014/_shared/images/enterprise-nas-banner-tile-767x170.jpg);	}	}	</style>	
+								<a href="/internal-hard-drives/nas-drives/enterprisenas-hdd" id="enterprise-nas-banner-tile" class="home-tile" >
+									<div class="home-tile-content">
+										
+	<h3 style="color:#ffffff;">	<div id='inline-text-e489cf896470a410VgnVCM100000ef41090aRCRD-INTRO-TEXT' contentEditable="false" formattingtoolsenabled='false' oid='e489cf896470a410VgnVCM100000ef41090aRCRD' attributexmlname='INTRO-TEXT' isvalid='false'  originalvalue='' iscomponent='false'>
+Featured Product</div>
+		</h3>	
+	<h4 style="color:#ffffff;"> Enterprise NAS</h4>	
+	<p ></p>
+										<div class="home-tile-hover">
+											<div class="home-tile-hover-content">
+												<h5>Combining Reliability & High Performance With Up to 6TB of Capacitytrue11111111111111111</h5>	<div id='inline-text-e489cf896470a410VgnVCM100000ef41090aRCRD-DESCRIPTION-SHORT-HOVER' contentEditable="false" formattingtoolsenabled='false' oid='e489cf896470a410VgnVCM100000ef41090aRCRD' attributexmlname='DESCRIPTION-SHORT-HOVER' isvalid='false'  originalvalue='' iscomponent='false'>
+<p>true222222222222</p></div>
+
+											</div>
+										</div>
+										<span class="btn btn-primary">
+										<div id='inline-text-e489cf896470a410VgnVCM100000ef41090aRCRD-CALL-TO-ACTION' contentEditable="false" formattingtoolsenabled='false' oid='e489cf896470a410VgnVCM100000ef41090aRCRD' attributexmlname='CALL-TO-ACTION' isvalid='false'  originalvalue='' iscomponent='false'>
+LEARN MORE</div>
+</span>	</div>	</a>	<script type="text/javascript">
+  if(typeof vExt != 'undefined'){
+vExt.onReady(function() {
+	vui.cps.ui.pencilUtil = {
+		editItem: function(objectType,objTypeId,objTypeXmlName,vcmID){
+			vui.vcm.ui.editor.edit({
+				asObjectType: eval(objectType),
+				objectTypeId: objTypeId,
+				objectTypeXmlName: objTypeXmlName,
+				id: vcmID,
+				skipPopout: true
+			});}}
+	var hideClassName="x-hide-display";
+	function motovuiGetEvents() {
+		var e = {};
+		e[vui.cps.ui.ice.page.TOPIC] = vui.scope(this, function(domEvent, vuiEvent){
+			if (vuiEvent.type === vui.cps.ui.ice.page.EDIT_ON) {
+				var els = vExt.select("a.moto-pencil-hide", true);
+				els.removeClass(hideClassName);
+			} else if (vuiEvent.type === vui.cps.ui.ice.page.EDIT_OFF) {
+				var els = vExt.select("a.moto-pencil-hide", true);
+				els.addClass(hideClassName);}});
+		return e;
+	}
+	vui.cps.ui.ice.util.subscribeVuiListeners(motovuiGetEvents());});
+  }
+</script>
+<style type="text/css">
+.moto-pencil-hide{
+	}
+</style><img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','e766ae3ecfd9f210VgnVCM1000001180090a____','HOME-SUB-BANNER-MASTER','bb9f299e4dfda410VgnVCM100000ef41090aRCRD');" />
+
+<!-- End Link Background Image Hover Display View -->
+</div>
+</div>
+	</div> 
+					</div>
+				</div>
+			</div>
+			<div class="span3 t-s12">
+				<div class="row">
+					<div class="span3 t-s4">
+					    
+					        	<div id="r-region-e" class="r-region-e">
+					                <div class="vgn-ext-region" vgnextregionname="region-e" vgnextregionscope="page" vgnextregiontypes="VgnExtMultiSelect,VgnExtQuery,VgnExtChannelNavComponent" vgnextregionid="60da91cca7346410VgnVCM1000001340090aRCRD">
+
+<div  class="vgn-ext-component vgn-ext-component-VgnExtMultiSelect" vgnextcomponentid="27dbf47e9b516410VgnVCM1000001340090aRCRD" vgnextxmlname="VgnExtMultiSelect"  vgnextdisplayname="Content List" translationrequired="false">
+
+<!-- Start Link Background Image Button Display View -->
+
+<!-- Ani Test - locale in the code en_US -->
+<!-- Ani Test - Content ID 6d4a4fd21f6f5410VgnVCM1000001340090aRCRD -->	
+	<div class="link-background-image-button" style="background-image:url(/files/www-content/homepage/homepage_2014/_shared/images/home-tile-4.jpg)">	    
+	    <div class="link-background-image-button-content">
+	        <script type="text/javascript">
+            if(typeof vExt != 'undefined'){
+vExt.onReady(function() {
+	vui.cps.ui.pencilUtil = {
+		editItem: function(objectType,objTypeId,objTypeXmlName,vcmID){
+			vui.vcm.ui.editor.edit({
+				asObjectType: eval(objectType),
+				objectTypeId: objTypeId,
+				objectTypeXmlName: objTypeXmlName,
+				id: vcmID,
+				skipPopout: true
+			});}}
+	var hideClassName="x-hide-display";
+	function motovuiGetEvents() {
+		var e = {};
+		e[vui.cps.ui.ice.page.TOPIC] = vui.scope(this, function(domEvent, vuiEvent){
+			if (vuiEvent.type === vui.cps.ui.ice.page.EDIT_ON) {
+				var els = vExt.select("a.moto-pencil-hide", true);
+				els.removeClass(hideClassName);
+			} else if (vuiEvent.type === vui.cps.ui.ice.page.EDIT_OFF) {
+				var els = vExt.select("a.moto-pencil-hide", true);
+				els.addClass(hideClassName);}});
+		return e;
+	}
+	vui.cps.ui.ice.util.subscribeVuiListeners(motovuiGetEvents());});
+            }
+</script>
+<style type="text/css">
+.moto-pencil-hide{
+	}
+</style><img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','8517b5916d07d210VgnVCM1000001180090a____','LINK-MASTER','8b5a4fd21f6f5410VgnVCM1000001340090aRCRD');" />
+<h3> <div id='inline-text-6d4a4fd21f6f5410VgnVCM1000001340090aRCRD-NAME' contentEditable="false" formattingtoolsenabled='false' oid='6d4a4fd21f6f5410VgnVCM1000001340090aRCRD' attributexmlname='NAME' isvalid='false'  originalvalue=' NEED TO REGISTER YOUR PRODUCT?' iscomponent='false'>
+NEED TO REGISTER YOUR PRODUCT?</div>
+</h3>
+	        <a href="https://registration.seagate.com/" class="btn btn-primary">
+			<div id='inline-text-6d4a4fd21f6f5410VgnVCM1000001340090aRCRD-CALL-TO-ACTION' contentEditable="false" formattingtoolsenabled='false' oid='6d4a4fd21f6f5410VgnVCM1000001340090aRCRD' attributexmlname='CALL-TO-ACTION' isvalid='false'  originalvalue='REGISTER NOW' iscomponent='false'>
+REGISTER NOW</div>
+
+	</a> </div>	</div>
+</div>
+</div>
+	</div> 
+					</div>
+					<div class="span3 t-s8">
+					   	
+					        	<div id="r-region-f" class="r-region-f">
+					                <div class="vgn-ext-region" vgnextregionname="region-f" vgnextregionscope="page" vgnextregiontypes="VgnExtMultiSelect,VgnExtChannelNavComponent,VgnExtQuery" vgnextregionid="4eea91cca7346410VgnVCM1000001340090aRCRD">
+
+<div  class="vgn-ext-component vgn-ext-component-VgnExtQuery" vgnextcomponentid="d7ebf47e9b516410VgnVCM1000001340090aRCRD" vgnextxmlname="VgnExtQuery"  vgnextdisplayname="Smart List" isSmartListComponent="true" translationrequired="false">
+<!-- Start Teaser Latest News Display View Ani en_US -->
+
+			<div class="teaser-latest-news">
+				<div class="teaser-latest-news-content">
+					<h3><a href="/about-seagate/news">NEWS</a></h3>	<div id='inline-text-29550c3886d0b410VgnVCM100000ef41090aRCRD-NAME' contentEditable="false" formattingtoolsenabled='false' oid='29550c3886d0b410VgnVCM100000ef41090aRCRD' attributexmlname='NAME' isvalid='false'  originalvalue='Seagate Expands Collaboration Efforts With Supermicro To Optimize Database Deployments With A Microsoft Validated Solution' iscomponent='false'>
+<p class="descriptor-text">
+							<script type="text/javascript">
+                if(typeof vExt != 'undefined'){
+vExt.onReady(function() {
+	vui.cps.ui.pencilUtil = {
+		editItem: function(objectType,objTypeId,objTypeXmlName,vcmID){
+			vui.vcm.ui.editor.edit({
+				asObjectType: eval(objectType),
+				objectTypeId: objTypeId,
+				objectTypeXmlName: objTypeXmlName,
+				id: vcmID,
+				skipPopout: true
+			});}}
+	var hideClassName="x-hide-display";
+	function motovuiGetEvents() {
+		var e = {};
+		e[vui.cps.ui.ice.page.TOPIC] = vui.scope(this, function(domEvent, vuiEvent){
+			if (vuiEvent.type === vui.cps.ui.ice.page.EDIT_ON) {
+				var els = vExt.select("a.moto-pencil-hide", true);
+				els.removeClass(hideClassName);
+			} else if (vuiEvent.type === vui.cps.ui.ice.page.EDIT_OFF) {
+				var els = vExt.select("a.moto-pencil-hide", true);
+				els.addClass(hideClassName);}});
+		return e;
+	}
+	vui.cps.ui.ice.util.subscribeVuiListeners(motovuiGetEvents());});
+                }
+</script>
+<style type="text/css">
+.moto-pencil-hide{
+	}
+</style><img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','606eb4026149f210VgnVCM1000001180090a____','PRESS-RELEASE-MASTER','29550c3886d0b410VgnVCM100000ef41090aRCRD');" />
+
+	<br/>	<a href='/newsroom/press-releases/seagate-expands-collaboration-efforts-with-supermicro-to-optimize-database-pr' >Seagate Expands Collaboration Efforts With Supermicro To Optimize Database Deployments With A Microsoft Validated Solution</a>
+	</p></div>
+
+	</div>	</div>	
+<!-- End Teaser Latest News Display View -->
+</div>
+</div>
+	</div> 
+	</div>	</div>	</div>	</div> </div> <!-- /container -->
+<div class="vgn-ext-region" vgnextregionname="nav-footer" vgnextregionscope="template" vgnextregiontypes="VgnExtQuery,VgnExtMultiSelect" vgnextregionid="cf5dadff57757310VgnVCM1000001180090aRCRD">
+
+<div  class="vgn-ext-component vgn-ext-component-VgnExtMultiSelect" vgnextcomponentid="ebd91187de606410VgnVCM1000001340090aRCRD" vgnextxmlname="VgnExtMultiSelect"  vgnextdisplayname="Content List" translationrequired="false">
+<!-- cache generate time:footer.jsp= Wed May 06 13:44:41 CDT 2015 -->
+<!-- BEGIN footer -->
+
+	<div class="modal-distributor modal hide fade in" id="LocaleSelector">
+		<div class="modal-body">
+			<button class="nav-footer-close close" data-dismiss="modal">&#215;</button> 
+			<div class="nav-footer-close " data-dismiss="modal">
+				<div class="nav-footer-lt">
+				</div>
+				<button class="nav-footer-close">Back</button> 
+			</div>
+			<div class="nav-footer-selector clearfix">
+				<div class="nav-footer-selector-header">
+					<div class="nav-footer-heading">
+						SELECT YOUR COUNTRY/REGION
+					</div>
+					<div class="nav-footer-remember">
+						<div class="nav-footer-checkbox">
+							<div class="nav-footer-checked">
+							</div>
+							<div class="nav-footer-unchecked">
+							</div>
+						</div>
+						<input type="checkbox" checked="checked" id="nav-footer-remember" class="cbnav-footer-remember">
+						<div class="nav-footer-checkbox-desc">
+							Remember my country/region &amp; language selection
+						</div>
+						<div class="nav-footer-cart-warning" style="display: none;">
+							 Selecting a different country will clear your cart
+						</div>
+					</div>
+				</div>
+				<div class="nav-footer-columns-frame clearfix">
+					<div class="nav-footer-selector-col">
+						<div class="nav-footer-region">
+							Asia-Pacific (APAC)
+						</div>
+						<ul>
+							<li><span dir="ltr"><a href="javascript:updateLocale('en-as');"><span id="country.asean" class="nav-footer-locale">ASEAN</span> <span id="country.asean.lang">(English)</span></a></span></li>
+							<li><span dir="ltr"><a href="javascript:updateLocale('en-au');"><span id="country.australia" class="nav-footer-locale">Australia / New Zealand</span> <span id="country.australia.lang">(English)</span></a></span></li>
+							<li><span dir="ltr"><a href="javascript:updateLocale('en-in');"><span id="country.india" class="nav-footer-locale">India</span> <span id="country.india.lang">(English)</span></a></span></li>
+							<li><span dir="ltr"><a href="javascript:updateLocale('en-sg');"><span id="country.singapore" class="nav-footer-locale">Singapore</span> <span id="country.singapore.lang">(English)</span></a></span></li>
+							<li><span dir="ltr"><a href="javascript:updateLocale('id-id');"><span id="country.indonesia" class="nav-footer-locale">Indonesia</span> <span id="country.indonesia.lang">(Indonesian)</span></a></span></li>
+							<li><span dir="ltr"><a href="javascript:updateLocale('ja-jp');"><span id="country.japan" class="nav-footer-locale">日本</span> <span id="country.japan.lang">(日本語)</span></a></span></li>
+							<li><span dir="ltr"><a href="javascript:updateLocale('ko-kr');"><span id="country.republicofKorea" class="nav-footer-locale">대한민국</span> <span id="country.republicofKorea.lang">(한국어)</span></a></span></li>
+							<li><span dir="ltr"><a href="javascript:updateLocale('zh-tw');"><span id="country.taiwan" class="nav-footer-locale">台灣</span> <span id="country.taiwan.lang">(繁體中文)</span></a></span></li>
+							<li><span dir="ltr"><a href="javascript:updateLocale('zh-cn');"><span id="country.china" class="nav-footer-locale">中国</span> <span id="country.china.lang">(简体中文)</span></a></span></li>
+						</ul>
+					</div>
+					<div class="nav-footer-selector-col">
+						<div class="nav-footer-region">
+							Europe, Middle East, Africa 
+						</div>
+						<div class="nav-footer-subregion">
+							Europe
+						</div>
+						<ul>
+						
+								<li><span dir="ltr"><a href="javascript:updateLocale('fr-be');"><span id="country.belgiumf" class="nav-footer-locale">Belgique</span> <span id="country.belgiumf.lang">(Français)</span></a></span></li>
+								<li><span dir="ltr"><a href="javascript:updateLocale('nl-be');"><span id="country.belgiumn" class="nav-footer-locale">België</span> <span id="country.belgiumn.lang">(Nederlands)</span></a></span></li>
+							    <li><span dir="ltr"><a href="javascript:updateLocale('en-cz');"><span id="country.czechRepublic" class="nav-footer-locale">Czech Republic</span> <span id="country.czechRepublic.lang">(English)</span></a></span></li>
+							    <li><span dir="ltr"><a href="javascript:updateLocale('en-dk');"><span id="country.denmark" class="nav-footer-locale">Denmark</span> <span id="country.denmark.lang">(English)</span></a></span></li>
+							    <li><span dir="ltr"><a href="javascript:updateLocale('en-ie');"><span id="country.eurozone" class="nav-footer-locale">Rest of Eurozone</span> <span id="country.eurozone.lang">(English)</span></a></span></li>
+								<li><span dir="ltr"><a href="javascript:updateLocale('fr-fr');"><span id="country.france" class="nav-footer-locale">France</span> <span id="country.france.lang">(Français)</span></a></span></li>
+								<li><span dir="ltr"><a href="javascript:updateLocale('de-de');"><span id="country.germany" class="nav-footer-locale">Deutschland</span> <span id="country.germany.lang">(Deutsch)</span></a></span></li>
+							    <li><span dir="ltr"><a href="javascript:updateLocale('en-hu');"><span id="country.hungary" class="nav-footer-locale">Hungary</span> <span id="country.hungary.lang">(English)</span></a></span></li>
+								<li><span dir="ltr"><a href="javascript:updateLocale('it-it');"><span id="country.italy" class="nav-footer-locale">Italia</span> <span id="country.italy.lang">(Italiano)</span></a></span></li>
+							    <li><span dir="ltr"><a href="javascript:updateLocale('en-lt');"><span id="country.lithuania" class="nav-footer-locale">Lithuania</span> <span id="country.lithuania.lang">(English)</span></a></span></li>
+								<li><span dir="ltr"><a href="javascript:updateLocale('nl-nl');"><span id="country.netherlands" class="nav-footer-locale">Nederland</span> <span id="country.netherlands.lang">(Nederlands)</span></a></span></li>
+								<li><span dir="ltr"><a href="javascript:updateLocale('pl-pl');"><span id="country.poland" class="nav-footer-locale">Polska</span> <span id="country.poland.lang">(Polski)</span></a></span></li>
+							    <li><span dir="ltr"><a href="javascript:updateLocale('en-ro');"><span id="country.romania" class="nav-footer-locale">Romania</span> <span id="country.romania.lang">(English)</span></a></span></li>
+								<li><span dir="ltr"><a href="javascript:updateLocale('ru-ru');"><span id="country.russia" class="nav-footer-locale">Россия</span> <span id="country.russia.lang">(Pусский)</span></a></span></li>
+								<li><span dir="ltr"><a href="javascript:updateLocale('es-es');"><span id="country.spain" class="nav-footer-locale">España</span> <span id="country.spain.lang">(Español)</span></a></span></li>
+								<li><span dir="ltr"><a href="javascript:updateLocale('en-se');"><span id="country.sweden" class="nav-footer-locale">Sweden</span> <span id="country.sweden.lang">(English)</span></a></span></li>
+								<li><span dir="ltr"><a href="javascript:updateLocale('en-gb');"><span id="country.unitedKingdom" class="nav-footer-locale">United Kingdom</span> <span id="country.unitedKingdom.lang">(English)</span></a></span></li>
+
+						</ul>
+						<div class="nav-footer-additional-subregion">
+							Middle East / North Africa
+						</div>
+						<ul>
+								
+								<li><span dir="ltr"><a href="javascript:updateLocale('tr-tr');"><span id="country.turkey" class="nav-footer-locale">Türkiye</span> <span id="country.turkey.lang">(Türkçe)</span></a></span></li>	
+								<li><span dir="ltr"><a href="javascript:updateLocale('en-em');"><span id="country.menaEnglish" class="nav-footer-locale">Middle East/North Africa</span> <span id="country.menaEnglish.lang">(English)</span></a></span></li>
+								<li><span dir="rtl"><a href="javascript:updateLocale('ar-em');"><span id="country.menaArabic" class="nav-footer-locale">الشرق الأوسط/شمال أفريقيا</span> <span id="country.menaArabic.lang">(العربية)</span></a></span></li>
+						
+						</ul>
+					</div>
+					<div class="nav-footer-selector-col">
+						<div class="nav-footer-region">
+							Americas (AMER)
+						</div>
+						<div class="nav-footer-subregion">
+							Latin America
+						</div>
+						<ul>
+							<li><span dir="ltr"><a href="javascript:updateLocale('pt-br');"><span id="country.brazil" class="nav-footer-locale">Brasil</span> <span id="country.brazil.lang">(Português)</span></a></span></li>
+							<li><span dir="ltr"><a href="javascript:updateLocale('es-la');"><span id="country.americaLatina" class="nav-footer-locale">Latinoamérica</span> <span id="country.americaLatina.lang">(Español)</span></a></span></li>
+						</ul>
+						<div class="nav-footer-additional-subregion">
+							North America
+						</div>
+						<ul>
+							<li><span dir="ltr"><a href="javascript:updateLocale('en-us');"><span id="country.unitedStates" class="nav-footer-locale">United States</span> <span id="country.unitedStates.lang">(English)</span></a></span></li>
+							<li><span dir="ltr"><a href="javascript:updateLocale('en-ca');"><span id="country.canada" class="nav-footer-locale">Canada</span> <span id="country.canada.lang">(English)</span></a></span></li>	</ul>	</div>	</div>	</div>	</div>	</div>
+
+<div class="nav-footer-wrapper">
+	<div class="container">
+ 		<div class="row">
+ 			<div class="span12">
+				<div class="nav-footer">
+						
+						<a class="globe-icon" data-toggle="modal" href="#LocaleSelector" id="currentCountry"><span class="ss-icon">&#x1F30E;</span><span id="currentCountryText"></span></a> 
+						<div class="nav-footer-line"></div>
+						
+							<div class="nav-footer-top-container">
+								<ul class="nav-footer-links nav-footer-top ">
+								
+																<li><a href="/site-index" target='stx-popup' id="site-index-master-ci">Site Map</a>	<script type="text/javascript">
+                                  if(typeof vExt != 'undefined'){
+vExt.onReady(function() {
+	vui.cps.ui.pencilUtil = {
+		editItem: function(objectType,objTypeId,objTypeXmlName,vcmID){
+			vui.vcm.ui.editor.edit({
+				asObjectType: eval(objectType),
+				objectTypeId: objTypeId,
+				objectTypeXmlName: objTypeXmlName,
+				id: vcmID,
+				skipPopout: true
+			});}}
+	var hideClassName="x-hide-display";
+	function motovuiGetEvents() {
+		var e = {};
+		e[vui.cps.ui.ice.page.TOPIC] = vui.scope(this, function(domEvent, vuiEvent){
+			if (vuiEvent.type === vui.cps.ui.ice.page.EDIT_ON) {
+				var els = vExt.select("a.moto-pencil-hide", true);
+				els.removeClass(hideClassName);
+			} else if (vuiEvent.type === vui.cps.ui.ice.page.EDIT_OFF) {
+				var els = vExt.select("a.moto-pencil-hide", true);
+				els.addClass(hideClassName);}});
+		return e;
+	}
+	vui.cps.ui.ice.util.subscribeVuiListeners(motovuiGetEvents());});
+                                  }
+</script>
+<style type="text/css">
+.moto-pencil-hide{
+	}
+</style><img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','2067b5916d07d210VgnVCM1000001180090a____','CHANNEL-INFO-MASTER','4b3f0303966ee210VgnVCM1000001340090aRCRD');" />
+</li>	
+																<li><a href="/about-seagate"  id="about-seagate-channel-master-ci">About Seagate</a>	<img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','2067b5916d07d210VgnVCM1000001180090a____','CHANNEL-INFO-MASTER','f3230303966ee210VgnVCM1000001340090aRCRD');" />
+</li>	
+																<li><a href="/about-seagate/news"  id="2014-about-seagate-news-events-master-ci">News</a>	<img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','2067b5916d07d210VgnVCM1000001180090a____','CHANNEL-INFO-MASTER','c3b888b0ce9f8410VgnVCM1000001340090aRCRD');" />
+</li>	
+																<li><a href="/partners"  id="partners-landing-master-ci">Partner Login</a>	<img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','2067b5916d07d210VgnVCM1000001180090a____','CHANNEL-INFO-MASTER','ee1dc29f397e0310VgnVCM1000001340090aRCRD');" />
+</li>	
+																<li><a href="/jobs"  id="new-jobs-master-ci">Jobs at Seagate</a>	<img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','2067b5916d07d210VgnVCM1000001180090a____','CHANNEL-INFO-MASTER','f15d8d484a766410VgnVCM1000001340090aRCRD');" />
+</li>	
+																<li><a href="/investors"  id="investors-new-master-ci">Investors</a>	<img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','2067b5916d07d210VgnVCM1000001180090a____','CHANNEL-INFO-MASTER','ba39a355bd347410VgnVCM1000001340090aRCRD');" />
+</li>	
+																<li><a href="http://blog.seagate.com/"  id="seagate-social-master-ci">Blog</a>	<img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','2067b5916d07d210VgnVCM1000001180090a____','CHANNEL-INFO-MASTER','7c152ce27e781310VgnVCM1000001340090aRCRD');" />
+</li>	
+																<li><a href="/global-citizenship"  id="global-citizenship-new-master-ci">Global Citizenship</a>	<img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','2067b5916d07d210VgnVCM1000001180090a____','CHANNEL-INFO-MASTER','c85114f0029d5410VgnVCM1000001340090aRCRD');" />
+</li>	
+																<li><a href="/product-finder/external-hard-drives"  id="product-finder-master-ci">Product Finder</a>	<img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','2067b5916d07d210VgnVCM1000001180090a____','CHANNEL-INFO-MASTER','8661ff55a4052310VgnVCM1000001340090aRCRD');" />
+</li>	
+																<li><a href="http://wheretobuy.seagate.com/?language=en-us"  id="where-to-buy-master-link">Where To Buy</a>	<img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','8517b5916d07d210VgnVCM1000001180090a____','LINK-MASTER','7804808b6fd41310VgnVCM1000001340090aRCRD');" />
+</li>	
+																<li><a href="/contacts"  id="contacts-master-ci">Contact Us</a>	<img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','2067b5916d07d210VgnVCM1000001180090a____','CHANNEL-INFO-MASTER','53cc0fd85cc91410VgnVCM1000001340090aRCRD');" />
+</li>	
+	</ul>	</div>	
+						<div class="nav-footer-line nav-footer-tablet-only clear-both">
+						</div>
+						
+						<div class="nav-footer-socials">
+							
+											<ul class="nav-footer-links">
+										
+											<li class="facebook">
+												<a href="http://www.facebook.com/seagate" id="link-seagateFooter-Facebook" class="link-icon facebook-small">Facebook</a>	
+                        <img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','7847b5916d07d210VgnVCM1000001180090a____','SOCIAL-MEDIA-MASTER','bdb7ed49a4e62310VgnVCM1000001340090aRCRD');" />
+
+	</li>	
+											<li>
+												<a href="http://www.linkedin.com/company/2868?trk=tyah" id="link-seagateFooter-LinkedIn" class="link-icon linkedin-small">LinkedIn</a>	<img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','7847b5916d07d210VgnVCM1000001180090a____','SOCIAL-MEDIA-MASTER','2c4dded349e62310VgnVCM1000001340090aRCRD');" />
+
+	</li>	
+											<li>
+												<a href="http://www.youtube.com/user/SeagateTechnology" id="link-seagateFooter-YouTube" class="link-icon youtube-small">YouTube</a>	<img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','7847b5916d07d210VgnVCM1000001180090a____','SOCIAL-MEDIA-MASTER','16e65cba41472310VgnVCM1000001340090aRCRD');" />
+
+	</li>	
+											<li>
+												<a href="http://twitter.com/#!/SEAGATE" id="link-seagateFooter-Twitter" class="link-icon twitter-small">Twitter</a>	<img title="Edit item" border="0" src="/sites/legacy/images/edit_new.gif" style="float:left;vertical-align:middle"  onclick="javascript:vui.cps.ui.pencilUtil.editItem('vui.vcm.type.CONTENT_INSTANCE','7847b5916d07d210VgnVCM1000001180090a____','SOCIAL-MEDIA-MASTER','846eded349e62310VgnVCM1000001340090aRCRD');" />
+
+	</li>	
+	</ul>	
+	</div>	
+					<div class="nav-footer-line clear-both">
+					</div>
+					<div class="span12">
+						<ul class="nav-footer-links nav-footer-copy center">
+							<li>&#xA9;2015&nbsp;Seagate Technology LLC</li>
+							<li class="nav-footer-divider">|</li>
+							<li><a id="LegalPrivacy" href='/legal-privacy/'>Legal & Privacy</a></li>	</ul>	
+							<script type="text/javascript">
+							    setGlobeLocaleCountry(); 
+								var footLang = "en_US".split("_");
+								if("en_US"=="en_US"){
+									document.getElementById('LegalPrivacy').href='/legal-privacy/';
+								}else{
+									document.getElementById('LegalPrivacy').href="/"+footLang[1].toLowerCase()+"/"+footLang[0]+'/legal-privacy/';
+								}
+							</script>
+						
+	</div>	</div>	</div>	</div>	</div>
+</div>
+
+	<iframe src="" id="ClearCartIframe"> </iframe>
+
+<input type="hidden" id="searchMSG"
+	value='Search' />
+<script type="text/javascript">
+
+
+var labels = {
+    "shop" :  "SHOP",
+	"seagate_direct_home" : "Seagate Direct Home",
+	"spp_home" : "SPP Home",
+	"standart_model" : "Standard Model",
+	"select_options" : "Mix and match options...",
+	"customize"	   : "Customize",
+	"model_numbers"  : "Model Numbers",
+	"select_drive"   : "Select Drive",
+	"model_number"  : "Model Number",
+	"add_to_shortlist": "Add to Shortlist",
+	"buy_from_seagate_online" : "Buy from Seagate Online",
+	"qty"			: "Qty",
+	"comparison_shop" : "Comparison Shop",
+	"find_a_distributor" : "Find a Distributor",
+	"find_a_store_nearby" : "Find a store nearby",
+	"find":"Find",
+	"add_to_cart" :"Add to Cart",
+	"back_order" : "Back Order",
+	"pre_order" :"Pre Order",
+    "not_available"  : "Sorry! Currently, there are no price and purchase options available for this product.",
+	"dr_in_stock" :"In Stock",
+	"dr_out_of_stock" :"Out of stock",
+	"dr_back_order" :"Back-Order",
+	"dr_pre_order" :"Pre-Order",
+	"back_order_desc" :"Available for Back Order",
+       "pre_order_desc" :"Available for Pre Order",
+       "configure_and_buy" :"Configure &amp; Buy",
+       "none" :"None",
+       "color" :"Color",
+	"on_sale" :"On Sale",
+	"price"  : "Price",
+	"compare_prices"  : "Compare Prices",
+	"unitedStates"  : "United States",
+	"china"  : "China",
+	"compare_prices"  : "Compare Prices",
+	"partner_offerings" : "Partner Offerings",
+	"buy" : "Buy",
+	"buy_now"  : "BUY NOW",
+  "not_selected"  : "Model Not Selected",
+  "select_value"  : "Please select a value for each option above.",
+  "wait_message"  : "Gathering price and purchase options.",
+  "more_resellers"  : "More Resellers",
+	"unitedStates"  : "United States",
+	"china"  : "China",
+	"japan"  : "Japan",
+	"republicofKorea"  : "Republic of Korea",
+	"taiwan"  : "Taiwan",
+	"germany"  : "Germany",
+	"spain"  : "Spain",
+	"france"  : "France",
+	"italy"  : "Italy",
+	"russia"  : "Russia",
+	"poland"  : "Poland",
+	"turkey"  : "Turkey",
+	"Portugal"  : "Portugal",
+	"find_a_store_url" : "http://seagatewtb.test.cs30.force.com/",
+	"select_model" : "Select your model",
+	"model_not_selected" : "Model not selected",
+	"select_option_value" : "Please select a value for each configuration option.",
+	"not_available_resellers" : "We're adding more resellers all the time, try another model or check back soon.",
+	"not_available_seagate" : "Sorry, the model you selected is currently unavailable for purchase on Seagate.com.",
+	"show_more_resellers" : "Show more Resellers",
+	"buy_from_reseller" : "Buy from a Reseller",
+	"buy_from_seagate" : "Buy from Seagate",
+	"available"  : "Available",
+	"unavailable"  : "Unavailable",
+	"selected"  : "Selected",
+	"preorder"  : "Pre order      ",
+	"instock"  : "In stock",
+	"outofstock"  : "Out of stock",
+	"backorder"  : "Backorder",
+	"get_alert"  : "Get In-Stock Alert",	
+	"notavailable"  : "Not available						",
+	"sale"  : "SALE",
+	"consumer_util_url"  : "https://logindev.okla.seagate.com/consumer-identity/common/consumerUtil.jsp",
+	"my_profile_url_non_consumer"  : "https://partnerreg.seagate.com/partnerprofile/myaccount.jsp",
+	"my_dashboard_url_sd"  : "http://wwwdevedit.okla.seagate.com/portal/site/direct/",
+	"my_profile_url_sd"  : "http://wwwdevedit.okla.seagate.com/portal/site/direct/myprofile",
+	"my_dashboard_url_supplier"  : "https://www.seagate.com/portal/site/supplier ",
+	"my_profile_url_supplier"  : "https://www.seagate.com/portal/site/supplier/myprofile",
+	"my_dashboard_url_spp"  : "https://www.seagate.com/partners/my-spp-dashboard/",
+	"my_profile_url_spp"  : "https://seagate.my.salesforce.com/apex/SPP_CompanyProfile_VF",
+	"my_dashboard_url_ci"  : "https://logindev.okla.seagate.com/consumer-identity/home.jsp",
+	"my_profile_url_ci"  : "https://logindev.okla.seagate.com/consumer-identity/profile/",
+	"logout_url"  : "https://ssodev.okla.seagate.com/www/logout.html",
+	"logout_url_ci"  : "https://logindev.okla.seagate.com/consumer-identity/logout"
+};
+</script>
+<!-- END footer -->
+</div>
+</div>
+ <!-- Javascript ================================================== --> <!-- Placed at the end of the document so the pages load faster --> 
+    <script src="/ww/universal/js/library-min.js?v=51"></script>
+    <script src="//cts-secure.channelintelligence.com/7240515_landing.js"></script> 
+    
+
+<script type="text/javascript">
+	//Analytics: Page Name variables
+	var sea_pagename = 'stx:' + rcLocaleJS;
+	var sea_comparelist = ''; //blank string
+	var sea_comparebuystate = ''; //blank string
+	var sea_solutionproviderstate = ''; //blank string
+	//Analytics: Measurement Page Name variable
+	var measurementPageName = 'stx';
+
+	
+</script>
+<script>
+var ciLocaleMap = {"locales":[
+{'name':'pl-pl','embed':'','xml':''},{'name':'en-in','embed':'5203','xml':'5204'},{'name':'en-ca','embed':'5898','xml':'5886'},{'name':'ru-ru','embed':'4632','xml':'4641'},{'name':'en-ie','embed':'','xml':''},{'name':'fr-be','embed':'','xml':''},{'name':'pt-br','embed':'4634','xml':'4638'},{'name':'en-em','embed':'','xml':''},{'name':'tr-tr','embed':'4633','xml':'4643'},{'name':'zh-tw','embed':'','xml':''},{'name':'ja-jp','embed':'','xml':''},{'name':'fr-fr','embed':'4448','xml':'4452'},{'name':'nl-nl','embed':'','xml':''},{'name':'en-cz','embed':'','xml':''},{'name':'en-sg','embed':'4631','xml':'4642'},{'name':'zh-cn','embed':'','xml':''},{'name':'en-as','embed':'','xml':''},{'name':'en-us','embed':'4399','xml':'4450'},{'name':'nl-hu','embed':'','xml':''},{'name':'es-es','embed':'5062','xml':'5063'},{'name':'en-se','embed':'','xml':''},{'name':'en-au','embed':'','xml':''},{'name':'en-dk','embed':'','xml':''},{'name':'id-id','embed':'','xml':''},{'name':'ar-em','embed':'','xml':''},{'name':'nl-be','embed':'','xml':''},{'name':'ko-kr','embed':'','xml':''},{'name':'de-de','embed':'4447','xml':'4453'},{'name':'en-ro','embed':'','xml':''},{'name':'en-lt','embed':'','xml':''},{'name':'it-it','embed':'','xml':''},{'name':'en-gb','embed':'4449','xml':'4451'},{'name':'es-la','embed':'','xml':''}
+]};
+var rclocale = "en-us";
+</script>		
+<script language="JavaScript" src="http://content.channelintelligence.com/scripts/ykb_PopupWindow.js" type="text/javascript"></script>
+<script language="JavaScript" src="http://content.channelintelligence.com/scripts/cii_embeddedfunctions.asp" type="text/javascript"></script>
+<script language="JavaScript" src="http://seagate.links.channelintelligence.com/scripts/cii_CBL_DataService_API.asp" type="text/javascript"></script>
+<script>
+function cii_ShowCBLButton(rsSKU,roPrime,roAlt,rnInst,rnRGID,rsLID,rnH,rnW){
+  if(!rsSKU){return;}
+  var sUSku=rsSKU.toUpperCase(),bOL=true,oL={},aO=[];
+  if(!rnRGID){rnRGID=-1;}
+  if(!rsLID){rsLID='';}
+  if(!oCIICBLDataObject[sUSku]){return;}
+  var o=oCIICBLDataObject[sUSku];
+  if(!o.dealerCount){return;}
+  var nCnt=parseInt(o.dealerCount,10);
+  if(nCnt>0&&roPrime){oL=roPrime;}
+  else if(nCnt<=0&&roAlt){oL=roAlt;}
+  else{return;}
+  if(oL.linkurl&&oL.linkurl!==''){aO[aO.length]='<a href="'+ciiPlcHldr(oL.linkurl,rsSKU,rnInst,rnRGID,rsLID)+'">';}
+  else if(oL.customlinkurl&&oL.customlinkurl!==''){aO[aO.length]=ciiPlcHldr(oL.customlinkurl,rsSKU,rnInst,rnRGID,rsLID);}
+  else if(nCnt>0){
+    aO[aO.length]='<a href="JavaScript:manu_CD';
+    if(rnRGID>0){
+      aO[aO.length]='RuleGroupLink(\x27seagate\x27,\x27'+rsSKU+'\x27,\x27'+rnRGID+'\x27,';
+    }else{
+      aO[aO.length]='Link(\x27seagate\x27,\x27'+rsSKU+'\x27,';
+    }
+    aO[aO.length]=(typeof(rnH)==='undefined'||rnH===null?'null':rnH)+','+(typeof(rnW)==='undefined'||rnW===null?'null':rnW)+',null,\x27'+rsLID+'\x27)">';
+  }else{bOL=false;}
+  if(oL.imageurl&&oL.imageurl!==''){
+    aO[aO.length]='<img src="'+oL.imageurl+'" border="0"';
+    var oImage=new Image();
+    oImage.src=oL.imageurl;
+    if(oImage.width&&oImage.width>1&&oImage.height&&oImage.height>1){aO[aO.length]=' height="'+oImage.height+'" width="'+oImage.width+'"';}
+    if(oL.onmouseover&&oL.onmouseover!==''){aO[aO.length]=' onMouseOver="'+oL.onmouseover+'"';}
+    if(oL.onmouseout&&oL.onmouseout!==''){aO[aO.length]=' onMouseOut="'+oL.onmouseout+'"';}
+    aO[aO.length]=' alt="'+(!oL.alt?'':oL.alt)+'" />';
+  }
+  else if(oL.customimagehtml&&oL.customimagehtml!==''){aO[aO.length]=ciiPlcHldr(oL.customimagehtml,rsSKU,rnInst,rnRGID,rsLID);}
+  else if(oL.linktext){aO[aO.length]=ciiPlcHldr(oL.linktext,rsSKU,rnInst,rnRGID,rsLID);}
+  if(bOL){aO[aO.length]='</a>';}
+  //document.write(aO.join(''));
+  return aO;
+}
+</script>
+<script type="text/javascript" language="JavaScript">
+<!--
+var oCIIPrimaryLink = new Object();
+oCIIPrimaryLink["imageurl"] =
+'http://links.channelintelligence.com/oemsites/11111/cii_Buy-Now.png';
+oCIIPrimaryLink["alt"] = 'Buy Now';
+var oCIIAlternateLink = new Object();
+//
+-->
+</script>
+<!-- End Temporary Hardcode of PDP Javascript -->
+
+
+	<!-- Toggle Pencil Functionality -->
+	
+	<a id="toggle-pencil" href="#" title="Toggle Edit Pencils"></a>
+	
+	<script>
+	function togglePencil() {
+		if ($('img[title="Edit item"]').css('display') =='none') {
+			$('img[title="Edit item"]').show();
+		} else {
+			$('img[title="Edit item"]').hide();
+		}
+	}
+	
+	$(document).ready(function() {
+		togglePencil();
+		
+		$('#toggle-pencil').click( function(e) {
+			e.preventDefault();
+			togglePencil();
+		});	
+	});
+	</script>
+<!-- Page load in 1204 -->
+	<!-- Begin insert footerCode from Channel Info Child -->	<script src="/ww/universal/ll/assets/lib/TweenMax.min.js"></script>
+    <script src="/ww/universal/ll/js/ll.js"></script>
+    <script src="/ww/universal/ll/js/RequestBinaryData.js"></script>
+    <script src="/ww/universal/ll/js/require.js"></script>
+<script>
+      var rootPath = "/ww/universal/ll/";
+      var rSplit = rcLocaleJS.split("-");
+      var rcLocaleJSDirectory = rSplit[0]+"/"+rSplit[1];
+     
+                if (Environment.isIe() && Environment.isIe() <= 9 && !Environment.ieGrown()) {
+                       requirejs.config({
+                           baseUrl: rootPath,
+                           shim: {
+                               'js/ll-script': ['js/ll-webgl'],
+                               'js/ll-apifunctions': ['js/FBOUtils']
+                           },
+                           paths: {
+                               jquery: [
+                                   '/ww/universal/ll/js/jquery-1.11.3.min',
+                                   'jquery'
+                               ]
+                           }
+                       });
+                       require(['jquery'], function($) {
+                           return jQuery;
+                       });
+                       require(["js/ll-webgl", 'js/Common', "js/ll-script", "assets/js/bootstrap"], function() {})
+                   } else {
+                       requirejs.config({
+                           baseUrl: rootPath,
+                           paths: {
+                               jquery: [
+                                   '/ww/universal/ll/js/jquery-1.11.3.min.js',
+                                   //If the CDN location fails, load from this location
+                                   'jquery'
+                               ]
+                           },
+                           shim: {
+                               'js/ll-webgl': ["js/ll", 'js/three.min', 'js/ll-apifunctions', 'js/ll-apiscene', 'js/ll-apisceneGetty', 'js/ll-canvas.min'],
+                               'js/FBOUtils': ["js/ll", 'js/three.min'],
+                               'js/ll-script': ["js/ll", 'js/ll-webgl'],
+                               'js/Common': ["js/ll", 'js/three.min'],
+                               "js/ll-apiscene": ["js/ll", 'js/three.min'],
+                               "js/ll-apisceneGetty": ["js/ll", 'js/three.min', 'js/ll-apiscene'],
+                               'js/ll-apifunctions': ["js/ll", 'js/FBOUtils']
+                           },
+                           waitSeconds: 0
+                       });      
+                       require(["js/three.min", "js/FBOUtils", "js/Common", "js/ll", "js/ll-apifunctions", "js/ll-apiscene", "js/ll-apisceneGetty", "js/ll-webgl",
+                           "js/ll-script", "../font/ss-standard", "js/ll-canvas.min", "js/ll-taglines", "js/klang.min"
+                       ], function() {
+                           //This function will be called when all the dependencies
+                           //listed above in deps are loaded. Note that this
+                           //function could be called before the page is loaded.
+                           //This callback is optional.
+                           //  console.log('now ready')
+                       })
+                   }
+      </script>
+  <script>  
+    if (Environment.isIe() && Environment.isIe() <= 9 && !Environment.ieGrown()) {
+    } else {
+        $(function() {
+            mack.hotZone();
+            $(window).resize(function() {
+                mack.hotZone();
+            })
+        })
+    }
+    </script>
+	<!-- End insert footerCode from Channel Info Child --> 
+     <div id="facebook_loading">
+       <div><img src="/ww/universal/ll/images/ajax-loader.gif" /></div>
+   </div>
+  </body>
+</html>
+
