@@ -1488,7 +1488,6 @@ LL.APIScene.prototype =
         var newTarget = ToRadians( centerX * kMaxAngle );
 
         var areaIncrByFov = 0.25 + 0.25*(1.0-cameraFovPer_);
-        //console.log( cameraFovPer_ );
         if( Math.abs(absCenterX) < window.innerWidth*areaIncrByFov ) //&& cameraFovPer_ > 0.75 )
         {    
             this.cubePoolMesh.rotation.y += (newTarget - this.cubePoolMesh.rotation.y) * kRotationSpeed;

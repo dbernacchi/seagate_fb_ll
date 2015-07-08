@@ -73,25 +73,27 @@ var facebookLL = {};
     $(document).on('click', 'a#facebook_login', function(e) {
       e.preventDefault();
 
-    
+      var elm = this;
+      
       //check for webgl
       renderer = Detector.webgl;
 
       if (!Environment.isChrome() && !Environment.isFire()) {
       //if (Environment.isChrome() || Environment.isFire()) {  
-        $(".slide_container").html($('.error_container_2').html());
+        $(".slide_container").html($('.error_container_1').html());
       
       } else if (!renderer) {
         
-        $(".slide_container").html($('.error_container_1').html());
+        $(".slide_container").html($('.error_container_2').html());
         
       } else { 
       
         FB.getLoginStatus(function(response) {
 
           if (response.status === 'connected') {
-
-            href = $(this).attr('href');
+            
+            var href = $(elm).attr('href');
+            
             window.open(href, "_blank");
 
           } else {
@@ -112,10 +114,19 @@ var facebookLL = {};
 
   }
 
+  this.comBootstrap = function(response) {
+
+    $('#facebook_loading').show();
+
+    this.fbBootstrap();
+  }
+  
   this.fbBootstrap = function(response) {
 
     var ns = this;
 
+    facebookActivated = true;
+    
     $('#leftControls').css('top', '0px');
     $('#leftControls').css('left', '10px');
     $('#leftControls').css('position', 'fixed');
@@ -243,7 +254,6 @@ var facebookLL = {};
 
 
   }
-  
 
   this.skipBootstrap = function(response) {
 
@@ -478,21 +488,27 @@ var facebookLL = {};
     image.onload = function() {
 
       //this is where we start the logo running in ll-script.js
-      llBootstrap();
-      
+      if(rcLocaleJSDirectory != 'facebook'){
+        $("#facebook_loading").hide();
+        
+        FacebookCallFunc_WebGL();
+      } else {
+        llBootstrap();
+      }
     };
     image.src = dataUrl;
 
   }
 
   this.countFriends = function(callback) {
-
+    
     this.login(function(loginResponse) {
+    
       FB.api(
               '/me/friends',
               {fields: 'id'},
       function(friendResponse) {
-
+        
         if (callback) {
 
           callback(friendResponse);

@@ -11,6 +11,8 @@ var fullscreenButton = $("#fullscreen")
 var isFullscreen = false;
 var containerHeight = 500;
 
+var facebookActivated = false;
+
 // If facebook use full window dimension
 if(rcLocaleJSDirectory == 'facebook')
 {
@@ -394,7 +396,7 @@ var logoGetty = {
 
   , pathSlowness: 4.5
   , frontParticlesCount: 20
-  , landscapeChance: 50 //75
+  , landscapeChance: 75
 
     , tileWidthPortrait: 144
     , tileHeightPortrait: 256
@@ -434,7 +436,7 @@ var logoFacebook = {
 
   //, pathSlowness: 4.5
   //, frontParticlesCount: 20
-  , landscapeChance: 50 //75
+  , landscapeChance: 75
 
     // Same as Getty
     , tileWidthPortrait: 144
@@ -449,6 +451,14 @@ var logoFacebook = {
     , texHeight: 2048
 };
 
+
+var APIInstagramIndex = 0;
+var APITwitterIndex = 1;
+var APINYTIndex = 2;
+var APIAmazonIndex = 3;
+var APILastfmIndex = 4;
+var APIGettyIndex = 5;
+var APIFacebookIndex = 6;
 
 var logoIndexArr = [ -1, -1, -1, -1, -1, -1, -1 ];
 
@@ -738,7 +748,7 @@ function CreateRenderer()
   }
   renderer.setSize( 1, 1 ); //window.innerWidth, window.innerHeight );
   renderer.autoClear = true;
-  renderer.sortObjects = false; //true;
+  renderer.sortObjects = true;
   renderer.autoClearStencil = false;
 
   canvas = renderer.domElement;
@@ -790,23 +800,19 @@ function CreateRenderer()
   for (var k = 0; k < glQueries.length; k++)
   {
     glInfo.push(gl.getParameter(glQueries[k]));
-    /*poo( glQueryNames[k] + " -- " + glInfo[k] );*/
   }
 }
 
-
-//var that = $.Deferred();
-//that.staticData = staticData;
 var dataCount = 0;
 
 function LoadShaderData(staticData, name, url)
 {
   var defer = $.Deferred();
-  LOG("+++ Loading: " + name);
+
   $.get(url, function(data)
   {
     staticData[ name ] = data;
-    LOG("+++ Loaded: " + name);
+
     defer.resolve();
   });
   return defer;
@@ -814,7 +820,6 @@ function LoadShaderData(staticData, name, url)
 
 function LoadJsonData(staticData, name, url)
 {
-  
   //mack.vars.staticData = [];
   var defer = $.Deferred();
   
@@ -822,6 +827,7 @@ function LoadJsonData(staticData, name, url)
   
   if(name == 'PartAnim1' || manifest.indexOf(check) > -1){
   //if(true){
+    
     $.getJSON(url + "?" + new Date().getTime(), function(json)
     {
      
@@ -830,12 +836,33 @@ function LoadJsonData(staticData, name, url)
       } else {
         eval(' mack.vars.staticData.' + name + ' = json');
       }
+
+      
       // mack.vars.staticData[ name ]=json;
       staticData[ name ] = json;
+      
       mack.vars.staticData[name] = json;
 
       defer.resolve();
     });
+  } else if(name == 'facebook1Json'){
+    
+    var status = "off";
+    console.log(manifest);
+    
+    if(manifest.indexOf('facebook') > -1 && (Environment.isChrome() || Environment.isFire())){
+      
+      status = "on";
+      $('.facebook').show();
+      
+    }
+    
+    staticData[ "facebook1Json" ] = {};
+    staticData[ "facebook1Json" ].tagline = "";
+    staticData[ "facebook1Json" ].status = status;
+    
+    defer.resolve();
+    
   } else {
     
     var json = JSON.parse('{"status":"off"}');
@@ -919,6 +946,7 @@ function LoadTexture(staticData, name, url)
 }
 
 /*var json05Files = [ 0, 0, 0 ];*/
+var json06Files = [0];
 var json05Files = [0, 0];
 var json00Files = [0, 0, 0];
 var json01Files = [0, 0, 0];
@@ -964,7 +992,6 @@ function FindValidAPIID(api_)
 
 function LoadData(api)
 {
-
   if(rcLocaleJSDirectory == 'facebook')
   {
       logoIndexArr = [ APIFacebookIndex ];
@@ -977,6 +1004,7 @@ function LoadData(api)
         staticData[ "facebook1Json" ] = {};
         staticData[ "facebook1Json" ].tagline = "";
         staticData[ "facebook1Json" ].status = "on";
+
         
         if (mack.vars.isKosher) 
         {
@@ -996,6 +1024,8 @@ function LoadData(api)
       // Load all data
       //
 
+     
+      
       $.getJSON(rootPath + "images/" + rcLocaleJSDirectory + "/manifest.json" + "?" + new Date().getTime(), function(json)
       {
         manifest = json;
@@ -1032,6 +1062,8 @@ function LoadData(api)
                 , LoadJsonData(staticData, "lastfm3Json", rootPath + "images/" + rcLocaleJSDirectory + "/lastfm-3.json")
                 , LoadJsonData(staticData, "lastfm4Json", rootPath + "images/" + rcLocaleJSDirectory + "/lastfm-4.json")
                 , LoadJsonData(staticData, "lastfm5Json", rootPath + "images/" + rcLocaleJSDirectory + "/lastfm-5.json")
+                
+                , LoadJsonData(staticData, "facebook1Json", '')
 
                 ).done(function() {
 
@@ -1041,6 +1073,7 @@ function LoadData(api)
 
           }
 
+    
           if (staticData["getty1Json"].status === "on")
             json05Files[0] = 1;
           if (staticData["getty2Json"].status === "on")
@@ -1093,8 +1126,11 @@ function LoadData(api)
           if (staticData["lastfm5Json"].status === "on")
             json04Files[4] = 1;
 
+          if (staticData["facebook1Json"].status === "on")
+            json06Files[0] = 1;
+          
           function showMenuItems(arr, cls, idx) {
-
+            
             var show = false;
             for (var ii = 0; ii < arr.length; ii++)
             {
@@ -1134,7 +1170,8 @@ function LoadData(api)
           var twt = showMenuItems(json01Files, 'twt', 1);
           var insta = showMenuItems(json00Files, 'insta', 0);
           var getty = showMenuItems(json05Files, 'getty', 5);
-
+          var fb = showMenuItems(json06Files, 'fb', 6);
+          
           var top = parseInt($("#leftControls").css('top'));
 
           top += 16;
@@ -1162,7 +1199,7 @@ function LoadData(api)
           var twitterPngFilename = rootPath + "images/" + rcLocaleJSDirectory + "/twitter-" + api1ID + ".png";
 
           var api2ID = FindValidAPIID(json02Files);
-          var nytimesJpegFilename = rootPath + "images/" + rcLocaleJSDirectory + "/nytimes-" + api2ID + ".jpg";
+          var nytimesJpegFilename = rootPath + "images/" + rcLocaleJSDirectory + "/nytimes-" + api2ID + ".png";
 
           var api3ID = FindValidAPIID(json03Files);
           var amazonJpegFilename = rootPath + "images/" + rcLocaleJSDirectory + "/amazon-" + api3ID + ".jpg";
@@ -1170,6 +1207,9 @@ function LoadData(api)
           var api4ID = FindValidAPIID(json04Files);
           var lastfmJpegFilename = rootPath + "images/" + rcLocaleJSDirectory + "/lastfm-" + api4ID + ".jpg";
 
+          var api6ID = FindValidAPIID(json06Files);
+          var facebookJpegFilename = "";
+          
           if (!getty) {
             gettyJpegFilename = false;
           }
@@ -1188,6 +1228,9 @@ function LoadData(api)
           if (!lastF) {
             lastfmJpegFilename = false;
           }
+          if (!fb) {
+            facebookJpegFilename = false;
+          }
 
           LoadWebGLData(
                   api5ID
@@ -1201,7 +1244,9 @@ function LoadData(api)
                   , twitterPngFilename
                   , nytimesJpegFilename
                   , amazonJpegFilename
-                  , lastfmJpegFilename);
+                  , lastfmJpegFilename
+
+                          );
 
         });//when
 
@@ -1235,10 +1280,6 @@ function LoadData(api)
         /* if( staticData["getty3Json"].status === "on" )
          json05Files[2] = 1;*/
 
-        for (var ii = 0; ii < json05Files.length; ii++)
-        {
-          LOG("*** GETTY json file status: " + json05Files[ii]);
-        }
 
 
         var api5ID = FindValidAPIID(json05Files);
@@ -1288,11 +1329,11 @@ function LoadWebGLDataFacebook() {
     });
 
     if (!mack.vars.logoIndex) {
-      poo('we da lights')
+
       $('.zoom-controls').css({display: 'block'})
 
     } else {
-      poo('going down dobe')
+
       $('.zoom-controls').css({display: 'block'})
     }
     
@@ -1335,11 +1376,9 @@ function LoadWebGLDataGetty(id6, api6name) {
     });
 
     if (!mack.vars.logoIndex) {
-      poo('we da lights')
       $('.zoom-controls').css({display: 'block'})
 
     } else {
-      poo('going down dobe')
       $('.zoom-controls').css({display: 'block'})
     }
     
@@ -1400,11 +1439,11 @@ function LoadWebGLData(id6, id1, id2, id3, id4, id5, api6name, api1name, api2nam
     });
 
     if (!mack.vars.logoIndex) {
-      poo('we da lights')
+
       $('.zoom-controls').css({display: 'block'})
 
     } else {
-      poo('going down dobe')
+
       $('.zoom-controls').css({display: 'block'})
     }
 
@@ -1416,6 +1455,7 @@ function LoadWebGLData(id6, id1, id2, id3, id4, id5, api6name, api1name, api2nam
 
 function PrepareDataFacebook() 
 {  
+  
   floatPathData = staticData[ "pathData" ];
   floatPathGettyData = staticData[ "pathDataGetty" ];
   bgTex = staticData[ "ll-bg" ];
@@ -1430,14 +1470,13 @@ function PrepareDataFacebook()
   {
     preloader.children("p").text("");
     if (Environment.isIe()) {
-
     } else {
-
       DoIt();
     }
-
-
+  
   });
+  
+  
 
 
 }
@@ -1489,6 +1528,7 @@ function PrepareData(api5ID, api0ID, api1ID, api2ID, api3ID, api4ID)
     SetTextureFiltering(Params[i]);
 
   PrepareGettyTagline(api5ID);
+
   PrepareInstagramTagline(api0ID);
   PrepareTwitterTagline(api1ID);
   PrepareNYTimesTagline(api2ID);
@@ -1503,7 +1543,6 @@ function PrepareData(api5ID, api0ID, api1ID, api2ID, api3ID, api4ID)
     if (Environment.isIe()) {
 
     } else {
-      poo('going to do it')
 
       DoIt();
     }
@@ -1526,12 +1565,11 @@ function SetTextureFiltering(tex_)
 
 function PrepareFacebookTagline()
 {
-    console.log( "PrepareFacebookTagline" );
-
-  apiID = 1
+  /*
+  apiID = 6;
   var copyText = "";
   var copyTextName;
-  /*poo(apiID + " current API")*/
+  
   mack.vars.currentApiId = 0;
 
   //   apiID = 3;
@@ -1578,9 +1616,9 @@ function PrepareFacebookTagline()
     console.log(copyTextName + ' undefined in staticdata');
     console.log(staticData);
   }
-  /*mack.vars.values = mack.vars.staticData['getty'+apiID+'Json'].values;*/
-
-
+  */
+  mack.vars.tagline = {};
+  mack.vars.tagline.tagline = $('#facebook_tagline').html();
   mack.apiText();
   //        copyTextArray.push( copyText );
 }
@@ -1588,14 +1626,16 @@ function PrepareFacebookTagline()
 
 function PrepareGettyTagline(apiID)
 {
+  
   var copyText;
   var copyTextName;
   /*poo(apiID + " current API")*/
   mack.vars.currentApiId = APIGettyIndex;
-
+  
   //   apiID = 3;
   // GETTY taglines
   copyText = copyTextArray[APIGettyIndex];
+
   mack.vars.values = copyText.values;
   mack.vars.setCurTag = apiID;
 
@@ -1621,29 +1661,30 @@ function PrepareGettyTagline(apiID)
     }
     if (staticData[ copyTextName ].values)
     {
+      
       for (var ti = 0; ti < staticData[ copyTextName ].values.length; ti++)
       {
         copyText.values.push(staticData[ copyTextName ].values[ti]);
       }
     }
+    if (staticData[ copyTextName ].value)
+    {
+ 
+      copyText.value = staticData[ copyTextName ].value;
+      
+    }    
     copyText.tagline = staticData[ copyTextName ].tagline;
 
     mack.vars.tagline = copyText;
-  } else {
-    console.trace();
-    console.log(copyTextName + ' undefined in staticdata');
-    console.log(staticData);
-  }
-  /*mack.vars.values = mack.vars.staticData['getty'+apiID+'Json'].values;*/
-
-
+  } 
+  
   mack.apiText();
   //        copyTextArray.push( copyText );
 }
 
 function PrepareInstagramTagline(apiID)
 {
-    console.log( "PrepareInstagramTagline" );
+
   var copyText;
   var copyTextName;
   if (!apiID || apiID == 0) {
@@ -1890,14 +1931,15 @@ function PrepareAmazonTagline(apiID)
 
 function PrepareLastFMTagline(apiID)
 {
+
   var copyText;
   var copyTextName;
 
   /*poo(apiID + " current API")*/
   mack.vars.currentApiId = APILastfmIndex;
   // var apiID = 5;
-  mack.vars.copyTextz = copyTextArray;
-  poo('prepare ')
+  mack.vars.copyText = copyTextArray;
+
   // LASTFM taglines
   copyText = copyTextArray[4];
   mack.vars.values = copyText.values;
@@ -1921,6 +1963,7 @@ function PrepareLastFMTagline(apiID)
     copyText.numberPrecision = staticData[ copyTextName ].number.toString().length;
     copyText.number = parseInt(staticData[ copyTextName ].number);
   }
+
   if (staticData[ copyTextName ].values)
   {
     for (var ti = 0; ti < staticData[ copyTextName ].values.length; ti++)
@@ -1928,32 +1971,22 @@ function PrepareLastFMTagline(apiID)
       copyText.values.push(staticData[ copyTextName ].values[ti]);
     }
   }
-
-  /*poo('copyText ' + copyTextName)*/
-  copyText.tagline = mack.vars.staticData[ copyTextName ].tagline;
-
-
-  // This is specific for one of lastfm lines. Replace several values in one sentence
-  if (mack.vars.staticData[ copyTextName ].values)
-  {
-    /*for( var ti=0; ti<staticData[ copyTextName ].values.length; ti++ )
-     {
-     var torepl = "{value_" + (ti+1) + "}";
-     copyText.tagline = copyText.tagline.replace( torepl, copyText.values[ti] );
-     }*/
-  }
-//        copyTextArray.push( copyText );
-  /*mack.vars.tagline = copyText.tagline;*/
   
-
+  copyText.tagline = mack.vars.staticData[ copyTextName ].tagline;
   
   mack.vars.tagline = copyText;
-  mack.vars.values = mack.vars.staticData['lastfm' + apiID + 'Json'].values;
+  mack.vars.tagline.values = mack.vars.staticData['lastfm' + apiID + 'Json'].values;
 
-
-  //  if(kCanClick){
+  str = mack.vars.tagline.tagline;
+  
+  if (str && mack.vars.tagline.values.length == 2) {
+    str = str.replace("{value_1}", mack.vars.tagline.values[0]);
+    str = str.replace("{value_2}", mack.vars.tagline.values[1]);
+    mack.vars.tagline.tagline = str;
+    
+  }
   mack.apiText();
-  // }
+
 }
 
 
@@ -2169,7 +2202,7 @@ function Init()
       break;
     }
   }
-
+  
   ActivateAPI(idx);
 
   currentTime = 0.0;
@@ -2179,15 +2212,14 @@ function Init()
 
 function ActivateAPI(index)
 {
-    console.log( "ActivateAPI" );
   mack.vars.ranApi = true;
-  poo('activate')
+
   if (!mack.vars.logoIndex) {
-    poo('going up')
+  
     $('.zoom-controls').css({display: 'blockP'})
     $('.zoom-icon').css({display: 'block'})
   } else {
-    poo('going down act')
+    
     $('.zoom-controls').css({display: 'none'})
   }
 
@@ -2197,6 +2229,7 @@ function ActivateAPI(index)
   {
     //  if(rcLocaleJS == "functionOff"){
     MenuClearStates();
+    
     switch (index)
     {
       case 0:
@@ -2218,7 +2251,13 @@ function ActivateAPI(index)
         GettyCallFunc_WebGL();
         break;
       case 6:
-        FacebookCallFunc_WebGL();
+        if(facebookActivated ){
+          FacebookCallFunc_WebGL();
+        } else {
+          
+          GettyCallFunc_WebGL();
+        }
+        
         break;
       default:
           console.log( "ActivateAPI: index is not valid" );
@@ -2261,6 +2300,7 @@ function OnWindowResize()
 
 function DoIt()
 {
+  
   // Menu animation
   (function()
   {
@@ -2305,7 +2345,7 @@ function DoIt()
   // Animate menu. Delay for a while to make sure the logo animation is done
   // menu.delay( 8000 ).fadeIn( 3000 );
 
-  LOG("+++ Initializing...");
+  //console.log("+++ Initializing...");
   Init();
 
   LOG("+++ Initialization complete.. Enter Mainloop.");
@@ -2518,16 +2558,11 @@ function Update(time, frameTime)
 function Render()
 {
   renderer.autoClear = false;
+    //renderer.autoDepthClear = true;
 
-  // If facebook version AND fullscreen we need the background
   if( rcLocaleJSDirectory == 'facebook' && isFullscreen )
   {
-    renderer.render( bgScene, bgCamera );
-  }
-  // If seagate.com we need the background
-  if( rcLocaleJSDirectory != 'facebook' )
-  {
-    renderer.render( bgScene, bgCamera );
+    renderer.render( bgScene, bgCamera, null, true );
   }   
 
   renderer.render( scene, camera );
@@ -2574,6 +2609,7 @@ function MainLoop()
     {
         apiIdleTime = 0.0;
         var idx = getLogoIndex( THREE.Math.randInt(0, APIGettyIndex) ); // Ignore facebook
+        
         ActivateAPI(idx);
     }
 
@@ -2978,7 +3014,6 @@ function RestartLogoIntroAnimation()
 
 function FacebookCallFunc_WebGL()
 {
-    console.log( "FacebookCallFunc_WebGL" );
 
   kCanClick = false;
   
@@ -2999,11 +3034,13 @@ function FacebookCallFunc_WebGL()
     logoIndex = APIFacebookIndex;
 //    currParamSelection = logoFacebook;    
 //            currParamSelection = Params[ logoIndex ];
+
     RestartLogoIntroAnimation();
 
     Klang.triggerEvent('getty_start');
     MenuClearStates();
-    MenuSetItem(0); // Special case: This is Getty at zero
+    MenuSetItem(logoIndex + 1);
+    $('li.facebook.avoid-clicks').addClass('active');
     $('.zoom-controls').css({display: 'block'})
   });
 }
@@ -3043,7 +3080,7 @@ function GettyCallFunc_WebGL()
 
 function InstagramCallFunc_WebGL()
 {
-    console.log( "InstagramCallFunc_WebGL" );
+   
   kCanClick = false;
   var apiID = FindValidAPIID(json00Files);
   var imageFilename = rootPath + "images/" + rcLocaleJSDirectory + "/instagram-" + apiID + ".jpg";
@@ -3077,6 +3114,7 @@ function InstagramCallFunc_WebGL()
 
     MenuClearStates();
     MenuSetItem(logoIndex + 1);
+    
     $('.zoom-controls').css({display: 'none'})
   });
 }
@@ -3127,7 +3165,7 @@ function NYTCallFunc_WebGL()
 {
   kCanClick = false;
   var apiID = FindValidAPIID(json02Files);
-  var imageFilename = rootPath + "images/" + rcLocaleJSDirectory + "/nytimes-" + apiID + ".jpg";
+  var imageFilename = rootPath + "images/" + rcLocaleJSDirectory + "/nytimes-" + apiID + ".png";
   LOG("+++ NYTimes selected index: " + apiID);
   $.when(LoadTexture(staticData, "nytimes" + apiID + "Json", imageFilename)
           ).done(function()

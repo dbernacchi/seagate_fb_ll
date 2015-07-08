@@ -204,7 +204,9 @@ var ieMe = {
 
   },
   getty: function() {
+
     if (Environment.isIe() && Environment.isIe() <= 9) {
+   
       //alert('in ie')
       var apiID = FindValidAPIID(json05Files);
 
@@ -215,7 +217,8 @@ var ieMe = {
       mack.setGif('getty_v06.gif', $(this))
     }
 
-  }
+  },
+  fb: function(){}
 };
 
 
@@ -403,6 +406,7 @@ var mack = {
 
       }
       CreateRenderer();
+
       DoIt()
 
       MainLoop();
@@ -1743,7 +1747,7 @@ var mack = {
       
       hHeight = window.innerHeight;
 
-      var center = (hHeight / 2) - 70;
+      var center = (hHeight / 2) - 27;
 
       $("#preloader").css('position','fixed');
 
@@ -2372,6 +2376,7 @@ var mack = {
       //  }
 
     }
+    
   },
   tap: {
     lastF: function() {
@@ -3197,12 +3202,8 @@ var mack = {
      $('#menu ul li').css({width:'150px'})*/
   },
   apiText: function(cases) {
-
+    
     var str = "";
-    //  poo('api text')
-    poo('apitText called case is ')
-    poo(mack.vars.tagline)
-
     switch (cases) {
       case 0:
 
@@ -3261,8 +3262,8 @@ var mack = {
 
 
         } else {
+          
           str = mack.vars.tagline.tagline;
-
 
           if (str) {
             if (mack.vars.currentApiId == 5) {
@@ -3272,7 +3273,7 @@ var mack = {
                 str = str.replace("{value}", mack.vars.staticData[statName].value);
               }
             } else {
-              if (typeof str !== 'undefined') {
+              if (typeof str !== 'undefined' && typeof mack.vars.values !== 'undefined' && mack.vars.values.length) {
 
 
                 str = str.replace("{value}", mack.vars.values[0]);
@@ -3361,7 +3362,6 @@ var mack = {
 
             }
 
-
             setTimeout(function() {
 
 
@@ -3382,6 +3382,15 @@ var mack = {
         break;
     }
 
+    
+    str = mack.vars.tagline.tagline;
+    
+    if (str && mack.vars.tagline.value) {
+      str = str.replace("{value}", mack.vars.tagline.value);
+      mack.vars.tagline.tagline = str;
+
+    }
+    
     if (mack.vars.ran || mack.vars.big) {
       /*mack.canApi(mack.vars.logoIndex+1)*/
       if (mack.vars.isKosher) {
@@ -4209,7 +4218,7 @@ var mack = {
       LOG("+++ Twitter selected index: " + api1ID);
 
       var api2ID = FindValidAPIID(json02Files);
-      var nytimesJpegFilename = rootPath + "images/nytimes-" + api2ID + ".jpg";
+      var nytimesJpegFilename = rootPath + "images/nytimes-" + api2ID + ".png";
       LOG("+++ NYT selected index: " + api2ID);
 
       var api3ID = FindValidAPIID(json03Files);

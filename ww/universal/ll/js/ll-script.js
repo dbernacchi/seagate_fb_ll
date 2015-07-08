@@ -14,14 +14,8 @@ $(document).ready(function()
 {
   
   //this ensures the script is loaded before we proceed
-    if(typeof llScriptReady != 'undefined'){llScriptReady.resolve();}
-    //llScriptReady.resolve();
+  if(typeof llScriptReady != 'undefined'){llScriptReady.resolve();}
   
-  if(rcLocaleJSDirectory != 'facebook'){
- 
-    llBootstrap();
-    
-  }
   
 });
 
@@ -202,7 +196,13 @@ function llBootstrap(){
         e.preventDefault();
         LastFMCallFunc_WebGL();
       });
-
+      // Facebook
+      menuItem[6].addEventListener('click', function(e)
+      {
+        e.preventDefault();
+      
+        facebookLL.comBootstrap();
+      });
 
       // Getty
       menuItemB[0].addEventListener('click', function(e)
@@ -242,6 +242,13 @@ function llBootstrap(){
         e.preventDefault();
         LastFMCallFunc_WebGL();
       });
+      // Facebook
+      menuItemB[5].addEventListener('click', function(e)
+      {
+        e.preventDefault();
+    
+        facebookLL.comBootstrap();
+      });      
     }
   }
 
