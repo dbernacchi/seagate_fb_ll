@@ -485,16 +485,18 @@ var facebookLL = {};
         quality: 1
      });
     image = document.getElementById('facebook_img');
-    image.onload = function() {
-
+    image.onload = function() 
+    {
       //this is where we start the logo running in ll-script.js
-      if(rcLocaleJSDirectory != 'facebook'){
+      if(rcLocaleJSDirectory != 'facebook')
+      {
         $("#facebook_loading").hide();
         
         FacebookCallFunc_WebGL();
       } else {
         llBootstrap();
       }
+        hasSelectedFacebook = false;
     };
     image.src = dataUrl;
 

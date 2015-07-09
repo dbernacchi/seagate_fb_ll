@@ -11,6 +11,7 @@ var fullscreenButton = $("#fullscreen")
 var isFullscreen = false;
 var containerHeight = 500;
 
+var hasSelectedFacebook = false;
 var facebookActivated = false;
 
 // If facebook use full window dimension
@@ -385,16 +386,15 @@ var logoGetty = {
   , PathWidthMaxOffset: 0.0
   , texture: null
   , particleDivisor: 0
-          //        , offsetGlobalScale: 2
 
-  , particleSpeed: 0.7 //0.25
-  , particleGlobalSize: 0.81 //0.72 //0.75
-  , wave1StartTime: 2 //2.8 //0.0
-  , wave1EmitTime: 6 //4.0 //3.2
-  , wave2StartTime: 1.5 //1.9 //0.0 //2.4
-  , wave2EmitTime: 3.5 //4.8 //4.0 //4.0
+  , particleSpeed: 0.7
+  , particleGlobalSize: 0.81
+  , wave1StartTime: 2
+  , wave1EmitTime: 6
+  , wave2StartTime: 1.5
+  , wave2EmitTime: 3.5
 
-  , pathSlowness: 4.5
+  , pathSlowness: 6.5 //4.5
   , frontParticlesCount: 20
   , landscapeChance: 75
 
@@ -2203,7 +2203,7 @@ function Init()
     }
   }
   
-  ActivateAPI(idx);
+  ActivateAPI( idx );
 
   currentTime = 0.0;
   startTime = timeNow();
@@ -2248,15 +2248,17 @@ function ActivateAPI(index)
         LastFMCallFunc_WebGL();
         break;
       case 5:
+          console.log( "ActivateAPI: run getty" );
         GettyCallFunc_WebGL();
         break;
       case 6:
-        if(facebookActivated ){
+          console.log( "ActivateAPI: run facebook" );
+        //if(facebookActivated )
+        //{
           FacebookCallFunc_WebGL();
-        } else {
-          
-          GettyCallFunc_WebGL();
-        }
+        //} else {          
+          //GettyCallFunc_WebGL();
+        //}
         
         break;
       default:
@@ -2557,62 +2559,63 @@ function Update(time, frameTime)
 
 function Render()
 {
-  renderer.autoClear = false;
+    renderer.autoClear = false;
     //renderer.autoDepthClear = true;
 
-  if( rcLocaleJSDirectory == 'facebook' && isFullscreen )
-  {
-    renderer.render( bgScene, bgCamera, null, true );
-  }   
+    if( rcLocaleJSDirectory == 'facebook' && isFullscreen )
+    {
+        renderer.render( bgScene, bgCamera, null, true );
+    }   
 
-  renderer.render( scene, camera );
+    renderer.render( scene, camera );
 
-  if( rcLocaleJSDirectory != 'facebook' )
-  {
-    renderer.render( fgScene, fgCamera );
-  }   
+    if( rcLocaleJSDirectory != 'facebook' )
+    {
+        renderer.render( fgScene, fgCamera );
+    }   
 }
 
 
 var frameTime = 0.0;
 var prevTime = 0.0;
+var clockTime = 0.0;
 var lastClockTime = 0.0;
-var delta = 1 / 60.0; // 60fps
+var prevTime = 0.0;
 function MainLoop()
 {
+    requestAnimationFrame(MainLoop);
 
-  // poo('entering main loop')
-//      // timekeeping
-//        var now = timeNow();
-//        var time = now - startTime;
-//        prevTime = currentTime;
-//        currentTime = time;
-//        frameTime = currentTime - prevTime;
-  // Use timestep
-  var clockTime = timeNow() - startTime;
-  var delta = Math.min(1 / 60.0, clockTime - lastClockTime);
-  lastClockTime = currentTime;
-  currentTime += delta;
-  apiIdleTime += delta;
-  frameTime = delta;
+    // Use timestep
+    clockTime = timeNow() - startTime;
+    var timeDiff = clockTime - lastClockTime;
+    var delta = Math.min( 1 / 60.0, timeDiff );
+    lastClockTime = clockTime;
+    prevTime = currentTime;
+    currentTime += delta;
+    if( !hasSelectedFacebook )  // If facebook has been selected and is loading, do not count idle time
+        apiIdleTime += delta;
+    frameTime = delta;
 
-  mack.vars.logoIndex = 0;
-//        LOG( delta + " - " + currentTime );
+    mack.vars.logoIndex = 0;
 
-  requestAnimationFrame(MainLoop);
-
-  Update(currentTime, frameTime);
-  Render();
+    Update( currentTime, frameTime );
+    Render();
 
     // Auto switch apis
-    if( apiIdleTime > kAutoSwitchTime && rcLocaleJSDirectory != 'facebook' )
+    if( apiIdleTime > kAutoSwitchTime 
+        && rcLocaleJSDirectory != 'facebook' 
+        )
     {
         apiIdleTime = 0.0;
-        var idx = getLogoIndex( THREE.Math.randInt(0, APIGettyIndex) ); // Ignore facebook
-        
-        ActivateAPI(idx);
+        var idx = getLogoIndex( THREE.Math.randInt( 0, APIGettyIndex ) ); // Ignore facebook
+        while( idx == APIFacebookIndex )
+        {
+            idx = getLogoIndex( THREE.Math.randInt( 0, APIGettyIndex ) ); // Ignore facebook
+            //console.log( "autoswitch: " , idx );
+        }
+        ActivateAPI( idx );
     }
-
+    //console.log( "hasSelectedFacebook: " + hasSelectedFacebook );
 
   // // DEBUG: Update app statistics
   // if (kShowStats)

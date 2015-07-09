@@ -72,7 +72,7 @@ LL.APISceneGetty = function ()
     this.klangVolume = 0;
     this.klangEase = 10;
 
-    this.enableFrontParticles = false;
+    this.enableFrontParticles = true;
 
 };
 
@@ -409,7 +409,8 @@ LL.APISceneGetty.prototype =
 //        }
         this.cubePoolMesh.frustumCulled = false;
 
-        this.cubePoolMesh.position.set( 0, 0, this.logoDepthScale );
+        // 10 because this path is specific is 10 units higher than the general one
+        this.cubePoolMesh.position.set( 0, 10, this.logoDepthScale );
 
 
         //
@@ -534,6 +535,7 @@ LL.APISceneGetty.prototype =
         this.decl = decl_;
 
 	    this.playRestSample = true;
+        this.exitAnimationActive = false;
 
         // Twitter uses transparency
         if( this.decl.index == 1 )
@@ -714,7 +716,8 @@ LL.APISceneGetty.prototype =
     //
 
     // Portrait Aspect Ratio
-    var aspectRatio = 16 / 9; //GettyTileSize.y / GettyTileSize.x;
+    //var aspectRatio = 1;
+    var aspectRatio = 16.0 / 9.0;
 
     var rndUniformScale = THREE.Math.randFloat( this.decl.MeshMinUniScale, this.decl.MeshMaxUniScale );
 
@@ -1493,7 +1496,7 @@ LL.APISceneGetty.prototype =
     if( !this.isActive )
         return;
 
-    this.exitAnimationActive = false;
+    //this.exitAnimationActive = false;
 
     if( this.innerTime > 10.0 //effectController_.pathSlowness+this.decl.wave2StartTime+this.decl.wave2EmitTime
         && !this.exitAnimationActive )
@@ -1539,7 +1542,8 @@ LL.APISceneGetty.prototype =
     // Hover logo a little bit.
     if( rcLocaleJSDirectory != 'facebook' ) 
     {
-        this.cubePoolMesh.position.y = Math.sin( ToRadians(this.innerTime*50) ) * 3.0;
+        // 10 because this path is specific is 10 units higher than the general one
+        this.cubePoolMesh.position.y = 10 + Math.sin( ToRadians(this.innerTime*50) ) * 3.0;
     }
 
 
@@ -1618,10 +1622,13 @@ LL.APISceneGetty.prototype =
             var ddd = this.frontCubeMeshesPos[i].clone();
             //ddd = ddd.add( this.frontCubeMeshesVel[i] );
 
-            var ss = gt * frameTime * 7;
+            var ss = gt * 7 * 0.016;
             ss = Saturate( ss );
             ss = 1.0 - (ss*ss*ss*ss*ss*ss*ss);
             var sss = ss;
+
+            // 10 because this path is specific is 10 units higher than the general one
+            gettyTestPart.position.y += 10;
 
 
             // HACK to cut on the length the particles travel left side on the screen

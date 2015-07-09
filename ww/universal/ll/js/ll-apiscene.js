@@ -403,6 +403,7 @@ LL.APIScene.prototype =
         this.decl = decl_;
 
         this.playRestSample = true;
+        this.exitAnimationActive = false;
 
         // Twitter uses transparency
         if( this.decl.index == 1 )
@@ -1467,7 +1468,7 @@ LL.APIScene.prototype =
     if( !this.isActive )
         return;
 
-    this.exitAnimationActive = false;
+    //this.exitAnimationActive = false;
 
     if( this.innerTime > 10.0 //effectController_.pathSlowness+this.decl.wave2StartTime+this.decl.wave2EmitTime
         && !this.exitAnimationActive )
