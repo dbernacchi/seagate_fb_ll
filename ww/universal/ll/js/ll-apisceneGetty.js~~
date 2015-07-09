@@ -1,20 +1,27 @@
-var LL = {};
+//var LL = {}; // Defined in ll-apiscene.js
 
-LL.APIScene = function ()
+LL.APISceneGetty = function ()
 {
     this.name = "";
 
     this.decl = null;
 
-    this.numFrontParticles = 60 * 2.0;  //kNumFrontParticles;
+    this.frontCubeMeshesPos = [];
+    //this.frontCubeMeshesVel = [];
+    this.frontCubeMeshesScale = [];
+    this.frontCubeMeshesTimeScale = [];
+    this.frontCubeMeshesTimeOffset = [];
+
+    this.frontCubeMeshes = [];
+    this.frontCubeGeom = null;
+    this.frontCubeUniforms = null;
+    this.frontCubeTexSections = [];
+
+    this.numFrontParticles = 60;
 
     this.exitAnimationActive = false;
     this.isActive = true;
     this.triggerTime = 0.0;
-
-    this.playRestSample = true;
-
-    this.logoDepthScale = 1.0 / 20.0;
 
     this.innerTime = 0.0;
 
@@ -63,9 +70,9 @@ LL.APIScene = function ()
 
 };
 
-LL.APIScene.prototype =
+LL.APISceneGetty.prototype =
 {
-    constructor: LL.APIScene
+    constructor: LL.APISceneGetty
 
     , Init: function( decl_, width_, height_, renderer_, scene_, camera_, pathDataTexture, effectController_, hasLinearFilteringAvailable )
     {
@@ -78,8 +85,7 @@ LL.APIScene.prototype =
         switch( this.decl.index )
         {
             case 0:
-            case 6:
-                this.numFrontParticles = 60 * 8.0;
+                this.numFrontParticles = 60 * 2.0;
                 break;
             case 1:
                 this.numFrontParticles = 60 * 4.0;
@@ -108,6 +114,118 @@ LL.APIScene.prototype =
         this.pathOffsetTex = new THREE.Texture();
         this.pathAttrib1Tex = new THREE.Texture();
 
+
+
+        //
+        // Front Particles V2.0
+        //
+
+        this.frontCubeGeom = new THREE.BoxGeometry( 10, 10, 0.001 );
+
+
+        var ux = THREE.Math.randInt( 0, kNumTextures.x-1 );
+        var uy = THREE.Math.randInt( 0, kNumTextures.x-1 );
+
+        var numParts = this.decl.frontParticlesCount;
+        for( var i=0; i<numParts; i++ )
+        {
+            var per = i / (numParts-1);
+
+            // Gen TexSectionOffset
+            var tsX = ux++;
+            var tsY = uy++;
+            tsX = tsX % (kNumTextures.x-1);
+            tsY = tsY % (kNumTextures.y-1);
+
+            //var tsX = THREE.Math.randInt( 0, kNumTextures.x-1 );
+            //var tsY = THREE.Math.randInt( 0, kNumTextures.y-1 );
+            var ts = new THREE.Vector4();
+            ts.x = kTextureSectionSize.x / (kTextureSize.x);
+            ts.y = kTextureSectionSize.y / (kTextureSize.y);
+            ts.z = tsX / kNumTextures.x;
+            ts.w = tsY / kNumTextures.y;
+
+
+            // Handle different Ratios
+            //
+//            var uvoff = new THREE.Vector2( 0, 0 );
+
+            var whichOne = THREE.Math.randInt( 0, 100 );
+            // Landscape
+            if( whichOne < this.decl.landscapeChance )
+            {
+                var uIdx = THREE.Math.randInt( 0, LandscapeTileCount.x-1 );
+                var vIdx = THREE.Math.randInt( 0, LandscapeTileCount.y-1 );
+
+                uIdx *= GettyTileSize.y; //
+                vIdx *= GettyTileSize.x; // Reversed xy as this is Landscape
+
+                uIdx /= GettyImageSize.x;
+                vIdx /= GettyImageSize.y * 0.5;  // divide by 2 as Landscape tiles are only 50% of the texture's height
+
+                ts.x = uIdx;
+                ts.y = (0.5 + vIdx * 0.5);  // starts at half height
+                ts.z = GettyTileSize.y / GettyImageSize.x; //
+                ts.w = GettyTileSize.x / GettyImageSize.y; // Reversed xy for Landscape
+//                console.log( ts.x + ", " + ts.y + ", " + ts.z + ", " + ts.w );
+            }
+            // Portrait
+            else
+            {
+                var uIdx = THREE.Math.randInt( 0, PortraitTileCount.x-1 );
+                var vIdx = THREE.Math.randInt( 0, PortraitTileCount.y-1 );
+
+                uIdx *= GettyTileSize.x;
+                vIdx *= GettyTileSize.y;
+
+                uIdx /= GettyImageSize.x;
+                vIdx /= GettyImageSize.y * 0.5;  // divide by 2 as Portrait tiles are only 50% of the texture's height
+
+                ts.x = uIdx;
+                ts.y = (vIdx * 0.5);  // starts at top
+                ts.z = GettyTileSize.x / GettyImageSize.x; //
+                ts.w = GettyTileSize.y / GettyImageSize.y; // Reversed xy for Landscape
+//                console.log( ts.x + ", " + ts.y + ", " + ts.z + ", " + ts.w );
+            }
+
+
+            var mat = new THREE.ShaderMaterial(
+            {
+                uniforms:
+                {
+                    DiffuseMap: { type: "t", value: this.decl.texture }
+                    , TexSectionOffset: { type: "v4", value: ts }
+                }
+                , vertexShader: staticData[ "GettyVertexShader" ]
+                , fragmentShader: staticData[ "GettyFragmentShader" ]
+            } );
+
+            this.frontCubeMeshes.push( new THREE.Mesh( this.frontCubeGeom, mat ) );
+
+            //var col = new THREE.Color( 1, 1, 1 ); //THREE.Math.randFloat(0, 1), THREE.Math.randFloat(0, 1), THREE.Math.randFloat(0, 1) );
+            //this.frontCubeMeshes.push( new THREE.Mesh( this.frontCubeGeom, new THREE.MeshBasicMaterial( {color: col, map: staticData["instagram"] } ) ) );
+
+            var xx = per*-5; //THREE.Math.randFloat( -5, 5 );
+            var yy = THREE.Math.randFloat( -10, 5 );
+            var zz = Math.sin( per * 2 * Math.PI * 4 ) * 7; //THREE.Math.randFloat( -15, 10 );
+            this.frontCubeMeshesPos.push( new THREE.Vector3( xx, yy, zz ) ); //LerpPath2( 0.0 ) );
+            //this.frontCubeMeshesVel.push( new THREE.Vector3() );
+
+            this.frontCubeMeshesScale.push( Math.abs(zz)*0.2 ); //THREE.Math.randFloat( 0.5, 2 ) );
+
+            this.frontCubeMeshesTimeOffset.push( Lerp( -2.25, 0.5, per ) ); //THREE.Math.randFloat( -4, 1 ) );
+            this.frontCubeMeshesTimeScale.push( THREE.Math.randFloat( 2, 3 ) );
+
+            //var tsX = THREE.Math.randInt( 0, kNumTextures.x-1 );
+            //var tsY = THREE.Math.randInt( 0, kNumTextures.y-1 );
+            //this.frontCubeTexSections.push( new THREE.Vector2( tsX, tsY ) );
+        }
+
+
+
+        //
+        //
+        //
 
         var numCubes = width_ * height_;
         this.cubePoolGeometry = new THREE.BufferGeometry();
@@ -154,13 +272,12 @@ LL.APIScene.prototype =
             PathSampler: { type: "t", value: pathDataTexture }
             , PathOffsetSampler: { type: "t", value: this.pathOffsetTex }
             , CubeAttrib1Map: { type: "t", value: this.pathAttrib1Tex }
-            , TexSection: { type: "v2", value: new THREE.Vector2() }
+            , TexSection: { type: "v2", value: null } // Set after
             , Dim: { type: "v2", value: new THREE.Vector2( width_, height_ ) }
             , WidthInv: { type: "f", value: 1.0/kPathDimX }
             , HeightInv: { type: "f", value: 1.0/kPathDimY }
-            , PathScale: { type: "f", value: 1.0/(kPathDimX) }
+            , PathScale: { type: "f", value: 1.0/(kPathDimX * 2) }
             , MeshScale: { type: "f", value: 1.0 }
-            , LogoDepthScale: { type: "f", value: 0.02 }
             , ViewPosition: { type: "v3", value: camera_.position }
             , LightPosition: { type: "v4", value: new THREE.Vector4( -300, -30, 600, 1.0 ) }
             , LightColor: { type: "v3", value: new THREE.Vector3( 1, 1, 1 ) }
@@ -174,7 +291,7 @@ LL.APIScene.prototype =
         };
 
 
-        //
+    //
         // Material
         //
 
@@ -183,23 +300,16 @@ LL.APIScene.prototype =
         var pathSimVertexShaderSource = "";
         var pathSimFragmentShaderSource = "";
 
-        // // If StdDerivatives, use them for normal computation
-        // if( renderer_.supportsStandardDerivatives() )
-        // {
-        //     pathDeformVertexShaderSource += "#define DO_STD_DERIVATIVES\n";
-        //     pathDeformFragmentShaderSource += "#define DO_STD_DERIVATIVES\n";
-        // }
+        // If StdDerivatives, use them for normal computation
+        if( renderer_.supportsStandardDerivatives() )
+        {
+            pathDeformVertexShaderSource += "#define DO_STD_DERIVATIVES\n";
+            pathDeformFragmentShaderSource += "#define DO_STD_DERIVATIVES\n";
+        }
 
         // Check for API specific defines
         switch( this.decl.index )
         {
-            case 6:
-                pathDeformVertexShaderSource += "#define FACEBOOK_API\n";
-                pathDeformFragmentShaderSource += "#define FACEBOOK_API\n";
-                pathDeformVertexShaderSource += "#define INSTAGRAM_API\n";
-                pathDeformFragmentShaderSource += "#define INSTAGRAM_API\n";
-                pathSimFragmentShaderSource += "#define INSTAGRAM_API\n";
-                break;
             case 0:
                 pathDeformVertexShaderSource += "#define INSTAGRAM_API\n";
                 pathDeformFragmentShaderSource += "#define INSTAGRAM_API\n";
@@ -236,10 +346,10 @@ LL.APIScene.prototype =
         }
 
         // Vertex shader
-        pathDeformVertexShaderSource += staticData[ "PathDeformVertexShader" ];
+        pathDeformVertexShaderSource += staticData[ "PathDeformVertexShader_Getty" ];
 
         // Fragment shader
-        pathDeformFragmentShaderSource += staticData[ "PathDeformFragmentShader" ];
+        pathDeformFragmentShaderSource += staticData[ "PathDeformFragmentShader_Getty" ];
 
         this.cubePoolPathMaterialsAttributes =
         {
@@ -279,7 +389,7 @@ LL.APIScene.prototype =
 
 
 
-    this.cubePoolMesh = new THREE.Mesh( this.cubePoolGeometry, this.cubePoolPathMaterial );
+        this.cubePoolMesh = new THREE.Mesh( this.cubePoolGeometry, this.cubePoolPathMaterial );
 //        if( browserName != "IE 11" ) // IE11 doesn't support gl_FrontFacing
 //        {
             this.cubePoolMesh.doubleSided = true;
@@ -290,7 +400,7 @@ LL.APIScene.prototype =
 //        }
         this.cubePoolMesh.frustumCulled = false;
 
-        this.cubePoolMesh.position.set( 0, 0, this.logoDepthScale );
+        this.cubePoolMesh.position.set( 0, 0, 0 );
 
 
         //
@@ -301,11 +411,11 @@ LL.APIScene.prototype =
         var pathSimFragmentLoopEndShaderSource = pathSimFragmentShaderSource;
 
         pathSimFragmentBeginShaderSource += "#define BEGIN_ANIM_ENABLED";
-        pathSimFragmentBeginShaderSource += staticData[ "PathSimFragmentShader" ];
-        pathSimFragmentLoopEndShaderSource += staticData[ "PathSimFragmentShader" ];
+        pathSimFragmentBeginShaderSource += staticData[ "PathSimFragmentShader_Getty" ];
+        pathSimFragmentLoopEndShaderSource += staticData[ "PathSimFragmentShader_Getty" ];
 
-        pathSimVertexShaderSource += staticData[ "PathSimVertexShader" ];
-        pathSimFragmentShaderSource += staticData[ "PathSimFragmentShader" ];
+        pathSimVertexShaderSource += staticData[ "PathSimVertexShader_Getty" ];
+        pathSimFragmentShaderSource += staticData[ "PathSimFragmentShader_Getty" ];
 
         this.pathSimShaderBegin = new THREE.ShaderMaterial(
         {
@@ -315,8 +425,8 @@ LL.APIScene.prototype =
                 , Map: { type: "t", value: this.pathOffsetBeginTex }
                 , CubeAttrib1Map: { type: "t", value: this.pathAttrib1Tex }
                 , ParticleSpeed: { type: "f", value: this.decl.particleSpeed }
-                , PathSpeed: { type: "f", value: effectController_.pathSlowness }
-                , OneOverPathSpeed: { type: "f", value: 1.0/effectController_.pathSlowness }
+                , PathSpeed: { type: "f", value: this.decl.pathSlowness }
+                , OneOverPathSpeed: { type: "f", value: 1.0/this.decl.pathSlowness }
                 , TimeStep: { type: "f", value: 1.0/60.0 }
                 , Time: { type: "f", value: 0.0 }
                 , LoopEndTime: { type: "f", value: 60000.0 }
@@ -334,8 +444,8 @@ LL.APIScene.prototype =
                 , Map: { type: "t", value: this.pathOffsetBeginTex }
                 , CubeAttrib1Map: { type: "t", value: this.pathAttrib1Tex }
                 , ParticleSpeed: { type: "f", value: this.decl.particleSpeed }
-                , PathSpeed: { type: "f", value: effectController_.pathSlowness }
-                , OneOverPathSpeed: { type: "f", value: 1.0/effectController_.pathSlowness }
+                , PathSpeed: { type: "f", value: this.decl.pathSlowness }
+                , OneOverPathSpeed: { type: "f", value: 1.0/this.decl.pathSlowness }
                 , TimeStep: { type: "f", value: 1.0/60.0 }
                 , Time: { type: "f", value: 0.0 }
                 , LoopEndTime: { type: "f", value: 60000.0 }
@@ -387,13 +497,18 @@ LL.APIScene.prototype =
 
     , AddToScene: function( scene_ )
     {
+        for( var i=0; i<this.frontCubeMeshes.length; i++ )
+            scene_.add( this.frontCubeMeshes[i] );
         scene_.add( this.cubePoolMesh );
     }
 
     , RemoveFromScene: function( scene_ )
     {
+        for( var i=0; i<this.frontCubeMeshes.length; i++ )
+            scene_.remove( this.frontCubeMeshes[i] );
         scene_.remove( this.cubePoolMesh );
     }
+
 
     // We change APIs using this function. It restarts the animation
     , Enable: function( decl_ )
@@ -402,8 +517,6 @@ LL.APIScene.prototype =
 
         this.decl = decl_;
 
-        this.playRestSample = true;
-        this.exitAnimationActive = false;
 
         // Twitter uses transparency
         if( this.decl.index == 1 )
@@ -437,22 +550,8 @@ LL.APIScene.prototype =
         }
 
 
-        // Facebook has different uv mapping
-        if( this.decl.index == 6 )
-        {
-            var ts = new THREE.Vector2( 0, 0 );
-            ts.x = this.decl.tileWidthPortrait / this.decl.texWidth;
-            ts.y = this.decl.tileHeightPortrait / this.decl.texHeight;
-            this.cubePoolPathUniforms.TexSection.value = ts;
-        }
-        else
-        {
-            var ts = new THREE.Vector2( 0, 0 );
-            ts.x = this.decl.tileWidth / this.decl.texWidth;
-            ts.y = this.decl.tileHeight / this.decl.texHeight;
-            this.cubePoolPathUniforms.TexSection.value = ts;
-        }
-        /*if( this.decl.index == 1 )
+        // Twitter has different geometry data
+        if( this.decl.index == 1 )
         {
             var ts = new THREE.Vector2(0, 0);
             ts.x = kTwitterTextureSectionSize.x / kTextureSize.x;
@@ -477,10 +576,9 @@ LL.APIScene.prototype =
             ts.y = kTextureSectionSize.y / kTextureSize.y;
             this.cubePoolPathUniforms.TexSection.value = ts;
             this.cubePoolPathUniforms.AlphaIntensity.value = 1.0;
-        }*/
-
-        this.cubePoolPathUniforms.Wave1ScaleAndOffset.value.set( 6.0, 0.0 );
-        this.cubePoolPathUniforms.AlphaIntensity.value = 1.0;
+            this.cubePoolPathUniforms.Wave1ScaleAndOffset.value.set( 6.0, 0.0 );
+            //console.log( ts.x + ", " + ts.y );
+        }
         this.cubePoolPathUniforms.Dim.value.set( this.width, this.height );
         this.cubePoolPathUniforms.Time.value = 0.0;
         this.cubePoolPathUniforms.DiffuseMap.value = this.decl.texture;
@@ -566,7 +664,6 @@ LL.APIScene.prototype =
     switch( this.decl.index )
     {
         case 0:
-        case 6:
             color = colWhite;
             break;
 
@@ -598,48 +695,33 @@ LL.APIScene.prototype =
     //
     // SCALE
     //
+
+    var aspectRatio = 1; //window.innerWidth / kContainerHeight;
+    // Portrait Aspect Ratio
+    var aspectRatio = 16 / 9; //GettyTileSize.y / GettyTileSize.x;
+
     var rndUniformScale = THREE.Math.randFloat( this.decl.MeshMinUniScale, this.decl.MeshMaxUniScale );
 
-    var rndScaleX = THREE.Math.randFloat( this.decl.MeshMinScaleX, this.decl.MeshMaxScaleX );
-    var rndScaleY = THREE.Math.randFloat( this.decl.MeshMinScaleY, this.decl.MeshMaxScaleY );
-    var rndScaleZ = THREE.Math.randFloat( this.decl.MeshMinScaleZ, this.decl.MeshMaxScaleZ );
-
-//    // NYT trick to have 2 types of shapes
-//    if( this.decl.index == 2 && THREE.Math.randInt(0, 100) > 90 )
-//    {
-//        rndScaleX = THREE.Math.randFloat( 0.1, 3 );
-//        rndScaleY = THREE.Math.randFloat( 0.1, 2 );
-//        rndScaleZ = THREE.Math.randFloat( 0.1, 4 );
-//    }
-
-
-    // Facebook
-    // Portrait Aspect Ratio
-    //var aspectRatio = 1;
-    var aspectRatio = 16.0 / 9.0;
-    if( this.decl.index == 6 )
+    //LOG( texcoordY );
+    if( texcoordY >= 0.5 )
     {
-        if( texcoordY >= 0.5 )
-        {
-            // Landscape
-            var scaler = THREE.Math.randFloat( this.decl.MeshMinScaleX, this.decl.MeshMaxScaleX );
-            //rndScaleX = scaler * aspectRatio;
-            //rndScaleY = scaler;
-            rndScaleX = scaler;
-            rndScaleY = scaler;
-        }
-        else
-        {
-            // Portrait
-            // X=Y has the landscape ratio included so we need to divide not by 2 but by 4 to get proper portrait ratio
-            var scaler = THREE.Math.randFloat( this.decl.MeshMinScaleX, this.decl.MeshMaxScaleX );
-            //rndScaleX = scaler;
-            //rndScaleY = scaler * aspectRatio;
-            rndScaleX = scaler / aspectRatio;
-            rndScaleY = scaler * aspectRatio * 1;
-        }
+        // Landscape
+        var scaler = THREE.Math.randFloat( this.decl.MeshMinScaleX, this.decl.MeshMaxScaleX );
+        var rndScaleX = scaler * aspectRatio;
+        var rndScaleY = scaler;
+//        if( this.decl.index == 0 )
+//            LOG( "Scale: Landscape" );
     }
-
+    else
+    {
+        // Portrait
+        // X=Y has the landscape ratio included so we need to divide not by 2 but by 4 to get proper portrait ratio
+        var scaler = THREE.Math.randFloat( this.decl.MeshMinScaleX, this.decl.MeshMaxScaleX );
+        var rndScaleX = scaler;
+        var rndScaleY = scaler * aspectRatio;
+        //LOG( "Scale: Portrait" );
+    }
+    var rndScaleZ = THREE.Math.randFloat( this.decl.MeshMinScaleZ, this.decl.MeshMaxScaleZ );
 
     // Scale particles globally
     rndUniformScale *= this.decl.particleGlobalSize; // * effectController.particleGlobalSize;
@@ -656,48 +738,26 @@ LL.APIScene.prototype =
 
         switch( this.decl.index )
         {
-            // Facebook
-            case 6:
-                if( texcoordY >= 0.5 )
+            case 0:
+                if( texcoordY > 0.5 )
                 {
                     // Landscape
                     var scaler = THREE.Math.randFloat( 0.1, 2.0 );
-                    //rndScaleX = scaler * aspectRatio;
-                    //rndScaleY = scaler;
-                    rndScaleX = scaler;
+                    rndScaleX = scaler * aspectRatio;
                     rndScaleY = scaler;
+                    //LOG( "Scale: Landscape 2" );
                 }
                 else
                 {
                     // Portrait
                     // X=Y has the landscape ratio included so we need to divide not by 2 but by 4 to get proper portrait ratio
                     var scaler = THREE.Math.randFloat( 0.1, 2.0 );
-                    //rndScaleX = scaler;
-                    //rndScaleY = scaler * aspectRatio;
-                    rndScaleX = scaler / aspectRatio;
-                    rndScaleY = scaler * aspectRatio * 1;
+                    rndScaleX = scaler;
+                    rndScaleY = scaler * aspectRatio;
                 }
 
                 rndScaleZ = 0.001; //THREE.Math.randFloat( 0.001, 0.01 ); //THREE.Math.randFloat( 0.5, 1.0 );
                 break;
-
-            case 0:
-                // if( first 3 particles )
-                //if( cubeIndex < 3 )
-//                {
-                    rndScaleX = 3.0 - THREE.Math.randFloat( 0.1, 3.0 );
-                    rndScaleY = rndScaleX * 1.1;//THREE.Math.randFloat( 0.1, 4.0 );
-//                    rndScaleX = 2.0 * 1.5;
-//                    rndScaleY = 3.0 * 1.5;
-//                }
-//                else
-//                {
-//                    rndScaleX = 0.75 * 2;
-//                    rndScaleY = 1.0 * 2;
-//                }
-                rndScaleZ = THREE.Math.randFloat( 0.01, 0.1 ); //THREE.Math.randFloat( 0.5, 1.0 );
-                break;
-
             case 1:
                 rndScaleX = THREE.Math.randFloat( 1, 2 );
                 rndScaleY = 1;//THREE.Math.randFloat( 1, 1 );
@@ -705,13 +765,11 @@ LL.APIScene.prototype =
                 //rndScaleY = rndScaleX;
                 //rndScaleZ = THREE.Math.randFloat( 0.1, 0.2 );
                 break;
-
             case 2:
                 rndScaleX = THREE.Math.randFloat( 1, 2 );
                 rndScaleY = rndScaleX * 0.5; //rndScaleX*2.0;
                 rndScaleZ = 0.01; //THREE.Math.randFloat( 0.2, 0.5 );
                 break;
-
             case 3:
                 if( cubeIndex < this.numFrontParticles/5 )
                 {
@@ -731,7 +789,6 @@ LL.APIScene.prototype =
                 rndScaleY = rndScaleX * 1.5;
                 rndScaleZ = THREE.Math.randFloat( 0.2, 0.5 ); //THREE.Math.randFloat( 0.1, 0.25 );
                 break;
-
             case 4:
                 // if( first 3 particles )
                 if( cubeIndex < 3 )
@@ -746,7 +803,6 @@ LL.APIScene.prototype =
                 }
                 rndScaleZ = THREE.Math.randFloat( 0.02, 0.05 );
                 break;
-
             default:
                 LOG( "--- Something is wrong with ComputeCubeAttributes scaling" );
                 //rndScaleZ = THREE.Math.randFloat( 0.12, 0.25 );
@@ -761,17 +817,25 @@ LL.APIScene.prototype =
     var offsetDir = new THREE.Vector3();
     switch( this.decl.index )
     {
-        case 6:
-            offsetDir.x = THREE.Math.randFloat( -1, 1 );
-            offsetDir.y = THREE.Math.randFloat( -1, 1 );
-            offsetDir.z = THREE.Math.randFloat( -4, 4 );
-            break;
         case 0:
-            offsetDir.x = THREE.Math.randFloat( -5, 5 );
-            offsetDir.y = THREE.Math.randFloat( -3, 3 );
-            offsetDir.z = THREE.Math.randFloat( -5, 5 );
+            offsetDir.x = 0; //THREE.Math.randFloat( -5, 5 );
+            offsetDir.y = THREE.Math.randFloat( -5, 1 );
+            offsetDir.z = THREE.Math.randFloat( 0, 120.0 ); //THREE.Math.randFloat( -5, 5 );
+            //offsetDir.z = Math.sin( offsetDir.y ) * 2;
             if( cubeIndex < this.numFrontParticles )
-                offsetDir.z = THREE.Math.randFloat( -5, 15 );
+            {
+                offsetDir.x = 0; //THREE.Math.randFloat( -0, 0 );
+                offsetDir.y = THREE.Math.randFloat( -5, 5 );
+                offsetDir.z = THREE.Math.randFloat( -1, 0 );
+            }
+/*
+ offsetDir.x = THREE.Math.randFloat( -5, 5 );
+ offsetDir.y = THREE.Math.randFloat( -3, 3 );
+ offsetDir.z = THREE.Math.randFloat( -5, 5 );
+ if( cubeIndex < this.numFrontParticles )
+ offsetDir.z = THREE.Math.randFloat( -5, 15 );
+
+ */
             break;
 
         case 1:
@@ -886,21 +950,20 @@ LL.APIScene.prototype =
 
         var doRotate = 0.0; // Per particle rotation flag
 
-        // Facebook
-        if( this.decl.index == 6 )
-        {
-            var whichOne = THREE.Math.randInt( 0, 100 );
+            // LANDSCAPE OR PORTRAIT ?
+
+            var whichOne = 0; //THREE.Math.randInt( 0, 100 );
             // Landscape
             if( whichOne < this.decl.landscapeChance )
             {
-                var uIdx = THREE.Math.randInt( 0, this.decl.numTilesXLandscape-1 );
-                var vIdx = THREE.Math.randInt( 0, this.decl.numTilesYLandscape-1 );
+                var uIdx = THREE.Math.randInt( 0, LandscapeTileCount.x-1 );
+                var vIdx = THREE.Math.randInt( 0, LandscapeTileCount.y-1 );
 
-                uIdx *= this.decl.tileWidthLandscape;
-                vIdx *= this.decl.tileHeightLandscape;
+                uIdx *= GettyTileSize.y; //
+                vIdx *= GettyTileSize.x; // Reversed xy as this is Landscape
 
-                uIdx /= this.decl.texWidth;
-                vIdx /= this.decl.texHeight * 0.5;  // divide by 2 as Landscape tiles are only 50% of the texture's height
+                uIdx /= GettyImageSize.x;
+                vIdx /= GettyImageSize.y * 0.5;  // divide by 2 as Landscape tiles are only 50% of the texture's height
 
                 uvoff.x = uIdx;
                 uvoff.y = (0.5 + vIdx * 0.5);  // starts at half height
@@ -909,47 +972,19 @@ LL.APIScene.prototype =
             // Portrait
             else
             {
-                var uIdx = THREE.Math.randInt( 0, this.decl.numTilesXPortrait-1 );
-                var vIdx = THREE.Math.randInt( 0, this.decl.numTilesYPortrait-1 );
+                var uIdx = THREE.Math.randInt( 0, PortraitTileCount.x-1 );
+                var vIdx = THREE.Math.randInt( 0, PortraitTileCount.y-1 );
 
-                uIdx *= this.decl.tileWidthPortrait;
-                vIdx *= this.decl.tileHeightPortrait;
+                uIdx *= GettyTileSize.x;
+                vIdx *= GettyTileSize.y;
 
-                uIdx /= this.decl.texWidth;
-                vIdx /= this.decl.texHeight * 0.5;  // divide by 2 as Portrait tiles are only 50% of the texture's height
+                uIdx /= GettyImageSize.x;
+                vIdx /= GettyImageSize.y * 0.5;  // divide by 2 as Portrait tiles are only 50% of the texture's height
 
                 uvoff.x = uIdx;
                 uvoff.y = (vIdx * 0.5);  // starts at top
 //                console.log( ts.x + ", " + ts.y + ", " + ts.z + ", " + ts.w );
             }
-        }
-        // The rest
-        else
-        {
-            var uIdx = THREE.Math.randInt( 0, this.decl.numTilesX-1 )
-            var vIdx = THREE.Math.randInt( 0, this.decl.numTilesY-1 );
-                
-            uIdx *= this.decl.tileWidth;
-            vIdx *= this.decl.tileHeight;
-                
-            uIdx /= this.decl.texWidth;
-            vIdx /= this.decl.texHeight;
-                
-            uvoff.x = uIdx;
-            uvoff.y = vIdx;
-        }
-
-        // if NYT
-        /*if( this.decl.index == 2 )
-        {
-            uvoff.x = (THREE.Math.randInt( 0, kNumNYTTextures.x-1 ) * kNYTTextureSectionSize.x) / kTextureSize.x;
-            uvoff.y = (THREE.Math.randInt( 0, kNumNYTTextures.y-1 ) * kNYTTextureSectionSize.y) / kTextureSize.y;
-        }
-        else
-        {
-            uvoff.x = (THREE.Math.randInt( 0, kNumTextures.x-1 ) * kTextureSectionSize.x) / kTextureSize.x;
-            uvoff.y = (THREE.Math.randInt( 0, kNumTextures.y-1 ) * kTextureSectionSize.y) / kTextureSize.y;
-        }*/
 
         //
         // Handle particle rotations
@@ -958,10 +993,6 @@ LL.APIScene.prototype =
             doRotate = 1.0;
 
         if( this.decl.index == 0 && isWave1 )
-            doRotate = 1.0;
-
-        // Facebook
-        if( this.decl.index == 6 && isWave1 )
             doRotate = 1.0;
 
         if( this.decl.index == 3 && isWave1 )
@@ -977,9 +1008,8 @@ LL.APIScene.prototype =
         var randYOffset = 0.0;
         var randZOffset = 0.0;
 
-        // Instagram/LastFM/Facebook Z offset (to give depth when in the logo)
+        // LastFM fixed Z offset (to give depth when in the logo)
         if( this.decl.index == 0
-            || this.decl.index == 6 // Facebook
             || this.decl.index == 4
             )
         {
@@ -1005,10 +1035,10 @@ LL.APIScene.prototype =
                 randZOffset = THREE.Math.randFloat( -1, 1 );
         }
 
+        color.set( uvoff.x, uvoff.y, posAlongPath );
+
         // Compute values for custom attributes. Returns into parameters
         this.ComputeCubeAttributes( ci, uvoff.y, partOffsetDir, partScale, partColorAndIndex, doRotate );
-
-        color.set( uvoff.x, uvoff.y, posAlongPath );
 
         for( var kk=0; kk<36; kk++ )
         {
@@ -1083,10 +1113,10 @@ LL.APIScene.prototype =
             uvoff.y = (THREE.Math.randInt( 2, kNumTwitterTextures.y-2 ) * kTwitterTextureSectionSize.y) / kTextureSize.y;
         }
 
+        color.set( uvoff.x, uvoff.y, posAlongPath );
+
         // Compute values for custom attributes. Returns into parameters
         this.ComputeCubeAttributes( ci, uvoff.y, partOffsetDir, partScale, partColorAndIndex, 0.0 );
-
-        color.set( uvoff.x, uvoff.y, posAlongPath );
 
         for( var kk=0; kk<36; kk++ )
         {
@@ -1205,6 +1235,7 @@ LL.APIScene.prototype =
             if( isWave1 )
             {
                 partOffsetDistance = 31.0;
+                partBeginT = 0;
             }
             else
             {
@@ -1212,15 +1243,15 @@ LL.APIScene.prototype =
 
                 particleSpeed += THREE.Math.randFloat( 0.0, 4.0 ) * frontPartsSpeedReduce;
 
-                if( this.decl.index == 0
-                    || this.decl.index == 6 )
+                if( this.decl.index == 0 )
                 {
                     partBeginT = 0.0;
 
                     // MOST particles begin inside the logo shape
                     if( idx00 > (w*hh)/32 )
                     {
-                        partBeginT = THREE.Math.randFloat( logoBeginT*0.2, logoBeginT );
+                        partBeginT = THREE.Math.randFloat( -0.2, logoBeginT*0.25 );
+                        //partBeginT = THREE.Math.randFloat( logoBeginT*0.2, logoBeginT );
                         //partBeginT = THREE.Math.randFloat( logoBeginT*0.25, logoBeginT );
                         rnd = THREE.Math.randFloat( logoBeginT, logoEndT );
 
@@ -1345,7 +1376,7 @@ LL.APIScene.prototype =
 //                    triggerTime = THREE.Math.randFloat( this.decl.wave2StartTime, this.decl.wave2EmitTime );
 //                }
 
-                if( !isWave1 )
+                if( !isWave1 ) //idx00 > this.numFrontParticles )
                 {
                     partBeginT = 0;
                     partOffsetDistance = THREE.Math.randFloat( 11, 50 );
@@ -1390,38 +1421,6 @@ LL.APIScene.prototype =
             }
 
 
-            // FACEBOOK
-            if( this.decl.index == 6 )
-            {
-                partBeginT = 0; //isWave1 ? 0.0 : THREE.Math.randFloat( 0.0, 0.0 );
-
-                if( isWave1 )
-                {
-                    partOffsetDistance = 30.0;
-                    frontPartsSpeedReduce = 0.035;
-                }
-                else
-                {
-                    partOffsetDistance = 30.0;
-
-                    if( idx00 > (w*hh)/32 ) // for most particles begin inside the logo shape
-                    {
-                        partBeginT = THREE.Math.randFloat( 0.0, logoBeginT*0.15 );
-                        rnd = THREE.Math.randFloat( logoBeginT, logoEndT );
-
-                        triggerTime = this.decl.wave2StartTime + THREE.Math.randFloat( 0.0, this.decl.wave2EmitTime-this.decl.wave2StartTime );
-                    }
-                    else
-                    {
-                        rnd = THREE.Math.randFloat( logoBeginT, logoEndT );
-                    }
-                }
-            }
-
-
-            // Small delay for all APIs
-            triggerTime += 0.25;
-
             this.pathOffsetData[ (i*bpp+0)+j*w*bpp ] = xx;
             this.pathOffsetData[ (i*bpp+1)+j*w*bpp ] = rnd;
             this.pathOffsetData[ (i*bpp+2)+j*w*bpp ] = 0; //triggerTime;
@@ -1447,15 +1446,16 @@ LL.APIScene.prototype =
 //    this.CreateFPTextureFromData( gl, this.pathAttrib1Tex, w, h, bpp, this.pathAttrib1TexData, gl.NEAREST );
 }
 
-, Update: function( frameTime, time_, camera_, scene_, effectController_, mouseX_, cameraFovPer_ )
+, Update: function( frameTime, time_, camera_, scene_, effectController_, mouseX_ )
 {
     this.innerTime = Clamp( time_ - this.triggerTime, 0.0, time_ );
 
-/*    //LOG( this.decl.index + " :: " + this.innerTime + "  --  " + (this.pathSimShader.uniforms.LoopEndTime.value + exitTime) );
+    //LOG( this.decl.index + " :: " + this.innerTime + "  --  " + (this.pathSimShader.uniforms.LoopEndTime.value + exitTime) );
     if( this.isActive && this.innerTime > this.pathSimShader.uniforms.LoopEndTime.value + kClickDelayTime )
     {
         kCanClick = true;
         this.Enable( this.decl );
+//        LOG( "Reset API: " + this.decl.index );
         this.isActive = false;
         this.exitAnimationActive = false;
         this.RemoveFromScene( scene_ );
@@ -1463,13 +1463,9 @@ LL.APIScene.prototype =
         this.lastX = 0;
         this.klangVolume = 0;
     }
-*/
 
     if( !this.isActive )
         return;
-
-    //this.exitAnimationActive = false;
-
 
     if( this.innerTime > 10.0 //effectController_.pathSlowness+this.decl.wave2StartTime+this.decl.wave2EmitTime
         && !this.exitAnimationActive )
@@ -1489,65 +1485,27 @@ LL.APIScene.prototype =
         // Rotation
         var newTarget = ToRadians( centerX * kMaxAngle );
 
-        var areaIncrByFov = 0.25 + 0.25*(1.0-cameraFovPer_);
-        if( Math.abs(absCenterX) < window.innerWidth*areaIncrByFov ) //&& cameraFovPer_ > 0.75 )
-        {    
+        if( Math.abs(absCenterX) < window.innerWidth*0.25 )
             this.cubePoolMesh.rotation.y += (newTarget - this.cubePoolMesh.rotation.y) * kRotationSpeed;
-        }
         else
-        {    
             this.cubePoolMesh.rotation.y *= 0.985;
-        }
-
-        if( this.playRestSample )
-        {
-            this.playRestSample = false;
-            switch( this.decl.index )
-            {
-                case 0:
-			        Klang.triggerEvent( 'instagram_rest' );
-                    break;
-                case 1:
-			        Klang.triggerEvent( 'twitter_rest' );
-                    break;
-                case 2:
-			        Klang.triggerEvent( 'nyt_rest' );
-                    break;
-                case 3:
-			        Klang.triggerEvent( 'amazon_rest' );
-                    break;
-                case 4:
-			        Klang.triggerEvent( 'lastfm_rest' );
-                    break;
-                case 6:
-			        Klang.triggerEvent( 'getty_rest' );
-                    break;
-            }
-        }
-
+        //floorMesh.rotation.y += (newTarget*0.5 - floorMesh.rotation.y) * kRotationSpeed;
     }
-
     // Reset rotation if exit animation is triggered
     if( this.exitAnimationActive )
-    {
         this.cubePoolMesh.rotation.y *= 0.9;
-    }
 
 
     // Hover logo a little bit.
-    if( rcLocaleJSDirectory != 'facebook' ) 
-    {
-        this.cubePoolMesh.position.y = Math.sin( ToRadians(this.innerTime*50) ) * 3.0;
-    }
+    //this.cubePoolMesh.position.y = Math.sin( ToRadians(this.innerTime*50) ) * 3.0;
 
 
     //
     // Simulation shader
     //
-    var speedMul = Saturate( cameraFovPer_ * 0.6 + 0.4 );
-    this.pathSimShader.uniforms.TimeStep.value = frameTime * 0.01 * speedMul;
+    this.pathSimShader.uniforms.TimeStep.value = frameTime * 0.01;
     this.pathSimShader.uniforms.Time.value = this.innerTime;
-    this.pathSimShader.uniforms.ParticleSpeed.value = this.decl.particleSpeed * speedMul;
+//    this.pathSimShader.uniforms.ParticleSpeed.value = this.decl.particleSpeed;// * effectController_.particleGlobalSpeed;
     //this.pathSimShader.uniforms.PathSpeed.value = effectController_.pathSlowness;
     //this.pathSimShader.uniforms.Wave2EmitPosT.value = (effectController.wave2EmitPositionT / 100.0);
     // Simulation
@@ -1562,22 +1520,94 @@ LL.APIScene.prototype =
     //
     this.cubePoolPathUniforms.PathOffsetSampler.value = this.pathSim.out;
     this.cubePoolPathUniforms.Time.value = this.innerTime;
+    //this.cubePoolPathUniforms.LightPosition.value.set( 0, -300, 400, 1.0 );
+    //this.cubePoolPathUniforms.LightColor.value.set( 1, 1, 1 );
+//        this.cubePoolPathUniforms.ViewPosition.value = camera_.position;
+//        this.cubePoolPathUniforms.MeshScale.value = effectController.particleGlobalSize;
+//        this.cubePoolPathUniforms.OffsetGlobalScale.value = effectController.offsetGlobalScale;
+//    this.cubePoolPathUniforms.OffsetGlobalScale.value = this.decl.offsetGlobalScale * effectController_.offsetGlobalScale;
 
-    switch( this.decl.index )
+    //LOG( this.cubePoolPathUniforms.TexSection.value.x + ", " + this.cubePoolPathUniforms.TexSection.value.y );
+
+
+    // Animate path2 front particles
+    for( var i=0; i<this.frontCubeMeshes.length; i++ )
     {
-        case 0:
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-            this.logoDepthScale = 1 / 20.0;
-            break;
-        case 6:
-            this.logoDepthScale = 1 / 8.0;
-            break;
+/*        var pathT = this.innerTime / (effectController_.pathSlowness + this.decl.wave1EmitTime);
+        pathT = pathT + (i*0.01);
+        pathT = 0.0001 + Saturate( pathT );
+        var cPos = LerpPath2( pathT );
+
+        var pathT2 = (this.innerTime+1) / (effectController_.pathSlowness + this.decl.wave1EmitTime);
+        pathT2 = pathT2 + (i*0.01);
+        pathT = 0.0001 + Saturate( pathT2 );
+        var cPos2 = LerpPath2( pathT2 );
+
+        var diff = new THREE.Vector3();
+        diff.x = cPos.x - cPos2.x;
+        diff.y = cPos.y - cPos2.y;
+        diff.z = cPos.z - cPos2.z;
+        //LOG( diff );
+
+        var ss = 0.01;
+        this.frontCubeMeshesVel[i].x += -diff.x * ss;
+        this.frontCubeMeshesVel[i].y += -diff.y * ss;
+        this.frontCubeMeshesVel[i].z += -diff.z * ss;
+
+        this.frontCubeMeshesPos[i].x += this.frontCubeMeshesVel[i].x * frameTime;
+        this.frontCubeMeshesPos[i].y += this.frontCubeMeshesVel[i].y * frameTime;
+        this.frontCubeMeshesPos[i].z += this.frontCubeMeshesVel[i].z * frameTime;
+        //LOG( this.frontCubeMeshesPos[i] );*/
+
+        var gt = ( ( this.innerTime * 0.85 + this.frontCubeMeshesTimeOffset[i] ) * this.frontCubeMeshesTimeScale[i] );
+        if( gt < 0.0 )  gt = 0.0;
+        var partT = gt;
+        partT *= 1000.0;
+        //var partT = ( ( this.innerTime - i*0.1 ) ) / 3.3333;
+        //partT *= (effectController_.pathSlowness + this.decl.wave1EmitTime) * 1000.0 * this.frontCubeMeshesTimeScale[i];
+        gettyPartTrack.Animate( partT, gettyTestPart );
+
+        //this.frontCubeMeshes[i].position = cPos;
+
+        //this.frontCubeMeshesVel[i].x += Math.cos( partT*0.0015 + i*0.2 ) * 0.1;
+        //this.frontCubeMeshesVel[i].y += Math.sin( partT*0.001 + i*0.2 ) * 0.1;
+        //this.frontCubeMeshesVel[i].z += Math.cos( partT*0.00001 ) * 0.015;
+
+        var ddd = this.frontCubeMeshesPos[i].clone();
+        //ddd = ddd.add( this.frontCubeMeshesVel[i] );
+
+        var ss = gt * frameTime * 7;
+        ss = Saturate( ss );
+        ss = 1.0 - (ss*ss*ss*ss*ss*ss*ss);
+        var sss = ss;
+
+
+        // HACK to cut on the length the particles travel left side on the screen
+        gettyTestPart.position.z -= 6;
+
+        var q1 = new THREE.Quaternion();
+        //q1.setFromAxisAngle( new THREE.Vector3( 1, 0, 1 ), ToRadians( i*3-this.innerTime*0.13 ) );
+
+        this.frontCubeMeshes[i].position = gettyTestPart.position.clone().add( ddd );
+        //this.frontCubeMeshes[i].position = gettyTestPart.position.clone().add( ddd.multiplyScalar( ss ) );
+        this.frontCubeMeshes[i].quaternion.copy( gettyTestPart.orientation );
+        this.frontCubeMeshes[i].quaternion.multiply( q1 );
+
+        // Portrait Aspect Ratio
+        var aspect = GettyTileSize.x / GettyTileSize.y;
+
+        var mat = this.frontCubeMeshes[i].material;
+        var texso = mat.uniforms.TexSectionOffset.value;
+        mat.uniforms.DiffuseMap.value = this.decl.texture;
+
+        // Landscape
+        if( texso.y >= 0.5 )
+            this.frontCubeMeshes[i].scale.set( 0.001 + 1*this.frontCubeMeshesScale[i]*sss, 0.001 + aspect*this.frontCubeMeshesScale[i]*sss, 0.001 + 1*this.frontCubeMeshesScale[i] );
+        // Portrait
+        else
+            this.frontCubeMeshes[i].scale.set( 0.001 + aspect*this.frontCubeMeshesScale[i]*sss, 0.001 + 1*this.frontCubeMeshesScale[i]*sss, 0.001 + 1*this.frontCubeMeshesScale[i] );
     }
 
-    this.cubePoolPathUniforms.LogoDepthScale.value = this.logoDepthScale;
 }
 
 };

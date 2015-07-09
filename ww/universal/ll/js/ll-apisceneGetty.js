@@ -1498,6 +1498,7 @@ LL.APISceneGetty.prototype =
 
     //this.exitAnimationActive = false;
 
+
     if( this.innerTime > 10.0 //effectController_.pathSlowness+this.decl.wave2StartTime+this.decl.wave2EmitTime
         && !this.exitAnimationActive )
     {
