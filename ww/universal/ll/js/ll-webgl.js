@@ -2615,7 +2615,6 @@ function MainLoop()
         }
         ActivateAPI( idx );
     }
-    //console.log( "hasSelectedFacebook: " + hasSelectedFacebook );
 
   // // DEBUG: Update app statistics
   // if (kShowStats)

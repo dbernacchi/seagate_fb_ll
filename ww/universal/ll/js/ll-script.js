@@ -200,7 +200,7 @@ function llBootstrap(){
       menuItem[6].addEventListener('click', function(e)
       {
         e.preventDefault();
-      
+        hasSelectedFacebook = true;
         facebookLL.comBootstrap();
       });
 
