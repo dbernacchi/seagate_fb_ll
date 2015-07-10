@@ -1016,7 +1016,7 @@ LL.APISceneGetty.prototype =
         if( this.decl.index == 2 && uvoff.y < (1.0/4.0) ) // v is flipped
             doRotate = 1.0;
 
-        //if( this.decl.index == 0 && isWave1 )
+        if( this.decl.index == 0 && isWave1 )
             doRotate = 1.0;
 
         if( this.decl.index == 3 && isWave1 )

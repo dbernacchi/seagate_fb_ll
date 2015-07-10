@@ -279,7 +279,7 @@ LL.APIScene.prototype =
 
 
 
-    this.cubePoolMesh = new THREE.Mesh( this.cubePoolGeometry, this.cubePoolPathMaterial );
+        this.cubePoolMesh = new THREE.Mesh( this.cubePoolGeometry, this.cubePoolPathMaterial );
 //        if( browserName != "IE 11" ) // IE11 doesn't support gl_FrontFacing
 //        {
             this.cubePoolMesh.doubleSided = true;
