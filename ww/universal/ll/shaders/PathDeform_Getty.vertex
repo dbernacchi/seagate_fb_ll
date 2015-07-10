@@ -247,8 +247,7 @@ void main()
     float yoffset = 0.5 * ystep;
 
     // Apply some rotation (angle) to the particles
-    float partDoRotate = 0.0; //ParticleColorAndIndex.w;
-    //float partIndex = ParticleColorAndIndex.w;
+    float partDoRotate = ParticleColorAndIndex.w;
     float partIndex = color.z;
 
     vec2 oxoff = vec2( mod(partIndex, Dim.x)/Dim.x, 1.0-(floor(partIndex/Dim.x)/Dim.y) );

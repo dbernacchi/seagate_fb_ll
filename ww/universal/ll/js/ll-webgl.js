@@ -375,7 +375,7 @@ var logoGetty = {
   index: 0  // HACK: Use 0 as instagram. Since this uses a different class it's ok
   , doRotation: 0.0
   , MeshMinScaleX: 0.03
-  , MeshMaxScaleX: 2.0
+  , MeshMaxScaleX: 1.5 //2.0
   , MeshMinScaleY: 0.03
   , MeshMaxScaleY: 2.0
   , MeshMinScaleZ: 0.1

@@ -280,11 +280,11 @@ LL.APISceneGetty.prototype =
             PathSampler: { type: "t", value: pathDataTexture }
             , PathOffsetSampler: { type: "t", value: this.pathOffsetTex }
             , CubeAttrib1Map: { type: "t", value: this.pathAttrib1Tex }
-            , TexSection: { type: "v2", value: null } // Set after
+            , TexSection: { type: "v2", value: new THREE.Vector2() }
             , Dim: { type: "v2", value: new THREE.Vector2( width_, height_ ) }
             , WidthInv: { type: "f", value: 1.0/kPathDimX }
             , HeightInv: { type: "f", value: 1.0/kPathDimY }
-            , PathScale: { type: "f", value: 1.0/(kPathDimX * 2) }
+            , PathScale: { type: "f", value: 1.0/(kPathDimX) }
             , MeshScale: { type: "f", value: 1.0 }
             , LogoDepthScale: { type: "f", value: 0.02 }
             , ViewPosition: { type: "v3", value: camera_.position }
@@ -982,34 +982,32 @@ LL.APISceneGetty.prototype =
             // Landscape
             if( whichOne < this.decl.landscapeChance )
             {
-                var uIdx = THREE.Math.randInt( 0, LandscapeTileCount.x-1 );
-                var vIdx = THREE.Math.randInt( 0, LandscapeTileCount.y-1 );
+                var uIdx = THREE.Math.randInt( 0, this.decl.numTilesXLandscape-1 );
+                var vIdx = THREE.Math.randInt( 0, this.decl.numTilesYLandscape-1 );
 
-                uIdx *= GettyTileSize.y; //
-                vIdx *= GettyTileSize.x; // Reversed xy as this is Landscape
+                uIdx *= this.decl.tileWidthLandscape;
+                vIdx *= this.decl.tileHeightLandscape;
 
-                uIdx /= GettyImageSize.x;
-                vIdx /= GettyImageSize.y * 0.5;  // divide by 2 as Landscape tiles are only 50% of the texture's height
+                uIdx /= this.decl.texWidth;
+                vIdx /= this.decl.texHeight * 0.5;  // divide by 2 as Landscape tiles are only 50% of the texture's height
 
                 uvoff.x = uIdx;
                 uvoff.y = (0.5 + vIdx * 0.5);  // starts at half height
-//                console.log( ts.x + ", " + ts.y + ", " + ts.z + ", " + ts.w );
             }
             // Portrait
             else
             {
-                var uIdx = THREE.Math.randInt( 0, PortraitTileCount.x-1 );
-                var vIdx = THREE.Math.randInt( 0, PortraitTileCount.y-1 );
+                var uIdx = THREE.Math.randInt( 0, this.decl.numTilesXPortrait-1 );
+                var vIdx = THREE.Math.randInt( 0, this.decl.numTilesYPortrait-1 );
 
-                uIdx *= GettyTileSize.x;
-                vIdx *= GettyTileSize.y;
+                uIdx *= this.decl.tileWidthPortrait;
+                vIdx *= this.decl.tileHeightPortrait;
 
-                uIdx /= GettyImageSize.x;
-                vIdx /= GettyImageSize.y * 0.5;  // divide by 2 as Portrait tiles are only 50% of the texture's height
+                uIdx /= this.decl.texWidth;
+                vIdx /= this.decl.texHeight * 0.5;  // divide by 2 as Portrait tiles are only 50% of the texture's height
 
                 uvoff.x = uIdx;
                 uvoff.y = (vIdx * 0.5);  // starts at top
-//                console.log( ts.x + ", " + ts.y + ", " + ts.z + ", " + ts.w );
             }
 
         //
@@ -1018,7 +1016,7 @@ LL.APISceneGetty.prototype =
         if( this.decl.index == 2 && uvoff.y < (1.0/4.0) ) // v is flipped
             doRotate = 1.0;
 
-        if( this.decl.index == 0 && isWave1 )
+        //if( this.decl.index == 0 && isWave1 )
             doRotate = 1.0;
 
         if( this.decl.index == 3 && isWave1 )
@@ -1643,8 +1641,8 @@ LL.APISceneGetty.prototype =
             this.frontCubeMeshes[i].quaternion.copy( gettyTestPart.orientation );
             this.frontCubeMeshes[i].quaternion.multiply( q1 );
 
-            // Portrait Aspect Ratio
-            var aspect = GettyTileSize.x / GettyTileSize.y;
+            // Aspect Ratio
+            var aspectRatio = 16.0 / 9.0;
 
             var mat = this.frontCubeMeshes[i].material;
             var texso = mat.uniforms.TexSectionOffset.value;
@@ -1652,10 +1650,19 @@ LL.APISceneGetty.prototype =
 
             // Landscape
             if( texso.y >= 0.5 )
-                this.frontCubeMeshes[i].scale.set( 0.001 + 1*this.frontCubeMeshesScale[i]*sss, 0.001 + aspect*this.frontCubeMeshesScale[i]*sss, 0.001 + 1*this.frontCubeMeshesScale[i] );
+            {
+                var scaleX = (this.frontCubeMeshesScale[i] * sss);
+                var scaleY = (this.frontCubeMeshesScale[i] * sss) / aspectRatio;
+                this.frontCubeMeshes[i].scale.set( 0.001 + scaleX, 0.001 + scaleY, 0.001 + this.frontCubeMeshesScale[i] );
+                //this.frontCubeMeshes[i].scale.set( 0.001 + 1*this.frontCubeMeshesScale[i]*sss, 0.001 + aspect*this.frontCubeMeshesScale[i]*sss, 0.001 + 1*this.frontCubeMeshesScale[i] );
+            }
             // Portrait
             else
-                this.frontCubeMeshes[i].scale.set( 0.001 + aspect*this.frontCubeMeshesScale[i]*sss, 0.001 + 1*this.frontCubeMeshesScale[i]*sss, 0.001 + 1*this.frontCubeMeshesScale[i] );
+            {
+                var scaleX = (this.frontCubeMeshesScale[i] * sss) / aspectRatio;
+                var scaleY = (this.frontCubeMeshesScale[i] * sss);
+                this.frontCubeMeshes[i].scale.set( 0.001 + scaleX, 0.001 + scaleY, 0.001 + this.frontCubeMeshesScale[i] );
+            }
         }
     }
 }
