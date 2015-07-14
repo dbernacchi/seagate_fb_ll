@@ -69,11 +69,11 @@ body.fb {
 
 .intranet .slide_container .tc{
   border: 0px solid;
-
+  display:none;
   height: 13px;
   left: 0px;
   position: absolute;
-  top: 277px;
+  top: 302px;
   width: 770px;
   color: #ccc;
   text-align: center;

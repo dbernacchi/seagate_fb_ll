@@ -37,11 +37,13 @@
 
     $.when(docReady, facebookReady).then(function () {
 
-      var parentHeight = $(window).height();
-
-      var newHeight = (parentHeight / 2);
+      var elm = $('.slide_container');
       
-      $('.slide_container').css('margin-top', newHeight).show();
+      var parentHeight = window.innerHeight;
+
+      var newHeight = (parentHeight / 2) - (elm.height() / 2);
+      
+      elm.css('margin-top', newHeight).show();
       
       facebookLL.slideBootstrap();
 
@@ -68,7 +70,7 @@
 
     <div class="slide_container">
       <a href="/fb.html?events" target="_blank" id="facebook_login"> 
-        <img src="/ww/universal/ll/images/facebook/fb-intranet.jpg" />
+        <img src="/ww/universal/ll/images/facebook/fb-intranet.png" />
       </a> 
       
       <div class="tc">

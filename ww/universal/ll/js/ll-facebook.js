@@ -79,29 +79,31 @@ var facebookLL = {};
       
       //check for webgl
       renderer = Detector.webgl;
-
+      
+      
       if ((!Environment.isChrome() && !Environment.isFire() ) || device.mobile()) {
-      //if (Environment.isChrome() || Environment.isFire()) {  
+      //if (Environment.isChrome() || Environment.isFire()) {
+      
         $(".slide_container").html($('.error_container_1').html());
       
       } else if (!renderer) {
-        
+   
         $(".slide_container").html($('.error_container_2').html());
         
       } else { 
-      
+   
         FB.getLoginStatus(function(response) {
-
+    
           if (response.status === 'connected') {
-            
+       
             var href = $(elm).attr('href');
             
             window.open(href, "_blank");
 
           } else {
-
+    
             ns.login(function(loginResponse) {
-
+             
               $(".slide_container").html($('.link_container').html());
 
             });
