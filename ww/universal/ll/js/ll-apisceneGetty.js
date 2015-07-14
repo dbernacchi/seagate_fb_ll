@@ -68,9 +68,9 @@ LL.APISceneGetty = function ()
 
 
     // Used for audio panning
-    this.lastX = 0;
-    this.klangVolume = 0;
-    this.klangEase = 10;
+    //this.lastX = 0;
+    //this.klangVolume = 0;
+    //this.klangEase = 10;
 
     this.enableFrontParticles = true;
 
@@ -1501,11 +1501,11 @@ LL.APISceneGetty.prototype =
         && !this.exitAnimationActive )
     {
       
-        // Klang stuff. Handles volume and panning values when interacting with logo.
-        var speed=Math.min(Math.abs((mouseX_-this.lastX)/100), 1);
-        this.klangVolume -= (this.klangVolume-speed)/this.klangEase;
-        Klang.triggerEvent('tilt_logo', (mouseX_ / window.innerWidth *2)-1, this.klangVolume);
-        this.lastX = mouseX_;
+        //// Klang stuff. Handles volume and panning values when interacting with logo.
+        //var speed=Math.min(Math.abs((mouseX_-this.lastX)/100), 1);
+        //this.klangVolume -= (this.klangVolume-speed)/this.klangEase;
+        //Klang.triggerEvent('tilt_logo', (mouseX_ / window.innerWidth *2)-1, this.klangVolume);
+        //this.lastX = mouseX_;
 
         var absCenterX = (mouseX_ - window.innerWidth*0.5);
         var centerX = Clamp( 4 * (absCenterX / (window.innerWidth*0.5)), -1, 1 );
@@ -1526,8 +1526,8 @@ LL.APISceneGetty.prototype =
         if( this.playRestSample )
         {
         	    this.playRestSample = false;
+            console.log( "now playing rest sample: GETTY" + this.decl.index );
 			Klang.triggerEvent( 'getty_rest' );
-			//console.log( "Playing Getty_rest sample" );
         }
     }
     

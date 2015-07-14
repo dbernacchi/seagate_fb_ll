@@ -3078,6 +3078,7 @@ function GettyCallFunc_WebGL()
     //            currParamSelection = Params[ logoIndex ];
     RestartLogoIntroAnimation();
 
+    console.log( "Klang.triggerEvent('getty_start');" );
     Klang.triggerEvent('getty_start');
     MenuClearStates();
     MenuSetItem(0); // Special case: This is Getty at zero
@@ -3116,7 +3117,9 @@ function InstagramCallFunc_WebGL()
     logoIndex = APIInstagramIndex;
 //    currParamSelection = Params[ logoIndex ];
     RestartLogoIntroAnimation();
-    if (!Environment.isMobile() && mack.vars.isKosher) {
+    if (!Environment.isMobile() && mack.vars.isKosher) 
+    {
+        console.log( "Klang.triggerEvent('instagram_start');" );
       Klang.triggerEvent('instagram_start');
     }
 
@@ -3160,7 +3163,9 @@ function TwitterCallFunc_WebGL()
     logoIndex = APITwitterIndex;
 //    currParamSelection = Params[ logoIndex ];
     RestartLogoIntroAnimation();
-    if (!Environment.isMobile() && mack.vars.isKosher) {
+    if (!Environment.isMobile() && mack.vars.isKosher) 
+    {
+        console.log( "Klang.triggerEvent('twitter_start');" );
       Klang.triggerEvent('twitter_start');
     }
     MenuClearStates();
@@ -3197,7 +3202,9 @@ function NYTCallFunc_WebGL()
     logoIndex = APINYTIndex;
 //    currParamSelection = Params[ logoIndex ];
     RestartLogoIntroAnimation();
-    if (!Environment.isMobile() && mack.vars.isKosher) {
+    if (!Environment.isMobile() && mack.vars.isKosher) 
+    {
+        console.log( "Klang.triggerEvent('times_start');" );
       Klang.triggerEvent('times_start');
     }
     MenuClearStates();
@@ -3235,8 +3242,10 @@ function AmazonCallFunc_WebGL()
     logoIndex = APIAmazonIndex;
 //    currParamSelection = Params[ logoIndex ];
     RestartLogoIntroAnimation();
-    if (!Environment.isMobile() && mack.vars.isKosher) {
-      Klang.triggerEvent('amazon_start');
+    if (!Environment.isMobile() && mack.vars.isKosher) 
+    {
+        console.log( "Klang.triggerEvent('amazon_start');" );
+        Klang.triggerEvent('amazon_start');
     }
     MenuClearStates();
     MenuSetItem(logoIndex + 1);
@@ -3272,7 +3281,9 @@ function LastFMCallFunc_WebGL()
     logoIndex = APILastfmIndex;
 //    currParamSelection = Params[ logoIndex ];
     RestartLogoIntroAnimation();
-    if (!Environment.isMobile() && mack.vars.isKosher) {
+    if (!Environment.isMobile() && mack.vars.isKosher) 
+    {
+        console.log( "Klang.triggerEvent('last_start');" );
       Klang.triggerEvent('last_start');
     }
     MenuClearStates();
