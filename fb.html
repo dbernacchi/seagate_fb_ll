@@ -21,8 +21,6 @@
     <script src="/ww/universal/ll/js/ll-header-combined.js"></script>
     <script src="/ww/universal/ll/js/ll-facebook.js"></script>
     <script>
-      
-      var skipFacebook = false;
 
       //1405856746407385
       var appId = 687711224695327;
@@ -52,11 +50,14 @@
 
       $.when(docReady, facebookReady, llScriptReady).then(function() {
 
-        if(!skipFacebook){
-          facebookLL.fbBootstrap();
+        if(location.href.indexOf('?events') > -1){
+          $('.non_events').hide();
+          $('.events').show();
         } else {
-          facebookLL.skipBootstrap();
+          $('.non_events').show();
+          $('.events').hide();
         }
+        facebookLL.fbBootstrap();
         
       });
 
@@ -126,7 +127,8 @@
         </div>
 
         <section id="leftControls" class="nmb">
-          <div class="gettyText">FACEBOOK</div>
+          <ul class="clr events"><li><a class="fb_logout" href="/logout.html">Log out</a></li><li><div class="gettyText">FACEBOOK</div></li></ul>
+          <div class="gettyText non_events">FACEBOOK</div>
           <ul>
             <li>
               <div class="checkboxContainer">

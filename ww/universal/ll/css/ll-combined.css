@@ -1197,6 +1197,7 @@
 }
 .zoom-icon {
   cursor: pointer;
+  color: #bbbbbb;
 }
 #leftControls ul {
   list-style: none;

@@ -468,11 +468,18 @@ function getLogoIndex(idx)
   {  
     idx++;
     
+    /*
     if( idx == APIFacebookIndex )
     {
       idx = 0;
     }
-  }
+    */
+   
+   if(idx >= logoIndexArr.length){
+     idx = 0;
+   }
+   
+  } 
   
   return logoIndexArr[idx];
 }
@@ -848,9 +855,9 @@ function LoadJsonData(staticData, name, url)
   } else if(name == 'facebook1Json'){
     
     var status = "off";
-    console.log(manifest);
+    //console.log(manifest);
     
-    if(manifest.indexOf('facebook') > -1 && (Environment.isChrome() || Environment.isFire())){
+    if(manifest.indexOf('facebook') > -1 && (Environment.isChrome() || Environment.isFire()) && !device.mobile()){
       
       status = "on";
       $('.facebook').show();
@@ -2192,18 +2199,8 @@ function Init()
   CameraPosClearStates();
   CameraPosSetItem(0);
 
-
-  var idx = 0;
-  for (var iii = logoIndexArr.length - 1; iii >= 0; iii--)
-  {
-    idx = logoIndexArr[iii];
-    if (idx === 5) 
-    {
-      break;
-    }
-  }
-  
-  ActivateAPI( idx );
+  //always start with getty
+  ActivateAPI( 5 );
 
   currentTime = 0.0;
   startTime = timeNow();
@@ -2230,6 +2227,8 @@ function ActivateAPI(index)
     //  if(rcLocaleJS == "functionOff"){
     MenuClearStates();
     
+    console.log('index:' + index);
+    
     switch (index)
     {
       case 0:
@@ -2248,21 +2247,21 @@ function ActivateAPI(index)
         LastFMCallFunc_WebGL();
         break;
       case 5:
-          console.log( "ActivateAPI: run getty" );
+          //console.log( "ActivateAPI: run getty" );
         GettyCallFunc_WebGL();
         break;
       case 6:
-          console.log( "ActivateAPI: run facebook" );
-        //if(facebookActivated )
+          //console.log( "ActivateAPI: run facebook" );
+        if(facebookActivated ){
         //{
           FacebookCallFunc_WebGL();
-        //} else {          
-          //GettyCallFunc_WebGL();
-        //}
+        } else {          
+          GettyCallFunc_WebGL();
+        }
         
         break;
       default:
-          console.log( "ActivateAPI: index is not valid" );
+          //console.log( "ActivateAPI: index is not valid" );
         //InstagramCallFunc_WebGL();
         break;
     }
@@ -2607,12 +2606,15 @@ function MainLoop()
         )
     {
         apiIdleTime = 0.0;
-        var idx = getLogoIndex( THREE.Math.randInt( 0, APIGettyIndex ) ); // Ignore facebook
+        
+        /*var idx = getLogoIndex( THREE.Math.randInt( 0, APIGettyIndex ) ); // Ignore facebook
         while( idx == APIFacebookIndex )
         {
             idx = getLogoIndex( THREE.Math.randInt( 0, APIGettyIndex ) ); // Ignore facebook
             //console.log( "autoswitch: " , idx );
-        }
+        }*/
+        
+        var idx = getLogoIndex(Math.floor(randIntz(logoIndexArr.length - 1, 0)) );
         ActivateAPI( idx );
     }
 

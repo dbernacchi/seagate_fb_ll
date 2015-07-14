@@ -3,7 +3,9 @@ var facebookLL = {};
 
   var debug = location.search.split('debug=')[1];
 
+  var version = 'fb' //fb, com, events
   var friends_count = 0;
+  var first_name = '';
   
   var default_vertical_url = '/ww/universal/ll/images/facebook/portrait.jpg';
   var default_horizontal_url = '/ww/universal/ll/images/facebook/landscape.jpg';
@@ -63,7 +65,7 @@ var facebookLL = {};
   var vertical_arr = new Array();
   var horizontal_arr = new Array();
 
-  var tagline_template = "Right now, you're sharing {# of photos} memories with {# of friends} friends around the world.";
+  var tagline_template = "Right now, {first_name} is sharing {# of photos} memories with {# of friends} friends around the world.";
 
 
   this.slideBootstrap = function() {
@@ -78,7 +80,7 @@ var facebookLL = {};
       //check for webgl
       renderer = Detector.webgl;
 
-      if (!Environment.isChrome() && !Environment.isFire()) {
+      if ((!Environment.isChrome() && !Environment.isFire() ) || device.mobile()) {
       //if (Environment.isChrome() || Environment.isFire()) {  
         $(".slide_container").html($('.error_container_1').html());
       
@@ -118,6 +120,8 @@ var facebookLL = {};
 
     $('#facebook_loading').show();
 
+    version = 'com';
+    
     this.fbBootstrap();
   }
   
@@ -127,10 +131,21 @@ var facebookLL = {};
 
     facebookActivated = true;
     
-    $('#leftControls').css('top', '0px');
-    $('#leftControls').css('left', '10px');
-    $('#leftControls').css('position', 'fixed');
-    $('#leftControls').css('z-index', '999999999999999999999999999999999999');
+    $(document).on('click', 'a.fb_logout', function(e) {
+      e.preventDefault();
+
+      FB.logout(function(response) {
+        location.href='/events.html';
+      });      
+     
+    });      
+    
+    if(version != 'com'){
+      $('#leftControls').css('top', '0px');
+      $('#leftControls').css('left', '10px');
+      $('#leftControls').css('position', 'fixed');
+      $('#leftControls').css('z-index', '999999999999999999999999999999999999');
+    }
     
     //create canvases
     canvas = document.createElement('canvas');
@@ -191,114 +206,71 @@ var facebookLL = {};
     document.body.appendChild(imageObj);
 
     //first get the friends count, then get the photos. These both must be completed before we process
-
+    
     this.countFriends(function(friendResponse) {
-
+    
       friends_count = friendResponse.summary.total_count;
 
-      ns.getUppedPhotos(function(photos) {
-
-        all_photos = photos;
+      ns.getName(function(){
         
-        ns.getTaggedPhotos(function() {
+        ns.getUppedPhotos(function(photos) {
 
-          //load default images
-          default_vertical_img = new Image();
-          default_vertical_img.onload = function() {
+          all_photos = photos;
 
-            ns.sortPhotos();
+          ns.getTaggedPhotos(function() {
 
-          };
-
-          default_vertical_img.src = default_vertical_url;
-
-          default_horizontal_img = new Image();
-          default_horizontal_img.onload = function() {
-
-            ns.sortPhotos();
-
-          };
-
-          default_horizontal_img.src = default_horizontal_url;
-
-          //load found photos
-
-          for (var i = 0; i < all_photos.length && i < (max_count * 2); i++) {
-
-            all_photos[i].img = new Image();
-
-            all_photos[i].img.setAttribute('crossOrigin', 'anonymous');
-
-            all_photos[i].img.onload = function() {
+            //load default images
+            default_vertical_img = new Image();
+            default_vertical_img.onload = function() {
 
               ns.sortPhotos();
 
             };
-            
-            var url = '';
-            if(typeof all_photos[i].source == 'undefined'){
-              url = all_photos[i].url;
-            } else {
-              url = all_photos[i].source;
+
+            default_vertical_img.src = default_vertical_url;
+
+            default_horizontal_img = new Image();
+            default_horizontal_img.onload = function() {
+
+              ns.sortPhotos();
+
+            };
+
+            default_horizontal_img.src = default_horizontal_url;
+
+            //load found photos
+
+            for (var i = 0; i < all_photos.length && i < (max_count * 2); i++) {
+
+              all_photos[i].img = new Image();
+
+              all_photos[i].img.setAttribute('crossOrigin', 'anonymous');
+
+              all_photos[i].img.onload = function() {
+
+                ns.sortPhotos();
+
+              };
+
+              var url = '';
+              if(typeof all_photos[i].source == 'undefined'){
+                url = all_photos[i].url;
+              } else {
+                url = all_photos[i].source;
+              }
+
+              all_photos[i].img.src = url;
+
             }
-            
-            all_photos[i].img.src = url;
-            
-          }
 
 
+          });
         });
       });
-
     });
 
 
   }
-
-  this.skipBootstrap = function(response) {
-
-    var ns = this;
-
-    $('#leftControls').css('top', '0px');
-    $('#leftControls').css('left', '10px');
-    $('#leftControls').css('position', 'fixed');
-    $('#leftControls').css('z-index', '999999999999999999999999999999999999');
-    
-    //create image for matrix
-    var imageObj = new Image();
-    imageObj.id = 'facebook_img';
-
-    if (!debug) {
-      imageObj.style.display = 'none';
-    }
-
-    $('body').append(imageObj);
-    
-    imageObj.onload = function() {
-      
-      //this is where we start the logo running in ll-script.js
-      llBootstrap();
-      
-    };
-    imageObj.src = '/ww/universal/ll/images/facebook/index.png';
-
-
-    tagline = document.createElement('div');
-
-    tagline.id = 'facebook_tagline';
-    if (debug != 2) {
-      tagline.style.display = 'none';
-    }
-
-    var compiled_tagline = tagline_template;
-
-    compiled_tagline = compiled_tagline.replace("{# of photos}", '2345');
-    compiled_tagline = compiled_tagline.replace("{# of friends}", '6789');
-
-    tagline.innerHTML = compiled_tagline;
-    $('body').append(tagline);    
-    
-  }  
 
   this.sortPhotos = function() {
 
@@ -472,7 +444,8 @@ var facebookLL = {};
     
     compiled_tagline = compiled_tagline.replace("{# of photos}", all_photos.length);
     compiled_tagline = compiled_tagline.replace("{# of friends}", friends_count);
-
+    compiled_tagline = compiled_tagline.replace("{first_name}", first_name);
+    
     tagline.innerHTML = compiled_tagline;
     document.body.appendChild(tagline);
 
@@ -521,6 +494,29 @@ var facebookLL = {};
 
   }
 
+  this.getName = function(callback) {
+    
+    var url = '/me';
+    
+    FB.api(
+            url,
+            {fields: 'name'},
+            function(nameResponse) {
+              
+              var full_name = nameResponse.name.split(" ")
+              first_name = full_name[0];
+              
+              if (callback) { 
+                  callback();
+              }
+              
+              
+            }
+    );
+
+
+  }
+  
   this.getTaggedPhotos = function(callback, after) {
 
     
