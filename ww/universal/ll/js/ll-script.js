@@ -12,11 +12,8 @@ var cameraControlsB = $('.bigMenuB #leftControls span.circle');
 
 $(document).ready(function()
 {
-  
   //this ensures the script is loaded before we proceed
   if(typeof llScriptReady != 'undefined'){llScriptReady.resolve();}
-  
-  
 });
 
 
@@ -201,7 +198,12 @@ function llBootstrap(){
       {
         e.preventDefault();
         hasSelectedFacebook = true;
-        facebookLL.comBootstrap();
+        if(facebookActivated){
+          FacebookCallFunc_WebGL();
+        } else {
+          facebookLL.comBootstrap();
+          
+        }
       });
 
       // Getty
@@ -246,8 +248,13 @@ function llBootstrap(){
       menuItemB[5].addEventListener('click', function(e)
       {
         e.preventDefault();
-    
-        facebookLL.comBootstrap();
+        hasSelectedFacebook = true;
+        if(facebookActivated){
+          FacebookCallFunc_WebGL();
+        } else {
+          facebookLL.comBootstrap();
+          
+        }
       });      
     }
   }

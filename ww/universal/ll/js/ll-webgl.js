@@ -2199,8 +2199,12 @@ function Init()
   CameraPosClearStates();
   CameraPosSetItem(0);
 
-  //always start with getty
-  ActivateAPI( 5 );
+  //always start with getty or facebook
+  if(rcLocaleJSDirectory != 'facebook'){
+    ActivateAPI( 5 );
+  } else {
+    ActivateAPI( 6 );
+  }
 
   currentTime = 0.0;
   startTime = timeNow();
@@ -3040,7 +3044,7 @@ function FacebookCallFunc_WebGL()
 //            currParamSelection = Params[ logoIndex ];
 
     RestartLogoIntroAnimation();
-
+   
     Klang.triggerEvent('getty_start');
     MenuClearStates();
     MenuSetItem(logoIndex + 1);
@@ -3279,15 +3283,15 @@ function LastFMCallFunc_WebGL()
 
 zoomButton.on('click', function()
 {
-  if( logoIndex == APIFacebookIndex )
-  {
+  //if( logoIndex == APIFacebookIndex )
+  //{
     if (effectController.nextFieldOfView != effectController.fovMinValue)
       effectController.nextFieldOfView = effectController.fovMinValue;
     else
       effectController.nextFieldOfView = effectController.fovMaxValue;
-  }
-  else
-  {
-    effectController.nextFieldOfView = effectController.fovMaxValue;
-  }
+  //}
+  //else
+  //{
+  //  effectController.nextFieldOfView = effectController.fovMaxValue;
+  //}
 });
