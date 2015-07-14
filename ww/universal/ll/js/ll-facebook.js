@@ -65,7 +65,7 @@ var facebookLL = {};
   var vertical_arr = new Array();
   var horizontal_arr = new Array();
 
-  var tagline_template = "Right now, {first_name} is sharing {# of photos} memories with {# of friends} friends around the world.";
+  var tagline_template = "{first_name}, right now you are sharing {# of photos} memories with {# of friends} friends around the world.";
 
 
   this.slideBootstrap = function() {
