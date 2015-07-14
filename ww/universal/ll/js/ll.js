@@ -305,10 +305,13 @@ var mack = {
               Klang.triggerEvent('last_start');
               break;
             case 5:
-
+              Klang.triggerEvent('getty_start');
+              break;
+            case 6:
               Klang.triggerEvent('getty_start');
               break;
             default:
+              break;
           }
         }
 
