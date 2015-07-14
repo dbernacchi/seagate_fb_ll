@@ -21,7 +21,7 @@ var colWhite = new THREE.Vector3( 1, 1, 1 );
 
 // Constants
 
-var kAutoSwitchTime = 20.0;
+var kAutoSwitchTime = 60.0;
 
 var kCanClick = true;
 var kClickDelayTime = 9; //7.5;
