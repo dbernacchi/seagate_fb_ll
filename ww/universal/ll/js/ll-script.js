@@ -245,7 +245,7 @@ function llBootstrap(){
         LastFMCallFunc_WebGL();
       });
       // Facebook
-      menuItemB[5].addEventListener('click', function(e)
+      menuItemB[6].addEventListener('click', function(e)
       {
         e.preventDefault();
         hasSelectedFacebook = true;
