@@ -1527,7 +1527,7 @@ LL.APISceneGetty.prototype =
         {
         	    this.playRestSample = false;
             console.log( "now playing rest sample: GETTY" + this.decl.index );
-			Klang.triggerEvent( 'getty_rest' );
+            console.log(Klang.triggerEvent( 'getty_rest' ));
         }
     }
     

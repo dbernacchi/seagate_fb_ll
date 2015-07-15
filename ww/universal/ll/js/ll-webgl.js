@@ -862,6 +862,8 @@ function LoadJsonData(staticData, name, url)
       status = "on";
       $('.facebook').show();
       
+    } else {
+      $('.facebook').remove();
     }
     
     staticData[ "facebook1Json" ] = {};
@@ -2231,8 +2233,6 @@ function ActivateAPI(index)
     //  if(rcLocaleJS == "functionOff"){
     MenuClearStates();
     
-    console.log('index:' + index);
-    
     switch (index)
     {
       case 0:
@@ -3077,9 +3077,8 @@ function GettyCallFunc_WebGL()
 //    currParamSelection = logoGetty;
     //            currParamSelection = Params[ logoIndex ];
     RestartLogoIntroAnimation();
-
-    console.log( "Klang.triggerEvent('getty_start');" );
-    Klang.triggerEvent('getty_start');
+    console.log('start');
+    console.log(Klang.triggerEvent('getty_start'));
     MenuClearStates();
     MenuSetItem(0); // Special case: This is Getty at zero
     $('.zoom-controls').css({display: 'block'})
