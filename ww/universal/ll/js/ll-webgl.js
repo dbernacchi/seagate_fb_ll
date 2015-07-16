@@ -1438,13 +1438,15 @@ function LoadWebGLData(id6, id1, id2, id3, id4, id5, api6name, api1name, api2nam
           ).done(function()
   {
 
-    /*alert('done webgl')*/
-
+    if(Environment.isMobile()){
+      mack.vars.logoIndex = 5;
+    }
+    
     preloader.delay(100).fadeTo(2500, 0).delay(250, function()
     {
-
+      
       mack.init();
-
+      
     });
 
     if (!mack.vars.logoIndex) {
@@ -1455,7 +1457,7 @@ function LoadWebGLData(id6, id1, id2, id3, id4, id5, api6name, api1name, api2nam
 
       $('.zoom-controls').css({display: 'block'})
     }
-
+ 
     //PrepareData( api5ID, api0ID, api1ID, api2ID, api3ID, api4ID );
     PrepareData(id6, id1, id2, id3, id4, id5);
   });
@@ -1552,7 +1554,7 @@ function PrepareData(api5ID, api0ID, api1ID, api2ID, api3ID, api4ID)
     if (Environment.isIe()) {
 
     } else {
-
+      
       DoIt();
     }
 
@@ -1831,7 +1833,6 @@ function PrepareNYTimesTagline(apiID)
   mack.vars.currentApiId = 2;
   // var apiID = 2;
 
-  poo('prepare ')
   // NYTIMES taglines
   copyText = copyTextArray[2];
   mack.vars.values = copyText.values;
@@ -2215,6 +2216,8 @@ function Init()
 
 function ActivateAPI(index)
 {
+  
+
   mack.vars.ranApi = true;
 
   if (!mack.vars.logoIndex) {

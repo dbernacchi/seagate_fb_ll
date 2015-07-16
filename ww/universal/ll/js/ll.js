@@ -265,7 +265,7 @@ var mack = {
     startGap: 9500
   },
   init: function() {
-
+    
     if (!mack.vars.isKosher) {
       $('.zoom-icon').css({
         display: 'none'
@@ -4132,8 +4132,6 @@ var mack = {
     //
     // Load all data
     //
-    poo(rcLocaleJSDirectory)
-
     $.when(
             //
             LoadJsonData(staticData, "instagram1Json", rootPath + "images/" + rcLocaleJSDirectory + "/instagram-1.json"), LoadJsonData(staticData, "instagram2Json", rootPath + "images/" + rcLocaleJSDirectory + "/instagram-2.json"), LoadJsonData(staticData, "instagram3Json", rootPath + "images/" + rcLocaleJSDirectory + "/instagram-3.json")
