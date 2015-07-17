@@ -1,0 +1,44 @@
+//#ifdef DO_STD_DERIVATIVES
+//    #extension GL_OES_standard_derivatives : enable
+//#endif
+
+#define float2 vec2
+#define float3 vec3
+#define float4 vec4
+
+const float PI                	= 3.1415926535897;
+const float TWOPI               = 2.0 * PI;
+const float DEG_TO_RAD          = PI / 180.0;
+const float RAD_TO_DEG          = 180.0 / PI;
+
+const float Gamma              	= 2.2;
+const float InvGamma            = 1.0 / Gamma;
+const vec3  LumCoeff            = vec3(0.2125, 0.7154, 0.0721);
+vec3 ToLinear( vec3 v )         { return pow( v, vec3( Gamma ) ); }
+vec3 ToSRGB( vec3 v )           { return pow( v, vec3( InvGamma ) ); }
+float Intensity( vec3 color )   { float intensity = dot( color, LumCoeff ); return intensity; }
+
+uniform sampler2D DiffuseMap;
+//uniform vec3 ViewPosition;
+//uniform vec4 LightPosition;
+//uniform vec3 LightColor;
+//uniform float Time;
+//uniform float AlphaIntensity;
+
+varying vec2 texcoord;
+
+
+
+void main()
+{
+    float4 FinalColor = float4( 0.0, 0.0, 0.0, 1.0 );
+    
+    float4 colorTexel = texture2D( DiffuseMap, texcoord );
+    colorTexel.rgb = ToLinear( colorTexel.rgb );
+
+    FinalColor.rgb = colorTexel.rgb;
+    
+    gl_FragColor.rgb = ToSRGB( FinalColor.rgb );
+    gl_FragColor.a = FinalColor.a;
+}
+//</script>

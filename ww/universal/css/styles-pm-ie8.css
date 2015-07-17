@@ -1,0 +1,26 @@
+body {
+	min-width: 1000px;
+}
+.wmh-logo {
+	background: url('../images/pm/logo-seagate.png') no-repeat;
+}
+.wmh-logo svg {
+	display: none;
+}
+.btn-search {
+	background: url(../images/pm/icn-search-magnify.png);
+}
+.btn-search i {
+	display: none;
+}
+.cbox input[type="checkbox"] {
+	visibility: visible;
+	outline: none;
+}
+.cbox input[type="checkbox"]:checked + label:before {
+	display: none;
+}
+.cbox input[type="checkbox"].checked + label:before {
+	display: block;
+	content: "\e605";
+}

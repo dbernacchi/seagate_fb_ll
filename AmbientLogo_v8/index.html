@@ -1,0 +1,296 @@
+<html>
+<head>
+	<title>Log</title>
+	<link href="css/style.css" rel="stylesheet" />
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="lib/spritespin.js"></script>
+	<script src="lib/green/TweenMax.min.js"></script>
+	
+<!-- <script src="lib/legacy_spritespin.js"></script> -->
+	<style>
+
+
+	.bg {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top:0;
+		content: '';
+		
+		background: url('images/page_bg_1920.jpg') no-repeat;
+		background-size: 100% 100%;
+		width: 1440px;
+		height: 1173px;
+	}
+
+	#seaLogo {
+	  margin: 5px;
+	  z-index: 3;
+
+
+
+	}
+	#container{
+	    width: 480px;
+	}
+
+	#seaLogoText {
+		pointer-events:none;
+	  margin: 5px;
+	  
+	 
+	}
+
+	.staticGreen {
+		/*background: url('images/seagate_green_logo_v01.png') no-repeat;*/
+		position: relative;
+	}
+	.staticGreen img {
+		height: 37px;
+		width: 42px;
+	}
+	.seag {
+		margin: 7px;
+		padding: 0;
+	}
+	.seag li {
+		display: inline-block;
+		max-width: 50%;
+		position: relative;
+		height: 40px;
+		float: left;
+	}
+	.lContain {
+		top:13px;
+		position: relative;
+	}
+	.logoHolder {
+		/*padding: 5px;*/
+		/*border: 1px solid black;*/
+		/*margin: 5px;*/
+		margin-left: 40px;
+		z-index: 3;
+
+	}
+	.textHolder {
+		position: absolute;
+		top: 8px;
+		/*padding: 5px;*/
+		/*border: 1px solid black;*/
+		/*margin: 5px;*/
+		margin-left: 5px;
+		padding-left: 0;
+	}
+	.textHolder img {
+		width: 121px;
+		height: 37px;
+	}
+
+	.logoText {
+
+	}
+	</style>
+</head>
+<body>
+
+
+	<!-- <div id='container'>
+	    <div id='spritespizn'></div>
+	    <div id='slider'></div>
+	</div>
+ -->
+
+
+
+	<div class="bg">
+	</div>
+			<!-- <div class="logoHolder">
+				<div id="seaLogo"></div>
+			</div> -->
+			<ul class="seag">
+				<li>
+					<div class="lContain">
+						<div class="logoHolder">
+							<!-- <div id="seaLogoText" class="spritespin seaLogoText"></div> -->
+							<div class="staticGreen">
+								<img src="images/seagate_green_logo_v01.png" alt="">
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="textHolder">
+						<img class="logoText" src="images/sprites/logo_text-v02.png">
+					</div>
+				</li>
+			</ul>
+			
+			<div class="procent"></div>
+
+		
+
+		<script type="text/javascript">
+		var randSelector = 0;
+		var waitTime = 1000;
+		 var seaLog ;
+
+		 var mack = {
+		 	randomInterval: function(min,max)
+					{
+					    return Math.floor(Math.random()*(max-min+1)+min);
+					}
+		 }
+
+		function notRandomWait(){
+			switch(randSelector){
+				case 0:
+					   seaLogoText = $('#seaLogoText').spritespin({
+					      source: 'images/sprites/logo_42x38_10_23.png',
+					      width: 42,
+					      height: 38,
+					      loop: false,
+					      frames: 180,
+					      framesX: 13,
+					      sense: -1
+					    })
+
+
+
+					 randSelector =  Math.floor(Math.random() * 4) + 1;
+					 notRandomWait();
+				break;
+				case 1: 
+					waitTime = 5000;
+					setTimeout(function(){
+						/*seaLog.spritespin("api").startAnimation()*/
+						seaLogoText.spritespin("api").startAnimation()
+						randSelector =  Math.floor(Math.random() * 4) + 1;
+						notRandomWait();
+					}, waitTime );
+				break;
+				case 2: 
+					waitTime = mack.randomInterval(5000,9000);
+					setTimeout(function(){
+						/*seaLog.spritespin("api").startAnimation()*/
+						seaLogoText.spritespin("api").startAnimation()
+						randSelector =  Math.floor(Math.random() * 4) + 1;
+						notRandomWait();
+					}, waitTime );
+				break;
+				case 3: 
+					waitTime = mack.randomInterval(5000,15000);
+					setTimeout(function(){
+						/*seaLog.spritespin("api").startAnimation()*/
+						seaLogoText.spritespin("api").startAnimation()
+						randSelector =  Math.floor(Math.random() * 4) + 1;
+						notRandomWait();
+					}, waitTime );
+				break;
+				case 4: 
+					waitTime = mack.randomInterval(5000,20000);
+					setTimeout(function(){
+						/*seaLog.spritespin("api").startAnimation()*/
+						seaLogoText.spritespin("api").startAnimation()
+						randSelector =  Math.floor(Math.random() * 4) + 1;
+						notRandomWait();
+					}, waitTime );
+				break;
+
+
+			}
+
+		}
+		
+		notRandomWait();
+		var seaL = new TimelineMax();
+		  
+		$(function(){
+			//TweenLite.set($('.logoHolder'), {perspective:500});
+			seaL.set($('.lContain'), { perspective:400});
+
+			$(window).mousemove(function(event){
+
+				/*console.log(event.pageX);*/
+				var total = $(window).width();
+				var height = $(window).height();
+				var half = total/2;
+				var halfTop = height/2;
+				var xPos = event.pageX;
+				var leftHem = xPos/half;
+				var yPos = event.pageY;
+				var northHem = yPos/half;
+				/*console.log('half '+ northHem)
+				console.log(yPos+ ' half '+halfTop)*/
+				/*console.log('half '+ leftHem)*/
+				/*console.log(xPos+ ' half '+half)*/
+				if( xPos <= half){
+					
+					var multiplier = 1 -leftHem;
+					
+				//	console.log((80*multiplier))
+					var yTurn = (-45*multiplier);
+					
+					
+					//console.log('yTurn'+yTurn)
+					//console.log(yTurn)
+					//TweenLite.to($('.logoHolder'),0, {rotationY:yTurn, transformStyle:"preserve-3d", transformOrigin:"center"})
+					TweenMax.to(".logoHolder", 0.9, {rotationY:yTurn});
+					/*$(".logoHolder").animate({"shortRotationX":yTurn}, 500);*/
+
+				} else {
+					var multiplier = leftHem-1;
+					//var multiplier = 1 -leftHem;
+					
+					var yTurnz = (45*multiplier)+1;
+					//console.log('bing'+yTurnz)
+					/*console.log(yTurnz)*/
+					TweenMax.to($('.logoHolder'),0.9, {rotationY:yTurnz, transformStyle:"preserve-3d", overwrite:"auto"})
+					/*$('.logoHolder').animate({rotationX:yTurnz});*/
+					//TweenMax.to(".logoHolder", 0, {rotationY:yTurnz});
+					/*$(".logoHolder").animate({transform:"rotateX("+yTurnz+"deg)"}, 500);*/
+
+				}
+
+				if(yPos <= halfTop){
+					var multiplierX = 1 -northHem;
+					var xTurn = (45*multiplierX);
+					console.log("top"+xTurn)
+					//TweenMax.to(".logoHolder", 0, {rotationX:xTurn});
+					TweenMax.to($('.logoHolder'),0.9, {rotationX:xTurn, transformStyle:"preserve-3d", overwrite:"auto"})
+
+				} else {
+					var multiplierX = northHem-0.31;
+					/*var multiplierX = 1 -northHem;*/
+					
+					if((-45*multiplierX) >=-45){
+						var xTurnz = (-45*multiplierX);
+					} else {
+						var xTurnz = -45;
+
+					}
+					console.log("bottom"+xTurnz)
+					TweenMax.to($('.logoHolder'),0.9, {rotationX:xTurnz, transformStyle:"preserve-3d", overwrite:"auto"})
+
+				}
+
+			})
+			$('.logoHolder').mouseenter(function(ev){
+				ev.stopPropagation()
+
+				//seaL.to($('.logoHolder'), 3, {rotationY:80})
+
+
+			}).mouseleave(function(ev){
+				//seaL.to($('.logoHolder'), 3, {rotationY:0})
+
+			})
+		})
+
+
+		 // showSpriteExample();
+		</script>
+	
+</body>
+</html>

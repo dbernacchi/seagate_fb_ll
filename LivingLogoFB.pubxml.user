@@ -1,0 +1,3055 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\vic\Desktop\LivingLogo</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/LivingLogoFacebook.dll">
+      <publishTime>06/24/2015 15:43:50</publishTime>
+    </File>
+    <File Include="fb.html">
+      <publishTime>06/24/2015 15:34:43</publishTime>
+    </File>
+    <File Include="nbproject/private/config.properties">
+      <publishTime>01/13/2015 20:36:53</publishTime>
+    </File>
+    <File Include="nbproject/private/private.properties">
+      <publishTime>05/13/2015 19:45:29</publishTime>
+    </File>
+    <File Include="nbproject/private/private.xml">
+      <publishTime>06/23/2015 19:18:55</publishTime>
+    </File>
+    <File Include="nbproject/project.properties">
+      <publishTime>01/13/2015 20:35:38</publishTime>
+    </File>
+    <File Include="nbproject/project.xml">
+      <publishTime>01/13/2015 20:35:38</publishTime>
+    </File>
+    <File Include="slide.html">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="test/index.php">
+      <publishTime>05/30/2015 19:23:46</publishTime>
+    </File>
+    <File Include="test/index_1.php">
+      <publishTime>05/26/2015 16:22:50</publishTime>
+    </File>
+    <File Include="test/next.php">
+      <publishTime>05/30/2015 21:52:52</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>06/24/2015 16:23:37</publishTime>
+    </File>
+    <File Include="ww/js/alslider.js">
+      <publishTime>06/18/2015 16:13:24</publishTime>
+    </File>
+    <File Include="ww/js/app/doMoreArticle.js">
+      <publishTime>06/18/2015 16:12:47</publishTime>
+    </File>
+    <File Include="ww/js/app/localeChooser.js">
+      <publishTime>06/18/2015 16:12:46</publishTime>
+    </File>
+    <File Include="ww/js/app/localeChooser.min.js">
+      <publishTime>06/18/2015 16:12:46</publishTime>
+    </File>
+    <File Include="ww/js/atooltip.jquery.js">
+      <publishTime>06/18/2015 16:13:17</publishTime>
+    </File>
+    <File Include="ww/js/bootstrap-modal.js">
+      <publishTime>06/18/2015 16:12:45</publishTime>
+    </File>
+    <File Include="ww/js/bootstrap-transition.js">
+      <publishTime>06/18/2015 16:13:22</publishTime>
+    </File>
+    <File Include="ww/js/clearinput.js">
+      <publishTime>06/18/2015 16:13:19</publishTime>
+    </File>
+    <File Include="ww/js/common-worp.js">
+      <publishTime>06/18/2015 16:13:09</publishTime>
+    </File>
+    <File Include="ww/js/common.js">
+      <publishTime>06/18/2015 16:13:15</publishTime>
+    </File>
+    <File Include="ww/js/cusel-min-2.3.1.js">
+      <publishTime>06/18/2015 16:13:26</publishTime>
+    </File>
+    <File Include="ww/js/cusel-min-2.3.4.js">
+      <publishTime>06/18/2015 16:13:21</publishTime>
+    </File>
+    <File Include="ww/js/cusel-select.js">
+      <publishTime>06/18/2015 16:13:06</publishTime>
+    </File>
+    <File Include="ww/js/cuselhandler.js">
+      <publishTime>06/18/2015 16:13:27</publishTime>
+    </File>
+    <File Include="ww/js/downloadPopUp.js">
+      <publishTime>06/18/2015 16:13:19</publishTime>
+    </File>
+    <File Include="ww/js/fadegallery.js">
+      <publishTime>06/18/2015 16:13:23</publishTime>
+    </File>
+    <File Include="ww/js/frontend/accessories_entry.js">
+      <publishTime>06/18/2015 16:12:49</publishTime>
+    </File>
+    <File Include="ww/js/frontend/campaign_buy_template.js">
+      <publishTime>06/18/2015 16:12:57</publishTime>
+    </File>
+    <File Include="ww/js/frontend/campaign_learn.js">
+      <publishTime>06/18/2015 16:13:01</publishTime>
+    </File>
+    <File Include="ww/js/frontend/category_internal_drives.js">
+      <publishTime>06/18/2015 16:12:55</publishTime>
+    </File>
+    <File Include="ww/js/frontend/company_profile.js">
+      <publishTime>06/18/2015 16:13:03</publishTime>
+    </File>
+    <File Include="ww/js/frontend/directed_support.js">
+      <publishTime>06/18/2015 16:13:04</publishTime>
+    </File>
+    <File Include="ww/js/frontend/direct_dash.js">
+      <publishTime>06/18/2015 16:12:56</publishTime>
+    </File>
+    <File Include="ww/js/frontend/direct_portal_application.js">
+      <publishTime>06/18/2015 16:13:02</publishTime>
+    </File>
+    <File Include="ww/js/frontend/Do_More_search_result.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ww/js/frontend/financial_information.js">
+      <publishTime>06/18/2015 16:12:51</publishTime>
+    </File>
+    <File Include="ww/js/frontend/home.js">
+      <publishTime>06/18/2015 16:12:57</publishTime>
+    </File>
+    <File Include="ww/js/frontend/legacy_category.js">
+      <publishTime>06/18/2015 16:12:49</publishTime>
+    </File>
+    <File Include="ww/js/frontend/overlays_popup.js">
+      <publishTime>06/18/2015 16:12:55</publishTime>
+    </File>
+    <File Include="ww/js/frontend/partners_dash_auth.js">
+      <publishTime>06/18/2015 16:13:05</publishTime>
+    </File>
+    <File Include="ww/js/frontend/popup_content.js">
+      <publishTime>06/18/2015 16:13:01</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_contact.js">
+      <publishTime>06/18/2015 16:12:58</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_details.js">
+      <publishTime>06/18/2015 16:12:52</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_blackarmor_features.js">
+      <publishTime>06/18/2015 16:13:03</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_blackarmor_overview.js">
+      <publishTime>06/18/2015 16:12:58</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_goflex.js">
+      <publishTime>06/18/2015 16:12:58</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_goflex_features.js">
+      <publishTime>06/18/2015 16:13:05</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_goflex_overview.js">
+      <publishTime>06/18/2015 16:12:51</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_goflex_reviews.js">
+      <publishTime>06/18/2015 16:12:54</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_goflex_ship.js">
+      <publishTime>06/18/2015 16:13:01</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_goflex_specs.js">
+      <publishTime>06/18/2015 16:12:52</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_goflex_support.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_goflex_support_downloads.js">
+      <publishTime>06/18/2015 16:12:59</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_goflex_support_how_tos.js">
+      <publishTime>06/18/2015 16:12:54</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_goflex_support_started.js">
+      <publishTime>06/18/2015 16:12:56</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_goflex_support_troubleshooting.js">
+      <publishTime>06/18/2015 16:13:06</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_momentus_features.js">
+      <publishTime>06/18/2015 16:12:48</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_momentus_overview.js">
+      <publishTime>06/18/2015 16:12:50</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_momentus_quick.js">
+      <publishTime>06/18/2015 16:12:52</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_savvio_features.js">
+      <publishTime>06/18/2015 16:13:06</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_savvio_overview.js">
+      <publishTime>06/18/2015 16:12:53</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_support_article.js">
+      <publishTime>06/18/2015 16:12:58</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_support_contact.js">
+      <publishTime>06/18/2015 16:13:03</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_support_entry.js">
+      <publishTime>06/18/2015 16:12:53</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_support_firmware.js">
+      <publishTime>06/18/2015 16:12:56</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_detail_support_forum.js">
+      <publishTime>06/18/2015 16:13:02</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_finder_comparison.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_finder_entry.js">
+      <publishTime>06/18/2015 16:12:49</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_finder_grid.js">
+      <publishTime>06/18/2015 16:12:59</publishTime>
+    </File>
+    <File Include="ww/js/frontend/product_quick_link.js">
+      <publishTime>06/18/2015 16:13:02</publishTime>
+    </File>
+    <File Include="ww/js/frontend/search_result.js">
+      <publishTime>06/18/2015 16:12:55</publishTime>
+    </File>
+    <File Include="ww/js/frontend/solution_provider_finder.js">
+      <publishTime>06/18/2015 16:13:04</publishTime>
+    </File>
+    <File Include="ww/js/frontend/sub_category_enterprise.js">
+      <publishTime>06/18/2015 16:12:59</publishTime>
+    </File>
+    <File Include="ww/js/frontend/sub_category_portables.js">
+      <publishTime>06/18/2015 16:12:53</publishTime>
+    </File>
+    <File Include="ww/js/frontend/sub_category_support.js">
+      <publishTime>06/18/2015 16:12:51</publishTime>
+    </File>
+    <File Include="ww/js/frontend/support_downloads_entry.js">
+      <publishTime>06/18/2015 16:12:50</publishTime>
+    </File>
+    <File Include="ww/js/frontend/support_download_entry_search_reveal.js">
+      <publishTime>06/18/2015 16:12:54</publishTime>
+    </File>
+    <File Include="ww/js/frontend/warrantySteps.js">
+      <publishTime>06/18/2015 16:13:04</publishTime>
+    </File>
+    <File Include="ww/js/frontend/warranty_returns_suport.js">
+      <publishTime>06/18/2015 16:12:51</publishTime>
+    </File>
+    <File Include="ww/js/frontend/where_to_buy_landing.js">
+      <publishTime>06/18/2015 16:12:57</publishTime>
+    </File>
+    <File Include="ww/js/gallery.js">
+      <publishTime>06/18/2015 16:13:09</publishTime>
+    </File>
+    <File Include="ww/js/header-min.js">
+      <publishTime>06/18/2015 16:13:08</publishTime>
+    </File>
+    <File Include="ww/js/jquery-1.6.1.min.js">
+      <publishTime>06/18/2015 16:12:44</publishTime>
+    </File>
+    <File Include="ww/js/jquery-1.9.1.js">
+      <publishTime>06/18/2015 16:12:41</publishTime>
+    </File>
+    <File Include="ww/js/jquery-1.9.1.min.js">
+      <publishTime>06/18/2015 16:12:41</publishTime>
+    </File>
+    <File Include="ww/js/jquery-migrate-1.1.0.js">
+      <publishTime>06/18/2015 16:13:25</publishTime>
+    </File>
+    <File Include="ww/js/jquery-ui-1.10.2.custom.min.js">
+      <publishTime>06/18/2015 16:12:43</publishTime>
+    </File>
+    <File Include="ww/js/jquery-ui-1.10.3.custom.min.js">
+      <publishTime>06/18/2015 16:13:26</publishTime>
+    </File>
+    <File Include="ww/js/jquery-ui-1.8.18.custom.min.js">
+      <publishTime>06/18/2015 16:12:47</publishTime>
+    </File>
+    <File Include="ww/js/jquery.ba-hashchange.min.js">
+      <publishTime>06/18/2015 16:12:43</publishTime>
+    </File>
+    <File Include="ww/js/jquery.cookie.js">
+      <publishTime>06/18/2015 16:12:39</publishTime>
+    </File>
+    <File Include="ww/js/jquery.ezmark.min.js">
+      <publishTime>06/18/2015 16:13:27</publishTime>
+    </File>
+    <File Include="ww/js/jquery.ezmark.min2.js">
+      <publishTime>06/18/2015 16:12:41</publishTime>
+    </File>
+    <File Include="ww/js/jquery.fancybox-1.3.4.pack.js">
+      <publishTime>06/18/2015 16:13:21</publishTime>
+    </File>
+    <File Include="ww/js/jquery.fancybox-1.3.4_patch.js">
+      <publishTime>06/18/2015 16:13:25</publishTime>
+    </File>
+    <File Include="ww/js/jquery.fancybox.pack.js">
+      <publishTime>06/18/2015 16:13:09</publishTime>
+    </File>
+    <File Include="ww/js/jquery.file.js">
+      <publishTime>06/18/2015 16:13:08</publishTime>
+    </File>
+    <File Include="ww/js/jquery.galleryScroll.1.5.2.js">
+      <publishTime>06/18/2015 16:13:16</publishTime>
+    </File>
+    <File Include="ww/js/jquery.infieldlabel.min.js">
+      <publishTime>06/18/2015 16:13:10</publishTime>
+    </File>
+    <File Include="ww/js/jquery.jscrollpane.min.js">
+      <publishTime>06/18/2015 16:13:17</publishTime>
+    </File>
+    <File Include="ww/js/jquery.json-2.2.min.js">
+      <publishTime>06/18/2015 16:12:47</publishTime>
+    </File>
+    <File Include="ww/js/jquery.min.map">
+      <publishTime>06/18/2015 16:12:44</publishTime>
+    </File>
+    <File Include="ww/js/jquery.mousewheel.js">
+      <publishTime>06/18/2015 16:13:20</publishTime>
+    </File>
+    <File Include="ww/js/jquery.navSlider.js">
+      <publishTime>06/18/2015 16:13:22</publishTime>
+    </File>
+    <File Include="ww/js/jquery.navSlider_Category.js">
+      <publishTime>06/18/2015 16:13:20</publishTime>
+    </File>
+    <File Include="ww/js/jquery.newsticker.min.js">
+      <publishTime>06/18/2015 16:12:39</publishTime>
+    </File>
+    <File Include="ww/js/jquery.session.js">
+      <publishTime>06/18/2015 16:13:15</publishTime>
+    </File>
+    <File Include="ww/js/jquery.tablesorter.min.js">
+      <publishTime>06/18/2015 16:13:25</publishTime>
+    </File>
+    <File Include="ww/js/jquery/fadegallery.js">
+      <publishTime>06/18/2015 16:13:24</publishTime>
+    </File>
+    <File Include="ww/js/library-min-www.js">
+      <publishTime>06/18/2015 16:13:16</publishTime>
+    </File>
+    <File Include="ww/js/library-min.js">
+      <publishTime>06/18/2015 16:12:42</publishTime>
+    </File>
+    <File Include="ww/js/library.js">
+      <publishTime>06/18/2015 16:13:27</publishTime>
+    </File>
+    <File Include="ww/js/main.js">
+      <publishTime>06/18/2015 16:13:07</publishTime>
+    </File>
+    <File Include="ww/js/plugins.js">
+      <publishTime>06/18/2015 16:13:20</publishTime>
+    </File>
+    <File Include="ww/js/product_configurator.js">
+      <publishTime>06/18/2015 16:12:45</publishTime>
+    </File>
+    <File Include="ww/js/product_finder.js">
+      <publishTime>06/18/2015 16:12:45</publishTime>
+    </File>
+    <File Include="ww/js/product_support.js">
+      <publishTime>06/18/2015 16:12:43</publishTime>
+    </File>
+    <File Include="ww/js/quo.js">
+      <publishTime>06/18/2015 16:13:10</publishTime>
+    </File>
+    <File Include="ww/js/search/merged.js">
+      <publishTime>06/18/2015 16:13:18</publishTime>
+    </File>
+    <File Include="ww/js/search/search.js">
+      <publishTime>06/18/2015 16:13:18</publishTime>
+    </File>
+    <File Include="ww/js/search/ss.js">
+      <publishTime>06/18/2015 16:13:19</publishTime>
+    </File>
+    <File Include="ww/js/slideBlock.js">
+      <publishTime>06/18/2015 16:13:24</publishTime>
+    </File>
+    <File Include="ww/js/SlideCarousel.js">
+      <publishTime>06/18/2015 16:12:39</publishTime>
+    </File>
+    <File Include="ww/js/specs.js">
+      <publishTime>06/18/2015 16:13:24</publishTime>
+    </File>
+    <File Include="ww/js/support_firmware.js">
+      <publishTime>06/18/2015 16:13:07</publishTime>
+    </File>
+    <File Include="ww/js/swfobject.js">
+      <publishTime>06/18/2015 16:12:39</publishTime>
+    </File>
+    <File Include="ww/js/tabs.js">
+      <publishTime>06/18/2015 16:13:22</publishTime>
+    </File>
+    <File Include="ww/js/tn.js">
+      <publishTime>06/18/2015 16:12:40</publishTime>
+    </File>
+    <File Include="ww/js/toggle.js">
+      <publishTime>06/18/2015 16:13:07</publishTime>
+    </File>
+    <File Include="ww/js/vcmjs/vext/adapter/vext/vext-base.js">
+      <publishTime>06/18/2015 16:13:15</publishTime>
+    </File>
+    <File Include="ww/js/vcmjs/vext/vext-all.js">
+      <publishTime>06/18/2015 16:13:12</publishTime>
+    </File>
+    <File Include="ww/js/vcmjs/vext/vext-ux/vext-ux.js">
+      <publishTime>06/18/2015 16:13:13</publishTime>
+    </File>
+    <File Include="ww/universal/css/bootstrap-responsive.css">
+      <publishTime>06/18/2015 16:13:58</publishTime>
+    </File>
+    <File Include="ww/universal/css/font-awesome.min.css">
+      <publishTime>06/18/2015 16:13:55</publishTime>
+    </File>
+    <File Include="ww/universal/css/ie8.css">
+      <publishTime>06/18/2015 16:13:51</publishTime>
+    </File>
+    <File Include="ww/universal/css/lacie-bootstrap-min.css">
+      <publishTime>06/18/2015 16:13:48</publishTime>
+    </File>
+    <File Include="ww/universal/css/lacie-bootstrap-responsive-min.css">
+      <publishTime>06/18/2015 16:13:49</publishTime>
+    </File>
+    <File Include="ww/universal/css/lacie-bootstrap-responsive.css">
+      <publishTime>06/18/2015 16:13:46</publishTime>
+    </File>
+    <File Include="ww/universal/css/lacie-bootstrap.css">
+      <publishTime>06/18/2015 16:13:47</publishTime>
+    </File>
+    <File Include="ww/universal/css/post-share.css">
+      <publishTime>06/18/2015 16:13:57</publishTime>
+    </File>
+    <File Include="ww/universal/css/ss-standard.css">
+      <publishTime>06/18/2015 16:13:42</publishTime>
+    </File>
+    <File Include="ww/universal/css/stx-bootstrap-legacy-header-footer.css">
+      <publishTime>06/18/2015 16:13:49</publishTime>
+    </File>
+    <File Include="ww/universal/css/stx-bootstrap-min.css">
+      <publishTime>06/18/2015 16:13:52</publishTime>
+    </File>
+    <File Include="ww/universal/css/stx-bootstrap-responsive-min.css">
+      <publishTime>06/18/2015 16:13:51</publishTime>
+    </File>
+    <File Include="ww/universal/css/stx-bootstrap-responsive.css">
+      <publishTime>06/18/2015 16:13:45</publishTime>
+    </File>
+    <File Include="ww/universal/css/stx-bootstrap.css">
+      <publishTime>06/18/2015 16:13:50</publishTime>
+    </File>
+    <File Include="ww/universal/css/stx-product-manual-min.css">
+      <publishTime>06/18/2015 16:13:53</publishTime>
+    </File>
+    <File Include="ww/universal/css/stx-product-manual-responsive-min.css">
+      <publishTime>06/18/2015 16:13:57</publishTime>
+    </File>
+    <File Include="ww/universal/css/stx-product-manual-responsive.css">
+      <publishTime>06/18/2015 16:13:51</publishTime>
+    </File>
+    <File Include="ww/universal/css/stx-product-manual.css">
+      <publishTime>06/18/2015 16:13:43</publishTime>
+    </File>
+    <File Include="ww/universal/css/styles-pm-ie8.css">
+      <publishTime>06/18/2015 16:13:54</publishTime>
+    </File>
+    <File Include="ww/universal/css/styles_ie8.css">
+      <publishTime>06/18/2015 16:13:45</publishTime>
+    </File>
+    <File Include="ww/universal/css/styles_ie9.css">
+      <publishTime>06/18/2015 16:13:56</publishTime>
+    </File>
+    <File Include="ww/universal/font/ben/temp.html">
+      <publishTime>06/18/2015 16:14:49</publishTime>
+    </File>
+    <File Include="ww/universal/font/documentation.html">
+      <publishTime>06/18/2015 16:14:52</publishTime>
+    </File>
+    <File Include="ww/universal/font/font">
+      <publishTime>06/18/2015 16:14:58</publishTime>
+    </File>
+    <File Include="ww/universal/font/fontawesome-webfont.eot">
+      <publishTime>06/18/2015 16:14:52</publishTime>
+    </File>
+    <File Include="ww/universal/font/fontawesome-webfont.svg">
+      <publishTime>06/18/2015 16:14:55</publishTime>
+    </File>
+    <File Include="ww/universal/font/fontawesome-webfont.ttf">
+      <publishTime>06/18/2015 16:14:56</publishTime>
+    </File>
+    <File Include="ww/universal/font/fontawesome-webfont.woff">
+      <publishTime>06/18/2015 16:14:58</publishTime>
+    </File>
+    <File Include="ww/universal/font/FontAwesome.otf">
+      <publishTime>06/18/2015 16:14:58</publishTime>
+    </File>
+    <File Include="ww/universal/font/Lato-Bold.eot">
+      <publishTime>06/18/2015 16:14:56</publishTime>
+    </File>
+    <File Include="ww/universal/font/Lato-Bold.ttf">
+      <publishTime>06/18/2015 16:14:54</publishTime>
+    </File>
+    <File Include="ww/universal/font/Lato-Bold.woff">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ww/universal/font/Lato-Light.eot">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ww/universal/font/Lato-Light.ttf">
+      <publishTime>06/18/2015 16:14:59</publishTime>
+    </File>
+    <File Include="ww/universal/font/Lato-Light.woff">
+      <publishTime>06/18/2015 16:15:01</publishTime>
+    </File>
+    <File Include="ww/universal/font/Lato-Regular.eot">
+      <publishTime>06/18/2015 16:14:57</publishTime>
+    </File>
+    <File Include="ww/universal/font/Lato-Regular.ttf">
+      <publishTime>06/18/2015 16:14:51</publishTime>
+    </File>
+    <File Include="ww/universal/font/Lato-Regular.woff">
+      <publishTime>06/18/2015 16:14:57</publishTime>
+    </File>
+    <File Include="ww/universal/font/ss-standard.css">
+      <publishTime>06/18/2015 16:14:49</publishTime>
+    </File>
+    <File Include="ww/universal/font/ss-standard.eot">
+      <publishTime>06/18/2015 16:14:53</publishTime>
+    </File>
+    <File Include="ww/universal/font/ss-standard.js">
+      <publishTime>06/18/2015 16:14:48</publishTime>
+    </File>
+    <File Include="ww/universal/font/ss-standard.svg">
+      <publishTime>06/18/2015 16:14:52</publishTime>
+    </File>
+    <File Include="ww/universal/font/ss-standard.ttf">
+      <publishTime>06/18/2015 16:14:50</publishTime>
+    </File>
+    <File Include="ww/universal/font/ss-standard.woff">
+      <publishTime>06/18/2015 16:14:59</publishTime>
+    </File>
+    <File Include="ww/universal/font/stx-product-manual.eot">
+      <publishTime>06/18/2015 16:14:53</publishTime>
+    </File>
+    <File Include="ww/universal/font/stx-product-manual.svg">
+      <publishTime>06/18/2015 16:14:53</publishTime>
+    </File>
+    <File Include="ww/universal/font/stx-product-manual.ttf">
+      <publishTime>06/18/2015 16:14:55</publishTime>
+    </File>
+    <File Include="ww/universal/font/stx-product-manual.woff">
+      <publishTime>06/18/2015 16:15:01</publishTime>
+    </File>
+    <File Include="ww/universal/images/bg-ds-btm.png">
+      <publishTime>06/18/2015 16:13:59</publishTime>
+    </File>
+    <File Include="ww/universal/images/bg-pdp-buy-rtl.gif">
+      <publishTime>06/18/2015 16:14:23</publishTime>
+    </File>
+    <File Include="ww/universal/images/bg-pdp-buy.gif">
+      <publishTime>06/18/2015 16:14:36</publishTime>
+    </File>
+    <File Include="ww/universal/images/bg-rwd-nav-tabs.png">
+      <publishTime>06/18/2015 16:14:21</publishTime>
+    </File>
+    <File Include="ww/universal/images/bg-transparent.png">
+      <publishTime>06/18/2015 16:14:42</publishTime>
+    </File>
+    <File Include="ww/universal/images/btn-gear.png">
+      <publishTime>06/18/2015 16:14:15</publishTime>
+    </File>
+    <File Include="ww/universal/images/btn-search-submit-flat-rtl.png">
+      <publishTime>06/18/2015 16:14:32</publishTime>
+    </File>
+    <File Include="ww/universal/images/btn-search-submit-flat.png">
+      <publishTime>06/18/2015 16:14:17</publishTime>
+    </File>
+    <File Include="ww/universal/images/btn-search-submit-rtl.png">
+      <publishTime>06/18/2015 16:14:04</publishTime>
+    </File>
+    <File Include="ww/universal/images/btn-search-submit.png">
+      <publishTime>06/18/2015 16:14:47</publishTime>
+    </File>
+    <File Include="ww/universal/images/choice-lang-sprite.png">
+      <publishTime>06/18/2015 16:14:13</publishTime>
+    </File>
+    <File Include="ww/universal/images/consumers.jpg">
+      <publishTime>06/18/2015 16:14:22</publishTime>
+    </File>
+    <File Include="ww/universal/images/ds-specs-table-rtl.png">
+      <publishTime>06/18/2015 16:14:23</publishTime>
+    </File>
+    <File Include="ww/universal/images/ds-specs-table.png">
+      <publishTime>06/18/2015 16:14:09</publishTime>
+    </File>
+    <File Include="ww/universal/images/footer-logo.gif">
+      <publishTime>06/18/2015 16:14:30</publishTime>
+    </File>
+    <File Include="ww/universal/images/footer-logo.png">
+      <publishTime>06/18/2015 16:14:29</publishTime>
+    </File>
+    <File Include="ww/universal/images/fpo-consumer-dashboard-communities-bg.png">
+      <publishTime>06/18/2015 16:14:33</publishTime>
+    </File>
+    <File Include="ww/universal/images/fpo-consumer-dashboard-welcome-bg.jpg">
+      <publishTime>06/18/2015 16:14:42</publishTime>
+    </File>
+    <File Include="ww/universal/images/fpo-facebook-icon.png">
+      <publishTime>06/18/2015 16:14:35</publishTime>
+    </File>
+    <File Include="ww/universal/images/fpo-twitter-icon.png">
+      <publishTime>06/18/2015 16:14:31</publishTime>
+    </File>
+    <File Include="ww/universal/images/fpo-welcome-item-1.jpg">
+      <publishTime>06/18/2015 16:14:34</publishTime>
+    </File>
+    <File Include="ww/universal/images/fpo-welcome-item-1.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ww/universal/images/fpo-welcome-item-2.png">
+      <publishTime>06/18/2015 16:14:05</publishTime>
+    </File>
+    <File Include="ww/universal/images/fpo-welcome-item-3.png">
+      <publishTime>06/18/2015 16:14:07</publishTime>
+    </File>
+    <File Include="ww/universal/images/fpo-welcome-item-4.png">
+      <publishTime>06/18/2015 16:14:13</publishTime>
+    </File>
+    <File Include="ww/universal/images/global/fancybox/blank.gif">
+      <publishTime>06/18/2015 16:14:38</publishTime>
+    </File>
+    <File Include="ww/universal/images/global/fancybox/fancybox-x.png">
+      <publishTime>06/18/2015 16:14:37</publishTime>
+    </File>
+    <File Include="ww/universal/images/global/fancybox/fancybox-y.png">
+      <publishTime>06/18/2015 16:14:38</publishTime>
+    </File>
+    <File Include="ww/universal/images/global/fancybox/fancybox.png">
+      <publishTime>06/18/2015 16:14:37</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn-magnify.gif">
+      <publishTime>06/18/2015 16:14:28</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn-magnify.png">
+      <publishTime>06/18/2015 16:14:05</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn-nav-arrow-h-rtl.png">
+      <publishTime>06/18/2015 16:14:23</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn-nav-arrow-h.png">
+      <publishTime>06/18/2015 16:14:41</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn-nav-arrow-rtl.png">
+      <publishTime>06/18/2015 16:14:39</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn-nav-arrow.png">
+      <publishTime>06/18/2015 16:14:33</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn-pdf-desktop.png">
+      <publishTime>06/18/2015 16:14:10</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn-pdf-touch.png">
+      <publishTime>06/18/2015 16:14:42</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn-press-release-arrow.png">
+      <publishTime>06/18/2015 16:14:16</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn-press-release-search.png">
+      <publishTime>06/18/2015 16:14:09</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_arrow_brand.gif">
+      <publishTime>06/18/2015 16:14:04</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_calendar-20x16.png">
+      <publishTime>06/18/2015 16:14:17</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_check.png">
+      <publishTime>06/18/2015 16:14:43</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_divider_soc.gif">
+      <publishTime>06/18/2015 16:14:31</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_doctype_sprite-13x14.png">
+      <publishTime>06/18/2015 16:14:30</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_drivers.gif">
+      <publishTime>06/18/2015 16:14:05</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_editprofile-28x36.png">
+      <publishTime>06/18/2015 16:14:43</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_folder.gif">
+      <publishTime>06/18/2015 16:14:07</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_load.gif">
+      <publishTime>06/18/2015 16:14:43</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_lupa-blue.png">
+      <publishTime>06/18/2015 16:14:22</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_lupa.gif">
+      <publishTime>06/18/2015 16:14:12</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_newtab-20x16.png">
+      <publishTime>06/18/2015 16:14:08</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_pdf-11x13.png">
+      <publishTime>06/18/2015 16:14:29</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_pdf-12x14.png">
+      <publishTime>06/18/2015 16:14:18</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_pdf.png">
+      <publishTime>06/18/2015 16:14:06</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_star-empty-18x15.png">
+      <publishTime>06/18/2015 16:14:31</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_star-empty-25x20.png">
+      <publishTime>06/18/2015 16:14:21</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_star-full-18x15.png">
+      <publishTime>06/18/2015 16:14:39</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_star-full-25x20.png">
+      <publishTime>06/18/2015 16:14:10</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_star-half-18x15.png">
+      <publishTime>06/18/2015 16:14:47</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_star-half-25x20.png">
+      <publishTime>06/18/2015 16:14:39</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_training-20x16.png">
+      <publishTime>06/18/2015 16:14:33</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_video-white.png">
+      <publishTime>06/18/2015 16:14:35</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_video.gif">
+      <publishTime>06/18/2015 16:14:38</publishTime>
+    </File>
+    <File Include="ww/universal/images/icn_webinar-20x16.png">
+      <publishTime>06/18/2015 16:14:41</publishTime>
+    </File>
+    <File Include="ww/universal/images/icon-cart.png">
+      <publishTime>06/18/2015 16:14:16</publishTime>
+    </File>
+    <File Include="ww/universal/images/jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>06/18/2015 16:14:25</publishTime>
+    </File>
+    <File Include="ww/universal/images/jquery-ui/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>06/18/2015 16:14:25</publishTime>
+    </File>
+    <File Include="ww/universal/images/jquery-ui/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>06/18/2015 16:14:26</publishTime>
+    </File>
+    <File Include="ww/universal/images/jquery-ui/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>06/18/2015 16:14:27</publishTime>
+    </File>
+    <File Include="ww/universal/images/jquery-ui/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>06/18/2015 16:14:28</publishTime>
+    </File>
+    <File Include="ww/universal/images/jquery-ui/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>06/18/2015 16:14:25</publishTime>
+    </File>
+    <File Include="ww/universal/images/jquery-ui/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>06/18/2015 16:14:26</publishTime>
+    </File>
+    <File Include="ww/universal/images/jquery-ui/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>06/18/2015 16:14:27</publishTime>
+    </File>
+    <File Include="ww/universal/images/jquery-ui/ui-icons_222222_256x240.png">
+      <publishTime>06/18/2015 16:14:24</publishTime>
+    </File>
+    <File Include="ww/universal/images/jquery-ui/ui-icons_2e83ff_256x240.png">
+      <publishTime>06/18/2015 16:14:26</publishTime>
+    </File>
+    <File Include="ww/universal/images/jquery-ui/ui-icons_454545_256x240.png">
+      <publishTime>06/18/2015 16:14:25</publishTime>
+    </File>
+    <File Include="ww/universal/images/jquery-ui/ui-icons_888888_256x240.png">
+      <publishTime>06/18/2015 16:14:27</publishTime>
+    </File>
+    <File Include="ww/universal/images/jquery-ui/ui-icons_cd0a0a_256x240.png">
+      <publishTime>06/18/2015 16:14:28</publishTime>
+    </File>
+    <File Include="ww/universal/images/lacie-logo.jpg">
+      <publishTime>06/18/2015 16:14:47</publishTime>
+    </File>
+    <File Include="ww/universal/images/logo_w110_blk.png">
+      <publishTime>06/18/2015 16:14:46</publishTime>
+    </File>
+    <File Include="ww/universal/images/logo_w110_wht.png">
+      <publishTime>06/18/2015 16:14:29</publishTime>
+    </File>
+    <File Include="ww/universal/images/logo_w131.png">
+      <publishTime>06/18/2015 16:14:40</publishTime>
+    </File>
+    <File Include="ww/universal/images/logo_w131_blk.png">
+      <publishTime>06/18/2015 16:14:46</publishTime>
+    </File>
+    <File Include="ww/universal/images/logo_w131_wht.png">
+      <publishTime>06/18/2015 16:14:03</publishTime>
+    </File>
+    <File Include="ww/universal/images/menu-arrows.png">
+      <publishTime>06/18/2015 16:14:04</publishTime>
+    </File>
+    <File Include="ww/universal/images/nav-global-arrows-rtl.png">
+      <publishTime>06/18/2015 16:14:14</publishTime>
+    </File>
+    <File Include="ww/universal/images/nav-global-arrows.png">
+      <publishTime>06/18/2015 16:14:32</publishTime>
+    </File>
+    <File Include="ww/universal/images/nav-sprite.png">
+      <publishTime>06/18/2015 16:14:12</publishTime>
+    </File>
+    <File Include="ww/universal/images/nav-tab-chrome-bg.jpg">
+      <publishTime>06/18/2015 16:14:11</publishTime>
+    </File>
+    <File Include="ww/universal/images/nav-tab-sprite.gif">
+      <publishTime>06/18/2015 16:14:06</publishTime>
+    </File>
+    <File Include="ww/universal/images/opinionlab/oo_float_icon.gif">
+      <publishTime>06/18/2015 16:14:45</publishTime>
+    </File>
+    <File Include="ww/universal/images/opinionlab/oo_icon.gif">
+      <publishTime>06/18/2015 16:14:45</publishTime>
+    </File>
+    <File Include="ww/universal/images/opinionlab/oo_tab.png">
+      <publishTime>06/18/2015 16:14:44</publishTime>
+    </File>
+    <File Include="ww/universal/images/opinionlab/oo_tab_icon.gif">
+      <publishTime>06/18/2015 16:14:45</publishTime>
+    </File>
+    <File Include="ww/universal/images/oz/bg-cart-counter.png">
+      <publishTime>06/18/2015 16:14:19</publishTime>
+    </File>
+    <File Include="ww/universal/images/oz/bg-drop-overlay.png">
+      <publishTime>06/18/2015 16:14:21</publishTime>
+    </File>
+    <File Include="ww/universal/images/oz/border-header-t.png">
+      <publishTime>06/18/2015 16:14:20</publishTime>
+    </File>
+    <File Include="ww/universal/images/oz/stx-staticlogo_curr-drk-nopad-109x26.png">
+      <publishTime>06/18/2015 16:14:19</publishTime>
+    </File>
+    <File Include="ww/universal/images/oz/stx-staticlogo_curr-drk-nopad-150x36.png">
+      <publishTime>06/18/2015 16:14:20</publishTime>
+    </File>
+    <File Include="ww/universal/images/oz/stx-staticlogo_curr-wht-nopad-109x26.png">
+      <publishTime>06/18/2015 16:14:19</publishTime>
+    </File>
+    <File Include="ww/universal/images/oz/stx-staticlogo_curr-wht-nopad-150x36.png">
+      <publishTime>06/18/2015 16:14:18</publishTime>
+    </File>
+    <File Include="ww/universal/images/partners.jpg">
+      <publishTime>06/18/2015 16:14:07</publishTime>
+    </File>
+    <File Include="ww/universal/images/personal-cloud-global-nav-promo-248x336.jpg">
+      <publishTime>06/18/2015 16:14:30</publishTime>
+    </File>
+    <File Include="ww/universal/images/placeholder500x500-999.gif">
+      <publishTime>06/18/2015 16:14:15</publishTime>
+    </File>
+    <File Include="ww/universal/images/placeholder500x500-fff.gif">
+      <publishTime>06/18/2015 16:14:22</publishTime>
+    </File>
+    <File Include="ww/universal/images/pm/bg-pm-nav-subbed-opened.jpg">
+      <publishTime>06/18/2015 16:14:03</publishTime>
+    </File>
+    <File Include="ww/universal/images/pm/header-top-pattern.png">
+      <publishTime>06/18/2015 16:14:02</publishTime>
+    </File>
+    <File Include="ww/universal/images/pm/icn-search-magnify.png">
+      <publishTime>06/18/2015 16:14:01</publishTime>
+    </File>
+    <File Include="ww/universal/images/pm/ico_pdf.png">
+      <publishTime>06/18/2015 16:14:02</publishTime>
+    </File>
+    <File Include="ww/universal/images/pm/ico_searchIcon.png">
+      <publishTime>06/18/2015 16:14:01</publishTime>
+    </File>
+    <File Include="ww/universal/images/pm/logo-seagate.png">
+      <publishTime>06/18/2015 16:14:01</publishTime>
+    </File>
+    <File Include="ww/universal/images/quote-marks-rtl.png">
+      <publishTime>06/18/2015 16:14:34</publishTime>
+    </File>
+    <File Include="ww/universal/images/sale-icon.jpg">
+      <publishTime>06/18/2015 16:14:08</publishTime>
+    </File>
+    <File Include="ww/universal/images/samsung_logo_107x36-black.png">
+      <publishTime>06/18/2015 16:14:47</publishTime>
+    </File>
+    <File Include="ww/universal/images/samsung_logo_110x36-black.png">
+      <publishTime>06/18/2015 16:14:31</publishTime>
+    </File>
+    <File Include="ww/universal/images/samsung_logo_137x48-black.png">
+      <publishTime>06/18/2015 16:14:44</publishTime>
+    </File>
+    <File Include="ww/universal/images/samsung_logo_77x26-black.png">
+      <publishTime>06/18/2015 16:14:23</publishTime>
+    </File>
+    <File Include="ww/universal/images/seagate-logo-dr.gif">
+      <publishTime>06/18/2015 16:14:41</publishTime>
+    </File>
+    <File Include="ww/universal/images/seagate-spinner.gif">
+      <publishTime>06/18/2015 16:14:16</publishTime>
+    </File>
+    <File Include="ww/universal/images/shoppingcart-globnav-desktop-blue.png">
+      <publishTime>06/18/2015 16:14:17</publishTime>
+    </File>
+    <File Include="ww/universal/images/shoppingcart-globnav-desktop.png">
+      <publishTime>06/18/2015 16:14:08</publishTime>
+    </File>
+    <File Include="ww/universal/images/shoppingcart-globnav-mobile-blue.png">
+      <publishTime>06/18/2015 16:14:38</publishTime>
+    </File>
+    <File Include="ww/universal/images/shoppingcart-globnav-mobile.png">
+      <publishTime>06/18/2015 16:14:46</publishTime>
+    </File>
+    <File Include="ww/universal/images/social-icons-large.png">
+      <publishTime>06/18/2015 16:14:40</publishTime>
+    </File>
+    <File Include="ww/universal/images/social-icons-small.jpg">
+      <publishTime>06/18/2015 16:14:32</publishTime>
+    </File>
+    <File Include="ww/universal/images/stx-staticlogo-drk-nopad-109x26.png">
+      <publishTime>06/18/2015 16:14:11</publishTime>
+    </File>
+    <File Include="ww/universal/images/stx-staticlogo-drk-nopad-150x36.png">
+      <publishTime>06/18/2015 16:14:35</publishTime>
+    </File>
+    <File Include="ww/universal/images/stx-staticlogo-gray-nopad-109x26.png">
+      <publishTime>06/18/2015 16:14:40</publishTime>
+    </File>
+    <File Include="ww/universal/images/stx-staticlogo-gray-nopad-150x36.png">
+      <publishTime>06/18/2015 16:14:34</publishTime>
+    </File>
+    <File Include="ww/universal/images/stx-staticlogo-wht-nopad-109x26.png">
+      <publishTime>06/18/2015 16:14:14</publishTime>
+    </File>
+    <File Include="ww/universal/images/stx-staticlogo-wht-nopad-150x36.png">
+      <publishTime>06/18/2015 16:14:14</publishTime>
+    </File>
+    <File Include="ww/universal/images/vert_divider.gif">
+      <publishTime>06/18/2015 16:14:06</publishTime>
+    </File>
+    <File Include="ww/universal/js/abixTreeList.min.js">
+      <publishTime>06/18/2015 16:13:37</publishTime>
+    </File>
+    <File Include="ww/universal/js/bootstrap.js">
+      <publishTime>06/18/2015 16:13:39</publishTime>
+    </File>
+    <File Include="ww/universal/js/bootstrap.min.js">
+      <publishTime>06/18/2015 16:13:37</publishTime>
+    </File>
+    <File Include="ww/universal/js/html5.js">
+      <publishTime>06/18/2015 16:13:35</publishTime>
+    </File>
+    <File Include="ww/universal/js/jquery-1.7.2.min.js">
+      <publishTime>06/18/2015 16:13:39</publishTime>
+    </File>
+    <File Include="ww/universal/js/jquery-1.9.1.js">
+      <publishTime>06/18/2015 16:13:30</publishTime>
+    </File>
+    <File Include="ww/universal/js/jquery-1.9.1.min.js">
+      <publishTime>06/18/2015 16:13:30</publishTime>
+    </File>
+    <File Include="ww/universal/js/jquery.history.js">
+      <publishTime>06/18/2015 16:13:33</publishTime>
+    </File>
+    <File Include="ww/universal/js/jquery.min.map">
+      <publishTime>06/18/2015 16:13:32</publishTime>
+    </File>
+    <File Include="ww/universal/js/jquery.textfill.min.js">
+      <publishTime>06/18/2015 16:13:32</publishTime>
+    </File>
+    <File Include="ww/universal/js/library-min.js">
+      <publishTime>06/18/2015 16:13:31</publishTime>
+    </File>
+    <File Include="ww/universal/js/library.js">
+      <publishTime>06/18/2015 16:13:39</publishTime>
+    </File>
+    <File Include="ww/universal/js/pdp-v10.js">
+      <publishTime>06/18/2015 16:13:41</publishTime>
+    </File>
+    <File Include="ww/universal/js/placeholder_polyfill.jquery.js">
+      <publishTime>06/18/2015 16:13:33</publishTime>
+    </File>
+    <File Include="ww/universal/js/placeholder_polyfill.jquery.min.js">
+      <publishTime>06/18/2015 16:13:34</publishTime>
+    </File>
+    <File Include="ww/universal/js/rAF.min.js">
+      <publishTime>06/18/2015 16:13:34</publishTime>
+    </File>
+    <File Include="ww/universal/js/search.js">
+      <publishTime>06/18/2015 16:13:36</publishTime>
+    </File>
+    <File Include="ww/universal/js/ss-standard.js">
+      <publishTime>06/18/2015 16:13:29</publishTime>
+    </File>
+    <File Include="ww/universal/js/stx-product-detail-page.js">
+      <publishTime>06/18/2015 16:13:38</publishTime>
+    </File>
+    <File Include="ww/universal/js/stx-product-detail-page.min.js">
+      <publishTime>06/18/2015 16:13:36</publishTime>
+    </File>
+    <File Include="ww/universal/js/stx-product-manual.js">
+      <publishTime>06/18/2015 16:13:35</publishTime>
+    </File>
+    <File Include="ww/universal/js/stx-product-manual.min.js">
+      <publishTime>06/18/2015 16:13:32</publishTime>
+    </File>
+    <File Include="ww/universal/js/stx-spp-page.js">
+      <publishTime>06/18/2015 16:13:31</publishTime>
+    </File>
+    <File Include="ww/universal/js/stx-spp-page.min.js">
+      <publishTime>06/18/2015 16:13:33</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/easing/EasePack.min.js">
+      <publishTime>06/23/2015 15:51:17</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/jquery.gsap.min.js">
+      <publishTime>06/23/2015 15:51:17</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/plugins/AttrPlugin.min.js">
+      <publishTime>06/23/2015 15:51:19</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/plugins/BezierPlugin.min.js">
+      <publishTime>06/23/2015 15:51:21</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/plugins/ColorPropsPlugin.min.js">
+      <publishTime>06/23/2015 15:51:19</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/plugins/CSSPlugin.min.js">
+      <publishTime>06/23/2015 15:51:22</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/plugins/CSSRulePlugin.min.js">
+      <publishTime>06/23/2015 15:51:23</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/plugins/DirectionalRotationPlugin.min.js">
+      <publishTime>06/23/2015 15:51:20</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/plugins/EaselPlugin.min.js">
+      <publishTime>06/23/2015 15:51:22</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/plugins/EndArrayPlugin.min.js">
+      <publishTime>06/23/2015 15:51:20</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/plugins/KineticPlugin.min.js">
+      <publishTime>06/23/2015 15:51:22</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/plugins/RaphaelPlugin.min.js">
+      <publishTime>06/23/2015 15:51:21</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/plugins/RoundPropsPlugin.min.js">
+      <publishTime>06/23/2015 15:51:19</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/plugins/ScrollToPlugin.min.js">
+      <publishTime>06/23/2015 15:51:21</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/plugins/TextPlugin.min.js">
+      <publishTime>06/23/2015 15:51:20</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/TimelineLite.min.js">
+      <publishTime>06/23/2015 15:51:15</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/TimelineMax.min.js">
+      <publishTime>06/23/2015 15:51:17</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/TweenLite.min.js">
+      <publishTime>06/23/2015 15:51:15</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/TweenMax.min.js">
+      <publishTime>06/23/2015 15:51:16</publishTime>
+    </File>
+    <File Include="ww/universal/ll/assets/lib/utils/Draggable.min.js">
+      <publishTime>06/23/2015 15:51:18</publishTime>
+    </File>
+    <File Include="ww/universal/ll/css/controls.css">
+      <publishTime>06/23/2015 15:47:07</publishTime>
+    </File>
+    <File Include="ww/universal/ll/css/controls.less">
+      <publishTime>06/23/2015 15:47:03</publishTime>
+    </File>
+    <File Include="ww/universal/ll/css/facebook.css">
+      <publishTime>06/23/2015 16:56:03</publishTime>
+    </File>
+    <File Include="ww/universal/ll/css/fonts/themify.eot">
+      <publishTime>06/23/2015 15:47:07</publishTime>
+    </File>
+    <File Include="ww/universal/ll/css/fonts/themify.svg">
+      <publishTime>06/23/2015 15:47:05</publishTime>
+    </File>
+    <File Include="ww/universal/ll/css/fonts/themify.ttf">
+      <publishTime>06/23/2015 15:47:06</publishTime>
+    </File>
+    <File Include="ww/universal/ll/css/fonts/themify.woff">
+      <publishTime>06/23/2015 15:47:06</publishTime>
+    </File>
+    <File Include="ww/universal/ll/css/fullscreen.css">
+      <publishTime>06/23/2015 15:47:03</publishTime>
+    </File>
+    <File Include="ww/universal/ll/css/fullscreen.less">
+      <publishTime>06/23/2015 15:47:02</publishTime>
+    </File>
+    <File Include="ww/universal/ll/css/ll-combined.css">
+      <publishTime>06/23/2015 15:47:04</publishTime>
+    </File>
+    <File Include="ww/universal/ll/css/menu.css">
+      <publishTime>06/23/2015 15:47:01</publishTime>
+    </File>
+    <File Include="ww/universal/ll/css/menu.less">
+      <publishTime>06/23/2015 15:47:07</publishTime>
+    </File>
+    <File Include="ww/universal/ll/css/styles.css">
+      <publishTime>06/23/2015 15:47:04</publishTime>
+    </File>
+    <File Include="ww/universal/ll/css/styles.less">
+      <publishTime>06/23/2015 15:47:01</publishTime>
+    </File>
+    <File Include="ww/universal/ll/css/text.css">
+      <publishTime>06/23/2015 15:47:04</publishTime>
+    </File>
+    <File Include="ww/universal/ll/css/text.less">
+      <publishTime>06/23/2015 15:47:03</publishTime>
+    </File>
+    <File Include="ww/universal/ll/css/themify-icons.css">
+      <publishTime>06/23/2015 15:47:02</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ajax-loader.gif">
+      <publishTime>06/23/2015 15:50:28</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ar/em/getty-1.jpg">
+      <publishTime>06/23/2015 15:50:07</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ar/em/getty-1.json">
+      <publishTime>06/23/2015 15:50:07</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ar/em/getty-2.jpg">
+      <publishTime>06/23/2015 15:50:06</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ar/em/getty-2.json">
+      <publishTime>06/23/2015 15:50:06</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/audio-off.svg">
+      <publishTime>06/23/2015 15:50:40</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/audio-on.svg">
+      <publishTime>06/23/2015 15:49:59</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/br/pt/instagram-1.json">
+      <publishTime>06/23/2015 15:50:13</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/br/pt/instagram-2.json">
+      <publishTime>06/23/2015 15:50:13</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/br/pt/instagram-3.json">
+      <publishTime>06/23/2015 15:50:13</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ca/en/amazon-1.jpg">
+      <publishTime>06/23/2015 15:47:18</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ca/en/amazon-1.json">
+      <publishTime>06/23/2015 15:47:20</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ca/en/amazon-2.json">
+      <publishTime>06/23/2015 15:47:18</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ca/en/amazon-3.json">
+      <publishTime>06/23/2015 15:47:21</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ca/en/amazon-4.json">
+      <publishTime>06/23/2015 15:47:21</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ca/en/instagram-1.json">
+      <publishTime>06/23/2015 15:47:20</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ca/en/instagram-2.json">
+      <publishTime>06/23/2015 15:47:19</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ca/en/instagram-3.json">
+      <publishTime>06/23/2015 15:47:21</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ca/en/twitter-1.json">
+      <publishTime>06/23/2015 15:47:19</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ca/en/twitter-2.json">
+      <publishTime>06/23/2015 15:47:22</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ca/en/twitter-2.png">
+      <publishTime>06/23/2015 15:47:19</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ca/en/twitter-3.json">
+      <publishTime>06/23/2015 15:47:20</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/camera.svg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/circle1-off.svg">
+      <publishTime>06/23/2015 15:49:51</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/circle1-on.svg">
+      <publishTime>06/23/2015 15:50:29</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/circle2-off.svg">
+      <publishTime>06/23/2015 15:50:40</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/circle2-on.svg">
+      <publishTime>06/23/2015 15:49:59</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/circle3-off.svg">
+      <publishTime>06/23/2015 15:49:52</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/circle3-on.svg">
+      <publishTime>06/23/2015 15:51:14</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/de/de/amazon-1.json">
+      <publishTime>06/23/2015 15:49:55</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/de/de/amazon-2.json">
+      <publishTime>06/23/2015 15:49:53</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/de/de/amazon-3.json">
+      <publishTime>06/23/2015 15:49:57</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/de/de/amazon-4.json">
+      <publishTime>06/23/2015 15:49:56</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/de/de/getty-1.jpg">
+      <publishTime>06/23/2015 15:49:57</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/de/de/getty-1.json">
+      <publishTime>06/23/2015 15:49:56</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/de/de/getty-2.jpg">
+      <publishTime>06/23/2015 15:49:54</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/de/de/getty-2.json">
+      <publishTime>06/23/2015 15:49:55</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/de/de/instagram-1.json">
+      <publishTime>06/23/2015 15:49:55</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/de/de/instagram-2.json">
+      <publishTime>06/23/2015 15:49:54</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/de/de/instagram-3.json">
+      <publishTime>06/23/2015 15:49:58</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/de/de/twitter-1.json">
+      <publishTime>06/23/2015 15:49:54</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/de/de/twitter-2.json">
+      <publishTime>06/23/2015 15:49:58</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/de/de/twitter-3.json">
+      <publishTime>06/23/2015 15:49:56</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/as/getty-1.jpg">
+      <publishTime>06/23/2015 15:49:35</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/as/getty-1.json">
+      <publishTime>06/23/2015 15:49:34</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/as/getty-2.jpg">
+      <publishTime>06/23/2015 15:49:34</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/as/getty-2.json">
+      <publishTime>06/23/2015 15:49:34</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/au/amazon-1.json">
+      <publishTime>06/23/2015 15:47:44</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/au/amazon-2.json">
+      <publishTime>06/23/2015 15:47:42</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/au/amazon-3.json">
+      <publishTime>06/23/2015 15:47:45</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/au/amazon-4.json">
+      <publishTime>06/23/2015 15:47:44</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/au/getty-1.jpg">
+      <publishTime>06/23/2015 15:47:45</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/au/getty-1.json">
+      <publishTime>06/23/2015 15:47:44</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/au/getty-2.jpg">
+      <publishTime>06/23/2015 15:47:43</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/au/getty-2.json">
+      <publishTime>06/23/2015 15:47:43</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/ca/amazon-1.jpg">
+      <publishTime>06/23/2015 15:47:37</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/ca/amazon-1.json">
+      <publishTime>06/23/2015 15:47:39</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/ca/amazon-2.json">
+      <publishTime>06/23/2015 15:47:36</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/ca/amazon-3.json">
+      <publishTime>06/23/2015 15:47:40</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/ca/amazon-4.json">
+      <publishTime>06/23/2015 15:47:40</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/ca/getty-1.jpg">
+      <publishTime>06/23/2015 15:47:41</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/ca/getty-1.json">
+      <publishTime>06/23/2015 15:47:40</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/ca/getty-2.jpg">
+      <publishTime>06/23/2015 15:47:38</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/ca/getty-2.json">
+      <publishTime>06/23/2015 15:47:39</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/ca/instagram-1.json">
+      <publishTime>06/23/2015 15:47:38</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/ca/instagram-2.json">
+      <publishTime>06/23/2015 15:47:38</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/ca/instagram-3.json">
+      <publishTime>06/23/2015 15:47:41</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/ca/twitter-1.json">
+      <publishTime>06/23/2015 15:47:38</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/ca/twitter-2.json">
+      <publishTime>06/23/2015 15:47:42</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/ca/twitter-3.json">
+      <publishTime>06/23/2015 15:47:39</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/em/getty-1.jpg">
+      <publishTime>06/23/2015 15:47:48</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/em/getty-1.json">
+      <publishTime>06/23/2015 15:47:47</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/em/getty-2.jpg">
+      <publishTime>06/23/2015 15:47:46</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/em/getty-2.json">
+      <publishTime>06/23/2015 15:47:47</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/gb/amazon-1.json">
+      <publishTime>06/23/2015 15:49:30</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/gb/amazon-2.json">
+      <publishTime>06/23/2015 15:49:28</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/gb/amazon-3.json">
+      <publishTime>06/23/2015 15:49:31</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/gb/amazon-4.json">
+      <publishTime>06/23/2015 15:49:31</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/gb/getty-1.jpg">
+      <publishTime>06/23/2015 15:49:32</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/gb/getty-1.json">
+      <publishTime>06/23/2015 15:49:31</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/gb/getty-2.jpg">
+      <publishTime>06/23/2015 15:49:29</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/gb/getty-2.json">
+      <publishTime>06/23/2015 15:49:30</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/gb/instagram-1.json">
+      <publishTime>06/23/2015 15:49:29</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/gb/instagram-2.json">
+      <publishTime>06/23/2015 15:49:29</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/gb/instagram-3.json">
+      <publishTime>06/23/2015 15:49:32</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/gb/twitter-1.json">
+      <publishTime>06/23/2015 15:49:29</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/gb/twitter-2.json">
+      <publishTime>06/23/2015 15:49:33</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/gb/twitter-3.json">
+      <publishTime>06/23/2015 15:49:30</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/in/amazon-1.json">
+      <publishTime>06/23/2015 15:49:40</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/in/amazon-2.json">
+      <publishTime>06/23/2015 15:49:38</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/in/amazon-3.jpg">
+      <publishTime>06/23/2015 15:49:39</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/in/amazon-3.json">
+      <publishTime>06/23/2015 15:49:42</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/in/amazon-4.json">
+      <publishTime>06/23/2015 15:49:41</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/in/getty-1.jpg">
+      <publishTime>06/23/2015 15:49:42</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/in/getty-1.json">
+      <publishTime>06/23/2015 15:49:41</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/in/getty-2.jpg">
+      <publishTime>06/23/2015 15:49:39</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/in/getty-2.json">
+      <publishTime>06/23/2015 15:49:40</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/in/twitter-1.json">
+      <publishTime>06/23/2015 15:49:40</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/in/twitter-2.json">
+      <publishTime>06/23/2015 15:49:43</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/in/twitter-3.json">
+      <publishTime>06/23/2015 15:49:41</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/sg/getty-1.jpg">
+      <publishTime>06/23/2015 15:49:38</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/sg/getty-1.json">
+      <publishTime>06/23/2015 15:49:37</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/sg/getty-2.jpg">
+      <publishTime>06/23/2015 15:49:36</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/sg/getty-2.json">
+      <publishTime>06/23/2015 15:49:37</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/amazon-1.jpg">
+      <publishTime>06/23/2015 15:47:57</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/amazon-1.json">
+      <publishTime>06/23/2015 15:48:55</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/amazon-2.jpg">
+      <publishTime>06/23/2015 15:48:40</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/amazon-2.json">
+      <publishTime>06/23/2015 15:47:49</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/amazon-3.jpg">
+      <publishTime>06/23/2015 15:48:39</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/amazon-3.json">
+      <publishTime>06/23/2015 15:48:59</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/amazon-4.jpg">
+      <publishTime>06/23/2015 15:48:58</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/amazon-4.json">
+      <publishTime>06/23/2015 15:48:58</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/de/de/amazon-1.json">
+      <publishTime>06/23/2015 15:48:43</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/de/de/amazon-2.json">
+      <publishTime>06/23/2015 15:48:42</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/de/de/amazon-3.json">
+      <publishTime>06/23/2015 15:48:44</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/de/de/amazon-4.json">
+      <publishTime>06/23/2015 15:48:44</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/de/de/instagram-1.json">
+      <publishTime>06/23/2015 15:48:43</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/de/de/instagram-2.json">
+      <publishTime>06/23/2015 15:48:42</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/de/de/instagram-3.json">
+      <publishTime>06/23/2015 15:48:44</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/de/de/twitter-1.json">
+      <publishTime>06/23/2015 15:48:42</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/de/de/twitter-2.json">
+      <publishTime>06/23/2015 15:48:44</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/de/de/twitter-3.json">
+      <publishTime>06/23/2015 15:48:43</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/au/amazon-1.json">
+      <publishTime>06/23/2015 15:48:15</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/au/amazon-2.json">
+      <publishTime>06/23/2015 15:48:15</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/au/amazon-3.json">
+      <publishTime>06/23/2015 15:48:16</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/au/amazon-4.json">
+      <publishTime>06/23/2015 15:48:15</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/ca/amazon-1.json">
+      <publishTime>06/23/2015 15:48:11</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/ca/amazon-2.json">
+      <publishTime>06/23/2015 15:48:09</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/ca/amazon-3.json">
+      <publishTime>06/23/2015 15:48:13</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/ca/amazon-4.json">
+      <publishTime>06/23/2015 15:48:12</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/ca/getty-1.jpg">
+      <publishTime>06/23/2015 15:48:13</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/ca/getty-1.json">
+      <publishTime>06/23/2015 15:48:12</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/ca/getty-2.jpg">
+      <publishTime>06/23/2015 15:48:10</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/ca/getty-2.json">
+      <publishTime>06/23/2015 15:48:11</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/ca/instagram-1.json">
+      <publishTime>06/23/2015 15:48:11</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/ca/instagram-2.json">
+      <publishTime>06/23/2015 15:48:10</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/ca/instagram-3.json">
+      <publishTime>06/23/2015 15:48:14</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/ca/twitter-1.json">
+      <publishTime>06/23/2015 15:48:10</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/ca/twitter-2.json">
+      <publishTime>06/23/2015 15:48:14</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/ca/twitter-3.json">
+      <publishTime>06/23/2015 15:48:12</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/gb/amazon-1.json">
+      <publishTime>06/23/2015 15:48:30</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/gb/amazon-2.json">
+      <publishTime>06/23/2015 15:48:29</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/gb/amazon-3.json">
+      <publishTime>06/23/2015 15:48:31</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/gb/amazon-4.json">
+      <publishTime>06/23/2015 15:48:31</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/gb/instagram-1.json">
+      <publishTime>06/23/2015 15:48:30</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/gb/instagram-2.json">
+      <publishTime>06/23/2015 15:48:29</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/gb/instagram-3.json">
+      <publishTime>06/23/2015 15:48:31</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/gb/twitter-1.json">
+      <publishTime>06/23/2015 15:48:30</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/gb/twitter-2.json">
+      <publishTime>06/23/2015 15:48:32</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/gb/twitter-3.json">
+      <publishTime>06/23/2015 15:48:30</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/in/amazon-1.json">
+      <publishTime>06/23/2015 15:48:34</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/in/amazon-2.json">
+      <publishTime>06/23/2015 15:48:32</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/in/amazon-3.jpg">
+      <publishTime>06/23/2015 15:48:33</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/in/amazon-3.json">
+      <publishTime>06/23/2015 15:48:35</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/in/amazon-4.json">
+      <publishTime>06/23/2015 15:48:34</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/in/twitter-1.json">
+      <publishTime>06/23/2015 15:48:33</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/in/twitter-2.json">
+      <publishTime>06/23/2015 15:48:35</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/in/twitter-3.json">
+      <publishTime>06/23/2015 15:48:34</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/amazon-1.jpg">
+      <publishTime>06/23/2015 15:48:18</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/amazon-1.json">
+      <publishTime>06/23/2015 15:48:23</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/amazon-2.json">
+      <publishTime>06/23/2015 15:48:17</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/amazon-3.json">
+      <publishTime>06/23/2015 15:48:25</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/amazon-4.json">
+      <publishTime>06/23/2015 15:48:25</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/getty-1.jpg">
+      <publishTime>06/23/2015 15:48:26</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/getty-1.json">
+      <publishTime>06/23/2015 15:48:25</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/getty-2.jpg">
+      <publishTime>06/23/2015 15:48:20</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/getty-2.json">
+      <publishTime>06/23/2015 15:48:23</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/instagram-1.jpg">
+      <publishTime>06/23/2015 15:48:27</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/instagram-1.json">
+      <publishTime>06/23/2015 15:48:22</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/instagram-2.json">
+      <publishTime>06/23/2015 15:48:20</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/instagram-3.json">
+      <publishTime>06/23/2015 15:48:27</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/lastfm-1.json">
+      <publishTime>06/23/2015 15:48:20</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/lastfm-2.json">
+      <publishTime>06/23/2015 15:48:22</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/lastfm-3.jpg">
+      <publishTime>06/23/2015 15:48:28</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/lastfm-3.json">
+      <publishTime>06/23/2015 15:48:18</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/lastfm-4.json">
+      <publishTime>06/23/2015 15:48:21</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/lastfm-5.json">
+      <publishTime>06/23/2015 15:48:21</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/nytimes-1.json">
+      <publishTime>06/23/2015 15:48:21</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/nytimes-1.png">
+      <publishTime>06/23/2015 15:48:27</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/nytimes-2.json">
+      <publishTime>06/23/2015 15:48:19</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/nytimes-3.json">
+      <publishTime>06/23/2015 15:48:22</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/nytimes-4.json">
+      <publishTime>06/23/2015 15:48:23</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/nytimes-5.json">
+      <publishTime>06/23/2015 15:48:19</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/twitter-1.json">
+      <publishTime>06/23/2015 15:48:22</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/twitter-1.png">
+      <publishTime>06/23/2015 15:48:24</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/twitter-2.json">
+      <publishTime>06/23/2015 15:48:28</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/en/us/twitter-3.json">
+      <publishTime>06/23/2015 15:48:24</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/es/amazon-1.json">
+      <publishTime>06/23/2015 15:49:17</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/es/amazon-2.json">
+      <publishTime>06/23/2015 15:49:15</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/es/amazon-3.json">
+      <publishTime>06/23/2015 15:49:18</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/es/amazon-4.json">
+      <publishTime>06/23/2015 15:49:18</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/es/getty-2.jpg">
+      <publishTime>06/23/2015 15:49:16</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/es/getty-2.json">
+      <publishTime>06/23/2015 15:49:17</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/es/instagram-1.json">
+      <publishTime>06/23/2015 15:49:16</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/es/instagram-2.json">
+      <publishTime>06/23/2015 15:49:16</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/es/instagram-3.json">
+      <publishTime>06/23/2015 15:49:18</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/es/twitter-1.json">
+      <publishTime>06/23/2015 15:49:16</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/es/twitter-2.json">
+      <publishTime>06/23/2015 15:49:19</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/es/twitter-3.json">
+      <publishTime>06/23/2015 15:49:17</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/la/amazon-1.json">
+      <publishTime>06/23/2015 15:49:11</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/la/amazon-2.jpg">
+      <publishTime>06/23/2015 15:49:11</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/la/amazon-2.json">
+      <publishTime>06/23/2015 15:49:09</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/la/amazon-3.json">
+      <publishTime>06/23/2015 15:49:13</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/la/amazon-4.json">
+      <publishTime>06/23/2015 15:49:12</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/la/getty-1.jpg">
+      <publishTime>06/23/2015 15:49:13</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/la/getty-1.json">
+      <publishTime>06/23/2015 15:49:12</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/la/getty-2.jpg">
+      <publishTime>06/23/2015 15:49:09</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/la/getty-2.json">
+      <publishTime>06/23/2015 15:49:11</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/la/instagram-1.json">
+      <publishTime>06/23/2015 15:49:11</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/la/instagram-2.json">
+      <publishTime>06/23/2015 15:49:10</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/la/instagram-3.json">
+      <publishTime>06/23/2015 15:49:14</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/la/twitter-1.json">
+      <publishTime>06/23/2015 15:49:10</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/la/twitter-2.json">
+      <publishTime>06/23/2015 15:49:14</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/es/la/twitter-3.json">
+      <publishTime>06/23/2015 15:49:12</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/fr/be/instagram-1.json">
+      <publishTime>06/23/2015 15:48:36</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/fr/be/instagram-2.json">
+      <publishTime>06/23/2015 15:48:36</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/fr/be/instagram-3.json">
+      <publishTime>06/23/2015 15:48:37</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/fr/fr/amazon-1.json">
+      <publishTime>06/23/2015 15:48:38</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/fr/fr/amazon-2.json">
+      <publishTime>06/23/2015 15:48:37</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/fr/fr/amazon-3.json">
+      <publishTime>06/23/2015 15:48:38</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/fr/fr/amazon-4.json">
+      <publishTime>06/23/2015 15:48:38</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/getty-1-144.jpg">
+      <publishTime>06/23/2015 15:47:59</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/getty-1-256.jpg">
+      <publishTime>06/23/2015 15:49:03</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/getty-1.jpg">
+      <publishTime>06/23/2015 15:49:03</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/getty-1.json">
+      <publishTime>06/23/2015 15:48:58</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/getty-2.jpg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/getty-2.json">
+      <publishTime>06/23/2015 15:48:47</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/getty-3.json">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/id/id/getty-2.jpg">
+      <publishTime>06/23/2015 15:48:49</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/id/id/getty-2.json">
+      <publishTime>06/23/2015 15:48:50</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/id/id/twitter-1.json">
+      <publishTime>06/23/2015 15:48:50</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/id/id/twitter-2.json">
+      <publishTime>06/23/2015 15:48:51</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/id/id/twitter-3.json">
+      <publishTime>06/23/2015 15:48:50</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/instagram-1.jpg">
+      <publishTime>06/23/2015 15:49:19</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/instagram-1.json">
+      <publishTime>06/23/2015 15:48:46</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/instagram-2.jpg">
+      <publishTime>06/23/2015 15:48:47</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/instagram-2.json">
+      <publishTime>06/23/2015 15:48:06</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/instagram-3.jpg">
+      <publishTime>06/23/2015 15:47:57</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/instagram-3.json">
+      <publishTime>06/23/2015 15:49:07</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/it/it/amazon-1.json">
+      <publishTime>06/23/2015 15:47:55</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/it/it/amazon-2.json">
+      <publishTime>06/23/2015 15:47:54</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/it/it/amazon-3.json">
+      <publishTime>06/23/2015 15:47:55</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/it/it/amazon-4.json">
+      <publishTime>06/23/2015 15:47:55</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/it/it/instagram-1.json">
+      <publishTime>06/23/2015 15:47:54</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/it/it/instagram-2.json">
+      <publishTime>06/23/2015 15:47:54</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/it/it/instagram-3.json">
+      <publishTime>06/23/2015 15:47:56</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/ja/jp/amazon-1.json">
+      <publishTime>06/23/2015 15:47:51</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/ja/jp/amazon-2.json">
+      <publishTime>06/23/2015 15:47:51</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/ja/jp/amazon-3.json">
+      <publishTime>06/23/2015 15:47:52</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/ja/jp/amazon-4.json">
+      <publishTime>06/23/2015 15:47:52</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/ja/jp/twitter-1.json">
+      <publishTime>06/23/2015 15:47:51</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/ja/jp/twitter-2.json">
+      <publishTime>06/23/2015 15:47:52</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/ja/jp/twitter-3.json">
+      <publishTime>06/23/2015 15:47:51</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/lastfm-1.jpg">
+      <publishTime>06/23/2015 15:48:54</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/lastfm-1.json">
+      <publishTime>06/23/2015 15:48:06</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/lastfm-2.jpg">
+      <publishTime>06/23/2015 15:48:55</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/lastfm-2.json">
+      <publishTime>06/23/2015 15:48:40</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/lastfm-3.jpg">
+      <publishTime>06/23/2015 15:49:27</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/lastfm-3.json">
+      <publishTime>06/23/2015 15:47:57</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/lastfm-4.jpg">
+      <publishTime>06/23/2015 15:48:46</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/lastfm-4.json">
+      <publishTime>06/23/2015 15:48:08</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/lastfm-5.jpg">
+      <publishTime>06/23/2015 15:48:56</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/lastfm-5.json">
+      <publishTime>06/23/2015 15:48:08</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/manifest.json">
+      <publishTime>06/23/2015 15:48:39</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nl/be/instagram-1.json">
+      <publishTime>06/23/2015 15:48:52</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nl/be/instagram-2.json">
+      <publishTime>06/23/2015 15:48:52</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nl/be/instagram-3.json">
+      <publishTime>06/23/2015 15:48:53</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nl/nl/instagram-1.json">
+      <publishTime>06/23/2015 15:48:54</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nl/nl/instagram-2.json">
+      <publishTime>06/23/2015 15:48:53</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nl/nl/instagram-3.json">
+      <publishTime>06/23/2015 15:48:54</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nytimes-1.jpg">
+      <publishTime>06/23/2015 15:48:59</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nytimes-1.json">
+      <publishTime>06/23/2015 15:48:07</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nytimes-1.png">
+      <publishTime>06/23/2015 15:49:04</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nytimes-2.jpg">
+      <publishTime>06/23/2015 15:49:02</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nytimes-2.json">
+      <publishTime>06/23/2015 15:47:58</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nytimes-2.png">
+      <publishTime>06/23/2015 15:49:05</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nytimes-3.jpg">
+      <publishTime>06/23/2015 15:48:47</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nytimes-3.json">
+      <publishTime>06/23/2015 15:48:45</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nytimes-3.png">
+      <publishTime>06/23/2015 15:47:56</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nytimes-4.jpg">
+      <publishTime>06/23/2015 15:47:49</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nytimes-4.json">
+      <publishTime>06/23/2015 15:48:48</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nytimes-4.png">
+      <publishTime>06/23/2015 15:48:56</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nytimes-5.jpg">
+      <publishTime>06/23/2015 15:48:45</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nytimes-5.json">
+      <publishTime>06/23/2015 15:47:58</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/nytimes-5.png">
+      <publishTime>06/23/2015 15:48:07</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/pt/br/amazon-1.json">
+      <publishTime>06/23/2015 15:48:03</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/pt/br/amazon-2.json">
+      <publishTime>06/23/2015 15:48:01</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/pt/br/amazon-3.json">
+      <publishTime>06/23/2015 15:48:05</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/pt/br/amazon-4.json">
+      <publishTime>06/23/2015 15:48:04</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/pt/br/getty-1.jpg">
+      <publishTime>06/23/2015 15:48:05</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/pt/br/getty-1.json">
+      <publishTime>06/23/2015 15:48:04</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/pt/br/getty-2.jpg">
+      <publishTime>06/23/2015 15:48:02</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/pt/br/getty-2.json">
+      <publishTime>06/23/2015 15:48:03</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/pt/br/instagram-1.json">
+      <publishTime>06/23/2015 15:48:03</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/pt/br/instagram-2.json">
+      <publishTime>06/23/2015 15:48:02</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/pt/br/instagram-3.json">
+      <publishTime>06/23/2015 15:48:06</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/pt/br/twitter-1.json">
+      <publishTime>06/23/2015 15:48:02</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/pt/br/twitter-2.json">
+      <publishTime>06/23/2015 15:48:06</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/pt/br/twitter-3.json">
+      <publishTime>06/23/2015 15:48:04</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/ru/ru/instagram-1.json">
+      <publishTime>06/23/2015 15:49:01</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/ru/ru/instagram-2.json">
+      <publishTime>06/23/2015 15:49:01</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/ru/ru/instagram-3.json">
+      <publishTime>06/23/2015 15:49:01</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/amazon-1.json">
+      <publishTime>06/23/2015 15:49:25</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/amazon-2.json">
+      <publishTime>06/23/2015 15:49:21</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/amazon-3.json">
+      <publishTime>06/23/2015 15:49:26</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/amazon-4.json">
+      <publishTime>06/23/2015 15:49:26</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/instagram-1.json">
+      <publishTime>06/23/2015 15:49:24</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/instagram-2.json">
+      <publishTime>06/23/2015 15:49:22</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/instagram-3.json">
+      <publishTime>06/23/2015 15:49:26</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/lastfm-1.json">
+      <publishTime>06/23/2015 15:49:22</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/lastfm-2.json">
+      <publishTime>06/23/2015 15:49:23</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/lastfm-3.json">
+      <publishTime>06/23/2015 15:49:21</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/lastfm-4.json">
+      <publishTime>06/23/2015 15:49:23</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/lastfm-5.json">
+      <publishTime>06/23/2015 15:49:23</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/nytimes-1.json">
+      <publishTime>06/23/2015 15:49:22</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/nytimes-2.json">
+      <publishTime>06/23/2015 15:49:21</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/nytimes-3.json">
+      <publishTime>06/23/2015 15:49:24</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/nytimes-4.json">
+      <publishTime>06/23/2015 15:49:25</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/nytimes-5.json">
+      <publishTime>06/23/2015 15:49:22</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/twitter-1.json">
+      <publishTime>06/23/2015 15:49:24</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/twitter-2.json">
+      <publishTime>06/23/2015 15:49:27</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/tr/tr/twitter-3.json">
+      <publishTime>06/23/2015 15:49:25</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/twitter-1.json">
+      <publishTime>06/23/2015 15:48:40</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/twitter-1.png">
+      <publishTime>06/23/2015 15:48:57</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/twitter-2.json">
+      <publishTime>06/23/2015 15:49:19</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/twitter-2.png">
+      <publishTime>06/23/2015 15:47:59</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/twitter-3.json">
+      <publishTime>06/23/2015 15:48:57</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/twitter-3.png">
+      <publishTime>06/23/2015 15:49:08</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/zh/cn/amazon-1.json">
+      <publishTime>06/23/2015 15:49:06</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/zh/cn/amazon-2.json">
+      <publishTime>06/23/2015 15:49:06</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/zh/cn/amazon-3.json">
+      <publishTime>06/23/2015 15:49:07</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/en/us/zh/cn/amazon-4.json">
+      <publishTime>06/23/2015 15:49:06</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/es/amazon-1.json">
+      <publishTime>06/23/2015 15:50:54</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/es/amazon-2.json">
+      <publishTime>06/23/2015 15:50:52</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/es/amazon-3.json">
+      <publishTime>06/23/2015 15:50:56</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/es/amazon-4.json">
+      <publishTime>06/23/2015 15:50:55</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/es/getty-1.jpg">
+      <publishTime>06/23/2015 15:50:56</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/es/getty-1.json">
+      <publishTime>06/23/2015 15:50:55</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/es/getty-2.jpg">
+      <publishTime>06/23/2015 15:50:53</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/es/getty-2.json">
+      <publishTime>06/23/2015 15:50:54</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/es/instagram-1.json">
+      <publishTime>06/23/2015 15:50:54</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/es/instagram-2.json">
+      <publishTime>06/23/2015 15:50:53</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/es/instagram-3.json">
+      <publishTime>06/23/2015 15:50:57</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/es/twitter-1.json">
+      <publishTime>06/23/2015 15:50:53</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/es/twitter-2.json">
+      <publishTime>06/23/2015 15:50:57</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/es/twitter-3.json">
+      <publishTime>06/23/2015 15:50:55</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/la/amazon-1.json">
+      <publishTime>06/23/2015 15:50:49</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/la/amazon-2.jpg">
+      <publishTime>06/23/2015 15:50:48</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/la/amazon-2.json">
+      <publishTime>06/23/2015 15:50:46</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/la/amazon-3.json">
+      <publishTime>06/23/2015 15:50:50</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/la/amazon-4.json">
+      <publishTime>06/23/2015 15:50:50</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/la/getty-1.jpg">
+      <publishTime>06/23/2015 15:50:51</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/la/getty-1.json">
+      <publishTime>06/23/2015 15:50:49</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/la/getty-2.jpg">
+      <publishTime>06/23/2015 15:50:47</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/la/getty-2.json">
+      <publishTime>06/23/2015 15:50:48</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/la/instagram-1.json">
+      <publishTime>06/23/2015 15:50:48</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/la/instagram-2.json">
+      <publishTime>06/23/2015 15:50:47</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/la/instagram-3.json">
+      <publishTime>06/23/2015 15:50:51</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/la/twitter-1.json">
+      <publishTime>06/23/2015 15:50:47</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/la/twitter-2.json">
+      <publishTime>06/23/2015 15:50:51</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/es/la/twitter-3.json">
+      <publishTime>06/23/2015 15:50:49</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/facebook/facebook.jpg">
+      <publishTime>06/23/2015 15:47:09</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/facebook/landscape.jpg">
+      <publishTime>06/23/2015 15:47:11</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/facebook/portrait.jpg">
+      <publishTime>06/23/2015 15:47:10</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/feat-back.jpg">
+      <publishTime>06/23/2015 15:50:29</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/fr/be/getty-1.jpg">
+      <publishTime>06/23/2015 15:49:46</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/fr/be/getty-1.json">
+      <publishTime>06/23/2015 15:49:46</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/fr/be/getty-2.jpg">
+      <publishTime>06/23/2015 15:49:44</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/fr/be/getty-2.json">
+      <publishTime>06/23/2015 15:49:45</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/fr/be/instagram-1.json">
+      <publishTime>06/23/2015 15:49:45</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/fr/be/instagram-2.json">
+      <publishTime>06/23/2015 15:49:45</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/fr/be/instagram-3.json">
+      <publishTime>06/23/2015 15:49:47</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/fr/fr/amazon-1.json">
+      <publishTime>06/23/2015 15:49:49</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/fr/fr/amazon-2.json">
+      <publishTime>06/23/2015 15:49:47</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/fr/fr/amazon-3.json">
+      <publishTime>06/23/2015 15:49:50</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/fr/fr/amazon-4.json">
+      <publishTime>06/23/2015 15:49:49</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/fr/fr/getty-1.jpg">
+      <publishTime>06/23/2015 15:49:50</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/fr/fr/getty-1.json">
+      <publishTime>06/23/2015 15:49:49</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/fr/fr/getty-2.jpg">
+      <publishTime>06/23/2015 15:49:48</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/fr/fr/getty-2.json">
+      <publishTime>06/23/2015 15:49:48</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/fullscreen-off.svg">
+      <publishTime>06/23/2015 15:50:41</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/fullscreen-on.svg">
+      <publishTime>06/23/2015 15:49:59</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/id/id/getty-1.jpg">
+      <publishTime>06/23/2015 15:50:17</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/id/id/getty-1.json">
+      <publishTime>06/23/2015 15:50:16</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/id/id/getty-2.jpg">
+      <publishTime>06/23/2015 15:50:15</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/id/id/getty-2.json">
+      <publishTime>06/23/2015 15:50:16</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/id/id/twitter-1.json">
+      <publishTime>06/23/2015 15:50:15</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/id/id/twitter-2.json">
+      <publishTime>06/23/2015 15:50:17</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/id/id/twitter-3.json">
+      <publishTime>06/23/2015 15:50:16</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/in/en/amazon-1.json">
+      <publishTime>06/23/2015 15:50:43</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/in/en/amazon-2.json">
+      <publishTime>06/23/2015 15:50:42</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/in/en/amazon-3.jpg">
+      <publishTime>06/23/2015 15:50:42</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/in/en/amazon-3.json">
+      <publishTime>06/23/2015 15:50:44</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/in/en/amazon-4.json">
+      <publishTime>06/23/2015 15:50:44</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/in/en/twitter-1.json">
+      <publishTime>06/23/2015 15:50:43</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/in/en/twitter-1.png">
+      <publishTime>06/23/2015 15:50:44</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/in/en/twitter-2.json">
+      <publishTime>06/23/2015 15:50:45</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/in/en/twitter-3.json">
+      <publishTime>06/23/2015 15:50:43</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/it/it/amazon-1.json">
+      <publishTime>06/23/2015 15:47:25</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/it/it/amazon-2.json">
+      <publishTime>06/23/2015 15:47:23</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/it/it/amazon-3.json">
+      <publishTime>06/23/2015 15:47:26</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/it/it/amazon-4.json">
+      <publishTime>06/23/2015 15:47:26</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/it/it/getty-1.jpg">
+      <publishTime>06/23/2015 15:47:27</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/it/it/getty-1.json">
+      <publishTime>06/23/2015 15:47:26</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/it/it/getty-2.jpg">
+      <publishTime>06/23/2015 15:47:24</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/it/it/getty-2.json">
+      <publishTime>06/23/2015 15:47:25</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/it/it/instagram-1.json">
+      <publishTime>06/23/2015 15:47:25</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/it/it/instagram-2.json">
+      <publishTime>06/23/2015 15:47:24</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/it/it/instagram-3.json">
+      <publishTime>06/23/2015 15:47:27</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ja/jp/amazon-1.json">
+      <publishTime>06/23/2015 15:47:14</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ja/jp/amazon-2.json">
+      <publishTime>06/23/2015 15:47:13</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ja/jp/amazon-3.json">
+      <publishTime>06/23/2015 15:47:16</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ja/jp/amazon-4.json">
+      <publishTime>06/23/2015 15:47:15</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ja/jp/getty-1.jpg">
+      <publishTime>06/23/2015 15:47:16</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ja/jp/getty-1.json">
+      <publishTime>06/23/2015 15:47:15</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ja/jp/getty-2.jpg">
+      <publishTime>06/23/2015 15:47:13</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ja/jp/getty-2.json">
+      <publishTime>06/23/2015 15:47:14</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ja/jp/twitter-1.json">
+      <publishTime>06/23/2015 15:47:14</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ja/jp/twitter-2.json">
+      <publishTime>06/23/2015 15:47:16</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ja/jp/twitter-3.json">
+      <publishTime>06/23/2015 15:47:15</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ko/kr/amazon-1.json">
+      <publishTime>06/23/2015 15:50:10</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ko/kr/amazon-2.json">
+      <publishTime>06/23/2015 15:50:09</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ko/kr/amazon-3.json">
+      <publishTime>06/23/2015 15:50:11</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ko/kr/amazon-4.json">
+      <publishTime>06/23/2015 15:50:11</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ko/kr/getty-1.jpg">
+      <publishTime>06/23/2015 15:50:12</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ko/kr/getty-1.json">
+      <publishTime>06/23/2015 15:50:10</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ko/kr/getty-2.jpg">
+      <publishTime>06/23/2015 15:50:09</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ko/kr/getty-2.json">
+      <publishTime>06/23/2015 15:50:10</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/kr/ko/amazon-1.json">
+      <publishTime>06/23/2015 15:51:01</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/kr/ko/amazon-2.json">
+      <publishTime>06/23/2015 15:50:58</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/kr/ko/amazon-3.json">
+      <publishTime>06/23/2015 15:51:02</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/kr/ko/amazon-4.json">
+      <publishTime>06/23/2015 15:51:02</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/kr/ko/instagram-1.json">
+      <publishTime>06/23/2015 15:51:01</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/kr/ko/instagram-2.json">
+      <publishTime>06/23/2015 15:50:59</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/kr/ko/instagram-3.json">
+      <publishTime>06/23/2015 15:51:02</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/kr/ko/lastfm-1.json">
+      <publishTime>06/23/2015 15:50:59</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/kr/ko/lastfm-2.json">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/kr/ko/lastfm-3.json">
+      <publishTime>06/23/2015 15:50:58</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/kr/ko/lastfm-4.json">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/kr/ko/lastfm-5.json">
+      <publishTime>06/23/2015 15:50:59</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/kr/ko/twitter-1.json">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/kr/ko/twitter-2.json">
+      <publishTime>06/23/2015 15:51:02</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/kr/ko/twitter-3.json">
+      <publishTime>06/23/2015 15:51:01</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/la/es/amazon-1.json">
+      <publishTime>06/23/2015 15:50:03</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/la/es/amazon-2.jpg">
+      <publishTime>06/23/2015 15:50:02</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/la/es/amazon-2.json">
+      <publishTime>06/23/2015 15:50:01</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/la/es/amazon-3.json">
+      <publishTime>06/23/2015 15:50:04</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/la/es/amazon-4.json">
+      <publishTime>06/23/2015 15:50:04</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/la/es/instagram-1.json">
+      <publishTime>06/23/2015 15:50:02</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/la/es/instagram-2.jpg">
+      <publishTime>06/23/2015 15:50:03</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/la/es/instagram-2.json">
+      <publishTime>06/23/2015 15:50:01</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/la/es/instagram-3.json">
+      <publishTime>06/23/2015 15:50:04</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/la/es/twitter-1.json">
+      <publishTime>06/23/2015 15:50:01</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/la/es/twitter-2.json">
+      <publishTime>06/23/2015 15:50:04</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/la/es/twitter-3.json">
+      <publishTime>06/23/2015 15:50:03</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ll-bg.png">
+      <publishTime>06/23/2015 15:49:58</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ll-shadow-nopersp.png">
+      <publishTime>06/23/2015 15:49:52</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/logo.path">
+      <publishTime>06/23/2015 15:49:51</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/logo.path~">
+      <publishTime>05/06/2015 22:58:34</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/logoGetty.path">
+      <publishTime>06/23/2015 15:49:51</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/nl/be/getty-1.jpg">
+      <publishTime>06/23/2015 15:50:21</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/nl/be/getty-1.json">
+      <publishTime>06/23/2015 15:50:20</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/nl/be/getty-2.jpg">
+      <publishTime>06/23/2015 15:50:19</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/nl/be/getty-2.json">
+      <publishTime>06/23/2015 15:50:20</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/nl/be/instagram-1.json">
+      <publishTime>06/23/2015 15:50:19</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/nl/be/instagram-2.json">
+      <publishTime>06/23/2015 15:50:19</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/nl/be/instagram-3.json">
+      <publishTime>06/23/2015 15:50:21</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/nl/nl/getty-1.jpg">
+      <publishTime>06/23/2015 15:50:24</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/nl/nl/getty-1.json">
+      <publishTime>06/23/2015 15:50:24</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/nl/nl/getty-2.jpg">
+      <publishTime>06/23/2015 15:50:22</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/nl/nl/getty-2.json">
+      <publishTime>06/23/2015 15:50:23</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/nl/nl/instagram-1.json">
+      <publishTime>06/23/2015 15:50:23</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/nl/nl/instagram-2.json">
+      <publishTime>06/23/2015 15:50:23</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/nl/nl/instagram-3.json">
+      <publishTime>06/23/2015 15:50:25</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/partSample01.json">
+      <publishTime>06/23/2015 15:50:29</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/pl/pl/getty-1.jpg">
+      <publishTime>06/23/2015 15:50:27</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/pl/pl/getty-1.json">
+      <publishTime>06/23/2015 15:50:27</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/pl/pl/getty-2.jpg">
+      <publishTime>06/23/2015 15:50:26</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/pl/pl/getty-2.json">
+      <publishTime>06/23/2015 15:50:26</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/pt/br/amazon-1.json">
+      <publishTime>06/23/2015 15:47:33</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/pt/br/amazon-2.json">
+      <publishTime>06/23/2015 15:47:30</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/pt/br/amazon-3.json">
+      <publishTime>06/23/2015 15:47:34</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/pt/br/amazon-4.json">
+      <publishTime>06/23/2015 15:47:33</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/pt/br/getty-1.jpg">
+      <publishTime>06/23/2015 15:47:34</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/pt/br/getty-1.json">
+      <publishTime>06/23/2015 15:47:33</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/pt/br/getty-2.jpg">
+      <publishTime>06/23/2015 15:47:31</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/pt/br/getty-2.json">
+      <publishTime>06/23/2015 15:47:32</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/pt/br/instagram-1.json">
+      <publishTime>06/23/2015 15:47:32</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/pt/br/instagram-2.json">
+      <publishTime>06/23/2015 15:47:31</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/pt/br/instagram-3.json">
+      <publishTime>06/23/2015 15:47:35</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/pt/br/twitter-1.json">
+      <publishTime>06/23/2015 15:47:32</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/pt/br/twitter-2.json">
+      <publishTime>06/23/2015 15:47:35</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/pt/br/twitter-3.json">
+      <publishTime>06/23/2015 15:47:33</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ru/ru/getty-1.jpg">
+      <publishTime>06/23/2015 15:50:33</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ru/ru/getty-1.json">
+      <publishTime>06/23/2015 15:50:32</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ru/ru/getty-2.jpg">
+      <publishTime>06/23/2015 15:50:31</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ru/ru/getty-2.json">
+      <publishTime>06/23/2015 15:50:32</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ru/ru/instagram-1.json">
+      <publishTime>06/23/2015 15:50:31</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ru/ru/instagram-2.json">
+      <publishTime>06/23/2015 15:50:31</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/ru/ru/instagram-3.json">
+      <publishTime>06/23/2015 15:50:33</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/Seagate_TextLockup.png">
+      <publishTime>06/23/2015 15:50:28</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/amazon-1.json">
+      <publishTime>06/23/2015 15:51:10</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/amazon-2.json">
+      <publishTime>06/23/2015 15:51:04</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/amazon-3.json">
+      <publishTime>06/23/2015 15:51:11</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/amazon-4.json">
+      <publishTime>06/23/2015 15:51:11</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/getty-1-144.jpg">
+      <publishTime>06/23/2015 15:51:05</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/getty-1-256.jpg">
+      <publishTime>06/23/2015 15:51:12</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/getty-1.jpg">
+      <publishTime>06/23/2015 15:51:12</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/getty-1.json">
+      <publishTime>06/23/2015 15:51:11</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/getty-2.jpg">
+      <publishTime>06/23/2015 15:51:06</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/getty-2.json">
+      <publishTime>06/23/2015 15:51:09</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/instagram-1.json">
+      <publishTime>06/23/2015 15:51:09</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/instagram-2.json">
+      <publishTime>06/23/2015 15:51:07</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/instagram-3.json">
+      <publishTime>06/23/2015 15:51:13</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/lastfm-1.json">
+      <publishTime>06/23/2015 15:51:06</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/lastfm-2.json">
+      <publishTime>06/23/2015 15:51:08</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/lastfm-3.json">
+      <publishTime>06/23/2015 15:51:04</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/lastfm-4.json">
+      <publishTime>06/23/2015 15:51:08</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/lastfm-5.json">
+      <publishTime>06/23/2015 15:51:07</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/nytimes-1.json">
+      <publishTime>06/23/2015 15:51:07</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/nytimes-2.json">
+      <publishTime>06/23/2015 15:51:04</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/nytimes-3.json">
+      <publishTime>06/23/2015 15:51:09</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/nytimes-4.json">
+      <publishTime>06/23/2015 15:51:10</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/nytimes-5.json">
+      <publishTime>06/23/2015 15:51:05</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/twitter-1.json">
+      <publishTime>06/23/2015 15:51:08</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/twitter-2.json">
+      <publishTime>06/23/2015 15:51:13</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/twitter-3.json">
+      <publishTime>06/23/2015 15:51:10</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tr/tr/twitter-3.png">
+      <publishTime>06/23/2015 15:51:13</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tw/zh/instagram-1.json">
+      <publishTime>06/23/2015 15:47:29</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tw/zh/instagram-2.json">
+      <publishTime>06/23/2015 15:47:28</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/tw/zh/instagram-3.json">
+      <publishTime>06/23/2015 15:47:29</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/zh/cn/amazon-1.json">
+      <publishTime>06/23/2015 15:50:38</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/zh/cn/amazon-2.json">
+      <publishTime>06/23/2015 15:50:37</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/zh/cn/amazon-3.json">
+      <publishTime>06/23/2015 15:50:39</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/zh/cn/amazon-4.json">
+      <publishTime>06/23/2015 15:50:39</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/zh/cn/getty-1.jpg">
+      <publishTime>06/23/2015 15:50:40</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/zh/cn/getty-1.json">
+      <publishTime>06/23/2015 15:50:38</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/zh/cn/getty-2.jpg">
+      <publishTime>06/23/2015 15:50:37</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/zh/cn/getty-2.json">
+      <publishTime>06/23/2015 15:50:38</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/zh/tw/getty-1.jpg">
+      <publishTime>06/23/2015 15:50:36</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/zh/tw/getty-1.json">
+      <publishTime>06/23/2015 15:50:35</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/zh/tw/getty-2.jpg">
+      <publishTime>06/23/2015 15:50:35</publishTime>
+    </File>
+    <File Include="ww/universal/ll/images/zh/tw/getty-2.json">
+      <publishTime>06/23/2015 15:50:35</publishTime>
+    </File>
+    <File Include="ww/universal/ll/img/mobile/menu_icon_v03.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ww/universal/ll/img/v06/amz_v06.gif">
+      <publishTime>06/23/2015 15:46:59</publishTime>
+    </File>
+    <File Include="ww/universal/ll/img/v06/getty_v06.gif">
+      <publishTime>06/23/2015 15:46:57</publishTime>
+    </File>
+    <File Include="ww/universal/ll/img/v06/insta_v06.gif">
+      <publishTime>06/23/2015 15:46:58</publishTime>
+    </File>
+    <File Include="ww/universal/ll/img/v06/last_v06.gif">
+      <publishTime>06/23/2015 15:46:59</publishTime>
+    </File>
+    <File Include="ww/universal/ll/img/v06/nyt_v06.gif">
+      <publishTime>06/23/2015 15:46:55</publishTime>
+    </File>
+    <File Include="ww/universal/ll/img/v06/twt_v06.gif">
+      <publishTime>06/23/2015 15:46:56</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/Common.js">
+      <publishTime>06/23/2015 15:46:26</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/Detector.js">
+      <publishTime>06/23/2015 15:46:28</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/device.min.js">
+      <publishTime>06/23/2015 15:46:23</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/FBOUtils.js">
+      <publishTime>06/23/2015 15:46:23</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/jquery-2.1.1.min.js">
+      <publishTime>06/23/2015 15:46:26</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/jquery.js">
+      <publishTime>06/23/2015 15:46:28</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/klang.min.js">
+      <publishTime>06/23/2015 15:46:27</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/ll-apifunctions.js">
+      <publishTime>06/23/2015 15:46:25</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/ll-apiscene.js">
+      <publishTime>06/23/2015 15:46:26</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/ll-apisceneGetty.js">
+      <publishTime>06/23/2015 15:46:24</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/ll-canvas.css">
+      <publishTime>06/23/2015 15:46:23</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/ll-canvas.js">
+      <publishTime>06/23/2015 15:46:22</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/ll-canvas.min.js">
+      <publishTime>06/23/2015 15:46:21</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/ll-facebook.js">
+      <publishTime>06/23/2015 21:09:05</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/ll-header-combined.js">
+      <publishTime>06/23/2015 15:46:27</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/ll-script.js">
+      <publishTime>06/23/2015 15:58:03</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/ll-taglines.js">
+      <publishTime>06/23/2015 15:46:25</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/ll-webgl.js">
+      <publishTime>06/24/2015 16:02:38</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/ll.js">
+      <publishTime>06/23/2015 16:20:49</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/RequestBinaryData.js">
+      <publishTime>06/23/2015 15:46:20</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/require.js">
+      <publishTime>06/23/2015 15:46:21</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/three.min.js">
+      <publishTime>06/23/2015 15:46:24</publishTime>
+    </File>
+    <File Include="ww/universal/ll/js/TweenMax.min.js">
+      <publishTime>06/23/2015 15:46:22</publishTime>
+    </File>
+    <File Include="ww/universal/ll/shaders/GettyAPI.fragment">
+      <publishTime>06/23/2015 15:51:24</publishTime>
+    </File>
+    <File Include="ww/universal/ll/shaders/GettyAPI.vertex">
+      <publishTime>06/23/2015 15:51:25</publishTime>
+    </File>
+    <File Include="ww/universal/ll/shaders/PathDeform.fragment">
+      <publishTime>06/23/2015 15:51:26</publishTime>
+    </File>
+    <File Include="ww/universal/ll/shaders/PathDeform.vertex">
+      <publishTime>06/23/2015 15:51:24</publishTime>
+    </File>
+    <File Include="ww/universal/ll/shaders/PathDeform_Getty.fragment">
+      <publishTime>06/23/2015 15:51:26</publishTime>
+    </File>
+    <File Include="ww/universal/ll/shaders/PathDeform_Getty.vertex">
+      <publishTime>06/23/2015 15:51:25</publishTime>
+    </File>
+    <File Include="ww/universal/ll/shaders/PathSim.fragment">
+      <publishTime>06/23/2015 15:51:24</publishTime>
+    </File>
+    <File Include="ww/universal/ll/shaders/PathSim.vertex">
+      <publishTime>06/23/2015 15:51:24</publishTime>
+    </File>
+    <File Include="ww/universal/ll/shaders/PathSim_Getty.fragment">
+      <publishTime>06/23/2015 15:51:26</publishTime>
+    </File>
+    <File Include="ww/universal/ll/shaders/PathSim_Getty.vertex">
+      <publishTime>06/23/2015 15:51:25</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/config.json">
+      <publishTime>06/23/2015 15:46:53</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1024.mp3">
+      <publishTime>06/23/2015 15:46:31</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1024.ogg">
+      <publishTime>06/23/2015 15:46:47</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1024_efff9d1ba582afcc3db1f02eab77ccc0_FX_SubtleOver_4.mp3">
+      <publishTime>06/23/2015 15:46:45</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1024_efff9d1ba582afcc3db1f02eab77ccc0_FX_SubtleOver_4.ogg">
+      <publishTime>06/23/2015 15:46:38</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1029.mp3">
+      <publishTime>06/23/2015 15:46:34</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1029.ogg">
+      <publishTime>06/23/2015 15:46:35</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1029_a834858207ea0fca3a0a8a06880b52b7_FX_SubtleClick_1.mp3">
+      <publishTime>06/23/2015 15:46:44</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1029_a834858207ea0fca3a0a8a06880b52b7_FX_SubtleClick_1.ogg">
+      <publishTime>06/23/2015 15:46:47</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1424.mp3">
+      <publishTime>06/23/2015 15:46:35</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1424.ogg">
+      <publishTime>06/23/2015 15:46:47</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1424_7689e52b3e17b01ee08274d94f22d1d4_TWITTER_FLUSH.mp3">
+      <publishTime>06/23/2015 15:46:39</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1424_7689e52b3e17b01ee08274d94f22d1d4_TWITTER_FLUSH.ogg">
+      <publishTime>06/23/2015 15:46:33</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1425.mp3">
+      <publishTime>06/23/2015 15:46:40</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1425.ogg">
+      <publishTime>06/23/2015 15:46:37</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1425_c90078f981cca11884c804ea535d79c6_TWITTER_REST.mp3">
+      <publishTime>06/23/2015 15:46:30</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1425_c90078f981cca11884c804ea535d79c6_TWITTER_REST.ogg">
+      <publishTime>06/23/2015 15:46:43</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1426.mp3">
+      <publishTime>06/23/2015 15:46:33</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1426.ogg">
+      <publishTime>06/23/2015 15:46:49</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1426_956992d3ecffe50d03271a39ec9623a1_NYT_FLUSH.mp3">
+      <publishTime>06/23/2015 15:46:39</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1426_956992d3ecffe50d03271a39ec9623a1_NYT_FLUSH.ogg">
+      <publishTime>06/23/2015 15:46:30</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1427.mp3">
+      <publishTime>06/23/2015 15:46:32</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1427.ogg">
+      <publishTime>06/23/2015 15:46:50</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1427_7a1eab0d1dd9c8af8c49164d40f8f213_AMAZON_FLUSH.mp3">
+      <publishTime>06/23/2015 15:46:49</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1427_7a1eab0d1dd9c8af8c49164d40f8f213_AMAZON_FLUSH.ogg">
+      <publishTime>06/23/2015 15:46:48</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1428.mp3">
+      <publishTime>06/23/2015 15:46:45</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1428.ogg">
+      <publishTime>06/23/2015 15:46:43</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1428_5d3a3c979c7cb6696b3c60ccfa35fe00_AMAZON_REST.mp3">
+      <publishTime>06/23/2015 15:46:51</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1428_5d3a3c979c7cb6696b3c60ccfa35fe00_AMAZON_REST.ogg">
+      <publishTime>06/23/2015 15:46:42</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1429.mp3">
+      <publishTime>06/23/2015 15:46:51</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1429.ogg">
+      <publishTime>06/23/2015 15:46:31</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1429_c5f2a31c0989d580306db107696f9457_INSTAGRAM_FLUSH.mp3">
+      <publishTime>06/23/2015 15:46:51</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1429_c5f2a31c0989d580306db107696f9457_INSTAGRAM_FLUSH.ogg">
+      <publishTime>06/23/2015 15:46:46</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1430.mp3">
+      <publishTime>06/23/2015 15:46:42</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1430.ogg">
+      <publishTime>06/23/2015 15:46:50</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1430_082a8dce4afb519d87848ab8c127efe7_INSTAGRAM_REST.mp3">
+      <publishTime>06/23/2015 15:46:36</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1430_082a8dce4afb519d87848ab8c127efe7_INSTAGRAM_REST.ogg">
+      <publishTime>06/23/2015 15:46:35</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1431.mp3">
+      <publishTime>06/23/2015 15:46:52</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1431.ogg">
+      <publishTime>06/23/2015 15:46:41</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1431_b5b2c25069ed496646df41ecf590dcfc_LASTFM_FLUSH.mp3">
+      <publishTime>06/23/2015 15:46:34</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1431_b5b2c25069ed496646df41ecf590dcfc_LASTFM_FLUSH.ogg">
+      <publishTime>06/23/2015 15:46:46</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1432.mp3">
+      <publishTime>06/23/2015 15:46:45</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1432.ogg">
+      <publishTime>06/23/2015 15:46:36</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1432_b1326a9d71247720253e6bb9982a9367_LASTFM_REST.mp3">
+      <publishTime>06/23/2015 15:46:39</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1432_b1326a9d71247720253e6bb9982a9367_LASTFM_REST.ogg">
+      <publishTime>06/23/2015 15:46:44</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1433.mp3">
+      <publishTime>06/23/2015 15:46:43</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1433.ogg">
+      <publishTime>06/23/2015 15:46:53</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1433_0dcbd8e0fe028b500cc3c02031499dca_NYT_REST.mp3">
+      <publishTime>06/23/2015 15:46:31</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/1433_0dcbd8e0fe028b500cc3c02031499dca_NYT_REST.ogg">
+      <publishTime>06/23/2015 15:46:38</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/5771.mp3">
+      <publishTime>06/23/2015 15:46:41</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/5771.ogg">
+      <publishTime>06/23/2015 15:46:37</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/5771_37b9c4ce804578706d39e254f3a54ef5_Getty_rest.mp3">
+      <publishTime>06/23/2015 15:46:52</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/5771_37b9c4ce804578706d39e254f3a54ef5_Getty_rest.ogg">
+      <publishTime>06/23/2015 15:46:48</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/5772_8860b30c42ea5ac74eb5c0fd59962d6c_Getty_flush.mp3">
+      <publishTime>06/23/2015 15:46:32</publishTime>
+    </File>
+    <File Include="ww/universal/ll/sounds/sounds/5772_8860b30c42ea5ac74eb5c0fd59962d6c_Getty_flush.ogg">
+      <publishTime>06/23/2015 15:46:40</publishTime>
+    </File>
+    <File Include="www-dev-home.html">
+      <publishTime>06/24/2015 16:22:16</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

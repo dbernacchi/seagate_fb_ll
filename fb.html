@@ -1,0 +1,395 @@
+﻿<!DOCTYPE html>
+
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>	Seagate - Storing the world’s digital content |	
+      Seagate	</title>	 
+    <meta name="keywords" content="hard drives, hard drive, hard disk drives, hard disk drive, hard disks, harddrive, storage drive, external hard drive, enterprise drive, desktop drive, portable drive, portable drives, FireWire, USB, Serial ATA, SATA"/> 
+
+    <meta name="description" content="Seagate is the company the world trusts to store our lives - our files and photos, our libraries and histories, our science and progress."/> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="">
+
+    <meta id="Viewport" name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script src="/ww/universal/ll/js/jquery-1.11.3.min.js"></script>
+    <link href="/ww/universal/ll/css/ll-combined.css" rel="stylesheet">
+    <link href="/ww/universal/ll/css/facebook.css" rel="stylesheet">
+    <script src="/ww/universal/ll/js/ll-header-combined.js"></script>
+    <script src="/ww/universal/ll/js/ll-facebook.js"></script>
+    <script>
+
+      //1405856746407385
+      var appId = 687711224695327;
+      //1643796342531920
+      //var appId = 1405856746407385;
+
+      /**
+       * This is the bootstrap / app script
+       */
+
+      // wait for DOM and facebook auth
+      var docReady = $.Deferred();
+      var facebookReady = $.Deferred();
+      var llScriptReady = $.Deferred();
+      
+      $(document).ready(docReady.resolve);
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId: appId,
+          status: true,
+          cookie: true,
+          xfbml: true
+        });
+        facebookReady.resolve();
+      };
+
+      $.when(docReady, facebookReady, llScriptReady).then(function() {
+
+        if(location.href.indexOf('?events') > -1){
+          $('.non_events').hide();
+          $('.events').show();
+        } else {
+          $('.non_events').show();
+          $('.events').hide();
+        }
+        facebookLL.fbBootstrap();
+        
+      });
+
+      // call facebook script
+      (function(d) {
+        var js, id = 'facebook-jssdk';
+        if (d.getElementById(id)) {
+          return;
+        }
+        js = d.createElement('script');
+        js.id = id;
+        js.async = true;
+        js.src = "http://connect.facebook.net/en_US/all.js";
+        d.getElementsByTagName('head')[0].appendChild(js);
+      }(document));
+      
+    </script>
+
+  </head> 
+  <body class="fb"> 
+
+    <div id="fb-root"></div>
+
+    <div class="row hotZone" style="top: 140px; position: relative;">
+
+      <div class="row mainStage">
+
+        <!-- This is Where the content lives -->  
+
+
+        <div id="glContainer" style="display:none;"></div>
+        <div class="container">
+          <div id="doEvent"></div>
+          <div id="doTiltLR"></div>
+          <div id="doTiltFB"></div>
+          <div id="doDirection"></div>
+        </div>
+        <div style="display:none;" class="gifMe">
+
+        </div> 
+
+        <!-- ll canvas elements -->
+        <div id="ll-canvas-container">
+
+          <div id="ll-canvas-shadow"></div>
+          <canvas id="ll-canvas"></canvas>
+        </div>
+
+
+
+        <div class="container block canCan" style="display:none;">
+
+          <div class="row">
+            <div class="container block">
+              <div class="ll-ratio button">100%</div>
+            </div>
+            <div class="container block bnc">
+              <div class="btnc button" onclick="mack.setCan(0.1)">10%</div>
+              <div class="btnc button" onclick="mack.setCan(0.25)">25%</div>
+              <div onclick="mack.setCan(0.5)" class="btnc button">50%</div>
+              <div class="btnc button" onclick="mack.setCan(0.70)">70%</div>
+              <div class="btnc button" onclick="mack.setCan(0.80)">80%</div>
+              <div class="btnc button" onclick="mack.setCan(0.90)">90%</div>
+              <div class="btnc button" onclick="mack.setCan(1)">100%</div>
+            </div>
+          </div>
+        </div>
+
+        <section id="leftControls" class="nmb">
+          <ul class="clr events"><li><a class="fb_logout" href="/logout.html">Log out</a></li><li><div class="gettyText">FACEBOOK</div></li></ul>
+          <div class="gettyText non_events">FACEBOOK</div>
+          <ul>
+            <li>
+              <div class="checkboxContainer">
+                <div id="audio"></div>
+              </div>
+            </li>
+            <li></li>
+            <li><span class="circle cameraActive0"></span></li>
+            <li><span class="circle"></span></li>
+            <li><span class="circle"></span></li>
+            <li id="zoom-controls" class="zoom-controls">
+              <span class="ti-search zoom-icon"></span>
+            </li>
+          </ul>
+        </section>  
+        
+        <section id="rightControls">
+          <div class="checkboxContainer">
+            <div id="fullscreen"></div>
+          </div>
+        </section>
+
+
+        <!--  IN The Below Section Lay The API Div Fields we Target -->
+        <section id="text">
+          <section id="preloader">
+            <p dir="ltr">Seagate creates space for the human experience <span class="ellipsis"><span class="dot dot1">.</span><span class="dot dot2">.</span><span class="dot dot3">.</span></span></p>
+          </section>
+          <section id="bottomText"> <!--  Bottom Text's top value is animated through hotzone and supersizeme/supersizemeGL functions -->
+            <section id="stats" style="opacity: 0;">
+              <p></p>
+            </section>
+            <section id="statsTwitter" style="opacity: 0;display:none!important;visibility:hidden;">
+              <p><span id="twitterHandle"></span> <span id="twitterText"></span></p>
+            </section>
+            <section id="logo" style="opacity: 0;"></section>
+          </section>
+        </section>
+
+      </div>
+
+      <audio preload="auto" class="bGetty" style="display:none;visibility: hidden" loop>
+        <source src="/ww/universal/ll/sounds/sounds/5771_37b9c4ce804578706d39e254f3a54ef5_Getty_rest.mp3" type="audio/mpeg" />
+        <source src="/ww/universal/ll/sounds/sounds/5771_37b9c4ce804578706d39e254f3a54ef5_Getty_rest.ogg" type="audio/ogg" /> Your browser isn't invited for super fun audio time.
+      </audio>
+
+    </div>
+    <!-- /container -->
+
+    <div class="spinner"></div>
+
+    <!-- Begin insert footerCode from Channel Info Child -->	
+    <script src="/ww/universal/ll/js/require.js"></script>
+    <script>
+
+                var rcLocaleJSDirectory = 'facebook';
+
+                var Environment = {
+                  //mobile or desktop compatible event name, to be used with '.on' function
+                  TOUCH_DOWN_EVENT_NAME: 'mousedown touchstart',
+                  TOUCH_UP_EVENT_NAME: 'mouseup touchend',
+                  TOUCH_MOVE_EVENT_NAME: 'mousemove touchmove',
+                  TOUCH_DOUBLE_TAB_EVENT_NAME: 'dblclick dbltap',
+                  isFire: function() {
+                    return (navigator.userAgent.toLowerCase().indexOf('firefox') > -1)
+                  },
+                  isAndroid: function() {
+                    return navigator.userAgent.match(/Android/i);
+                  },
+                  isBlackBerry: function() {
+                    return navigator.userAgent.match(/BlackBerry/i);
+                  },
+                  isIOS: function() {
+                    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+                  },
+                  isOpera: function() {
+                    return navigator.userAgent.match(/Opera Mini/i);
+                  },
+                  isWindows: function() {
+                    return navigator.userAgent.match(/IEMobile/i);
+                  },
+                  isSafari: function() {
+                    var ua = navigator.userAgent.toLowerCase();
+                    if (ua.indexOf('safari') != -1) {
+                      if (ua.indexOf('chrome') > -1) {
+                        // Chrome
+                        return false;
+                      } else {
+                        // Safari
+                        return true;
+                      }
+                    }
+
+                  },
+                  isChrome: function() {
+                    var ua = navigator.userAgent.toLowerCase();
+                    if (ua.indexOf('safari') != -1) {
+                      if (ua.indexOf('chrome') > -1) {
+                        // Chrome
+                        return true;
+                      } else {
+                        // Safari
+                        return false;
+                      }
+                    }
+                  },
+                  checkWin: function() {
+
+                  },
+                  windowWhat: function() {
+                    /*var ua = navigator.userAgent.toLowerCase();
+                     var isWinXP = ua.indexOf('windows nt 5.1') > 0;   */
+                    var OSName = null;
+                    if (navigator.appVersion.indexOf("Windows NT 6.2") != -1)
+                      OSName = "Windows 8";
+                    if (navigator.appVersion.indexOf("Windows NT 6.1") != -1)
+                      OSName = "Windows 7";
+                    if (navigator.appVersion.indexOf("Windows NT 6.0") != -1)
+                      OSName = "Windows Vista";
+                    if (navigator.appVersion.indexOf("Windows NT 5.1") != -1)
+                      OSName = "Windows XP";
+                    if (navigator.appVersion.indexOf("Windows NT 5.0") != -1)
+                      OSName = "Windows 2000";
+                    if (navigator.appVersion.indexOf("Mac") != -1)
+                      OSName = "Mac/iOS";
+                    if (navigator.appVersion.indexOf("X11") != -1)
+                      OSName = "UNIX";
+                    if (navigator.appVersion.indexOf("Linux") != -1)
+                      OSName = "Linux";
+                    if (OSName) {
+                      /*if(OSName == "Windows XP" || OSName == "Windows Vista"){
+                       return OSName;
+                       } else {
+                       return false;
+                       }*/
+                      return OSName;
+                    } else {
+                      return false;
+                    }
+
+                  },
+                  chromeCheck: function() {
+                    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+                    if (isChrome) {
+                      return true;
+                    }
+                  },
+                  isIe: function() {
+                    var ua = window.navigator.userAgent;
+                    var msie = ua.indexOf('MSIE ');
+                    var trident = ua.indexOf('Trident/');
+                    if (msie > 0) {
+                      // IE 10 or older => return version number
+                      return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+                    }
+                    if (trident > 0) {
+                      // IE 11 (or newer) => return version number
+                      var rv = ua.indexOf('rv:');
+                      return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 12);
+                    }
+                    // other browser
+                    return false;
+                  },
+                  ieGrown: function() {
+                    var ieVz = 0;
+                    if (!!navigator.userAgent.match(/Trident\/7.0/)) {
+
+                      ieVz = 11;
+                    }
+                    if (!!navigator.userAgent.match(/Trident\/6.0/)) {
+                      ieVz = 10;
+                    }
+
+                    if (!ieVz) {
+                      return false;
+
+                    } else {
+                      /*alert(ieVz)*/
+                      return ieVz;
+                    }
+
+
+                  },
+                  isMobile: function() {
+                    return (Environment.isAndroid() || Environment.isBlackBerry() || Environment.isIOS() || Environment.isOpera() || Environment.isWindows());
+                  }
+                };
+
+                var rootPath = "/ww/universal/ll/";
+
+
+                if (Environment.isIe() && Environment.isIe() <= 9 && !Environment.ieGrown()) {
+                  requirejs.config({
+                    baseUrl: rootPath,
+                    shim: {
+                      'js/ll-script': ['js/ll-webgl'],
+                      'js/ll-apifunctions': ['js/FBOUtils']
+                    },
+                    paths: {
+                      jquery: [
+                        'js/jquery-1.11.3.min',
+                        'jquery'
+                      ]
+                    }
+                  });
+                  require(['jquery'], function($) {
+                    require(["js/ll-webgl", 'js/Common', "js/ll-script", "assets/js/bootstrap"], function() {
+                      callHotZone();
+                    });
+                    return jQuery;
+                  });
+
+                } else {
+
+                  requirejs.config({
+                    baseUrl: rootPath,
+                    paths: {
+                      jquery: [
+                        'js/jquery-1.11.3.min',
+
+                      ]
+                    },
+                    shim: {
+                      'js/ll-webgl': ["js/ll", 'js/three.min', 'js/ll-apifunctions', 'js/ll-apiscene', 'js/ll-apisceneGetty', 'js/ll-canvas.min'],
+                      'js/FBOUtils': ["js/ll", 'js/three.min'],
+                      'js/ll-script': ["js/ll", 'js/ll-webgl'],
+                      'js/Common': ["js/ll", 'js/three.min'],
+                      "js/ll-apiscene": ["js/ll", 'js/three.min'],
+                      "js/ll-apisceneGetty": ["js/ll", 'js/three.min', 'js/ll-apiscene'],
+                      'js/ll-apifunctions': ["js/ll", 'js/FBOUtils']
+                    },
+                    waitSeconds: 0
+                  });
+                  require(['jquery'], function($) {
+                    require(["js/three.min", "js/FBOUtils", "js/Common", "js/ll", "js/ll-apifunctions", "js/ll-apiscene", "js/ll-apisceneGetty", "js/ll-webgl",
+                      "js/ll-script", "../font/ss-standard", "js/ll-canvas.min", "js/ll-taglines", "js/klang.min"
+                    ], function() {
+                      callHotZone();
+                    });
+                    return jQuery;
+                  });
+
+                }
+    </script>
+    <script>
+      function callHotZone() {
+        if (Environment.isIe() && Environment.isIe() <= 9 && !Environment.ieGrown()) {
+        } else {
+          $(function() {
+            mack.hotZone();
+            $(window).resize(function() {
+              mack.hotZone();
+            })
+          })
+        }
+      }
+    </script>
+
+    <script src="/ww/universal/ll/assets/lib/TweenMax.min.js"></script>
+    <script src="/ww/universal/ll/js/RequestBinaryData.js"></script>  
+ 
+  </body>
+</html>
+
