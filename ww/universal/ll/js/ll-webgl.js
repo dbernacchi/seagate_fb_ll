@@ -15,7 +15,7 @@ var hasSelectedFacebook = false;
 var facebookActivated = false;
 
 // If facebook use full window dimension
-if(rcLocaleJSDirectory == 'facebook')
+if (rcLocaleJSDirectory == 'facebook')
 {
   containerHeight = window.innerHeight;
 }
@@ -35,9 +35,9 @@ mack.vars.staticData = [];
 
 var lastX = 0;
 
-if (!LOG) 
+if (!LOG)
 {
-  function LOG()  
+  function LOG()
   {
     // Empty
   }
@@ -76,16 +76,16 @@ function MenuSetItem(index)
 var fovCameraOffsetY = 22;
 
 var effectController =
-{
-  pathSlowness: 4.0
-  , fieldOfView: 45 //72
-  , nextFieldOfView: 45
-  , fovMinValue: 2.0
-  , fovMaxValue: 45.0
+        {
+          pathSlowness: 4.0
+          , fieldOfView: 45 //72
+          , nextFieldOfView: 45
+          , fovMinValue: 2.0
+          , fovMaxValue: 45.0
 
-  , fovCameraOffsetX: -5
-  , fovCameraOffsetY: fovCameraOffsetY
-};
+          , fovCameraOffsetX: -5
+          , fovCameraOffsetY: fovCameraOffsetY
+        };
 
 
 // Variables
@@ -190,30 +190,30 @@ var CopyDecl = function()
 };
 
 CopyDecl.prototype =
-{
-  constructor: CopyDecl
-  , Reset: function()
-  {
-    this.tagline = "";
-    this.number = 0;
-    this.numberPrecision = 1;
-    this.values = [];
-    this.animatedNumber = 0; // used if number is animated
-    this.hasNumberAnimation = false;
-    this.hasValueAnimation = false;
-    this.currentTime = 0.0;
-    this.longestValueSize = 0.0;
-    this.currentApiId = 0;
-  }
-  , Restart: function()
-  {
-    this.animatedNumber = 0.0;
-    this.currentTime = 0.0;
-  }
-};
+        {
+          constructor: CopyDecl
+          , Reset: function()
+          {
+            this.tagline = "";
+            this.number = 0;
+            this.numberPrecision = 1;
+            this.values = [];
+            this.animatedNumber = 0; // used if number is animated
+            this.hasNumberAnimation = false;
+            this.hasValueAnimation = false;
+            this.currentTime = 0.0;
+            this.longestValueSize = 0.0;
+            this.currentApiId = 0;
+          }
+          , Restart: function()
+          {
+            this.animatedNumber = 0.0;
+            this.currentTime = 0.0;
+          }
+        };
 
 
-var copyTextArray = [ new CopyDecl(), new CopyDecl(), new CopyDecl(), new CopyDecl(), new CopyDecl(), new CopyDecl(), new CopyDecl() ];
+var copyTextArray = [new CopyDecl(), new CopyDecl(), new CopyDecl(), new CopyDecl(), new CopyDecl(), new CopyDecl(), new CopyDecl()];
 
 
 var logoInstagram = {
@@ -239,12 +239,12 @@ var logoInstagram = {
   , wave2StartTime: 0.0 //2.4
   , wave2EmitTime: 3.5 //4.0
 
-    , tileWidth: 128 //kTextureSectionSize.x
-    , tileHeight: 128 //kTextureSectionSize.y
-    , numTilesX: 8
-    , numTilesY: 8
-    , texWidth: 1024 //kTextureSize.x
-    , texHeight: 1024 //kTextureSize.y
+  , tileWidth: 128 //kTextureSectionSize.x
+  , tileHeight: 128 //kTextureSectionSize.y
+  , numTilesX: 8
+  , numTilesY: 8
+  , texWidth: 1024 //kTextureSize.x
+  , texHeight: 1024 //kTextureSize.y
 };
 
 var logoTwitter = {
@@ -270,12 +270,12 @@ var logoTwitter = {
   , wave2StartTime: 0.4 //3.0 //3.9
   , wave2EmitTime: 4.5
 
-    , tileWidth: 1024 //kTextureSectionSize.x
-    , tileHeight: 16 //kTextureSectionSize.y
-    , numTilesX: 1
-    , numTilesY: 64
-    , texWidth: 1024 //kTextureSize.x
-    , texHeight: 1024 //kTextureSize.y
+  , tileWidth: 1024 //kTextureSectionSize.x
+  , tileHeight: 16 //kTextureSectionSize.y
+  , numTilesX: 1
+  , numTilesY: 64
+  , texWidth: 1024 //kTextureSize.x
+  , texHeight: 1024 //kTextureSize.y
 };
 
 var logoNYT = {
@@ -301,12 +301,12 @@ var logoNYT = {
   , wave2StartTime: 1.0 //2.5 //3.5
   , wave2EmitTime: 3.5 //5.0 //7.0
 
-    , tileWidth: 128 //kTextureSectionSize.x
-    , tileHeight: 64 //kTextureSectionSize.y
-    , numTilesX: 8
-    , numTilesY: 16
-    , texWidth: 1024 //kTextureSize.x
-    , texHeight: 1024 //kTextureSize.y
+  , tileWidth: 128 //kTextureSectionSize.x
+  , tileHeight: 64 //kTextureSectionSize.y
+  , numTilesX: 8
+  , numTilesY: 16
+  , texWidth: 1024 //kTextureSize.x
+  , texHeight: 1024 //kTextureSize.y
 };
 
 var logoAmazon = {
@@ -332,12 +332,12 @@ var logoAmazon = {
   , wave2StartTime: 0.5 //2.4
   , wave2EmitTime: 3.5
 
-    , tileWidth: 128 //kTextureSectionSize.x
-    , tileHeight: 128 //kTextureSectionSize.y
-    , numTilesX: 8
-    , numTilesY: 8
-    , texWidth: 1024 //kTextureSize.x
-    , texHeight: 1024 //kTextureSize.y
+  , tileWidth: 128 //kTextureSectionSize.x
+  , tileHeight: 128 //kTextureSectionSize.y
+  , numTilesX: 8
+  , numTilesY: 8
+  , texWidth: 1024 //kTextureSize.x
+  , texHeight: 1024 //kTextureSize.y
 };
 
 var logoLastFM = {
@@ -363,12 +363,12 @@ var logoLastFM = {
   , wave2StartTime: 0.0 //3.5 //4.5
   , wave2EmitTime: 4.5 //7.0
 
-    , tileWidth: 128 //kTextureSectionSize.x
-    , tileHeight: 128 //kTextureSectionSize.y
-    , numTilesX: 8
-    , numTilesY: 8
-    , texWidth: 1024 //kTextureSize.x
-    , texHeight: 1024 //kTextureSize.y
+  , tileWidth: 128 //kTextureSectionSize.x
+  , tileHeight: 128 //kTextureSectionSize.y
+  , numTilesX: 8
+  , numTilesY: 8
+  , texWidth: 1024 //kTextureSize.x
+  , texHeight: 1024 //kTextureSize.y
 };
 
 var logoGetty = {
@@ -398,21 +398,21 @@ var logoGetty = {
   , frontParticlesCount: 20
   , landscapeChance: 75
 
-    , tileWidthPortrait: 144
-    , tileHeightPortrait: 256
-    , numTilesXPortrait: 16
-    , numTilesYPortrait: 4
-    , tileWidthLandscape: 256
-    , tileHeightLandscape: 144
-    , numTilesXLandscape: 9
-    , numTilesYLandscape: 7
-    , texWidth: 4096
-    , texHeight: 2048
+  , tileWidthPortrait: 144
+  , tileHeightPortrait: 256
+  , numTilesXPortrait: 16
+  , numTilesYPortrait: 4
+  , tileWidthLandscape: 256
+  , tileHeightLandscape: 144
+  , numTilesXLandscape: 9
+  , numTilesYLandscape: 7
+  , texWidth: 4096
+  , texHeight: 2048
 };
 
 
 var logoFacebook = {
-    index: 6
+  index: 6
   , doRotation: 1.0
   , MeshMinScaleX: 1 //0.01
   , MeshMaxScaleX: 1 //1.5
@@ -434,21 +434,21 @@ var logoFacebook = {
   , wave2StartTime: 0.0 //2.4
   , wave2EmitTime: 3.5 //4.0
 
-  //, pathSlowness: 4.5
-  //, frontParticlesCount: 20
+          //, pathSlowness: 4.5
+          //, frontParticlesCount: 20
   , landscapeChance: 75
 
-    // Same as Getty
-    , tileWidthPortrait: 144
-    , tileHeightPortrait: 256
-    , numTilesXPortrait: 16
-    , numTilesYPortrait: 4
-    , tileWidthLandscape: 256
-    , tileHeightLandscape: 144
-    , numTilesXLandscape: 9
-    , numTilesYLandscape: 7
-    , texWidth: 4096
-    , texHeight: 2048
+          // Same as Getty
+  , tileWidthPortrait: 144
+  , tileHeightPortrait: 256
+  , numTilesXPortrait: 16
+  , numTilesYPortrait: 4
+  , tileWidthLandscape: 256
+  , tileHeightLandscape: 144
+  , numTilesXLandscape: 9
+  , numTilesYLandscape: 7
+  , texWidth: 4096
+  , texHeight: 2048
 };
 
 
@@ -460,27 +460,27 @@ var APILastfmIndex = 4;
 var APIGettyIndex = 5;
 var APIFacebookIndex = 6;
 
-var logoIndexArr = [ -1, -1, -1, -1, -1, -1, -1 ];
+var logoIndexArr = [-1, -1, -1, -1, -1, -1, -1];
 
-function getLogoIndex(idx) 
-{  
-  if( logoIndexArr[idx] == prevLogoIndex )
-  {  
+function getLogoIndex(idx)
+{
+  if (logoIndexArr[idx] == prevLogoIndex)
+  {
     idx++;
-    
+
     /*
-    if( idx == APIFacebookIndex )
-    {
+     if( idx == APIFacebookIndex )
+     {
+     idx = 0;
+     }
+     */
+
+    if (idx >= logoIndexArr.length) {
       idx = 0;
     }
-    */
-   
-   if(idx >= logoIndexArr.length){
-     idx = 0;
-   }
-   
-  } 
-  
+
+  }
+
   return logoIndexArr[idx];
 }
 
@@ -489,7 +489,7 @@ var logoIndex = 0;
 mack.vars.logoIndex = logoIndex;
 
 var prevLogoIndex = -1;
-var Params = [ logoInstagram, logoTwitter, logoNYT, logoAmazon, logoLastFM, logoGetty, logoFacebook ];
+var Params = [logoInstagram, logoTwitter, logoNYT, logoAmazon, logoLastFM, logoGetty, logoFacebook];
 //var currParamSelection = Params[ logoIndex ];
 
 var currCameraFovPer = 0.0;
@@ -593,11 +593,11 @@ function IsNotFullScreen()
   renderer.setSize(window.innerWidth, containerHeight);
   document.querySelector('body').classList.remove('fullscreen');
   $('.bigMenuB').css({display: 'none'})
-  
-  
+
+
   var top = '380px';
 
-  if (rcLocaleJSDirectory == 'facebook') 
+  if (rcLocaleJSDirectory == 'facebook')
   {
 
     hHeight = window.innerHeight;
@@ -612,22 +612,22 @@ function IsNotFullScreen()
 
     $('#text #bottomText').css('position', 'fixed');
     //if canvas top + canvas height > window height, 
-    if(canvas_top + canvas_height >= hHeight - tagline_height){
+    if (canvas_top + canvas_height >= hHeight - tagline_height) {
       //put tag line on the bottom of the window
 
       top = hHeight - tagline_height;
 
     } else {
       //else
-        //put it below canvas
-      top = canvas_top + canvas_height;  
+      //put it below canvas
+      top = canvas_top + canvas_height;
 
-    }  
+    }
 
     top += 'px';
   }
-  
-  
+
+
   TweenLite.to($('#text #bottomText'), 0.2, {top: top})
 
   $('#stats p').css('font-size', '13px');
@@ -721,11 +721,11 @@ function SetFullscreen(container)
   if (RunPrefixMethod(document, "FullScreen") || RunPrefixMethod(document, "IsFullScreen"))
   {
     RunPrefixMethod(document, "CancelFullScreen");
-  
+
   }
   else
   {
-   
+
     RunPrefixMethod(container, "RequestFullScreen");
     $('.bigMenuB').css({display: 'block'})
   }
@@ -745,15 +745,15 @@ function CreateRenderer()
   // Create WEBGL renderer
   //
   renderer = new THREE.WebGLRenderer({antialias: true, precision: "mediump", stencil: false, alpha: true});
-  
-  if(rcLocaleJSDirectory != 'facebook')
+
+  if (rcLocaleJSDirectory != 'facebook')
   {
     renderer.setClearColor(0xffffff, 1);
-  } else 
+  } else
   {
     renderer.setClearColor(0xffffff, 0);
   }
-  renderer.setSize( 1, 1 ); //window.innerWidth, window.innerHeight );
+  renderer.setSize(1, 1); //window.innerWidth, window.innerHeight );
   renderer.autoClear = true;
   renderer.sortObjects = true;
   renderer.autoClearStencil = false;
@@ -768,13 +768,13 @@ function CreateRenderer()
   //
 
   var ext1 = gl.getExtension("OES_texture_float");
-  if( !ext1 )
+  if (!ext1)
   {
     alert("Requires OES_texture_float extension");
     return;
   }
   var ext2 = gl.getExtension("OES_texture_float_linear");
-  if( ext2 )
+  if (ext2)
   {
     hasLinearFilteringAvailable = true;
   }
@@ -829,53 +829,54 @@ function LoadJsonData(staticData, name, url)
 {
   //mack.vars.staticData = [];
   var defer = $.Deferred();
-  
-  check = url.substring(url.lastIndexOf('/')+1);
-  
-  if(name == 'PartAnim1' || manifest.indexOf(check) > -1){
-  //if(true){
-    
+
+  check = url.substring(url.lastIndexOf('/') + 1);
+
+  if (name == 'PartAnim1' || manifest.indexOf(check) > -1) {
+    //if(true){
+
     $.getJSON(url + "?" + new Date().getTime(), function(json)
     {
-     
+
       if (Environment.isIe() && Environment.isIe() <= 9) {
         mack.vars.staticData[ "" + name + "" ] = json;
       } else {
         eval(' mack.vars.staticData.' + name + ' = json');
       }
 
-      
+
       // mack.vars.staticData[ name ]=json;
       staticData[ name ] = json;
-      
+
       mack.vars.staticData[name] = json;
 
       defer.resolve();
     });
-  } else if(name == 'facebook1Json'){
-    
+  } else if (name == 'facebook1Json') {
+
     var status = "off";
     //console.log(manifest);
-    
-    if(manifest.indexOf('facebook') > -1 && (Environment.isChrome() || Environment.isFire()) && !device.mobile()){
-      
+
+    if (manifest.indexOf('facebook') > -1 && (Environment.isChrome() || Environment.isFire()) && !Environment.isMobile()) {
+
       status = "on";
       $('.facebook').show();
-      
+
     } else {
       $('.facebook').remove();
+
     }
-    
+
     staticData[ "facebook1Json" ] = {};
     staticData[ "facebook1Json" ].tagline = "";
     staticData[ "facebook1Json" ].status = status;
-    
+
     defer.resolve();
-    
+
   } else {
-    
+
     var json = JSON.parse('{"status":"off"}');
-    
+
     if (Environment.isIe() && Environment.isIe() <= 9) {
       mack.vars.staticData[ "" + name + "" ] = json;
     } else {
@@ -884,10 +885,10 @@ function LoadJsonData(staticData, name, url)
     // mack.vars.staticData[ name ]=json;
     staticData[ name ] = json;
     mack.vars.staticData[name] = json;
-    
+
     defer.resolve();
-   
-   
+
+
   }
 
   return defer;
@@ -914,21 +915,21 @@ function LoadTexture(staticData, name, url)
 {
 
 
-  if(typeof staticData["instagram1Json"] !== 'undefined'){
+  if (typeof staticData["instagram1Json"] !== 'undefined') {
     staticData["instagram1Json"].status === "on"
   }
 
   if (Environment.isIe() && Environment.isIe() <= 9) {
   } else {
-    
+
     THREE.ImageUtils.crossOrigin = "";
     var defer = $.Deferred();
-    
+
     var loader = new THREE.TextureLoader();
 
-    if (url) 
+    if (url)
     {
-      if(url != 'facebook_img')
+      if (url != 'facebook_img')
       {
         loader.load(url, function(tex)
         {
@@ -936,16 +937,16 @@ function LoadTexture(staticData, name, url)
           defer.resolve();
         });
       } else {
-        
+
         //var tex = new THREE.Texture(document.getElementById(url));
-        var tex = new THREE.Texture( document.getElementById('facebook_img') );
-        
+        var tex = new THREE.Texture(document.getElementById('facebook_img'));
+
         tex.needsUpdate = true;
         staticData[name] = tex;
         defer.resolve();
-        
+
       }
-      
+
     } else {
       defer.resolve();
     }
@@ -971,7 +972,7 @@ function randIntz(max, min) {
 
 function FindValidAPIID(api_)
 {
-  
+
   if (Environment.isIe() && Environment.isIe() <= 9) {
 
     var id = mack.randIntz(api_.length - 1, 0);
@@ -981,60 +982,60 @@ function FindValidAPIID(api_)
 
   }
 
-  if(api_[id] == 0){
+  if (api_[id] == 0) {
     //console.log(id + ' is blank so...');
-    for(i = 0; i < api_.length; i++){
+    for (i = 0; i < api_.length; i++) {
       //console.log('index: ' + i + ' of api_ is: ' + api_[i]);
-      if(api_[i] == 1){
+      if (api_[i] == 1) {
         //console.log('found it at index: ' + i + ' where api_ is ' + api_[i]);
         id = i;
         //console.log('so im setting id to ' + id);
         break;
       }
-        
+
     }
   }
 
   return id + 1;
-  
+
 }
 
 function LoadData(api)
 {
-  if(rcLocaleJSDirectory == 'facebook')
+  if (rcLocaleJSDirectory == 'facebook')
   {
-      logoIndexArr = [ APIFacebookIndex ];
-      
-      $.when(
-              LoadJsonData(staticData, "PartAnim1", rootPath + "images/partSample01.json")
-              ).done(function()
+    logoIndexArr = [APIFacebookIndex];
+
+    $.when(
+            LoadJsonData(staticData, "PartAnim1", rootPath + "images/partSample01.json")
+            ).done(function()
+    {
+
+      staticData[ "facebook1Json" ] = {};
+      staticData[ "facebook1Json" ].tagline = "";
+      staticData[ "facebook1Json" ].status = "on";
+
+
+      if (mack.vars.isKosher)
       {
+        ParseJSONAnimation(staticData["PartAnim1"], gettyPartTrack);
+      }
 
-        staticData[ "facebook1Json" ] = {};
-        staticData[ "facebook1Json" ].tagline = "";
-        staticData[ "facebook1Json" ].status = "on";
+      mack.vars.logoIndex = APIFacebookIndex;
 
-        
-        if (mack.vars.isKosher) 
-        {
-          ParseJSONAnimation(staticData["PartAnim1"], gettyPartTrack);
-        }
-        
-        mack.vars.logoIndex = APIFacebookIndex;
-        
-        LoadWebGLDataFacebook();
-      });
-  } 
-  else 
+      LoadWebGLDataFacebook();
+    });
+  }
+  else
   {
     var loadAll = true;
-    if (loadAll == true) 
+    if (loadAll == true)
     {
       // Load all data
       //
 
-     
-      
+
+
       $.getJSON(rootPath + "images/" + rcLocaleJSDirectory + "/manifest.json" + "?" + new Date().getTime(), function(json)
       {
         manifest = json;
@@ -1071,7 +1072,7 @@ function LoadData(api)
                 , LoadJsonData(staticData, "lastfm3Json", rootPath + "images/" + rcLocaleJSDirectory + "/lastfm-3.json")
                 , LoadJsonData(staticData, "lastfm4Json", rootPath + "images/" + rcLocaleJSDirectory + "/lastfm-4.json")
                 , LoadJsonData(staticData, "lastfm5Json", rootPath + "images/" + rcLocaleJSDirectory + "/lastfm-5.json")
-                
+
                 , LoadJsonData(staticData, "facebook1Json", '')
 
                 ).done(function() {
@@ -1082,7 +1083,7 @@ function LoadData(api)
 
           }
 
-    
+
           if (staticData["getty1Json"].status === "on")
             json05Files[0] = 1;
           if (staticData["getty2Json"].status === "on")
@@ -1137,9 +1138,9 @@ function LoadData(api)
 
           if (staticData["facebook1Json"].status === "on")
             json06Files[0] = 1;
-          
+
           function showMenuItems(arr, cls, idx) {
-            
+
             var show = false;
             for (var ii = 0; ii < arr.length; ii++)
             {
@@ -1180,13 +1181,12 @@ function LoadData(api)
           var insta = showMenuItems(json00Files, 'insta', 0);
           var getty = showMenuItems(json05Files, 'getty', 5);
           var fb = showMenuItems(json06Files, 'fb', 6);
-          
+
           var top = parseInt($("#leftControls").css('top'));
 
           top += 16;
 
           $("body").append('<style>.fullscreen #leftControls{top: ' + top + 'px;}</style>');
-
 
           var lastGoodIndex = logoIndexArr.length - 1;
 
@@ -1218,7 +1218,7 @@ function LoadData(api)
 
           var api6ID = FindValidAPIID(json06Files);
           var facebookJpegFilename = "";
-          
+
           if (!getty) {
             gettyJpegFilename = false;
           }
@@ -1255,7 +1255,7 @@ function LoadData(api)
                   , amazonJpegFilename
                   , lastfmJpegFilename
 
-                          );
+                  );
 
         });//when
 
@@ -1302,7 +1302,7 @@ function LoadData(api)
 
 
     }
-    
+
   }
 
 }
@@ -1345,9 +1345,9 @@ function LoadWebGLDataFacebook() {
 
       $('.zoom-controls').css({display: 'block'})
     }
-    
+
     PrepareDataFacebook();
-    
+
   })
 
 }
@@ -1390,9 +1390,9 @@ function LoadWebGLDataGetty(id6, api6name) {
     } else {
       $('.zoom-controls').css({display: 'block'})
     }
-    
+
     PrepareDataGetty(id6);
-    
+
   })
 
 }
@@ -1437,43 +1437,50 @@ function LoadWebGLData(id6, id1, id2, id3, id4, id5, api6name, api1name, api2nam
           , LoadTexture(staticData, "lastfm" + id5 + "Json", api5name)
           ).done(function()
   {
-
-    if(Environment.isMobile()){
+    
+    if (Environment.isMobile() || Environment.isIe() || Environment.isSafari()) {
       mack.vars.logoIndex = 5;
     }
-    
+
     preloader.delay(100).fadeTo(2500, 0).delay(250, function()
     {
       
       mack.init();
-      
+      $('.canvasCover').delay(1000).queue(function() {
+        
+        
+        
+
+        
+        $(this).fadeOut(1).dequeue();
+        
+        //$(this).hide().dequeue();
+        
+      });
+
+
     });
 
-    if (!mack.vars.logoIndex) {
 
-      $('.zoom-controls').css({display: 'block'})
 
-    } else {
+    $('.zoom-controls').css({display: 'block'})
 
-      $('.zoom-controls').css({display: 'block'})
-    }
- 
     //PrepareData( api5ID, api0ID, api1ID, api2ID, api3ID, api4ID );
     PrepareData(id6, id1, id2, id3, id4, id5);
   });
 
 }
 
-function PrepareDataFacebook() 
-{  
-  
+function PrepareDataFacebook()
+{
+
   floatPathData = staticData[ "pathData" ];
   floatPathGettyData = staticData[ "pathDataGetty" ];
   bgTex = staticData[ "ll-bg" ];
   floorTex = staticData[ "ll-shadow-nopersp" ];
-  
+
   Params[APIFacebookIndex].texture = staticData[ "facebook" ];
-  
+
   for (var i = 0; i < 6; i++)
     SetTextureFiltering(Params[i]);
 
@@ -1484,28 +1491,28 @@ function PrepareDataFacebook()
     } else {
       DoIt();
     }
-  
+
   });
-  
-  
+
+
 
 
 }
 
 function PrepareDataGetty(api5ID) {
-  
+
   floatPathData = staticData[ "pathData" ];
   floatPathGettyData = staticData[ "pathDataGetty" ];
   bgTex = staticData[ "ll-bg" ];
   floorTex = staticData[ "ll-shadow-nopersp" ];
   /*poo(api0ID+'is id val')*/
   Params[APIGettyIndex].texture = staticData[ "getty" ];
-  
+
   for (var i = 0; i < 6; i++)
     SetTextureFiltering(Params[i]);
 
   PrepareGettyTagline(api5ID);
-  
+
   preloader.delay(100).fadeTo(2500, 0).delay(250, function()
   {
     preloader.children("p").text("");
@@ -1554,7 +1561,7 @@ function PrepareData(api5ID, api0ID, api1ID, api2ID, api3ID, api4ID)
     if (Environment.isIe()) {
 
     } else {
-      
+
       DoIt();
     }
 
@@ -1577,57 +1584,57 @@ function SetTextureFiltering(tex_)
 function PrepareFacebookTagline()
 {
   /*
-  apiID = 6;
-  var copyText = "";
-  var copyTextName;
-  
-  mack.vars.currentApiId = 0;
-
-  //   apiID = 3;
-  // GETTY taglines
-  copyText = copyTextArray[0];
-  mack.vars.values = copyText.values;
-  mack.vars.setCurTag = apiID;
-
-  copyText.Reset();
-
-  //        copyText = new CopyDecl();
-  copyTextName = "facebook" + apiID + "Json";
-  copyText.totalTaglines = 2;
-  copyText.currentApiId = apiID;
-  switch (apiID)
-  {
-    case 1:
-    case 2:
-      copyText.hasNumberAnimation = true;
-      break;
-  }
-  
-  if(typeof staticData[ copyTextName ] !== 'undefined')
-  {
-    if (staticData[ copyTextName ].number)
-    {
-      copyText.numberPrecision = staticData[ copyTextName ].number.toString().length;
-      copyText.number = parseInt(staticData[ copyTextName ].number);
-    }
-    if (staticData[ copyTextName ].values)
-    {
-      for (var ti = 0; ti < staticData[ copyTextName ].values.length; ti++)
-      {
-        copyText.values.push(staticData[ copyTextName ].values[ti]);
-      }
-    }
-    copyText.tagline = staticData[ copyTextName ].tagline;
-
-    mack.vars.tagline = copyText;
-    
-    //mack.vars.tagline.tagline = "Right now, you're sharing 208 memories with 300 friends around the world.";
-    mack.vars.tagline.tagline = $('#facebook_tagline').html();
-  } else {
-    console.log(copyTextName + ' undefined in staticdata');
-    console.log(staticData);
-  }
-  */
+   apiID = 6;
+   var copyText = "";
+   var copyTextName;
+   
+   mack.vars.currentApiId = 0;
+   
+   //   apiID = 3;
+   // GETTY taglines
+   copyText = copyTextArray[0];
+   mack.vars.values = copyText.values;
+   mack.vars.setCurTag = apiID;
+   
+   copyText.Reset();
+   
+   //        copyText = new CopyDecl();
+   copyTextName = "facebook" + apiID + "Json";
+   copyText.totalTaglines = 2;
+   copyText.currentApiId = apiID;
+   switch (apiID)
+   {
+   case 1:
+   case 2:
+   copyText.hasNumberAnimation = true;
+   break;
+   }
+   
+   if(typeof staticData[ copyTextName ] !== 'undefined')
+   {
+   if (staticData[ copyTextName ].number)
+   {
+   copyText.numberPrecision = staticData[ copyTextName ].number.toString().length;
+   copyText.number = parseInt(staticData[ copyTextName ].number);
+   }
+   if (staticData[ copyTextName ].values)
+   {
+   for (var ti = 0; ti < staticData[ copyTextName ].values.length; ti++)
+   {
+   copyText.values.push(staticData[ copyTextName ].values[ti]);
+   }
+   }
+   copyText.tagline = staticData[ copyTextName ].tagline;
+   
+   mack.vars.tagline = copyText;
+   
+   //mack.vars.tagline.tagline = "Right now, you're sharing 208 memories with 300 friends around the world.";
+   mack.vars.tagline.tagline = $('#facebook_tagline').html();
+   } else {
+   console.log(copyTextName + ' undefined in staticdata');
+   console.log(staticData);
+   }
+   */
   mack.vars.tagline = {};
   mack.vars.tagline.tagline = $('#facebook_tagline').html();
   mack.apiText();
@@ -1637,12 +1644,12 @@ function PrepareFacebookTagline()
 
 function PrepareGettyTagline(apiID)
 {
-  
+
   var copyText;
   var copyTextName;
   /*poo(apiID + " current API")*/
   mack.vars.currentApiId = APIGettyIndex;
-  
+
   //   apiID = 3;
   // GETTY taglines
   copyText = copyTextArray[APIGettyIndex];
@@ -1663,8 +1670,8 @@ function PrepareGettyTagline(apiID)
       copyText.hasNumberAnimation = true;
       break;
   }
-  
-  if(typeof staticData[ copyTextName ] !== 'undefined'){
+
+  if (typeof staticData[ copyTextName ] !== 'undefined') {
     if (staticData[ copyTextName ].number)
     {
       copyText.numberPrecision = staticData[ copyTextName ].number.toString().length;
@@ -1672,7 +1679,7 @@ function PrepareGettyTagline(apiID)
     }
     if (staticData[ copyTextName ].values)
     {
-      
+
       for (var ti = 0; ti < staticData[ copyTextName ].values.length; ti++)
       {
         copyText.values.push(staticData[ copyTextName ].values[ti]);
@@ -1680,15 +1687,15 @@ function PrepareGettyTagline(apiID)
     }
     if (staticData[ copyTextName ].value)
     {
- 
+
       copyText.value = staticData[ copyTextName ].value;
-      
-    }    
+
+    }
     copyText.tagline = staticData[ copyTextName ].tagline;
 
     mack.vars.tagline = copyText;
-  } 
-  
+  }
+
   mack.apiText();
   //        copyTextArray.push( copyText );
 }
@@ -1744,7 +1751,7 @@ function PrepareInstagramTagline(apiID)
 
   copyText.tagline = mack.vars.staticData[ copyTextName ].tagline;
 
-  
+
   mack.vars.tagline = copyText;
   mack.vars.values = mack.vars.staticData['instagram' + apiID + 'Json'].values;
 
@@ -1865,10 +1872,10 @@ function PrepareNYTimesTagline(apiID)
       copyText.values.push(staticData[ copyTextName ].values[ti]);
     }
   }
-  
+
   copyText.tagline = mack.vars.staticData[ copyTextName ].tagline;
 
-  
+
 //        copyTextArray.push( copyText );
   /*mack.vars.tagline = copyText.tagline;*/
   mack.vars.tagline = copyText;
@@ -1927,9 +1934,9 @@ function PrepareAmazonTagline(apiID)
   poo(copyText.tagline)
 //        copyTextArray.push( copyText );
   /*mack.vars.tagline = copyText.tagline;*/
-  
 
-  
+
+
   mack.vars.tagline = copyText;
 
 
@@ -1981,19 +1988,19 @@ function PrepareLastFMTagline(apiID)
       copyText.values.push(staticData[ copyTextName ].values[ti]);
     }
   }
-  
+
   copyText.tagline = mack.vars.staticData[ copyTextName ].tagline;
-  
+
   mack.vars.tagline = copyText;
   mack.vars.tagline.values = mack.vars.staticData['lastfm' + apiID + 'Json'].values;
 
   str = mack.vars.tagline.tagline;
-  
+
   if (str && mack.vars.tagline.values.length == 2) {
     str = str.replace("{value_1}", mack.vars.tagline.values[0]);
     str = str.replace("{value_2}", mack.vars.tagline.values[1]);
     mack.vars.tagline.tagline = str;
-    
+
   }
   mack.apiText();
 
@@ -2083,21 +2090,21 @@ function Init()
   pathDataTexInit = true;
 
 
-    //
-    // Background image
-    //
+  //
+  // Background image
+  //
 
-    bgMaterial = new THREE.MeshBasicMaterial({color: 0xffffff, map: bgTex, transparent: true, vertexColors: THREE.VertexColors});
-    bgMaterial.depthTest = false;
-    bgMaterial.depthWrite = false;
-    bgMesh = new THREE.Mesh(new THREE.PlaneGeometry(2, 2, 0), bgMaterial);
-    bgScene = new THREE.Scene();
-    bgCamera = new THREE.Camera();
-    bgScene.add(bgCamera);
-    bgScene.add(bgMesh);
+  bgMaterial = new THREE.MeshBasicMaterial({color: 0xffffff, map: bgTex, transparent: true, vertexColors: THREE.VertexColors});
+  bgMaterial.depthTest = false;
+  bgMaterial.depthWrite = false;
+  bgMesh = new THREE.Mesh(new THREE.PlaneGeometry(2, 2, 0), bgMaterial);
+  bgScene = new THREE.Scene();
+  bgCamera = new THREE.Camera();
+  bgScene.add(bgCamera);
+  bgScene.add(bgMesh);
 
 
-  if(rcLocaleJSDirectory != 'facebook')
+  if (rcLocaleJSDirectory != 'facebook')
   {
     //
     // Foreground
@@ -2142,46 +2149,46 @@ function Init()
   floorMesh = new THREE.Mesh(floorGeometry, floorMaterial);
   floorMesh.position.y = -70.0;
   //floorMesh.receiveShadow = true;
-  scene.add( floorMesh );
+  scene.add(floorMesh);
 
 
 
-    // APIs
-    //
+  // APIs
+  //
 
-    var apiInstagram = new LL.APIScene();
-    apiInstagram.Init(Params[APIInstagramIndex], cubeArrayDimX, cubeArrayDimY, renderer, scene, camera, pathDataTex, effectController, hasLinearFilteringAvailable);
-    apiList.push( apiInstagram );
-    //
-    var apiTwitter = new LL.APIScene();
-    apiTwitter.Init(Params[APITwitterIndex], cubeArrayDimX, cubeArrayDimY, renderer, scene, camera, pathDataTex, effectController, hasLinearFilteringAvailable);
-    apiList.push( apiTwitter );
-    //
-    var apiNYT = new LL.APIScene();
-    apiNYT.Init(Params[APINYTIndex], cubeArrayDimX, cubeArrayDimY, renderer, scene, camera, pathDataTex, effectController, hasLinearFilteringAvailable);
-    apiList.push( apiNYT );
-    //
-    var apiAmazon = new LL.APIScene();
-    apiAmazon.Init(Params[APIAmazonIndex], cubeArrayDimX, cubeArrayDimY, renderer, scene, camera, pathDataTex, effectController, hasLinearFilteringAvailable);
-    apiList.push( apiAmazon );
-    //
-    var apiLastfm = new LL.APIScene();
-    apiLastfm.Init(Params[APILastfmIndex], cubeArrayDimX, cubeArrayDimY, renderer, scene, camera, pathDataTex, effectController, hasLinearFilteringAvailable);
-    apiList.push( apiLastfm );
-    // Getty
-    var api = new LL.APISceneGetty();
-    api.Init(Params[APIGettyIndex], cubeArrayDimX, cubeArrayDimY, renderer, scene, camera, pathGettyDataTex, effectController, hasLinearFilteringAvailable);
-    apiList.push(api);
-    //
-    var apiFacebook = new LL.APIScene();
-    apiFacebook.Init(Params[APIFacebookIndex], cubeArrayDimX, cubeArrayDimY, renderer, scene, camera, pathDataTex, effectController, hasLinearFilteringAvailable);
-    apiList.push( apiFacebook );
+  var apiInstagram = new LL.APIScene();
+  apiInstagram.Init(Params[APIInstagramIndex], cubeArrayDimX, cubeArrayDimY, renderer, scene, camera, pathDataTex, effectController, hasLinearFilteringAvailable);
+  apiList.push(apiInstagram);
+  //
+  var apiTwitter = new LL.APIScene();
+  apiTwitter.Init(Params[APITwitterIndex], cubeArrayDimX, cubeArrayDimY, renderer, scene, camera, pathDataTex, effectController, hasLinearFilteringAvailable);
+  apiList.push(apiTwitter);
+  //
+  var apiNYT = new LL.APIScene();
+  apiNYT.Init(Params[APINYTIndex], cubeArrayDimX, cubeArrayDimY, renderer, scene, camera, pathDataTex, effectController, hasLinearFilteringAvailable);
+  apiList.push(apiNYT);
+  //
+  var apiAmazon = new LL.APIScene();
+  apiAmazon.Init(Params[APIAmazonIndex], cubeArrayDimX, cubeArrayDimY, renderer, scene, camera, pathDataTex, effectController, hasLinearFilteringAvailable);
+  apiList.push(apiAmazon);
+  //
+  var apiLastfm = new LL.APIScene();
+  apiLastfm.Init(Params[APILastfmIndex], cubeArrayDimX, cubeArrayDimY, renderer, scene, camera, pathDataTex, effectController, hasLinearFilteringAvailable);
+  apiList.push(apiLastfm);
+  // Getty
+  var api = new LL.APISceneGetty();
+  api.Init(Params[APIGettyIndex], cubeArrayDimX, cubeArrayDimY, renderer, scene, camera, pathGettyDataTex, effectController, hasLinearFilteringAvailable);
+  apiList.push(api);
+  //
+  var apiFacebook = new LL.APIScene();
+  apiFacebook.Init(Params[APIFacebookIndex], cubeArrayDimX, cubeArrayDimY, renderer, scene, camera, pathDataTex, effectController, hasLinearFilteringAvailable);
+  apiList.push(apiFacebook);
 
 
-/*    if(rcLocaleJSDirectory == 'facebook')
-    {
-        Params[0].particleSpeed = 0.1;
-    }*/
+  /*    if(rcLocaleJSDirectory == 'facebook')
+   {
+   Params[0].particleSpeed = 0.1;
+   }*/
 
 
   window.addEventListener('resize', OnWindowResize, false);
@@ -2194,7 +2201,7 @@ function Init()
   // Enable menu api
   MenuClearStates();
   //MenuSetItem( logoIndex );
-  if( logoIndex != APIFacebookIndex )
+  if (logoIndex != APIFacebookIndex)
     MenuSetItem(logoIndex + 1); // Add one because we placed Getty on top
   else
     MenuSetItem(0);
@@ -2203,10 +2210,10 @@ function Init()
   CameraPosSetItem(0);
 
   //always start with getty or facebook
-  if(rcLocaleJSDirectory != 'facebook'){
-    ActivateAPI( 5 );
+  if (rcLocaleJSDirectory != 'facebook') {
+    ActivateAPI(5);
   } else {
-    ActivateAPI( 6 );
+    ActivateAPI(6);
   }
 
   currentTime = 0.0;
@@ -2216,26 +2223,26 @@ function Init()
 
 function ActivateAPI(index)
 {
-  
+
 
   mack.vars.ranApi = true;
 
   if (!mack.vars.logoIndex) {
-  
+
     $('.zoom-controls').css({display: 'blockP'})
     $('.zoom-icon').css({display: 'block'})
   } else {
-    
+
     $('.zoom-controls').css({display: 'none'})
   }
 
 
   var loadAll = true;
-  if( loadAll == true )
+  if (loadAll == true)
   {
     //  if(rcLocaleJS == "functionOff"){
     MenuClearStates();
-    
+
     switch (index)
     {
       case 0:
@@ -2254,21 +2261,21 @@ function ActivateAPI(index)
         LastFMCallFunc_WebGL();
         break;
       case 5:
-          //console.log( "ActivateAPI: run getty" );
+        //console.log( "ActivateAPI: run getty" );
         GettyCallFunc_WebGL();
         break;
       case 6:
-          //console.log( "ActivateAPI: run facebook" );
-        if(facebookActivated ){
-        //{
+        //console.log( "ActivateAPI: run facebook" );
+        if (facebookActivated) {
+          //{
           FacebookCallFunc_WebGL();
-        } else {          
+        } else {
           GettyCallFunc_WebGL();
         }
-        
+
         break;
       default:
-          //console.log( "ActivateAPI: index is not valid" );
+        //console.log( "ActivateAPI: index is not valid" );
         //InstagramCallFunc_WebGL();
         break;
     }
@@ -2295,7 +2302,7 @@ function OnMouseOut()
 function OnWindowResize()
 {
   // If facebook use full window dimension
-  if(rcLocaleJSDirectory == 'facebook')
+  if (rcLocaleJSDirectory == 'facebook')
   {
     containerHeight = window.innerHeight;
   }
@@ -2308,7 +2315,7 @@ function OnWindowResize()
 
 function DoIt()
 {
-  
+
   // Menu animation
   (function()
   {
@@ -2360,16 +2367,16 @@ function DoIt()
   // HACK! Run one first time to propagate everything within particle fbo
   Update(0.0, 0.016);
   Render();
-  
+
   for (var ai = 0; ai < apiList.length; ai++)
   {
-    apiList[ai].Enable( Params[ai] );
+    apiList[ai].Enable(Params[ai]);
   }
 
   // Initialize Klang if it hasnt been already.
-  if( ! Klang.klangInited )
+  if (!Klang.klangInited)
   {
-    Klang.init( rootPath + 'sounds/config.json', function()
+    Klang.init(rootPath + 'sounds/config.json', function()
     {
       // // Klang ready
       // switch (getLogoIndex(logoIndex))
@@ -2402,37 +2409,37 @@ function DoIt()
     {
       //poo('Klang progress:', percent)
 
-    } );
+    });
   }
   // If Klang has been initialised...
   else
   {
-      // // Klang ready
-      // switch (getLogoIndex(logoIndex))
-      // {
-      //   case 5:
-      //     Klang.triggerEvent('getty_start');
-      //     break;
-      //   case 0:
-      //     Klang.triggerEvent('instagram_start');
-      //     break;
-      //   case 1:
-      //     Klang.triggerEvent('twitter_start');
-      //     break;
-      //   case 2:
-      //     Klang.triggerEvent('times_start');
-      //     break;
-      //   case 3:
-      //     Klang.triggerEvent('amazon_start');
-      //     break;
-      //   case 4:
-      //     Klang.triggerEvent('last_start');
-      //     break;
-      //   default:
-      // }
+    // // Klang ready
+    // switch (getLogoIndex(logoIndex))
+    // {
+    //   case 5:
+    //     Klang.triggerEvent('getty_start');
+    //     break;
+    //   case 0:
+    //     Klang.triggerEvent('instagram_start');
+    //     break;
+    //   case 1:
+    //     Klang.triggerEvent('twitter_start');
+    //     break;
+    //   case 2:
+    //     Klang.triggerEvent('times_start');
+    //     break;
+    //   case 3:
+    //     Klang.triggerEvent('amazon_start');
+    //     break;
+    //   case 4:
+    //     Klang.triggerEvent('last_start');
+    //     break;
+    //   default:
+    // }
 
-      // Now move on to mainloop
-      MainLoop();    
+    // Now move on to mainloop
+    MainLoop();
   }
 }
 
@@ -2441,7 +2448,7 @@ function Update(time, frameTime)
 {
 //        effectController.time = time;
 
-  if(rcLocaleJSDirectory != 'facebook')
+  if (rcLocaleJSDirectory != 'facebook')
   {
     // fade in effect
     if (firstTimeFadein)
@@ -2458,10 +2465,10 @@ function Update(time, frameTime)
     bgMaterial.opacity = THREE.Math.clamp(time * 0.25, 0.0, 1.0);
     backgroundFirstTimeFadeIn = (bgMaterial.opacity < 1.0);
   }
-  
 
 
-  if( prevLogoIndex >= 0 )
+
+  if (prevLogoIndex >= 0)
   {
     apiList[ prevLogoIndex ].Update(frameTime, time, camera, scene, effectController, mouseX, currCameraFovPer);
   }
@@ -2548,11 +2555,11 @@ function Update(time, frameTime)
   //
   if (!isFullscreen)
   {
-    camera.projectionMatrix.makePerspective(effectController.fieldOfView, window.innerWidth / containerHeight, 1, 400.0 );
+    camera.projectionMatrix.makePerspective(effectController.fieldOfView, window.innerWidth / containerHeight, 1, 400.0);
   }
   else
   {
-    camera.projectionMatrix.makePerspective(effectController.fieldOfView, window.innerWidth / window.innerHeight, 1, 400.0 );
+    camera.projectionMatrix.makePerspective(effectController.fieldOfView, window.innerWidth / window.innerHeight, 1, 400.0);
   }
 
 
@@ -2565,20 +2572,20 @@ function Update(time, frameTime)
 
 function Render()
 {
-    renderer.autoClear = false;
-    //renderer.autoDepthClear = true;
+  renderer.autoClear = false;
+  //renderer.autoDepthClear = true;
 
-    if( rcLocaleJSDirectory == 'facebook' && isFullscreen )
-    {
-        renderer.render( bgScene, bgCamera, null, true );
-    }   
+  if (rcLocaleJSDirectory == 'facebook' && isFullscreen)
+  {
+    renderer.render(bgScene, bgCamera, null, true);
+  }
 
-    renderer.render( scene, camera );
+  renderer.render(scene, camera);
 
-    if( rcLocaleJSDirectory != 'facebook' )
-    {
-        renderer.render( fgScene, fgCamera );
-    }   
+  if (rcLocaleJSDirectory != 'facebook')
+  {
+    renderer.render(fgScene, fgCamera);
+  }
 }
 
 
@@ -2589,41 +2596,41 @@ var lastClockTime = 0.0;
 var prevTime = 0.0;
 function MainLoop()
 {
-    requestAnimationFrame(MainLoop);
+  requestAnimationFrame(MainLoop);
 
-    // Use timestep
-    clockTime = timeNow() - startTime;
-    var timeDiff = clockTime - lastClockTime;
-    var delta = Math.min( 1 / 60.0, timeDiff );
-    lastClockTime = clockTime;
-    prevTime = currentTime;
-    currentTime += delta;
-    if( !hasSelectedFacebook )  // If facebook has been selected and is loading, do not count idle time
-        apiIdleTime += delta;
-    frameTime = delta;
+  // Use timestep
+  clockTime = timeNow() - startTime;
+  var timeDiff = clockTime - lastClockTime;
+  var delta = Math.min(1 / 60.0, timeDiff);
+  lastClockTime = clockTime;
+  prevTime = currentTime;
+  currentTime += delta;
+  if (!hasSelectedFacebook)  // If facebook has been selected and is loading, do not count idle time
+    apiIdleTime += delta;
+  frameTime = delta;
 
-    mack.vars.logoIndex = 0;
+  mack.vars.logoIndex = 0;
 
-    Update( currentTime, frameTime );
-    Render();
+  Update(currentTime, frameTime);
+  Render();
 
-    // Auto switch apis
-    if( apiIdleTime > kAutoSwitchTime 
-        && rcLocaleJSDirectory != 'facebook' 
-        )
-    {
-        apiIdleTime = 0.0;
-        
-        /*var idx = getLogoIndex( THREE.Math.randInt( 0, APIGettyIndex ) ); // Ignore facebook
-        while( idx == APIFacebookIndex )
-        {
-            idx = getLogoIndex( THREE.Math.randInt( 0, APIGettyIndex ) ); // Ignore facebook
-            //console.log( "autoswitch: " , idx );
-        }*/
-        
-        var idx = getLogoIndex(Math.floor(randIntz(logoIndexArr.length - 1, 0)) );
-        ActivateAPI( idx );
-    }
+  // Auto switch apis
+  if (apiIdleTime > kAutoSwitchTime
+          && rcLocaleJSDirectory != 'facebook'
+          )
+  {
+    apiIdleTime = 0.0;
+
+    /*var idx = getLogoIndex( THREE.Math.randInt( 0, APIGettyIndex ) ); // Ignore facebook
+     while( idx == APIFacebookIndex )
+     {
+     idx = getLogoIndex( THREE.Math.randInt( 0, APIGettyIndex ) ); // Ignore facebook
+     //console.log( "autoswitch: " , idx );
+     }*/
+
+    var idx = getLogoIndex(Math.floor(randIntz(logoIndexArr.length - 1, 0)));
+    ActivateAPI(idx);
+  }
 
   // // DEBUG: Update app statistics
   // if (kShowStats)
@@ -2788,9 +2795,9 @@ function AnimateCopyTextByNumber(api, str, frameTime_, timeToAnimate)
 //                numStr += "0";
   numStr += api.animatedNumber;
   str = str.replace("{number}", numStr); //api.animatedNumber );
-  
 
-    
+
+
 
   return str;
 }
@@ -2991,7 +2998,7 @@ function RestartLogoIntroAnimation()
   ResetTaglines();
 
 //        LOG( "previous: " + prevLogoIndex + "  --  current: " + logoIndex );
-  if (mack.vars.isKosher) 
+  if (mack.vars.isKosher)
   {
     apiList[ prevLogoIndex ].SetForExitAnimation(currentTime);
     apiList[ logoIndex ].SetTriggerTime(currentTime);
@@ -3009,7 +3016,7 @@ function RestartLogoIntroAnimation()
 
   statsText.css("opacity", 0.0);
   statsTwitter.css("opacity", 0.0);
-  if (mack.vars.big) 
+  if (mack.vars.big)
   {
     logo.css("opacity", 0.0);
   }
@@ -3027,17 +3034,17 @@ function FacebookCallFunc_WebGL()
 {
 
   kCanClick = false;
-  
+
   $.when(
-      LoadTexture(staticData, "facebookTex", 'facebook_img')
+          LoadTexture(staticData, "facebookTex", 'facebook_img')
           ).done(function()
   {
     if (Params[APIFacebookIndex].texture)
     {
-        Params[APIFacebookIndex].texture.dispose();
+      Params[APIFacebookIndex].texture.dispose();
     }
     Params[APIFacebookIndex].texture = staticData[ "facebookTex" ];
-    SetTexturePointFiltering( Params[APIFacebookIndex] );
+    SetTexturePointFiltering(Params[APIFacebookIndex]);
 
     PrepareFacebookTagline();
 
@@ -3047,7 +3054,7 @@ function FacebookCallFunc_WebGL()
 //            currParamSelection = Params[ logoIndex ];
 
     RestartLogoIntroAnimation();
-   
+
     Klang.triggerEvent('getty_start');
     MenuClearStates();
     MenuSetItem(logoIndex + 1);
@@ -3071,7 +3078,7 @@ function GettyCallFunc_WebGL()
       Params[APIGettyIndex].texture.dispose();
     }
     Params[APIGettyIndex].texture = staticData[ "getty" ];
-    SetTextureFiltering( Params[APIGettyIndex] );
+    SetTextureFiltering(Params[APIGettyIndex]);
 
     PrepareGettyTagline(apiID);
 
@@ -3091,7 +3098,7 @@ function GettyCallFunc_WebGL()
 
 function InstagramCallFunc_WebGL()
 {
-   
+
   kCanClick = false;
   var apiID = FindValidAPIID(json00Files);
   var imageFilename = rootPath + "images/" + rcLocaleJSDirectory + "/instagram-" + apiID + ".jpg";
@@ -3102,11 +3109,11 @@ function InstagramCallFunc_WebGL()
     if (Params[APIInstagramIndex].texture)
       Params[APIInstagramIndex].texture.dispose();
     Params[APIInstagramIndex].texture = staticData[ "instagram" + apiID + "Json" ];
-    SetTextureFiltering( Params[APIInstagramIndex] );
+    SetTextureFiltering(Params[APIInstagramIndex]);
 
     PrepareInstagramTagline(apiID);
-    
-    if (mack.vars.ranApi && prevLogoIndex !== logoIndex) 
+
+    if (mack.vars.ranApi && prevLogoIndex !== logoIndex)
     {
       mack.apiText();
       /* mack.peepShow();*/
@@ -3119,15 +3126,15 @@ function InstagramCallFunc_WebGL()
     logoIndex = APIInstagramIndex;
 //    currParamSelection = Params[ logoIndex ];
     RestartLogoIntroAnimation();
-    if (!Environment.isMobile() && mack.vars.isKosher) 
+    if (!Environment.isMobile() && mack.vars.isKosher)
     {
-        console.log( "Klang.triggerEvent('instagram_start');" );
+      console.log("Klang.triggerEvent('instagram_start');");
       Klang.triggerEvent('instagram_start');
     }
 
     MenuClearStates();
     MenuSetItem(logoIndex + 1);
-    
+
     $('.zoom-controls').css({display: 'none'})
   });
 }
@@ -3165,9 +3172,9 @@ function TwitterCallFunc_WebGL()
     logoIndex = APITwitterIndex;
 //    currParamSelection = Params[ logoIndex ];
     RestartLogoIntroAnimation();
-    if (!Environment.isMobile() && mack.vars.isKosher) 
+    if (!Environment.isMobile() && mack.vars.isKosher)
     {
-        console.log( "Klang.triggerEvent('twitter_start');" );
+      console.log("Klang.triggerEvent('twitter_start');");
       Klang.triggerEvent('twitter_start');
     }
     MenuClearStates();
@@ -3204,9 +3211,9 @@ function NYTCallFunc_WebGL()
     logoIndex = APINYTIndex;
 //    currParamSelection = Params[ logoIndex ];
     RestartLogoIntroAnimation();
-    if (!Environment.isMobile() && mack.vars.isKosher) 
+    if (!Environment.isMobile() && mack.vars.isKosher)
     {
-        console.log( "Klang.triggerEvent('times_start');" );
+      console.log("Klang.triggerEvent('times_start');");
       Klang.triggerEvent('times_start');
     }
     MenuClearStates();
@@ -3244,10 +3251,10 @@ function AmazonCallFunc_WebGL()
     logoIndex = APIAmazonIndex;
 //    currParamSelection = Params[ logoIndex ];
     RestartLogoIntroAnimation();
-    if (!Environment.isMobile() && mack.vars.isKosher) 
+    if (!Environment.isMobile() && mack.vars.isKosher)
     {
-        console.log( "Klang.triggerEvent('amazon_start');" );
-        Klang.triggerEvent('amazon_start');
+      console.log("Klang.triggerEvent('amazon_start');");
+      Klang.triggerEvent('amazon_start');
     }
     MenuClearStates();
     MenuSetItem(logoIndex + 1);
@@ -3283,9 +3290,9 @@ function LastFMCallFunc_WebGL()
     logoIndex = APILastfmIndex;
 //    currParamSelection = Params[ logoIndex ];
     RestartLogoIntroAnimation();
-    if (!Environment.isMobile() && mack.vars.isKosher) 
+    if (!Environment.isMobile() && mack.vars.isKosher)
     {
-        console.log( "Klang.triggerEvent('last_start');" );
+      console.log("Klang.triggerEvent('last_start');");
       Klang.triggerEvent('last_start');
     }
     MenuClearStates();
@@ -3298,10 +3305,10 @@ zoomButton.on('click', function()
 {
   //if( logoIndex == APIFacebookIndex )
   //{
-    if (effectController.nextFieldOfView != effectController.fovMinValue)
-      effectController.nextFieldOfView = effectController.fovMinValue;
-    else
-      effectController.nextFieldOfView = effectController.fovMaxValue;
+  if (effectController.nextFieldOfView != effectController.fovMinValue)
+    effectController.nextFieldOfView = effectController.fovMinValue;
+  else
+    effectController.nextFieldOfView = effectController.fovMaxValue;
   //}
   //else
   //{

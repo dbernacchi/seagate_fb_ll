@@ -507,6 +507,7 @@ HappyTree.canvas = (function() {
 
 
     function redraw() {
+        
         ctx.clearRect(0, 0, 320, 320);
 
         // draw the batches

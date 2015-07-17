@@ -262,6 +262,7 @@ function llBootstrap(){
   //
   // Preloader message fade in
   //
+  
   preloader.fadeTo(3000, 1);
   //    statsText.css("opacity", 0.0 );
   //    logo.css("opacity", 0.0 );
@@ -274,11 +275,10 @@ function llBootstrap(){
 
 
   if (LoadData) {
-
     LoadData();
 
   } else {
-
+ 
     mack.LoadData();
   }
   

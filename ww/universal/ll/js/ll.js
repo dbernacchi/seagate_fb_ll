@@ -1,3 +1,5 @@
+if(typeof Environment == 'undefined'){
+          
 var poo = function(txt) {
   /*console.log(txt)*/
 }
@@ -206,7 +208,7 @@ var ieMe = {
   getty: function() {
 
     if (Environment.isIe() && Environment.isIe() <= 9) {
-   
+
       //alert('in ie')
       var apiID = FindValidAPIID(json05Files);
 
@@ -218,7 +220,8 @@ var ieMe = {
     }
 
   },
-  fb: function(){}
+  fb: function() {
+  }
 };
 
 
@@ -265,7 +268,7 @@ var mack = {
     startGap: 9500
   },
   init: function() {
-    
+
     if (!mack.vars.isKosher) {
       $('.zoom-icon').css({
         display: 'none'
@@ -283,10 +286,10 @@ var mack = {
 
       mack.audioMagic();
 
-      Klang.init(rootPath + 'sounds/config.json?1', function() 
+      Klang.init(rootPath + 'sounds/config.json?1', function()
       {
         // Klang ready
-        if (!device.mobile() && !device.tablet()) 
+        if (!device.mobile() && !device.tablet())
         {
           switch (logoIndex) {
             case 0:
@@ -316,11 +319,13 @@ var mack = {
         }
 
         // Now move on to mainloop
-      }, function(percent) 
+      }, function(percent)
       {
         //poo('Klang progress:', percent)
       })
       /**/
+      
+      
       TweenLite.set($('.bigMenu #menu'), {
         display: 'none',
         opacity: 0
@@ -334,6 +339,8 @@ var mack = {
       //  if (rcLocaleJS != "featureOn") {
       var loadAll = true;
       if (loadAll == true) {
+       
+      
         TweenLite.to($('.bigMenu #menu, .bigMenuB #menu'), 1, {
           opacity: 1,
           display: 'block'
@@ -348,11 +355,14 @@ var mack = {
         //Added the portion above 
 
       } else {
+        
+      
         TweenLite.to($('.bigMenu #menu'), 1, {
           opacity: 1,
           display: 'block',
         })
       }
+
       $('.whatIs').html('webgl')
 
       switch (mack.vars.logoIndex) {
@@ -439,9 +449,9 @@ var mack = {
       var top = '350px';
 
       if (rcLocaleJSDirectory == 'facebook') {
-        
+
         top = (window.innerHeight * .85) - 80;
-        
+
         top += 'px';
 
       }
@@ -457,439 +467,489 @@ var mack = {
       //ENDOF if (mack.vars.isKosher && !Environment.isMobile()) {
     } else {
 
-        TweenLite.to($('#text #bottomText'), 0.2, {
-          top: '410px'
+      TweenLite.to($('#text #bottomText'), 0.2, {
+        top: '410px'
+      })
+
+      if (Environment.isFire() || Environment.isIe() == 10 || Environment.isIe() == 11) {
+
+        $('#ll-canvas-container').css({
+          'background-color': '#f7f7f7',
+          'background-image': '-moz-radial-gradient(50% 35%, ellipse cover, #f7f7f7, #b6b6b6 99%)',
+          'backgroundImage': '-webkit-radial-gradient(50% 35%, ellipse cover, #f7f7f7, #6b6b6b 99%)',
+          'backgroundImage': '-o-radial-gradient(50% 35%, ellipse cover, #f7f7f7, #6b6b6b 99%)',
+                  'backgroundImage': '-ms-radial-gradient(50% 35%, ellipse cover, #f7f7f7, #6b6b6b 99%)',
+                  'backgroundImage': 'radial-gradient(50% 35%, ellipse cover, #f7f7f7, #6b6b6b 99%)'
+        });
+      }
+      if (Environment.isIe() >= 10) {
+        // alert('fii')
+
+        $('#ll-canvas-container').css({
+          'background': '#F9F9F9',
+          /* Old browsers */
+          'background': '-moz-radial-gradient(center, ellipse cover,  #F9F9F9 0%, #DBDBDB 100%)',
+                  /* FF3.6+ */
+                  'background': '-webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#F9F9F9), color-stop(100%,#DBDBDB))',
+                  /* Chrome,Safari4+ */
+                  'background': '-webkit-radial-gradient(center, ellipse cover,  #F9F9F9 0%,#DBDBDB 100%)',
+                  /* Chrome10+,Safari5.1+ */
+                  'background': '-o-radial-gradient(center, ellipse cover,  #F9F9F9 0%,#DBDBDB 100%)',
+                  /* Opera 12+ */
+                  'background': '-ms-radial-gradient(center, ellipse cover,  #F9F9F9 24%,  #F9F9F9 24%,#DBDBDB 100%)',
+                  /* IE10+ */
+                  'background': 'radial-gradient(ellipse at center,  #F9F9F9 24%,#F9F9F9 24%,#DBDBDB 100%)',
+                  /* W3C */
+                  'filter': "progid:DXImageTransform.Microsoft.gradient( startColorstr='#F9F9F9', endColorstr='#DBDBDB',GradientType=1 )"
+                  /* IE6-9 fallback on horizontal gradient */
+        })
+      }
+      if (Environment.isIe() && Environment.isIe() <= 9) {
+        //alert('going old ie')
+
+        /*alert('catching ie'+Environment.isIe())*/
+        /*mack.hotZone();*/
+
+        $('#leftControls').hide();
+        $('#leftControls').css({
+          opacity: 0
+        });
+
+        $('section#bottomText').css({
+          top: '340px!important'
         })
 
-        if (Environment.isFire() || Environment.isIe() == 10 || Environment.isIe() == 11) {
 
-          $('#ll-canvas-container').css({
-            'background-color': '#f7f7f7',
-            'background-image': '-moz-radial-gradient(50% 35%, ellipse cover, #f7f7f7, #b6b6b6 99%)',
-            'backgroundImage': '-webkit-radial-gradient(50% 35%, ellipse cover, #f7f7f7, #6b6b6b 99%)',
-            'backgroundImage': '-o-radial-gradient(50% 35%, ellipse cover, #f7f7f7, #6b6b6b 99%)',
-                    'backgroundImage': '-ms-radial-gradient(50% 35%, ellipse cover, #f7f7f7, #6b6b6b 99%)',
-                    'backgroundImage': 'radial-gradient(50% 35%, ellipse cover, #f7f7f7, #6b6b6b 99%)'
-          });
-        }
-        if (Environment.isIe() >= 10) {
-          // alert('fii')
+        $('#menu').css({
+          top: '35px',
+          opacity: '1!important'
+        })
+        /* alert('setting')*/
+        $('#ll-canvas-container').css({
+          display: 'none'
+        })
+        $('#leftControls li').css({
+          border: 'none'
+        })
 
-          $('#ll-canvas-container').css({
-            'background': '#F9F9F9',
-            /* Old browsers */
-            'background': '-moz-radial-gradient(center, ellipse cover,  #F9F9F9 0%, #DBDBDB 100%)',
-                    /* FF3.6+ */
-                    'background': '-webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#F9F9F9), color-stop(100%,#DBDBDB))',
-                    /* Chrome,Safari4+ */
-                    'background': '-webkit-radial-gradient(center, ellipse cover,  #F9F9F9 0%,#DBDBDB 100%)',
-                    /* Chrome10+,Safari5.1+ */
-                    'background': '-o-radial-gradient(center, ellipse cover,  #F9F9F9 0%,#DBDBDB 100%)',
-                    /* Opera 12+ */
-                    'background': '-ms-radial-gradient(center, ellipse cover,  #F9F9F9 24%,  #F9F9F9 24%,#DBDBDB 100%)',
-                    /* IE10+ */
-                    'background': 'radial-gradient(ellipse at center,  #F9F9F9 24%,#F9F9F9 24%,#DBDBDB 100%)',
-                    /* W3C */
-                    'filter': "progid:DXImageTransform.Microsoft.gradient( startColorstr='#F9F9F9', endColorstr='#DBDBDB',GradientType=1 )"
-                    /* IE6-9 fallback on horizontal gradient */
-          })
-        }
-        if (Environment.isIe() && Environment.isIe() <= 9) {
-          //alert('going old ie')
+        $('.hotZone').css({
+          height: '500px'
+        })
+        $('.gifMe').css({
+          height: '340px'
+        })
+        $('.bigMenu, .gifMe, #bottomText').css({
+          opacity: 1,
+          display: 'block'
+        });
 
-          /*alert('catching ie'+Environment.isIe())*/
-          /*mack.hotZone();*/
-
-          $('#leftControls').hide();
-          $('#leftControls').css({
-            opacity: 0
-          });
-
-          $('section#bottomText').css({
-            top: '340px!important'
-          })
-
-
-          $('#menu').css({
-            top: '35px',
-            opacity: '1!important'
-          })
-          /* alert('setting')*/
-          $('#ll-canvas-container').css({
-            display: 'none'
-          })
-          $('#leftControls li').css({
-            border: 'none'
-          })
-
-          $('.hotZone').css({
-            height: '500px'
-          })
-          $('.gifMe').css({
-            height: '340px'
-          })
-          $('.bigMenu, .gifMe, #bottomText').css({
+        //  if (rcLocaleJS != "featureOn") {
+        var loadAll = true;
+        if (loadAll == true) {
+          $('.bigMenu #menu, .bigMenuB #menu').css({
             opacity: 1,
             display: 'block'
           });
+        }
 
-          //  if (rcLocaleJS != "featureOn") {
-          var loadAll = true;
-          if (loadAll == true) {
-            $('.bigMenu #menu, .bigMenuB #menu').css({
-              opacity: 1,
-              display: 'block'
-            });
-          }
+        $('#bottomText #logo').html('<img src="' + rootPath + 'images/Seagate_TextLockup.png">').css({
+          'background': 'none',
+          'background-image': 'none',
+          'width': '200px',
+          'margin': 'auto',
+          'top': '40px'
+        })
 
-          $('#bottomText #logo').html('<img src="' + rootPath + 'images/Seagate_TextLockup.png">').css({
-            'background': 'none',
-            'background-image': 'none',
-            'width': '200px',
-            'margin': 'auto',
-            'top': '40px'
+        $('#leftControls, #ll-canvas-container, #rightControls').css({
+          display: 'none!important'
+        });
+
+        switch (mack.vars.logoIndex) {
+          case 0:
+            ieMe.insta()
+            /* $('.insta').trigger( "click" );*/
+            break;
+          case 1:
+            ieMe.twt()
+            /*$('.twt').trigger( "click" );*/
+            break;
+          case 2:
+            ieMe.nyt()
+            /* $('.nyt').trigger( "click" );*/
+            break;
+          case 3:
+            ieMe.amz()
+            /*$('.amz').trigger( "click" );*/
+            break;
+          case 4:
+            ieMe.lastf()
+            /*$('.lastF').trigger( "click" );*/
+            break;
+          case 5:
+
+            ieMe.getty()
+            /*$('.lastF').trigger( "click" );*/
+            break;
+        }
+
+        $('#text #bottomText').css({
+          opacity: 1,
+          display: 'block'
+        });
+        mack.bringGif();
+        $('.gifMe').css({
+          top: '-205px'
+        })
+        /*$('#stats').css({'display':'block'});*/
+
+
+        // alert('settz')
+
+
+      } else {
+
+        if (Environment.isMobile()) {
+
+          TweenLite.to($('#audio'), 0.1, {
+            'display': 'none'
           })
-
-          $('#leftControls, #ll-canvas-container, #rightControls').css({
-            display: 'none!important'
-          });
-
-          switch (mack.vars.logoIndex) {
-            case 0:
-              ieMe.insta()
-              /* $('.insta').trigger( "click" );*/
-              break;
-            case 1:
-              ieMe.twt()
-              /*$('.twt').trigger( "click" );*/
-              break;
-            case 2:
-              ieMe.nyt()
-              /* $('.nyt').trigger( "click" );*/
-              break;
-            case 3:
-              ieMe.amz()
-              /*$('.amz').trigger( "click" );*/
-              break;
-            case 4:
-              ieMe.lastf()
-              /*$('.lastF').trigger( "click" );*/
-              break;
-            case 5:
-
-              ieMe.getty()
-              /*$('.lastF').trigger( "click" );*/
-              break;
-          }
-
-          $('#text #bottomText').css({
-            opacity: 1,
-            display: 'block'
-          });
-          mack.bringGif();
-          $('.gifMe').css({
-            top: '-205px'
-          })
-          /*$('#stats').css({'display':'block'});*/
-
-
-          // alert('settz')
-
 
         } else {
 
-          if (Environment.isMobile()) {
 
-            TweenLite.to($('#audio'), 0.1, {
-              'display': 'none'
-            })
+          /*Enable Sound */
+          if (Environment && Environment.ieGrown()) {
 
           } else {
-
-
-            /*Enable Sound */
-            if (Environment && Environment.ieGrown()) {
-
-            } else {
-              Klang.init(rootPath + 'sounds/config.json', function() {
-                // Klang ready
-                if (!device.mobile() && !device.tablet()) {
-                  switch (logoIndex) {
-                    case 0:
-                      $('.bInsta')[0].play()
-                      /*Klang.triggerEvent( 'instagram_start' );*/
-                      break;
-                    case 1:
-                      $('.bTwit')[0].play()
-                      // Klang.triggerEvent( 'twitter_start' );
-                      break;
-                    case 2:
-                      $('.bNyt')[0].play()
-                      // Klang.triggerEvent( 'times_start' );
-                      break;
-                    case 3:
-                      $('.bAmazon')[0].play()
-                      //  Klang.triggerEvent( 'amazon_start' );
-                      break;
-                    case 4:
-                      $('.bLast')[0].play()
-                      // Klang.triggerEvent( 'last_start' );
-                      break;
-                    default:
-                      $('.bLast')[0].play()
-                      break;
-                  }
+            Klang.init(rootPath + 'sounds/config.json', function() {
+              // Klang ready
+              if (!device.mobile() && !device.tablet()) {
+                switch (logoIndex) {
+                  case 0:
+                    $('.bInsta')[0].play()
+                    /*Klang.triggerEvent( 'instagram_start' );*/
+                    break;
+                  case 1:
+                    $('.bTwit')[0].play()
+                    // Klang.triggerEvent( 'twitter_start' );
+                    break;
+                  case 2:
+                    $('.bNyt')[0].play()
+                    // Klang.triggerEvent( 'times_start' );
+                    break;
+                  case 3:
+                    $('.bAmazon')[0].play()
+                    //  Klang.triggerEvent( 'amazon_start' );
+                    break;
+                  case 4:
+                    $('.bLast')[0].play()
+                    // Klang.triggerEvent( 'last_start' );
+                    break;
+                  default:
+                    $('.bLast')[0].play()
+                    break;
                 }
+              }
 
-                // Now move on to mainloop
-              }, function(percent) {
-                //poo('Klang progress:', percent)
-              })
-            }
-            /**/
+              // Now move on to mainloop
+            }, function(percent) {
+              //poo('Klang progress:', percent)
+            })
           }
+          /**/
+        }
 
-          TweenLite.to($('.bigMenu, #leftControls, #bottomText'), 2, {
+        TweenLite.to($('.bigMenu, #leftControls, #bottomText'), 2, {
+          opacity: 1,
+          display: 'block',
+          onComplete: mack.setControls
+        });
+        TweenLite.set($('.bigMenu #menu'), {
+          display: 'none',
+          opacity: 0
+        })
+        //  if (rcLocaleJS != "featureOn") {
+        var loadAll = true;
+        if (loadAll == true) {
+          TweenLite.to($('.bigMenu #menu, .bigMenuB #menu'), 1, {
+            opacity: 1,
+            display: 'block'
+          })
+        } else {
+          TweenLite.to($('.bigMenu #menu'), 1, {
             opacity: 1,
             display: 'block',
-            onComplete: mack.setControls
-          });
-          TweenLite.set($('.bigMenu #menu'), {
-            display: 'none',
-            opacity: 0
           })
-          //  if (rcLocaleJS != "featureOn") {
-          var loadAll = true;
-          if (loadAll == true) {
-            TweenLite.to($('.bigMenu #menu, .bigMenuB #menu'), 1, {
-              opacity: 1,
-              display: 'block'
-            })
-          } else {
-            TweenLite.to($('.bigMenu #menu'), 1, {
-              opacity: 1,
-              display: 'block',
-            })
-          }
+        }
 
-          mack.vars.canvas = 1;
-          mack.superSizeMe();
-          $(window).on('resize', mack.superSizeMe)
-          // set up canvas and start animation
-          HappyTree.canvas.init();
+        mack.vars.canvas = 1;
 
-          mack.peepShow();
+        
+        $(window).on('resize', mack.superSizeMe)
+        // set up canvas and start animation
+        
+        
+        
+        HappyTree.canvas.init();
+        
+ 
+      
+        mack.peepShow();
+
+        switch (mack.vars.logoIndex) {
+          case 0:
+            var apiID = FindValidAPIID(json00Files);
+            PrepareInstagramTagline(apiID);
+            HappyTree.canvas.set_api('instagram');
+            break;
+          case 1:
+            var apiID = FindValidAPIID(json01Files);
+            PrepareTwitterTagline(apiID);
+            HappyTree.canvas.set_api('twitter');
+            break;
+          case 2:
+            var apiID = FindValidAPIID(json02Files);
+            PrepareNYTimesTagline(apiID);
+            HappyTree.canvas.set_api('nyt');
+            break;
+          case 3:
+            var apiID = FindValidAPIID(json03Files);
+            PrepareAmazonTagline(apiID);
+            HappyTree.canvas.set_api('amazon');
+            break;
+          case 4:
+            var apiID = FindValidAPIID(json04Files);
+            PrepareLastFMTagline(apiID);
+            HappyTree.canvas.set_api('lastfm');
+            break;
+          case 5:
+            var apiID = FindValidAPIID(json05Files);
+            PrepareGettyTagline(apiID);
+
+            HappyTree.canvas.set_api('getty');
+
+            break;
+        }
+        HappyTree.canvas.set_camera(0); // note: camera isn't working yet
+        
+        
+        HappyTree.canvas.start();
+        
+        $('<div class="canvasCover"/>').css({
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            left: 0,
+            top: 0,
+            zIndex: 1000000,  // to be on the safe side
+            backgroundColor: "white"
+        }).appendTo($("#ll-canvas-container").css("position", "relative"));
+        
+        var cctop = $('.canvasCover').offset().top;
+        
+        var lltop = $('#ll-canvas-container').offset().top;
+        
+        var newtop = (cctop - lltop) * -1;
+        
+        $('.canvasCover').css('top', newtop + 'px');      
+        
+        var windowWidth = window.screen.width < window.outerWidth ?
+            window.screen.width : window.outerWidth;
+            
+        var ccleft = $('.canvasCover').offset().left;
+        
+        var llleft = $('#ll-canvas-container').offset().left;
+        
+        var newleft = (ccleft - llleft) * -1;
+        
+        var newwidth = windowWidth + newleft;
+        
+        $('.canvasCover').css('left', + newleft + 'px');      
+        $('.canvasCover').css('width', + newwidth + 'px');
+        
+        //$('#ll-canvas-container ').css('border', '1px solid red');
+        //$('.mainStage').css('border', '1px solid blue');
+        mack.superSizeMe();
+       
+ 
+        
+        $('#ll-canvas').trigger('mouseover')
+
+        HappyTree.canvas.set_performance(1);
+
+
+        /*mack.canApi(5)*/
+        var timeout = null;
 
 
 
-          switch (mack.vars.logoIndex) {
-            case 0:
-              var apiID = FindValidAPIID(json00Files);
-              PrepareInstagramTagline(apiID);
+        // $(function(){
+        /*$('.lastF').trigger( "click" );*/
+
+        $(document).on('keydown', function(e) {
+          switch (e.which - 48) {
+            case 1:
               HappyTree.canvas.set_api('instagram');
               break;
-            case 1:
-              var apiID = FindValidAPIID(json01Files);
-              PrepareTwitterTagline(apiID);
+            case 2:
               HappyTree.canvas.set_api('twitter');
               break;
-            case 2:
-              var apiID = FindValidAPIID(json02Files);
-              PrepareNYTimesTagline(apiID);
+            case 3:
               HappyTree.canvas.set_api('nyt');
               break;
-            case 3:
-              var apiID = FindValidAPIID(json03Files);
-              PrepareAmazonTagline(apiID);
+            case 4:
               HappyTree.canvas.set_api('amazon');
               break;
-            case 4:
-              var apiID = FindValidAPIID(json04Files);
-              PrepareLastFMTagline(apiID);
+            case 5:
               HappyTree.canvas.set_api('lastfm');
               break;
-            case 5:
-              var apiID = FindValidAPIID(json05Files);
-              PrepareGettyTagline(apiID);
+            case 6:
               HappyTree.canvas.set_api('getty');
               break;
           }
-          HappyTree.canvas.set_camera(0); // note: camera isn't working yet
-          HappyTree.canvas.start();
+        });
+        if (Environment.isIe() && Environment.isIe() <= 9) {
 
-          $('#ll-canvas').trigger('mouseover')
-
-
-          HappyTree.canvas.set_performance(1);
+        } else {
 
 
+          $('#ll-canvas').on('mousemove', function(e) {
 
-          /*mack.canApi(5)*/
-          var timeout = null;
+            var box = $('#ll-canvas');
+            var boxCenter = [box.offset().left + box.width() / 2, box.offset().top + box.height() / 2];
+
+            var x = (e.pageX - boxCenter[0]) / 1000
+
+            var y = (e.pageY - boxCenter[1]) / 1000
+
+            HappyTree.canvas.set_rotation(-60 * y, 60 * x);
+
+          });
 
 
+          $('#ll-canvas').mouseleave(function(e) {
 
-          // $(function(){
-          /*$('.lastF').trigger( "click" );*/
+            if (timeout !== null) {
+              clearTimeout(timeout);
+            }
 
-          $(document).on('keydown', function(e) {
-            switch (e.which - 48) {
+            switch (mack.vars.cam) {
+              case 0:
+
+                HappyTree.canvas.set_rotation(0, 0)
+                break;
               case 1:
-                HappyTree.canvas.set_api('instagram');
+
+                if (device.tablet()) {
+                  HappyTree.canvas.set_rotation(0, 60)
+
+                } else {
+                  HappyTree.canvas.set_rotation(0, -60)
+                }
+
                 break;
               case 2:
-                HappyTree.canvas.set_api('twitter');
+
+                if (device.tablet()) {
+                  HappyTree.canvas.set_rotation(60, 0)
+                } else {
+                  HappyTree.canvas.set_rotation(60, -60)
+                }
                 break;
-              case 3:
-                HappyTree.canvas.set_api('nyt');
-                break;
-              case 4:
-                HappyTree.canvas.set_api('amazon');
-                break;
-              case 5:
-                HappyTree.canvas.set_api('lastfm');
-                break;
-              case 6:
-                HappyTree.canvas.set_api('getty');
-                break;
-            }
-          });
-          if (Environment.isIe() && Environment.isIe() <= 9) {
-
-          } else {
-
-
-            $('#ll-canvas').on('mousemove', function(e) {
-
-              var box = $('#ll-canvas');
-              var boxCenter = [box.offset().left + box.width() / 2, box.offset().top + box.height() / 2];
-
-              var x = (e.pageX - boxCenter[0]) / 1000
-
-              var y = (e.pageY - boxCenter[1]) / 1000
-
-              HappyTree.canvas.set_rotation(-60 * y, 60 * x);
-
-            });
-
-
-            $('#ll-canvas').mouseleave(function(e) {
-
-              if (timeout !== null) {
-                clearTimeout(timeout);
-              }
-
-              switch (mack.vars.cam) {
-                case 0:
-
-                  HappyTree.canvas.set_rotation(0, 0)
-                  break;
-                case 1:
-
-                  if (device.tablet()) {
-                    HappyTree.canvas.set_rotation(0, 60)
-
-                  } else {
-                    HappyTree.canvas.set_rotation(0, -60)
-                  }
-
-                  break;
-                case 2:
-
-                  if (device.tablet()) {
-                    HappyTree.canvas.set_rotation(60, 0)
-                  } else {
-                    HappyTree.canvas.set_rotation(60, -60)
-                  }
-                  break;
-              }
-
-            })
-          }
-
-        }
-
-        if (Environment.isMobile()) {
-          $('.nmb').removeClass('avoid-clicks')
-        }
-        if (Environment.isMobile() || windowWidth < 800) {
-
-          if (windowWidth <= mack.vars.small) {
-
-            mack.smallAnim()
-          }
-
-          $(".mNav").change(function() {
-            var sKey = parseInt($(".mNav option:selected").attr('value'))
-            if (mack.vars.tomsDone) {
-
-              switch (sKey) {
-                case 0:
-                  $('.insta').trigger("click");
-                  var apiID = FindValidAPIID(json00Files);
-                  PrepareInstagramTagline(apiID)
-                  mack.canApi(sKey + 1)
-
-
-                  break;
-                case 1:
-                  var apiID = FindValidAPIID(json01Files);
-                  $('.twt').trigger("click");
-                  PrepareTwitterTagline(apiID)
-                  mack.canApi(sKey + 1)
-
-                  break;
-                case 2:
-                  var apiID = FindValidAPIID(json02Files);
-                  $('.nyt').trigger("click");
-                  PrepareNYTimesTagline(apiID)
-                  mack.canApi(sKey + 1)
-
-                  break;
-                case 3:
-                  var apiID = FindValidAPIID(json03Files);
-                  $('.amz').trigger("click");
-                  PrepareAmazonTagline(apiID)
-                  mack.canApi(sKey + 1)
-
-                  break;
-                case 4:
-                  var apiID = FindValidAPIID(json04Files);
-                  $('.lastF').trigger("click");
-                  PrepareLastFMTagline(apiID)
-                  mack.canApi(sKey + 1)
-
-                  break;
-                case 5:
-                  var apiID = FindValidAPIID(json05Files);
-                  $('.getty').trigger("click");
-                  PrepareGettyTagline(apiID)
-                  mack.canApi(sKey + 1)
-
-                  break;
-                default:
-                  break;
-
-              }
             }
 
           })
+        }
 
-          if (Environment.isIe() && Environment.isIe() <= 9) {
-          } else {
-            mack.bringCanvas();
-            mack.winOrient();
+      }
+
+      if (Environment.isMobile()) {
+        $('.nmb').removeClass('avoid-clicks')
+      }
+      
+
+      if (Environment.isMobile() || windowWidth < 800) {
+
+        if (windowWidth <= mack.vars.small) {
+        
+          mack.smallAnim()
+        }
+
+        $(".mNav").change(function() {
+          var sKey = parseInt($(".mNav option:selected").attr('value'))
+          if (mack.vars.tomsDone) {
+
+            switch (sKey) {
+              case 0:
+                $('.insta').trigger("click");
+                var apiID = FindValidAPIID(json00Files);
+                PrepareInstagramTagline(apiID)
+                mack.canApi(sKey + 1)
+
+
+                break;
+              case 1:
+                var apiID = FindValidAPIID(json01Files);
+                $('.twt').trigger("click");
+                PrepareTwitterTagline(apiID)
+                mack.canApi(sKey + 1)
+
+                break;
+              case 2:
+                var apiID = FindValidAPIID(json02Files);
+                $('.nyt').trigger("click");
+                PrepareNYTimesTagline(apiID)
+                mack.canApi(sKey + 1)
+
+                break;
+              case 3:
+                var apiID = FindValidAPIID(json03Files);
+                $('.amz').trigger("click");
+                PrepareAmazonTagline(apiID)
+                mack.canApi(sKey + 1)
+
+                break;
+              case 4:
+                var apiID = FindValidAPIID(json04Files);
+                $('.lastF').trigger("click");
+                PrepareLastFMTagline(apiID)
+                mack.canApi(sKey + 1)
+
+                break;
+              case 5:
+                var apiID = FindValidAPIID(json05Files);
+                $('.getty').trigger("click");
+                PrepareGettyTagline(apiID)
+                mack.canApi(sKey + 1)
+
+                break;
+              default:
+                break;
+
+            }
           }
+
+        })
+
+        if (Environment.isIe() && Environment.isIe() <= 9) {
         } else {
-          if (Environment.isIe() && Environment.isIe() <= 9) {
-          } else {
-            // alert('should be going canvas')
-            mack.winOrient();
-            mack.bringCanvas();
-          }
+          mack.bringCanvas();
+          mack.winOrient();
 
         }
-  
+      } else {
+        if (Environment.isIe() && Environment.isIe() <= 9) {
+        } else {
+          // alert('should be going canvas')
+          mack.winOrient();
+          mack.bringCanvas();
+        }
+
+      }
+      
+     
+      
+      
     }//ENDOF if (mack.vars.isKosher && !Environment.isMobile()) {} else
 
 
@@ -954,7 +1014,7 @@ var mack = {
     })
   },
   superSizeMeGL: function() {
-    
+
     if (rcLocaleJSDirectory != 'facebook') {
       var windowWidth = window.screen.width < window.outerWidth ?
               window.screen.width : window.outerWidth;
@@ -1359,11 +1419,13 @@ var mack = {
         })
 
         if (Environment.isAndroid()) {
+
           var llcan = $('#ll-canvas, #ll-canvas-shadow');
           /*alert('is this 610? port')*/
           $('#ll-canvas-container').css({
             width: '100%'
           })
+          
           TweenLite.set($('.mIcon'), {
             'z-index': 999999,
             width: '20px',
@@ -1422,8 +1484,9 @@ var mack = {
 
     }
 
-
+    
     if (windowWidth <= mack.vars.small) {
+      
 
       if (Environment.isMobile() && Environment.isMobile()[0] == "iPad") {
 
@@ -1435,6 +1498,7 @@ var mack = {
 
       if (mack.vars.tomsDone) {
         $('.mNav').attr('disabled', false)
+   
         TweenLite.to($('.mIcon'), 1, {
           opacity: 1
         })
@@ -1459,10 +1523,11 @@ var mack = {
         opacity: 1,
         display: 'block'
       })
-
+      
       if (mack.vars.landscape) {
-
+        
         mack.vars.windowWidth = windowWidth;
+
 
         TweenLite.to($('#ll-canvas-shadow'), 0.2, {
           marginLeft: '-30%'
@@ -1501,7 +1566,7 @@ var mack = {
           top: '150px',
           width: "100%"
         })
-        
+
         TweenLite.to($('.fullscreen #bottomText'), 0.2, {
           top: 380 + 'px'
         })
@@ -1511,14 +1576,15 @@ var mack = {
         TweenLite.to($('#text #bottomText #logo'), 0.2, {
           'background-size': '158px'
         })
-
+        /
         TweenLite.set($('.hotZone'), {
           height: '233px'
         })
         TweenLite.to($('#ll-canvas-container'), 0.1, {
           height: '233px'
         })
-
+       
+       
         TweenLite.set($('#ll-canvas-shadow'), {
           bottom: '10px'
         })
@@ -1540,9 +1606,10 @@ var mack = {
           })
         }
 
+        
 
       } else {
-
+        
         TweenLite.set($('.hotZone'), {
           height: '205px'
         })
@@ -1618,8 +1685,6 @@ var mack = {
 
 
     if (windowWidth >= 330 && windowWidth < 610) {
-      poo('330 to 610   biig')
-
 
       $('#ll-canvas-container').css({
         top: '-67px'
@@ -1636,7 +1701,9 @@ var mack = {
         marginTop: '-98px',
         marginLeft: '-78px'
       })
+      
       if (mack.vars.landscape) {
+        
         TweenLite.set($('.hotZone'), {
           height: '233px'
         })
@@ -1657,7 +1724,7 @@ var mack = {
         })
 
       } else {
-        /*alert('dom check two three')*/
+        
         TweenLite.set($('.hotZone'), {
           height: '205px'
         })
@@ -1689,7 +1756,7 @@ var mack = {
   hotZone: function() {
 
     if (Environment.isChrome() && !device.mobile()) {
-   
+
       var osh = (function() {
         var ua = navigator.userAgent.toLowerCase();
         return {
@@ -1747,27 +1814,27 @@ var mack = {
     }
 
     if (rcLocaleJSDirectory == 'facebook') {
-      
+
       hHeight = window.innerHeight;
 
       var center = (hHeight / 2) - 27;
 
-      $("#preloader").css('position','fixed');
+      $("#preloader").css('position', 'fixed');
 
       $("#preloader").css('top', center + 'px');
 
       $(".dot").css('opacity', 0);
-      
+
       $("#preloader").fadeTo(3000, 1, function() {
-        
+
         //setInterval(ellipsis, 3000);
         ellipsis();
-        
+
       });
 
-      function ellipsis(){
-        
-          
+      function ellipsis() {
+
+
         $(".dot1").fadeTo('slow', 1, function() {
 
           $(".dot2").fadeTo('slow', 1, function() {
@@ -1775,14 +1842,14 @@ var mack = {
             $(".dot3").fadeTo('slow', 1, function() {
 
               $(".ellipsis").fadeTo('slow', 0, function() {
-                
+
                 $(".dot").css('opacity', 0);
                 $(".ellipsis").css('opacity', 1);
-                
+
                 ellipsis();
-                
+
               });
-              
+
             });
 
           });
@@ -1790,11 +1857,11 @@ var mack = {
 
       }
 
-      
 
-        
+
+
     } else {
-      
+
       if (windowWidth >= 1188) {
         if (Environment.isMobile()) {
           $('#leftControls').css({
@@ -2104,6 +2171,7 @@ var mack = {
         mack.setGif('last_v06.gif', $(this));
       } else {
         if (!mack.vars.big) {
+          
           mack.smallAnim();
         }
       }
@@ -2152,6 +2220,7 @@ var mack = {
         mack.setGif('nyt_v06.gif', $(this));
       } else {
         if (!mack.vars.big) {
+           
           mack.smallAnim();
         }
       }
@@ -2355,7 +2424,7 @@ var mack = {
         mack.setGif('getty_v06.gif', $(this));
       } else {
         if (!mack.vars.big) {
-          /*poo('Im big')*/
+           
           mack.smallAnim();
         }
         //   setTimeout(function(){
@@ -2379,7 +2448,7 @@ var mack = {
       //  }
 
     }
-    
+
   },
   tap: {
     lastF: function() {
@@ -2567,6 +2636,8 @@ var mack = {
     var logo = $('#logo');
 
     $('.mNav').attr('disabled', true)
+    
+    
     TweenLite.to($('.mIcon'), 1, {
       opacity: 0.251
     })
@@ -2625,6 +2696,7 @@ var mack = {
 
     $.when(mack.vars.smallDone).done(function(doneSmall) {
       poo('finito small')
+  
       if ($('.mNav').css('opacity') == 0) {
         TweenLite.to($('.mIcon'), 1, {
           opacity: 1
@@ -2637,6 +2709,7 @@ var mack = {
     function tomzDone() {
       mack.vars.smallDone.resolve();
       mack.vars.tomsDone = true;
+      alert('x5');
       TweenLite.to($('.mIcon'), 1, {
         opacity: 1
       })
@@ -2652,7 +2725,6 @@ var mack = {
         })
       }
       TweenLite.to($('.fullscreen #bottomText'), 0.2, {
-        
         top: 380 + 'px'
       })
     }
@@ -2666,7 +2738,7 @@ var mack = {
           top: 130 + 'px'
         })
       }
- 
+
       TweenLite.to($('.fullscreen #bottomText'), 0.2, {
         top: 380 + 'px'
       })
@@ -2728,6 +2800,7 @@ var mack = {
       if (Environment.isMobile() && Environment.isAndroid()) {
 
         function killLogo() {
+
           TweenMax.killTweensOf(logo);
           $(logo).stop().fadeOut('slow');
 
@@ -2771,6 +2844,7 @@ var mack = {
           mack.vars.freshStart = true;
 
           mack.vars.tomsDone = true;
+         
           TweenLite.to($('.mIcon'), 1, {
             opacity: 1
           })
@@ -2874,6 +2948,7 @@ var mack = {
 
         var tl = new TimelineMax();
 
+        
         tl.to(llcan, 4, {
           opacity: 1,
           display: 'block'
@@ -3134,7 +3209,6 @@ var mack = {
     });
     if (Environment.isMobile() && Environment.isMobile()[0] == "iPad") {
       var llcan = $('#ll-canvas, #ll-canvas-shadow');
-      poo('going rogeu')
 
       /*$('#ll-canvas-container').append('<div class="andBot"></div>')*/
       if (mack.vars.landscape) {
@@ -3162,6 +3236,7 @@ var mack = {
       if (Environment.isMobile() && Environment.isAndroid()) {
 
       } else {
+
         TweenMax.to($('#ll-canvas-container'), 4, {
           visibility: 'visible',
           opacity: 1
@@ -3176,6 +3251,7 @@ var mack = {
 
   },
   bringGif: function() {
+
     $('.whatIs').html('Gif')
     $('.gifMe').css({
       display: 'block',
@@ -3196,6 +3272,7 @@ var mack = {
     /*TweenLite.to($('#stats'),1,{display:'block',opacity:1})*/
     /*mack.peepShow()*/
     mack.apiText();
+
     /* $('#stats').fadeIn('slow')*/
     // alert('going to gif')
 
@@ -3205,7 +3282,7 @@ var mack = {
      $('#menu ul li').css({width:'150px'})*/
   },
   apiText: function(cases) {
-    
+
     var str = "";
     switch (cases) {
       case 0:
@@ -3265,7 +3342,7 @@ var mack = {
 
 
         } else {
-          
+
           str = mack.vars.tagline.tagline;
 
           if (str) {
@@ -3385,24 +3462,25 @@ var mack = {
         break;
     }
 
-    
+
     str = mack.vars.tagline.tagline;
-    
+
     if (str && mack.vars.tagline.value) {
       str = str.replace("{value}", mack.vars.tagline.value);
       mack.vars.tagline.tagline = str;
 
     }
-    
+
     if (mack.vars.ran || mack.vars.big) {
       /*mack.canApi(mack.vars.logoIndex+1)*/
       if (mack.vars.isKosher) {
+
         mack.peepShow()
       }
 
     }
     if (!mack.vars.green) {
-      /*poo('geen log '+mack.vars.logoIndex)*/
+
       $('#logo').fadeOut();
     }
 
@@ -3464,9 +3542,8 @@ var mack = {
       paused: true
     });
 
-    /*  alert('peep')*/
-    // poo('peeepin')
-    /*$('.nmb').addClass('avoid-clicks')*/
+
+        
     $('#leftControls').removeClass('avoid-clicks')
     var windowWidth = window.screen.width < window.outerWidth ?
             window.screen.width : window.outerWidth;
@@ -3479,6 +3556,7 @@ var mack = {
 
     mack.vars.tomsDone = false;
     $('.mNav').attr('disabled', true)
+
     TweenLite.to($('.mIcon'), 1, {
       opacity: 0.251
     })
@@ -3506,6 +3584,7 @@ var mack = {
       $('.nmb').removeClass('avoid-clicks')
       mack.vars.tomsDone = true;
       mack.vars.freshStart = true;
+     
       TweenLite.to($('.mIcon'), 1, {
         opacity: 1
       })
@@ -3524,6 +3603,7 @@ var mack = {
       mack.vars.freshStart = true;
 
       mack.vars.tomsDone = true;
+      
       TweenLite.to($('.mIcon'), 1, {
         opacity: 1
       })
@@ -3554,6 +3634,7 @@ var mack = {
 
 
     if (mack.vars.big || $(window).width() > mack.vars.small) {
+
       /*poo('biggz')*/
       TweenLite.set(stats, {
         opacity: 0
@@ -3573,6 +3654,7 @@ var mack = {
       /*TweenLite.to(llcan,1,{opacity:0})*/
       function killLogo() {
         TweenMax.killTweensOf(logo);
+
         $(logo).stop().fadeOut('slow');
 
         TweenMax.set(logo, {
@@ -3670,7 +3752,7 @@ var mack = {
           poo('we in bubba')
           /*TweenMax.set(logo, {clearProps:"all"});
            TweenMax.set(stats, {clearProps:"all"});*/
-
+          
           $(llcan).fadeIn('slow', function() {
             var tBig = new TimelineMax();
 
@@ -3877,8 +3959,6 @@ var mack = {
              })*/
 
           } else {
-            poo('crates')
-            awe('crates')
 
             if (Environment.isMobile() && Environment.isAndroid()) {
               TweenMax.set($('#ll-canvas'), {
@@ -3923,8 +4003,6 @@ var mack = {
                   'background-size': '150px',
                 })
               }
-
-
 
               TweenMax.to($('#ll-canvas-container'), 4, {
                 visibility: 'visible',
@@ -3993,7 +4071,7 @@ var mack = {
 
 
     } else {
-      poo('Im small peep')
+     
       mack.smallAnim();
 
 
@@ -4145,9 +4223,11 @@ var mack = {
             , LoadJsonData(staticData, "lastfm1Json", rootPath + "images/" + rcLocaleJSDirectory + "/lastfm-1.json"), LoadJsonData(staticData, "lastfm2Json", rootPath + "images/" + rcLocaleJSDirectory + "/lastfm-2.json"), LoadJsonData(staticData, "lastfm3Json", rootPath + "images/" + rcLocaleJSDirectory + "/lastfm-3.json"), LoadJsonData(staticData, "lastfm4Json", rootPath + "images/" + rcLocaleJSDirectory + "/lastfm-4.json"), LoadJsonData(staticData, "lastfm5Json", rootPath + "images/" + rcLocaleJSDirectory + "/lastfm-5.json")
             ).done(function() {
 
-      preloader.delay(100).fadeTo(2500, 0).delay(250, function() {
 
+      preloader.delay(100).fadeTo(2500, 0).delay(250, function() {
+        
         mack.init();
+        
       });
       if (staticData["instagram1Json"].status === "on")
         json00Files[0] = 1;
@@ -4587,3 +4667,4 @@ $(function() {
 
   })
 })
+}

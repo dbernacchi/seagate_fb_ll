@@ -1,2 +1,4 @@
 /bin/
 /obj/
+nbproject/
+.DS_Store
