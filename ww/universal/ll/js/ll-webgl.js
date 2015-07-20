@@ -2572,20 +2572,24 @@ function Update(time, frameTime)
 
 function Render()
 {
-  renderer.autoClear = false;
-  //renderer.autoDepthClear = true;
+    renderer.autoClear = false;
+    //renderer.autoDepthClear = true;
 
-  if (rcLocaleJSDirectory == 'facebook' && isFullscreen)
-  {
-    renderer.render(bgScene, bgCamera, null, true);
-  }
+    if( rcLocaleJSDirectory == 'facebook' && isFullscreen )
+    {
+        renderer.render(bgScene, bgCamera, null, true);
+    }
+    if( rcLocaleJSDirectory != 'facebook' && isFullscreen )
+    {
+        renderer.render( bgScene, bgCamera, null, true );
+    }
 
-  renderer.render(scene, camera);
+    renderer.render(scene, camera);
 
-  if (rcLocaleJSDirectory != 'facebook')
-  {
-    renderer.render(fgScene, fgCamera);
-  }
+    if( rcLocaleJSDirectory != 'facebook' )
+    {
+        renderer.render( fgScene, fgCamera );
+    }
 }
 
 
