@@ -18,12 +18,22 @@
   width: 48px;
 }
 
+#glContainer 
+{
+  overflow: hidden;
+  background: url(/ww/universal/ll/images/ll-bg.png) no-repeat center center fixed;
+  -webkit-background-size: cover; /* For WebKit*/
+  -moz-background-size: cover;    /* Mozilla*/
+  -o-background-size: cover;      /* Opera*/
+  background-size: cover;         /* Generic*/
+}
+
 body.fb {
   /*background: url('/ww/universal/ll/images/ll-bg.png');
   background-size: cover; 
   */
   overflow: hidden;
-  background: url('/ww/universal/ll/images/ll-bg.png') no-repeat center center fixed;
+  background: url(/ww/universal/ll/images/ll-bg.png) no-repeat center center fixed;
   -webkit-background-size: cover; /* For WebKit*/
   -moz-background-size: cover;    /* Mozilla*/
   -o-background-size: cover;      /* Opera*/

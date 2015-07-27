@@ -3092,7 +3092,7 @@ function GettyCallFunc_WebGL()
     //            currParamSelection = Params[ logoIndex ];
     RestartLogoIntroAnimation();
     console.log('start');
-    console.log(Klang.triggerEvent('getty_start'));
+    console.log("Klang.triggerEvent('getty_start')");
     MenuClearStates();
     MenuSetItem(0); // Special case: This is Getty at zero
     $('.zoom-controls').css({display: 'block'})
