@@ -3309,10 +3309,15 @@ zoomButton.on('click', function()
 {
   //if( logoIndex == APIFacebookIndex )
   //{
-  if (effectController.nextFieldOfView != effectController.fovMinValue)
+  if (effectController.nextFieldOfView != effectController.fovMinValue){
+    
+    $('#bottomText').hide();
+  
     effectController.nextFieldOfView = effectController.fovMinValue;
-  else
+  } else {
+    $('#bottomText').show();
     effectController.nextFieldOfView = effectController.fovMaxValue;
+  }
   //}
   //else
   //{

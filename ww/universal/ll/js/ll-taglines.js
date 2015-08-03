@@ -66,10 +66,19 @@ var textFieldTwitterText = $('#twitterText');
     function FindValidAPIID( api_ )
     {
         var id = THREE.Math.randInt( 0, api_.length-1 );
+        var limit = 6;
         while( api_[id] <= 0 )
         {
-            id = THREE.Math.randInt( 0, api_.length-1 );
+          limit--;
+          id = THREE.Math.randInt( 0, api_.length-1 );
+            
+          if(!limit){
+            id = 0;
+            break;
+          }
+          
         }
+        
         return id + 1;
     }
 
@@ -575,6 +584,8 @@ mack.vars.values = copyText.values;
         else if( time >= fadet3 && time < fadet4 )
         {
             statsText.css("opacity", fadeout1 );
+            
+            
             logo.css("opacity", fadein2 );
         }
         else if( time >= fadet5 && time < fadet6 )

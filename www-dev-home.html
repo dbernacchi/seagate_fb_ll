@@ -748,10 +748,13 @@ vExt.onReady(function() {
     	<div id="r-region-a" class="r-region-a">
             <div class="vgn-ext-region" vgnextregionname="region-a" vgnextregionscope="page" vgnextregiontypes="VgnExtChannelNavComponent,VgnExtQuery,VgnExtContentSelectComponent,VgnExtMultiSelect,VgnExtTextBlock" vgnextregionid="d36991cca7346410VgnVCM1000001340090aRCRD">
 
-<div  class="vgn-ext-component vgn-ext-component-VgnExtMultiSelect" vgnextcomponentid="219af47e9b516410VgnVCM1000001340090aRCRD" vgnextxmlname="VgnExtMultiSelect"  vgnextdisplayname="Content List" translationrequired="false"><!-- #### Copy Paste Below into the desired Region hotZone is set to 100% width -->
+<div  class="vgn-ext-component vgn-ext-component-VgnExtMultiSelect" vgnextcomponentid="219af47e9b516410VgnVCM1000001340090aRCRD" vgnextxmlname="VgnExtMultiSelect"  vgnextdisplayname="Content List" translationrequired="false">
+  <!-- #### Copy Paste Below into the desired Region hotZone is set to 100% width -->
 
           
     <div class="row hotZone">
+
+      
       <div class="container bigMenu">
 
         <div id="ll-mega-nav-container">
@@ -843,7 +846,14 @@ vExt.onReady(function() {
   <!-- This is Where the content lives -->  
   
  
-      <div id="glContainer" style="display:none;"></div>
+  <div id="glContainer" style="display:none;">
+    
+     
+     <div id="facebook_loading">
+       <div><img src="/ww/universal/ll/images/loading.gif" /></div>
+     </div>    
+    
+  </div>
       <div class="container">
       <div id="doEvent"></div>
       <div id="doTiltLR"></div>
@@ -1875,14 +1885,13 @@ var oCIIAlternateLink = new Object();
             mack.hotZone();
             $(window).resize(function() {
                 mack.hotZone();
+                
             })
         })
     }
     </script>
 	<!-- End insert footerCode from Channel Info Child --> 
-     <div id="facebook_loading">
-       <div><img src="/ww/universal/ll/images/loading.gif" /></div>
-   </div>
+    
   </body>
 </html>
 

@@ -18,16 +18,6 @@
   width: 48px;
 }
 
-#glContainer 
-{
-  overflow: hidden;
-  background: url(/ww/universal/ll/images/ll-bg.png) no-repeat center center fixed;
-  -webkit-background-size: cover; /* For WebKit*/
-  -moz-background-size: cover;    /* Mozilla*/
-  -o-background-size: cover;      /* Opera*/
-  background-size: cover;         /* Generic*/
-}
-
 body.fb {
   /*background: url('/ww/universal/ll/images/ll-bg.png');
   background-size: cover; 
@@ -38,6 +28,30 @@ body.fb {
   -moz-background-size: cover;    /* Mozilla*/
   -o-background-size: cover;      /* Opera*/
   background-size: cover;         /* Generic*/
+}
+
+#glContainer canvas
+{
+  /*overflow: hidden;*/
+  background: url(/ww/universal/ll/images/ll-bg.png) no-repeat center center fixed;
+  -webkit-background-size: 100%; /* For WebKit*/
+  -moz-background-size: 100%;    /* Mozilla*/
+  -o-background-size: 100%;      /* Opera*/
+  background-size: 100%;         /* Generic*/
+}
+
+#glContainer canvas
+{
+  /*overflow: hidden;*/
+  background: url(/ww/universal/ll/images/ll-bg.png) no-repeat center center fixed;
+  -webkit-background-size: cover; /* For WebKit*/
+  -moz-background-size: cover;    /* Mozilla*/
+  -o-background-size: cover;      /* Opera*/
+  background-size: cover;         /* Generic*/
+}
+
+body.fb #glContainer canvas{
+  background: none;
 }
 
 #text #bottomText #stats {
@@ -94,12 +108,21 @@ body.fb {
   color: #ccc;
 }
 
+.slide_container_2{
+  position: relative;
+  text-align: center;
+  top:20%;
+ 
+}
+
 .facebook{display:none;}
+
+.hotZone{position: relative;}
 
 #facebook_loading
 {
   display:none;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;

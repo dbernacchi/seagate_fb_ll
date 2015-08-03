@@ -105,6 +105,7 @@ var facebookLL = {};
             ns.login(function(loginResponse) {
              
               $(".slide_container").html($('.link_container').html());
+			  $(".slide_container_2").html($('.link_container_2').html());
 
             });
 

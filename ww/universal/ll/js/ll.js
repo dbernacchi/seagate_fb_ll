@@ -1,5 +1,7 @@
-if(typeof Environment == 'undefined'){
-          
+if(typeof preloaderMargin == 'undefined'){
+  var preloaderMargin = 0;
+  var logoPadding = 0;
+}   
 var poo = function(txt) {
   /*console.log(txt)*/
 }
@@ -689,11 +691,20 @@ var mack = {
         // set up canvas and start animation
         
         
+        mack.hotZone();
+        var elm = $(".hotZone");
         
-        HappyTree.canvas.init();
+        HappyTree.canvas.init(); 
+        elm.hide();
+        elm.fadeIn(3000, function (next) {
+          
+           
+          
+          
+        });
         
- 
-      
+   
+        
         mack.peepShow();
 
         switch (mack.vars.logoIndex) {
@@ -732,8 +743,14 @@ var mack = {
         }
         HappyTree.canvas.set_camera(0); // note: camera isn't working yet
         
-        
         HappyTree.canvas.start();
+        
+        //$( ".hotZone" ).wrap( "<div class='canvasCover' style='display:none;'></div>" );
+        
+        /*
+        var stage = $(".hotZone");
+        
+        stage.css('overflow', 'hidden');
         
         $('<div class="canvasCover"/>').css({
             position: "absolute",
@@ -743,32 +760,10 @@ var mack = {
             top: 0,
             zIndex: 1000000,  // to be on the safe side
             backgroundColor: "white"
-        }).appendTo($("#ll-canvas-container").css("position", "relative"));
-        
-        var cctop = $('.canvasCover').offset().top;
-        
-        var lltop = $('#ll-canvas-container').offset().top;
-        
-        var newtop = (cctop - lltop) * -1;
-        
-        $('.canvasCover').css('top', newtop + 'px');      
-        
-        var windowWidth = window.screen.width < window.outerWidth ?
-            window.screen.width : window.outerWidth;
-            
-        var ccleft = $('.canvasCover').offset().left;
-        
-        var llleft = $('#ll-canvas-container').offset().left;
-        
-        var newleft = (ccleft - llleft) * -1;
-        
-        var newwidth = windowWidth + newleft;
-        
-        $('.canvasCover').css('left', + newleft + 'px');      
-        $('.canvasCover').css('width', + newwidth + 'px');
-        
-        //$('#ll-canvas-container ').css('border', '1px solid red');
-        //$('.mainStage').css('border', '1px solid blue');
+        }).appendTo(stage.css("position", "relative"));
+        */
+       
+       
         mack.superSizeMe();
        
  
@@ -876,6 +871,7 @@ var mack = {
         }
 
         $(".mNav").change(function() {
+
           var sKey = parseInt($(".mNav option:selected").attr('value'))
           if (mack.vars.tomsDone) {
 
@@ -928,6 +924,7 @@ var mack = {
 
             }
           }
+          
 
         })
 
@@ -1153,7 +1150,7 @@ var mack = {
       }
     }//ENDOF != facebook
 
-
+ 
   },
   superSizeMe: function() {
 
@@ -1678,6 +1675,8 @@ var mack = {
         marginTop: '-95px',
         marginLeft: '-80px'
       })
+      
+      
     }
 
 
@@ -1752,8 +1751,10 @@ var mack = {
 
 
 
+    
   },
   hotZone: function() {
+
 
     if (Environment.isChrome() && !device.mobile()) {
 
@@ -1934,7 +1935,7 @@ var mack = {
           })
 
           var textHeight = (hHeight / 2) + 90 + 'px';
-
+          
           TweenLite.to($('#text #preloader'), 0.1, {
             width: '80%',
             top: textHeight
@@ -2142,6 +2143,63 @@ var mack = {
         })
 
       }
+
+      if(Environment.isMobile()){
+        
+        
+        //$('canvas').css('border', '1px solid red');
+        //$('#glContainer').css('border', '1px solid blue');
+        //$('.mainStage').css('height', $('.hotZone').css('height'));
+     
+        /*
+        alert($('.mainStage').css('height'));
+        alert($('.hotZone').css('height'));
+        */
+        /*$('#bottomText').css('border', '1px solid black');
+        $('#preloader').css('border', '1px solid green');
+        $('#stats').css('border', '1px solid blue');*/
+        
+
+        /*$('section#text').show();
+        $('section#bottomText').show();
+        $('section#logo').show();*/
+        //alert($('section#logo').css('border'));
+
+        
+        var canvas_top = $('canvas').offset().top;
+        var canvas_height = $('canvas').height();
+        var canvas_middle = canvas_height / 2;
+        var canvas_bottom = canvas_height * .85;
+        
+        var pre_top = $('#preloader').offset().top; 
+        var logo_top = $('#logo').offset().top; 
+        
+        if(!preloaderMargin){
+          preloaderMargin = (canvas_top + canvas_middle - pre_top);
+         
+          logoPadding = (canvas_height / 9);
+          //logoPadding = canvas_height;
+        }
+        
+        $('#bottomText').css('margin-top', preloaderMargin + 'px');
+        $('#preloader').css('margin-top', preloaderMargin + 'px');
+        
+        
+        /*
+        var margin = -80;
+        $('#preloader').css('margin-top', margin + 'px');
+        $('#bottomText').css('margin-top', margin + 'px');
+        $('#logo').css('padding-top', '120px');
+        */
+       
+ 
+        
+      } else {
+    
+        var top = $('.hotZone').height() / 2;
+        $('#text #preloader').css('top', top + 'px');
+      }
+       
     }//ENDOF facebook {} else
 
   },
@@ -2709,7 +2767,7 @@ var mack = {
     function tomzDone() {
       mack.vars.smallDone.resolve();
       mack.vars.tomsDone = true;
-      alert('x5');
+
       TweenLite.to($('.mIcon'), 1, {
         opacity: 1
       })
@@ -2817,13 +2875,17 @@ var mack = {
           mack.vars.logoUp = true;
           /*poo('going logo')*/
           //   if (mack.vars.freshStart) {
+         
           $(logo).fadeIn('slow', function() {
+
+
+
 
             TweenMax.to(logo, 2, {
               opacity: 1,
               display: 'block'
             })
-            restore()
+            restore();
 
           }).delay(5000).fadeOut('slow', function() {
             killLogo();
@@ -3670,6 +3732,11 @@ var mack = {
         mack.vars.logoUp = true;
         /*poo('going logo')*/
         //   if (mack.vars.freshStart) {
+        //alert(logoPadding);
+        if(Environment.isMobile()){ 
+          $(logo).css('margin-top', logoPadding + 'px');
+        }
+        
         $(logo).fadeIn('slow', function() {
 
           TweenMax.to(logo, 2, {
@@ -4666,5 +4733,89 @@ $(function() {
     }
 
   })
-})
+});
+
+function fixMack(){
+  /*
+  $('#glContainer').css('background-size', '120px 120px');
+  alert($('#glContainer').css('background-size'));
+  
+  $('#glContainer').css('background', 'url(/ww/universal/ll/images/ll-bg.png)');
+  $('body.fb #glContainer').css('background', 'none');
+  */
+ 
+         
+  /*return;
+  
+  var can = $('#ll-canvas-container');
+  var bot = $('#bottomText');
+  var sta = $('#stats');
+  var log = $('#logo');
+  
+  var can_height = can.height();
+  var can_middle = can_height / 2;
+
+  
+  $('#bottomText').css('top', can_middle + 'px');
+  //$("#stats").css('top', '-35px');
+  //$("#logo").css('top', 'auto');
+
+  var can_dim = can_height * .75;
+
+  $("canvas").css('max-height', can_dim + 'px');
+  $("canvas").css('max-width', can_dim + 'px');
+
+  can.css('border', '1px solid green');
+  bot.css('border', '1px solid red');
+  sta.css('border', '1px solid blue');
+  log.css('border', '1px solid purple');
+
+  if($('.mobileNav').css('display') == 'block'){
+
+    log.css('bottom', '-10px');
+    
+    
+  } else {
+
+    log.css('bottom', '-50px'); 
+  }
+
+ 
+  
+  var can = $('#ll-canvas-container');
+  var bot = $('#bottomText');
+  var sta = $('#stats');
+  var log = $('#logo');
+  
+  var can_height = can.height();
+  var can_middle = can_height / 2;
+
+  
+  $('#bottomText').css('top', can_middle + 'px');
+  //$("#stats").css('top', '-35px');
+  //$("#logo").css('top', 'auto');
+
+  var can_dim = can_height * .75;
+
+  $("canvas").css('max-height', can_dim + 'px');
+  $("canvas").css('max-width', can_dim + 'px');
+
+  can.css('border', '1px solid green');
+  bot.css('border', '1px solid red');
+  sta.css('border', '1px solid blue');
+  log.css('border', '1px solid purple');
+
+  if($('.mobileNav').css('display') == 'block'){
+
+    log.css('bottom', '-10px');
+    
+    
+  } else {
+
+    log.css('bottom', '-50px'); 
+  }
+  */
+
 }
+
+

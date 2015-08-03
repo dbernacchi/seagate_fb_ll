@@ -159,7 +159,7 @@ function llBootstrap(){
       menuItem[0].addEventListener('click', function(e)
       {
         e.preventDefault();
-        ;
+        $('#bottomText').show();
         GettyCallFunc_WebGL();
       });
 
@@ -167,36 +167,44 @@ function llBootstrap(){
       menuItem[1].addEventListener('click', function(e)
       {
         e.preventDefault();
+        $('#bottomText').show();
+        
         InstagramCallFunc_WebGL();
       });
       // Twitter
       menuItem[2].addEventListener('click', function(e)
       {
         e.preventDefault();
+        $('#bottomText').show();
         TwitterCallFunc_WebGL();
       });
       // New york times
       menuItem[3].addEventListener('click', function(e)
       {
         e.preventDefault();
+        $('#bottomText').show();
         NYTCallFunc_WebGL();
       });
       // Amazon
       menuItem[4].addEventListener('click', function(e)
       {
         e.preventDefault();
+        $('#bottomText').show();
         AmazonCallFunc_WebGL();
       });
       // Last.fm
       menuItem[5].addEventListener('click', function(e)
       {
         e.preventDefault();
+        $('#bottomText').show();
         LastFMCallFunc_WebGL();
       });
       // Facebook
       menuItem[6].addEventListener('click', function(e)
       {
         e.preventDefault();
+        $('#bottomText').show();
+        
         hasSelectedFacebook = true;
         if(facebookActivated){
           FacebookCallFunc_WebGL();
@@ -210,7 +218,7 @@ function llBootstrap(){
       menuItemB[0].addEventListener('click', function(e)
       {
         e.preventDefault();
-
+        $('#bottomText').show();
         GettyCallFunc_WebGL();
       });
 
@@ -218,36 +226,42 @@ function llBootstrap(){
       menuItemB[1].addEventListener('click', function(e)
       {
         e.preventDefault();
+        $('#bottomText').show();
         InstagramCallFunc_WebGL();
       });
       // Twitter
       menuItemB[2].addEventListener('click', function(e)
       {
         e.preventDefault();
+        $('#bottomText').show();
         TwitterCallFunc_WebGL();
       });
       // New york times
       menuItemB[3].addEventListener('click', function(e)
       {
         e.preventDefault();
+        $('#bottomText').show();
         NYTCallFunc_WebGL();
       });
       // Amazon
       menuItemB[4].addEventListener('click', function(e)
       {
         e.preventDefault();
+        $('#bottomText').show();
         AmazonCallFunc_WebGL();
       });
       // Last.fm
       menuItemB[5].addEventListener('click', function(e)
       {
         e.preventDefault();
+        $('#bottomText').show();
         LastFMCallFunc_WebGL();
       });
       // Facebook
       menuItemB[6].addEventListener('click', function(e)
       {
         e.preventDefault();
+        $('#bottomText').show();
         hasSelectedFacebook = true;
         if(facebookActivated){
           FacebookCallFunc_WebGL();
